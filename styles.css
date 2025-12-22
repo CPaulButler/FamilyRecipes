@@ -106,13 +106,6 @@ section h2 {
     fill: none;
 }
 
-.tree-lines text {
-    font-size: 11px;
-    fill: #555;
-    font-family: 'Georgia', 'Times New Roman', serif;
-    font-style: italic;
-}
-
 .generation {
     display: flex;
     flex-wrap: wrap;

@@ -3,10 +3,6 @@
  * Draws connecting lines between family members to show relationships
  */
 
-// Constants for relationship labels
-const LABEL_SPOUSES = 'spouses';
-const LABEL_CHILD = 'child';
-
 document.addEventListener('DOMContentLoaded', function() {
     drawFamilyLines();
     
@@ -71,14 +67,6 @@ function drawSpouseConnections(svg, containerRect) {
         line.setAttribute('y2', y2);
         line.setAttribute('class', 'spouse-line');
         svg.appendChild(line);
-        
-        // Add label
-        const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-        text.setAttribute('x', (x1 + x2) / 2);
-        text.setAttribute('y', (y1 + y2) / 2 - 5);
-        text.setAttribute('text-anchor', 'middle');
-        text.textContent = LABEL_SPOUSES;
-        svg.appendChild(text);
     });
 }
 
@@ -121,13 +109,5 @@ function drawParentChildConnections(svg, containerRect) {
         path.setAttribute('d', pathData);
         path.setAttribute('class', 'parent-child-line');
         svg.appendChild(path);
-        
-        // Add label
-        const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-        text.setAttribute('x', (parentX + childX) / 2);
-        text.setAttribute('y', midY - 5);
-        text.setAttribute('text-anchor', 'middle');
-        text.textContent = LABEL_CHILD;
-        svg.appendChild(text);
     });
 }
