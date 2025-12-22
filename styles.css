@@ -106,8 +106,21 @@ section h2 {
     fill: none;
 }
 
+/* Spouse line styles based on marriage status */
+.tree-lines line.married-line {
+    stroke: #667eea;
+    stroke-width: 2;
+}
+
+.tree-lines line.divorced-line {
+    stroke: #ff6b6b;
+    stroke-width: 2;
+    stroke-dasharray: 10, 5;
+}
+
 .tree-lines line.widowed-line {
     stroke: #999;
+    stroke-width: 2;
     stroke-dasharray: 5, 5;
 }
 
@@ -166,6 +179,63 @@ section h2 {
     50% {
         background: linear-gradient(135deg, #ffd89b 0%, #19547b 100%);
     }
+}
+
+/* Legend Styles */
+.tree-legend {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    border: 2px solid #e0e0e0;
+}
+
+.tree-legend h3 {
+    color: #667eea;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+.legend-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: center;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.legend-item span {
+    color: #333;
+    font-size: 0.95rem;
+}
+
+.legend-line,
+.legend-path {
+    stroke-width: 2;
+    fill: none;
+}
+
+.legend-line.married-line {
+    stroke: #667eea;
+}
+
+.legend-line.divorced-line {
+    stroke: #ff6b6b;
+    stroke-dasharray: 10, 5;
+}
+
+.legend-line.widowed-line {
+    stroke: #999;
+    stroke-dasharray: 5, 5;
+}
+
+.legend-path.parent-child-line {
+    stroke: #667eea;
 }
 
 /* Recipes Styles */

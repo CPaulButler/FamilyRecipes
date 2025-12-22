@@ -54,11 +54,9 @@ function drawSpouseConnections(svg, containerRect) {
         if (marriagesAttr) {
             try {
                 const marriages = JSON.parse(marriagesAttr);
-                // Only draw lines for current marriages (married or widowed status)
+                // Draw lines for all marriages (married, widowed, and divorced)
                 marriages.forEach(marriage => {
-                    if (marriage.status === 'married' || marriage.status === 'widowed') {
-                        spousesToDraw.push({id: marriage.spouse, status: marriage.status});
-                    }
+                    spousesToDraw.push({id: marriage.spouse, status: marriage.status});
                 });
             } catch (e) {
                 console.error('Error parsing marriages data for', member.id, e);
@@ -83,13 +81,24 @@ function drawSpouseConnections(svg, containerRect) {
             const x2 = spouseRect.left + spouseRect.width / 2 - containerRect.left;
             const y2 = spouseRect.top + spouseRect.height / 2 - containerRect.top;
             
-            // Draw line between spouses
+            // Draw line between spouses with appropriate style based on status
             const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
             line.setAttribute('x1', x1);
             line.setAttribute('y1', y1);
             line.setAttribute('x2', x2);
             line.setAttribute('y2', y2);
-            line.setAttribute('class', spouseInfo.status === 'widowed' ? 'spouse-line widowed-line' : 'spouse-line');
+            
+            // Set class based on marriage status
+            let lineClass = 'spouse-line';
+            if (spouseInfo.status === 'divorced') {
+                lineClass += ' divorced-line';
+            } else if (spouseInfo.status === 'widowed') {
+                lineClass += ' widowed-line';
+            } else {
+                lineClass += ' married-line';
+            }
+            
+            line.setAttribute('class', lineClass);
             svg.appendChild(line);
         });
     });
