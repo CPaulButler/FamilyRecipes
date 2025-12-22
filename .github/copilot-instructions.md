@@ -23,4 +23,3 @@ Please determine the appropriate tech stack based on the project structure and f
 # Structure & Resources
 - Maintain a clean and organized file structure
 - Follow existing patterns and conventions in the repository
-- See README.md for additional guidance on contributing
