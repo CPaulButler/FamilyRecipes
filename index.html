@@ -36,7 +36,7 @@
                         <p class="relation">First wife of John</p>
                         <p class="years">1924-2015</p>
                     </div>
-                    <div class="family-member" id="grandpa-john" data-marriages='[{"spouse":"grandpa-john-first-wife","start":"1945","end":"1947","status":"divorced"},{"spouse":"grandma-mary","start":"1948","status":"married","end":"2008"}]' data-children="mom-sarah,uncle-tom">
+                    <div class="family-member" id="grandpa-john" data-marriages='[{"spouse":"grandpa-john-first-wife","start":"1945","end":"1947","status":"divorced"},{"spouse":"grandma-mary","start":"1948","status":"widowed","end":"2008"}]' data-children="mom-sarah,uncle-tom">
                         <h3>Grandpa John</h3>
                         <p class="relation">Patriarch</p>
                         <p class="years">1923-2008</p>
@@ -59,9 +59,9 @@
                         <p class="relation">First wife of Tom</p>
                         <p class="years">1953-1985</p>
                     </div>
-                    <div class="family-member" id="uncle-tom" data-marriages='[{"spouse":"uncle-tom-first-wife","start":"1975","end":"1985","status":"widowed"},{"spouse":"aunt-linda","start":"1988","status":"married"}]' data-children="cousin-jenny" data-parents="grandma-mary,grandpa-john">
+                    <div class="family-member" id="uncle-tom" data-marriages='[{"spouse":"uncle-tom-first-wife","start":"1975","end":"1985","status":"widowed"},{"spouse":"aunt-linda","start":"1988","status":"married"}]' data-children="cousin-jenny" data-parents="grandpa-john-first-wife,grandpa-john">
                         <h3>Uncle Tom</h3>
-                        <p class="relation">Son of Mary & John</p>
+                        <p class="relation">Son of Elizabeth & John</p>
                         <p class="years">1952-</p>
                     </div>
                     <div class="family-member" id="aunt-linda" data-marriages='[{"spouse":"uncle-tom","start":"1988","status":"married"}]'>
@@ -82,10 +82,40 @@
                         <p class="relation">Son of Sarah & Robert</p>
                         <p class="years">1978-</p>
                     </div>
-                    <div class="family-member" id="cousin-jenny" data-parents="uncle-tom,aunt-linda">
+                    <div class="family-member" id="cousin-jenny" data-parents="uncle-tom,uncle-tom-first-wife">
                         <h3>Cousin Jenny</h3>
-                        <p class="relation">Daughter of Tom & Linda</p>
+                        <p class="relation">Daughter of Tom & Patricia</p>
                         <p class="years">1980-</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tree-legend">
+                <h3>Legend</h3>
+                <div class="legend-items">
+                    <div class="legend-item">
+                        <svg width="60" height="20">
+                            <line x1="0" y1="10" x2="60" y2="10" class="legend-line married-line"></line>
+                        </svg>
+                        <span>Active Marriage</span>
+                    </div>
+                    <div class="legend-item">
+                        <svg width="60" height="20">
+                            <line x1="0" y1="10" x2="60" y2="10" class="legend-line divorced-line"></line>
+                        </svg>
+                        <span>Divorced</span>
+                    </div>
+                    <div class="legend-item">
+                        <svg width="60" height="20">
+                            <line x1="0" y1="10" x2="60" y2="10" class="legend-line widowed-line"></line>
+                        </svg>
+                        <span>Widowed/Deceased</span>
+                    </div>
+                    <div class="legend-item">
+                        <svg width="60" height="20">
+                            <path d="M 0,10 L 60,10" class="legend-path parent-child-line"></path>
+                        </svg>
+                        <span>Parent-Child</span>
                     </div>
                 </div>
             </div>
