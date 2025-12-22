@@ -3,6 +3,10 @@
  * Draws connecting lines between family members to show relationships
  */
 
+// Constants for relationship labels
+const LABEL_SPOUSES = 'spouses';
+const LABEL_CHILD = 'child';
+
 document.addEventListener('DOMContentLoaded', function() {
     drawFamilyLines();
     
@@ -73,7 +77,7 @@ function drawSpouseConnections(svg, containerRect) {
         text.setAttribute('x', (x1 + x2) / 2);
         text.setAttribute('y', (y1 + y2) / 2 - 5);
         text.setAttribute('text-anchor', 'middle');
-        text.textContent = 'spouses';
+        text.textContent = LABEL_SPOUSES;
         svg.appendChild(text);
     });
 }
@@ -82,7 +86,10 @@ function drawParentChildConnections(svg, containerRect) {
     const children = document.querySelectorAll('.family-member[data-parents]');
     
     children.forEach(child => {
-        const parentIds = child.getAttribute('data-parents').split(',');
+        const parentsAttr = child.getAttribute('data-parents');
+        if (!parentsAttr) return; // Safety check
+        
+        const parentIds = parentsAttr.split(',');
         const parents = parentIds.map(id => document.getElementById(id.trim())).filter(p => p);
         
         if (parents.length === 0) return;
@@ -99,6 +106,7 @@ function drawParentChildConnections(svg, containerRect) {
             parentX = parentRect.left + parentRect.width / 2 - containerRect.left;
             parentBottom = parentRect.bottom - containerRect.top;
         } else {
+            // Handle 2 or more parents - use first two
             const parent1Rect = parents[0].getBoundingClientRect();
             const parent2Rect = parents[1].getBoundingClientRect();
             parentX = (parent1Rect.left + parent1Rect.width / 2 + parent2Rect.left + parent2Rect.width / 2) / 2 - containerRect.left;
@@ -119,7 +127,7 @@ function drawParentChildConnections(svg, containerRect) {
         text.setAttribute('x', (parentX + childX) / 2);
         text.setAttribute('y', midY - 5);
         text.setAttribute('text-anchor', 'middle');
-        text.textContent = 'child';
+        text.textContent = LABEL_CHILD;
         svg.appendChild(text);
     });
 }
