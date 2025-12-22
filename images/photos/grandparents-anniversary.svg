@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">
+  <rect width="400" height="300" fill="#f5f7fa"/>
+  <circle cx="120" cy="100" r="50" fill="#667eea"/>
+  <path d="M 75 170 Q 120 130 165 170 L 165 250 L 75 250 Z" fill="#667eea"/>
+  <circle cx="280" cy="100" r="50" fill="#764ba2"/>
+  <path d="M 235 170 Q 280 130 325 170 L 325 250 L 235 250 Z" fill="#764ba2"/>
+  <text x="200" y="285" font-family="Arial" font-size="16" text-anchor="middle" fill="#333">Grandma Mary &amp; Grandpa John</text>
+  <text x="200" y="270" font-family="Arial" font-size="14" text-anchor="middle" fill="#666">50th Anniversary - 1998</text>
+</svg>

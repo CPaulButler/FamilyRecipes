@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="400" viewBox="0 0 300 400">
+  <rect width="300" height="400" fill="#f5f7fa"/>
+  <circle cx="150" cy="120" r="60" fill="#9b59b6"/>
+  <path d="M 80 250 Q 150 200 220 250 L 220 400 L 80 400 Z" fill="#9b59b6"/>
+  <text x="150" y="380" font-family="Arial" font-size="18" text-anchor="middle" fill="#333">Aunt Linda</text>
+  <text x="150" y="365" font-family="Arial" font-size="14" text-anchor="middle" fill="#666">1954-</text>
+</svg>

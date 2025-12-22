@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="300" viewBox="0 0 500 300">
+  <rect width="500" height="300" fill="#f5f7fa"/>
+  <circle cx="100" cy="80" r="40" fill="#e67e22"/>
+  <path d="M 65 130 Q 100 100 135 130 L 135 200 L 65 200 Z" fill="#e67e22"/>
+  <circle cx="200" cy="80" r="40" fill="#3498db"/>
+  <path d="M 165 130 Q 200 100 235 130 L 235 200 L 165 200 Z" fill="#3498db"/>
+  <circle cx="300" cy="80" r="40" fill="#e74c3c"/>
+  <path d="M 265 130 Q 300 100 335 130 L 335 200 L 265 200 Z" fill="#e74c3c"/>
+  <circle cx="400" cy="80" r="40" fill="#f39c12"/>
+  <path d="M 365 130 Q 400 100 435 130 L 435 200 L 365 200 Z" fill="#f39c12"/>
+  <text x="250" y="280" font-family="Arial" font-size="16" text-anchor="middle" fill="#333">Family Vacation - 2005</text>
+  <text x="250" y="260" font-family="Arial" font-size="14" text-anchor="middle" fill="#666">Sarah, Robert, Emily, Mike</text>
+</svg>
