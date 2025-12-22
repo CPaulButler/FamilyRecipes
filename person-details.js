@@ -357,11 +357,12 @@ function showPersonDetails(personId) {
                     }
                     
                     const dateRange = marriage.end ? `${marriage.start}-${marriage.end}` : `${marriage.start}-present`;
+                    const marriageLabel = marriages.length > 1 ? `Marriage ${index + 1}` : 'Marriage';
                     
                     marriagesHTML += `
                         <div class="marriage-item">
                             <div class="marriage-header">
-                                <strong>Marriage ${marriages.length > 1 ? (index + 1) : ''}</strong>
+                                <strong>${marriageLabel}</strong>
                                 <span class="marriage-status ${statusClass}">${statusText}</span>
                             </div>
                             <p><strong>Spouse:</strong> ${spouseName}</p>
