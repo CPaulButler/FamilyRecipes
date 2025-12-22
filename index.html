@@ -26,12 +26,17 @@
             <div class="tree-container">
                 <svg class="tree-lines" aria-hidden="true"></svg>
                 <div class="generation" data-generation="1">
-                    <div class="family-member" id="grandma-mary" data-spouse="grandpa-john" data-children="mom-sarah,uncle-tom">
+                    <div class="family-member" id="grandma-mary" data-marriages='[{"spouse":"grandpa-john","start":"1948","status":"widowed","end":"2008"}]' data-children="mom-sarah,uncle-tom">
                         <h3>Grandma Mary</h3>
                         <p class="relation">Matriarch</p>
                         <p class="years">1925-2010</p>
                     </div>
-                    <div class="family-member" id="grandpa-john" data-spouse="grandma-mary" data-children="mom-sarah,uncle-tom">
+                    <div class="family-member" id="grandpa-john-first-wife" data-marriages='[{"spouse":"grandpa-john","start":"1945","end":"1947","status":"divorced"}]'>
+                        <h3>Elizabeth Brown</h3>
+                        <p class="relation">First wife of John</p>
+                        <p class="years">1924-2015</p>
+                    </div>
+                    <div class="family-member" id="grandpa-john" data-marriages='[{"spouse":"grandpa-john-first-wife","start":"1945","end":"1947","status":"divorced"},{"spouse":"grandma-mary","start":"1948","status":"married","end":"2008"}]' data-children="mom-sarah,uncle-tom">
                         <h3>Grandpa John</h3>
                         <p class="relation">Patriarch</p>
                         <p class="years">1923-2008</p>
@@ -39,24 +44,29 @@
                 </div>
                 
                 <div class="generation" data-generation="2">
-                    <div class="family-member" id="mom-sarah" data-spouse="dad-robert" data-children="myself,brother-mike" data-parents="grandma-mary,grandpa-john">
+                    <div class="family-member" id="mom-sarah" data-marriages='[{"spouse":"dad-robert","start":"1972","status":"married"}]' data-children="myself,brother-mike" data-parents="grandma-mary,grandpa-john">
                         <h3>Mom Sarah</h3>
                         <p class="relation">Daughter of Mary & John</p>
                         <p class="years">1950-</p>
                     </div>
-                    <div class="family-member" id="dad-robert" data-spouse="mom-sarah" data-children="myself,brother-mike">
+                    <div class="family-member" id="dad-robert" data-marriages='[{"spouse":"mom-sarah","start":"1972","status":"married"}]' data-children="myself,brother-mike">
                         <h3>Dad Robert</h3>
                         <p class="relation">Son-in-law</p>
                         <p class="years">1948-</p>
                     </div>
-                    <div class="family-member" id="uncle-tom" data-spouse="aunt-linda" data-children="cousin-jenny" data-parents="grandma-mary,grandpa-john">
+                    <div class="family-member" id="uncle-tom-first-wife" data-marriages='[{"spouse":"uncle-tom","start":"1975","end":"1985","status":"deceased"}]' data-children="cousin-jenny">
+                        <h3>Patricia Moore</h3>
+                        <p class="relation">First wife of Tom</p>
+                        <p class="years">1953-1985</p>
+                    </div>
+                    <div class="family-member" id="uncle-tom" data-marriages='[{"spouse":"uncle-tom-first-wife","start":"1975","end":"1985","status":"widowed"},{"spouse":"aunt-linda","start":"1988","status":"married"}]' data-children="cousin-jenny" data-parents="grandma-mary,grandpa-john">
                         <h3>Uncle Tom</h3>
                         <p class="relation">Son of Mary & John</p>
                         <p class="years">1952-</p>
                     </div>
-                    <div class="family-member" id="aunt-linda" data-spouse="uncle-tom" data-children="cousin-jenny">
+                    <div class="family-member" id="aunt-linda" data-marriages='[{"spouse":"uncle-tom","start":"1988","status":"married"}]'>
                         <h3>Aunt Linda</h3>
-                        <p class="relation">Daughter-in-law</p>
+                        <p class="relation">Second wife of Tom</p>
                         <p class="years">1954-</p>
                     </div>
                 </div>

@@ -36,37 +36,62 @@ function drawFamilyLines() {
 }
 
 function drawSpouseConnections(svg, containerRect) {
-    const members = document.querySelectorAll('.family-member[data-spouse]');
+    // Handle both old data-spouse format and new data-marriages format
+    const members = document.querySelectorAll('.family-member[data-spouse], .family-member[data-marriages]');
     const drawnPairs = new Set();
     
     members.forEach(member => {
+        let spousesToDraw = [];
+        
+        // Check for old data-spouse format
         const spouseId = member.getAttribute('data-spouse');
-        const spouse = document.getElementById(spouseId);
+        if (spouseId) {
+            spousesToDraw.push({id: spouseId, status: 'married'});
+        }
         
-        if (!spouse) return;
+        // Check for new data-marriages format
+        const marriagesAttr = member.getAttribute('data-marriages');
+        if (marriagesAttr) {
+            try {
+                const marriages = JSON.parse(marriagesAttr);
+                // Only draw lines for current marriages (married or widowed status)
+                marriages.forEach(marriage => {
+                    if (marriage.status === 'married' || marriage.status === 'widowed') {
+                        spousesToDraw.push({id: marriage.spouse, status: marriage.status});
+                    }
+                });
+            } catch (e) {
+                console.error('Error parsing marriages data for', member.id, e);
+            }
+        }
         
-        // Create a unique pair identifier to avoid drawing twice
-        const pairId = [member.id, spouseId].sort().join('-');
-        if (drawnPairs.has(pairId)) return;
-        drawnPairs.add(pairId);
-        
-        const memberRect = member.getBoundingClientRect();
-        const spouseRect = spouse.getBoundingClientRect();
-        
-        // Calculate positions relative to container
-        const x1 = memberRect.left + memberRect.width / 2 - containerRect.left;
-        const y1 = memberRect.top + memberRect.height / 2 - containerRect.top;
-        const x2 = spouseRect.left + spouseRect.width / 2 - containerRect.left;
-        const y2 = spouseRect.top + spouseRect.height / 2 - containerRect.top;
-        
-        // Draw line between spouses
-        const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
-        line.setAttribute('x1', x1);
-        line.setAttribute('y1', y1);
-        line.setAttribute('x2', x2);
-        line.setAttribute('y2', y2);
-        line.setAttribute('class', 'spouse-line');
-        svg.appendChild(line);
+        spousesToDraw.forEach(spouseInfo => {
+            const spouse = document.getElementById(spouseInfo.id);
+            if (!spouse) return;
+            
+            // Create a unique pair identifier to avoid drawing twice
+            const pairId = [member.id, spouseInfo.id].sort().join('-');
+            if (drawnPairs.has(pairId)) return;
+            drawnPairs.add(pairId);
+            
+            const memberRect = member.getBoundingClientRect();
+            const spouseRect = spouse.getBoundingClientRect();
+            
+            // Calculate positions relative to container
+            const x1 = memberRect.left + memberRect.width / 2 - containerRect.left;
+            const y1 = memberRect.top + memberRect.height / 2 - containerRect.top;
+            const x2 = spouseRect.left + spouseRect.width / 2 - containerRect.left;
+            const y2 = spouseRect.top + spouseRect.height / 2 - containerRect.top;
+            
+            // Draw line between spouses
+            const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+            line.setAttribute('x1', x1);
+            line.setAttribute('y1', y1);
+            line.setAttribute('x2', x2);
+            line.setAttribute('y2', y2);
+            line.setAttribute('class', spouseInfo.status === 'widowed' ? 'spouse-line widowed-line' : 'spouse-line');
+            svg.appendChild(line);
+        });
     });
 }
 

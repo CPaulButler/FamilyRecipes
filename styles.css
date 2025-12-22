@@ -106,6 +106,11 @@ section h2 {
     fill: none;
 }
 
+.tree-lines line.widowed-line {
+    stroke: #999;
+    stroke-dasharray: 5, 5;
+}
+
 .generation {
     display: flex;
     flex-wrap: wrap;
@@ -475,6 +480,71 @@ footer p {
     color: #333;
     display: inline-block;
     min-width: 150px;
+}
+
+/* Marriage History Styles */
+.marriages-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.marriage-item {
+    background-color: #f8f9fa;
+    padding: 1rem;
+    border-radius: 8px;
+    border-left: 4px solid #667eea;
+}
+
+.marriage-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.marriage-header strong {
+    color: #667eea;
+    font-size: 1.1rem;
+}
+
+.marriage-status {
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.status-married {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.status-divorced {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.status-widowed {
+    background-color: #e2e3e5;
+    color: #383d41;
+}
+
+.status-deceased {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.marriage-item p {
+    margin: 0.3rem 0;
+    color: #555;
+}
+
+.marriage-item strong {
+    color: #333;
+    min-width: 80px;
+    display: inline-block;
 }
 
 /* Print Styles */
