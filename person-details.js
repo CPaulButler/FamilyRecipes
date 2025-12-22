@@ -45,7 +45,20 @@ const personData = {
                 { type: 'Phone', value: '(217) 555-0124' }
             ]
         },
-        bio: 'John worked as a carpenter and built the family home. He loved fishing and teaching his grandchildren about woodworking.'
+        bio: 'John worked as a carpenter and built the family home. He loved fishing and teaching his grandchildren about woodworking. He was married to Elizabeth Brown from 1945-1947, then married Mary in 1948.'
+    },
+    'grandpa-john-first-wife': {
+        name: 'Elizabeth Brown',
+        fullName: 'Elizabeth Anne Brown',
+        years: '1924-2015',
+        relation: 'First wife of John',
+        photos: [],
+        documents: [],
+        addresses: {
+            physical: [],
+            virtual: []
+        },
+        bio: 'Elizabeth was briefly married to John from 1945-1947. After their divorce, she moved to California and remarried in 1950.'
     },
     'mom-sarah': {
         name: 'Mom Sarah',
@@ -107,13 +120,26 @@ const personData = {
                 { type: 'Phone', value: '(309) 555-0167' }
             ]
         },
-        bio: 'Tom is famous for his BBQ ribs at every family reunion. He owns a small restaurant and loves outdoor cooking.'
+        bio: 'Tom is famous for his BBQ ribs at every family reunion. He owns a small restaurant and loves outdoor cooking. He was married to Patricia Moore from 1975-1985 and they had one daughter, Jenny. After Patricia\'s tragic passing, Tom married Linda in 1988.'
+    },
+    'uncle-tom-first-wife': {
+        name: 'Patricia Moore',
+        fullName: 'Patricia Ann Moore',
+        years: '1953-1985',
+        relation: 'First wife of Tom',
+        photos: [],
+        documents: [],
+        addresses: {
+            physical: [],
+            virtual: []
+        },
+        bio: 'Patricia was married to Tom from 1975 until her untimely death in 1985. She was a loving mother to Jenny and is fondly remembered by the family.'
     },
     'aunt-linda': {
         name: 'Aunt Linda',
         fullName: 'Linda Marie Wilson',
         years: '1954-',
-        relation: 'Daughter-in-law',
+        relation: 'Second wife of Tom',
         photos: [
             { src: 'images/photos/aunt-linda.svg', caption: 'Portrait', people: ['aunt-linda'] }
         ],
@@ -216,6 +242,11 @@ function createModal() {
                 
                 <div id="modal-person-bio" class="bio-section"></div>
                 
+                <div class="modal-section" id="marriages-section">
+                    <h3>Marriages</h3>
+                    <div id="modal-marriages"></div>
+                </div>
+                
                 <div class="modal-section" id="photos-section">
                     <h3>Photos</h3>
                     <div id="modal-photos" class="photos-grid"></div>
@@ -284,6 +315,73 @@ function showPersonDetails(personId) {
         bioSection.style.display = 'block';
     } else {
         bioSection.style.display = 'none';
+    }
+    
+    // Set marriages
+    const marriagesContainer = document.getElementById('modal-marriages');
+    const marriagesSection = document.getElementById('marriages-section');
+    const familyMemberElement = document.getElementById(personId);
+    const marriagesAttr = familyMemberElement ? familyMemberElement.getAttribute('data-marriages') : null;
+    
+    if (marriagesAttr) {
+        try {
+            const marriages = JSON.parse(marriagesAttr);
+            if (marriages && marriages.length > 0) {
+                let marriagesHTML = '<div class="marriages-list">';
+                marriages.forEach((marriage, index) => {
+                    const spouseData = personData[marriage.spouse];
+                    const spouseName = spouseData ? spouseData.fullName || spouseData.name : marriage.spouse;
+                    
+                    let statusText = '';
+                    let statusClass = '';
+                    switch(marriage.status) {
+                        case 'married':
+                            statusText = 'Married';
+                            statusClass = 'status-married';
+                            break;
+                        case 'divorced':
+                            statusText = 'Divorced';
+                            statusClass = 'status-divorced';
+                            break;
+                        case 'widowed':
+                            statusText = 'Widowed';
+                            statusClass = 'status-widowed';
+                            break;
+                        case 'deceased':
+                            statusText = 'Deceased';
+                            statusClass = 'status-deceased';
+                            break;
+                        default:
+                            statusText = marriage.status;
+                            statusClass = 'status-other';
+                    }
+                    
+                    const dateRange = marriage.end ? `${marriage.start}-${marriage.end}` : `${marriage.start}-present`;
+                    const marriageLabel = marriages.length > 1 ? `Marriage ${index + 1}` : 'Marriage';
+                    
+                    marriagesHTML += `
+                        <div class="marriage-item">
+                            <div class="marriage-header">
+                                <strong>${marriageLabel}</strong>
+                                <span class="marriage-status ${statusClass}">${statusText}</span>
+                            </div>
+                            <p><strong>Spouse:</strong> ${spouseName}</p>
+                            <p><strong>Duration:</strong> ${dateRange}</p>
+                        </div>
+                    `;
+                });
+                marriagesHTML += '</div>';
+                marriagesContainer.innerHTML = marriagesHTML;
+                marriagesSection.style.display = 'block';
+            } else {
+                marriagesSection.style.display = 'none';
+            }
+        } catch (e) {
+            console.error('Error parsing marriages data:', e);
+            marriagesSection.style.display = 'none';
+        }
+    } else {
+        marriagesSection.style.display = 'none';
     }
     
     // Set photos
