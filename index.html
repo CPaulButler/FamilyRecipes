@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Family Recipes</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="tree-lines.js" defer></script>
 </head>
 <body>
     <header>
@@ -22,54 +23,55 @@
         <section id="family-tree">
             <h2>Family Tree</h2>
             <div class="tree-container">
-                <div class="generation">
-                    <div class="family-member" id="grandma-mary">
+                <svg class="tree-lines" aria-hidden="true"></svg>
+                <div class="generation" data-generation="1">
+                    <div class="family-member" id="grandma-mary" data-spouse="grandpa-john" data-children="mom-sarah,uncle-tom">
                         <h3>Grandma Mary</h3>
                         <p class="relation">Matriarch</p>
                         <p class="years">1925-2010</p>
                     </div>
-                    <div class="family-member" id="grandpa-john">
+                    <div class="family-member" id="grandpa-john" data-spouse="grandma-mary" data-children="mom-sarah,uncle-tom">
                         <h3>Grandpa John</h3>
                         <p class="relation">Patriarch</p>
                         <p class="years">1923-2008</p>
                     </div>
                 </div>
                 
-                <div class="generation">
-                    <div class="family-member" id="mom-sarah">
+                <div class="generation" data-generation="2">
+                    <div class="family-member" id="mom-sarah" data-spouse="dad-robert" data-children="myself,brother-mike" data-parents="grandma-mary,grandpa-john">
                         <h3>Mom Sarah</h3>
                         <p class="relation">Daughter of Mary & John</p>
                         <p class="years">1950-</p>
                     </div>
-                    <div class="family-member" id="dad-robert">
+                    <div class="family-member" id="dad-robert" data-spouse="mom-sarah" data-children="myself,brother-mike">
                         <h3>Dad Robert</h3>
                         <p class="relation">Son-in-law</p>
                         <p class="years">1948-</p>
                     </div>
-                    <div class="family-member" id="uncle-tom">
+                    <div class="family-member" id="uncle-tom" data-spouse="aunt-linda" data-children="cousin-jenny" data-parents="grandma-mary,grandpa-john">
                         <h3>Uncle Tom</h3>
                         <p class="relation">Son of Mary & John</p>
                         <p class="years">1952-</p>
                     </div>
-                    <div class="family-member" id="aunt-linda">
+                    <div class="family-member" id="aunt-linda" data-spouse="uncle-tom" data-children="cousin-jenny">
                         <h3>Aunt Linda</h3>
                         <p class="relation">Daughter-in-law</p>
                         <p class="years">1954-</p>
                     </div>
                 </div>
 
-                <div class="generation">
-                    <div class="family-member" id="myself">
+                <div class="generation" data-generation="3">
+                    <div class="family-member" id="myself" data-parents="mom-sarah,dad-robert">
                         <h3>Emily</h3>
                         <p class="relation">Daughter of Sarah & Robert</p>
                         <p class="years">1975-</p>
                     </div>
-                    <div class="family-member" id="brother-mike">
+                    <div class="family-member" id="brother-mike" data-parents="mom-sarah,dad-robert">
                         <h3>Brother Mike</h3>
                         <p class="relation">Son of Sarah & Robert</p>
                         <p class="years">1978-</p>
                     </div>
-                    <div class="family-member" id="cousin-jenny">
+                    <div class="family-member" id="cousin-jenny" data-parents="uncle-tom,aunt-linda">
                         <h3>Cousin Jenny</h3>
                         <p class="relation">Daughter of Tom & Linda</p>
                         <p class="years">1980-</p>
