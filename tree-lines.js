@@ -1,0 +1,125 @@
+/**
+ * Family Tree Lines Drawing Script
+ * Draws connecting lines between family members to show relationships
+ */
+
+document.addEventListener('DOMContentLoaded', function() {
+    drawFamilyLines();
+    
+    // Redraw lines on window resize
+    let resizeTimeout;
+    window.addEventListener('resize', function() {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(drawFamilyLines, 250);
+    });
+});
+
+function drawFamilyLines() {
+    const svg = document.querySelector('.tree-lines');
+    if (!svg) return;
+    
+    // Clear existing lines
+    svg.innerHTML = '';
+    
+    const container = document.querySelector('.tree-container');
+    const containerRect = container.getBoundingClientRect();
+    
+    // Set SVG dimensions
+    svg.setAttribute('width', containerRect.width);
+    svg.setAttribute('height', containerRect.height);
+    
+    // Draw spouse connections (horizontal lines)
+    drawSpouseConnections(svg, containerRect);
+    
+    // Draw parent-child connections (vertical lines)
+    drawParentChildConnections(svg, containerRect);
+}
+
+function drawSpouseConnections(svg, containerRect) {
+    const members = document.querySelectorAll('.family-member[data-spouse]');
+    const drawnPairs = new Set();
+    
+    members.forEach(member => {
+        const spouseId = member.getAttribute('data-spouse');
+        const spouse = document.getElementById(spouseId);
+        
+        if (!spouse) return;
+        
+        // Create a unique pair identifier to avoid drawing twice
+        const pairId = [member.id, spouseId].sort().join('-');
+        if (drawnPairs.has(pairId)) return;
+        drawnPairs.add(pairId);
+        
+        const memberRect = member.getBoundingClientRect();
+        const spouseRect = spouse.getBoundingClientRect();
+        
+        // Calculate positions relative to container
+        const x1 = memberRect.left + memberRect.width / 2 - containerRect.left;
+        const y1 = memberRect.top + memberRect.height / 2 - containerRect.top;
+        const x2 = spouseRect.left + spouseRect.width / 2 - containerRect.left;
+        const y2 = spouseRect.top + spouseRect.height / 2 - containerRect.top;
+        
+        // Draw line between spouses
+        const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+        line.setAttribute('x1', x1);
+        line.setAttribute('y1', y1);
+        line.setAttribute('x2', x2);
+        line.setAttribute('y2', y2);
+        line.setAttribute('class', 'spouse-line');
+        svg.appendChild(line);
+        
+        // Add label
+        const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+        text.setAttribute('x', (x1 + x2) / 2);
+        text.setAttribute('y', (y1 + y2) / 2 - 5);
+        text.setAttribute('text-anchor', 'middle');
+        text.textContent = 'spouses';
+        svg.appendChild(text);
+    });
+}
+
+function drawParentChildConnections(svg, containerRect) {
+    const children = document.querySelectorAll('.family-member[data-parents]');
+    
+    children.forEach(child => {
+        const parentIds = child.getAttribute('data-parents').split(',');
+        const parents = parentIds.map(id => document.getElementById(id.trim())).filter(p => p);
+        
+        if (parents.length === 0) return;
+        
+        const childRect = child.getBoundingClientRect();
+        const childX = childRect.left + childRect.width / 2 - containerRect.left;
+        const childTop = childRect.top - containerRect.top;
+        
+        // Calculate midpoint between parents
+        let parentX, parentBottom;
+        
+        if (parents.length === 1) {
+            const parentRect = parents[0].getBoundingClientRect();
+            parentX = parentRect.left + parentRect.width / 2 - containerRect.left;
+            parentBottom = parentRect.bottom - containerRect.top;
+        } else {
+            const parent1Rect = parents[0].getBoundingClientRect();
+            const parent2Rect = parents[1].getBoundingClientRect();
+            parentX = (parent1Rect.left + parent1Rect.width / 2 + parent2Rect.left + parent2Rect.width / 2) / 2 - containerRect.left;
+            parentBottom = Math.max(parent1Rect.bottom, parent2Rect.bottom) - containerRect.top;
+        }
+        
+        // Draw path from parents to child
+        const midY = parentBottom + (childTop - parentBottom) / 2;
+        
+        const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+        const pathData = `M ${parentX},${parentBottom} L ${parentX},${midY} L ${childX},${midY} L ${childX},${childTop}`;
+        path.setAttribute('d', pathData);
+        path.setAttribute('class', 'parent-child-line');
+        svg.appendChild(path);
+        
+        // Add label
+        const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+        text.setAttribute('x', (parentX + childX) / 2);
+        text.setAttribute('y', midY - 5);
+        text.setAttribute('text-anchor', 'middle');
+        text.textContent = 'child';
+        svg.appendChild(text);
+    });
+}
