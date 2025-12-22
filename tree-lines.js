@@ -3,8 +3,6 @@
  * Draws connecting lines between family members to show relationships
  */
 
-
-
 document.addEventListener('DOMContentLoaded', function() {
     drawFamilyLines();
     
