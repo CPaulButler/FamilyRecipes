@@ -54,9 +54,12 @@ function drawSpouseConnections(svg, containerRect) {
         if (marriagesAttr) {
             try {
                 const marriages = JSON.parse(marriagesAttr);
-                // Draw lines for all marriages (married, widowed, and divorced)
+                // Draw lines for all valid marriages
+                const validStatuses = ['married', 'widowed', 'divorced'];
                 marriages.forEach(marriage => {
-                    spousesToDraw.push({id: marriage.spouse, status: marriage.status});
+                    if (validStatuses.includes(marriage.status)) {
+                        spousesToDraw.push({id: marriage.spouse, status: marriage.status});
+                    }
                 });
             } catch (e) {
                 console.error('Error parsing marriages data for', member.id, e);
@@ -94,7 +97,11 @@ function drawSpouseConnections(svg, containerRect) {
                 lineClass += ' divorced-line';
             } else if (spouseInfo.status === 'widowed') {
                 lineClass += ' widowed-line';
+            } else if (spouseInfo.status === 'married') {
+                lineClass += ' married-line';
             } else {
+                // Log warning for unexpected status
+                console.warn(`Unexpected marriage status '${spouseInfo.status}' for ${member.id}, defaulting to married-line`);
                 lineClass += ' married-line';
             }
             
