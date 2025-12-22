@@ -11,7 +11,7 @@ const personData = {
         years: '1925-2010',
         relation: 'Matriarch',
         photos: [
-            { src: 'images/photos/grandma-mary.svg', caption: 'Portrait', people: ['grandma-mary'] },
+            { src: 'images/photos/grandma-mary.webp', caption: 'Portrait', people: ['grandma-mary'] },
             { src: 'images/photos/grandparents-anniversary.svg', caption: '50th Anniversary - 1998', people: ['grandma-mary', 'grandpa-john'] }
         ],
         documents: [
