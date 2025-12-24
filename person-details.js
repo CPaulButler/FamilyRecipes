@@ -5,15 +5,15 @@
 
 // Person data structure with photos, documents, and contact information
 const personData = {
-    'grandma-mary': {
+    'grandma-linda': {
         name: 'Linda',
         fullName: 'Linda Margot Fontenot',
         years: '1950-',
         relation: 'Second wife of Martin',
         photos: [
-            { src: 'images/photos/grandma-mary.svg', caption: 'Portrait', people: ['grandma-mary'] },
-            { src: 'images/photos/DCP_2064.jpg', caption: 'Portrait', people: ['grandma-mary'] },
-            { src: 'images/photos/grandparents-anniversary.svg', caption: '50th Anniversary - 1998', people: ['grandma-mary', 'grandpa-john'] }
+            { src: 'images/photos/grandma-mary.svg', caption: 'Portrait', people: ['grandma-linda'] },
+            { src: 'images/photos/DCP_2064.jpg', caption: 'Portrait', people: ['grandma-linda'] },
+            { src: 'images/photos/grandparents-anniversary.svg', caption: '50th Anniversary - 1998', people: ['grandma-linda', 'martin'] }
         ],
         documents: [
             { src: 'images/documents/birth-cert-grandma-mary.svg', caption: 'Birth Certificate', type: 'Birth Certificate' }
@@ -28,14 +28,14 @@ const personData = {
         },
         bio: 'Linda was known for her amazing cooking and warm hospitality. Her cornbread recipe has been passed down through generations.'
     },
-    'grandpa-john': {
+    'martin': {
         name: 'Martin',
         fullName: 'Martin Lee Porter',
         years: '1948-',
         relation: 'Patriarch',
         photos: [
-            { src: 'images/photos/grandpa-john.svg', caption: 'Portrait', people: ['grandpa-john'] },
-            { src: 'images/photos/grandparents-anniversary.svg', caption: '50th Anniversary - 1998', people: ['grandma-mary', 'grandpa-john'] }
+            { src: 'images/photos/grandpa-john.svg', caption: 'Portrait', people: ['martin'] },
+            { src: 'images/photos/grandparents-anniversary.svg', caption: '50th Anniversary - 1998', people: ['grandma-linda', 'martin'] }
         ],
         documents: [],
         addresses: {
@@ -48,7 +48,7 @@ const personData = {
         },
         bio: 'Martin worked as a carpenter and built the family home. He loved fishing and teaching his grandchildren about woodworking.'
     },
-    'grandpa-john-first-wife': {
+    'doris': {
         name: 'Doris',
         fullName: 'Doris Ann Bradley',
         years: '1950-',
