@@ -5,15 +5,15 @@
 
 // Person data structure with photos, documents, and contact information
 const personData = {
-    'grandma-mary': {
-        name: 'Grandma Mary',
-        fullName: 'Mary Elizabeth Johnson',
-        years: '1925-2010',
-        relation: 'Matriarch',
+    'grandma-linda': {
+        name: 'Linda',
+        fullName: 'Linda Margot Fontenot',
+        years: '1950-',
+        relation: 'Second wife of Martin',
         photos: [
-            { src: 'images/photos/grandma-mary.svg', caption: 'Portrait', people: ['grandma-mary'] },
-            { src: 'images/photos/DCP_2064.jpg', caption: 'Portrait', people: ['grandma-mary'] },
-            { src: 'images/photos/grandparents-anniversary.svg', caption: '50th Anniversary - 1998', people: ['grandma-mary', 'grandpa-john'] }
+            { src: 'images/photos/grandma-mary.svg', caption: 'Portrait', people: ['grandma-linda'] },
+            { src: 'images/photos/DCP_2064.jpg', caption: 'Portrait', people: ['grandma-linda'] },
+            { src: 'images/photos/grandparents-anniversary.svg', caption: '50th Anniversary - 1998', people: ['grandma-linda', 'martin'] }
         ],
         documents: [
             { src: 'images/documents/birth-cert-grandma-mary.svg', caption: 'Birth Certificate', type: 'Birth Certificate' }
@@ -26,16 +26,16 @@ const personData = {
                 { type: 'Phone', value: '(217) 555-0123' }
             ]
         },
-        bio: 'Mary was known for her amazing cooking and warm hospitality. Her cornbread recipe has been passed down through generations.'
+        bio: 'Linda was known for her amazing cooking and warm hospitality. Her cornbread recipe has been passed down through generations.'
     },
-    'grandpa-john': {
-        name: 'Grandpa John',
-        fullName: 'John Michael Smith',
-        years: '1923-2008',
+    'martin': {
+        name: 'Martin',
+        fullName: 'Martin Lee Porter',
+        years: '1948-',
         relation: 'Patriarch',
         photos: [
-            { src: 'images/photos/grandpa-john.svg', caption: 'Portrait', people: ['grandpa-john'] },
-            { src: 'images/photos/grandparents-anniversary.svg', caption: '50th Anniversary - 1998', people: ['grandma-mary', 'grandpa-john'] }
+            { src: 'images/photos/grandpa-john.svg', caption: 'Portrait', people: ['martin'] },
+            { src: 'images/photos/grandparents-anniversary.svg', caption: '50th Anniversary - 1998', people: ['grandma-linda', 'martin'] }
         ],
         documents: [],
         addresses: {
@@ -46,26 +46,26 @@ const personData = {
                 { type: 'Phone', value: '(217) 555-0124' }
             ]
         },
-        bio: 'John worked as a carpenter and built the family home. He loved fishing and teaching his grandchildren about woodworking. He was married to Elizabeth Brown from 1945-1947, then married Mary in 1948.'
+        bio: 'Martin worked as a carpenter and built the family home. He loved fishing and teaching his grandchildren about woodworking.'
     },
-    'grandpa-john-first-wife': {
-        name: 'Elizabeth Brown',
-        fullName: 'Elizabeth Anne Brown',
-        years: '1924-2015',
-        relation: 'First wife of John',
+    'doris': {
+        name: 'Doris',
+        fullName: 'Doris Ann Bradley',
+        years: '1950-',
+        relation: 'First wife of Martin',
         photos: [],
         documents: [],
         addresses: {
             physical: [],
             virtual: []
         },
-        bio: 'Elizabeth was briefly married to John from 1945-1947. After their divorce, she moved to California and remarried in 1950.'
+        bio: 'Doris is a loving mother and grandmother.'
     },
     'mom-sarah': {
         name: 'Mom Sarah',
         fullName: 'Sarah Ann Smith',
         years: '1950-',
-        relation: 'Daughter of Mary & John',
+        relation: 'Daughter of Doris & Martin',
         photos: [
             { src: 'images/photos/mom-sarah.svg', caption: 'Portrait', people: ['mom-sarah'] },
             { src: 'images/photos/family-vacation-2005.svg', caption: 'Family Vacation 2005', people: ['mom-sarah', 'dad-robert', 'myself', 'brother-mike'] }
@@ -101,13 +101,13 @@ const personData = {
                 { type: 'Phone', value: '(312) 555-0146' }
             ]
         },
-        bio: 'Robert is an engineer who loves solving complex problems. He enjoys woodworking, a skill he learned from Grandpa John.'
+        bio: 'Robert is an engineer who loves solving complex problems. He enjoys woodworking, a skill he learned from Martin.'
     },
     'uncle-tom': {
         name: 'Uncle Tom',
         fullName: 'Thomas William Smith',
         years: '1952-',
-        relation: 'Son of Mary & John',
+        relation: 'Son of Doris & Martin',
         photos: [
             { src: 'images/photos/uncle-tom.svg', caption: 'Portrait', people: ['uncle-tom'] }
         ],
