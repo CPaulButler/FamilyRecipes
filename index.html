@@ -26,27 +26,27 @@
             <div class="tree-container">
                 <svg class="tree-lines" aria-hidden="true"></svg>
                 <div class="generation" data-generation="1">
-                    <div class="family-member" id="grandma-mary" data-marriages='[{"spouse":"grandpa-john","start":"1948","status":"widowed","end":"2008"}]' data-children="mom-sarah,uncle-tom">
-                        <h3>Grandma Mary</h3>
-                        <p class="relation">Matriarch</p>
-                        <p class="years">1925-2010</p>
+                    <div class="family-member" id="grandma-mary" data-marriages='[{"spouse":"grandpa-john","start":"1948","status":"married"}]'>
+                        <h3>Linda</h3>
+                        <p class="relation">Second wife of Martin</p>
+                        <p class="years">1950-</p>
                     </div>
-                    <div class="family-member" id="grandpa-john-first-wife" data-marriages='[{"spouse":"grandpa-john","start":"1945","end":"1947","status":"divorced"}]'>
-                        <h3>Elizabeth Brown</h3>
-                        <p class="relation">First wife of John</p>
-                        <p class="years">1924-2015</p>
+                    <div class="family-member" id="grandpa-john-first-wife" data-marriages='[{"spouse":"grandpa-john","start":"1945","end":"1947","status":"divorced"}]' data-children="mom-sarah,uncle-tom">
+                        <h3>Doris</h3>
+                        <p class="relation">First wife of Martin</p>
+                        <p class="years">1950-</p>
                     </div>
-                    <div class="family-member" id="grandpa-john" data-marriages='[{"spouse":"grandpa-john-first-wife","start":"1945","end":"1947","status":"divorced"},{"spouse":"grandma-mary","start":"1948","status":"widowed","end":"2008"}]' data-children="mom-sarah,uncle-tom">
-                        <h3>Grandpa John</h3>
+                    <div class="family-member" id="grandpa-john" data-marriages='[{"spouse":"grandpa-john-first-wife","start":"1945","end":"1947","status":"divorced"},{"spouse":"grandma-mary","start":"1948","status":"married"}]' data-children="mom-sarah,uncle-tom">
+                        <h3>Martin</h3>
                         <p class="relation">Patriarch</p>
-                        <p class="years">1923-2008</p>
+                        <p class="years">1948-</p>
                     </div>
                 </div>
                 
                 <div class="generation" data-generation="2">
-                    <div class="family-member" id="mom-sarah" data-marriages='[{"spouse":"dad-robert","start":"1972","status":"married"}]' data-children="myself,brother-mike" data-parents="grandma-mary,grandpa-john">
+                    <div class="family-member" id="mom-sarah" data-marriages='[{"spouse":"dad-robert","start":"1972","status":"married"}]' data-children="myself,brother-mike" data-parents="grandpa-john-first-wife,grandpa-john">
                         <h3>Mom Sarah</h3>
-                        <p class="relation">Daughter of Mary & John</p>
+                        <p class="relation">Daughter of Doris & Martin</p>
                         <p class="years">1950-</p>
                     </div>
                     <div class="family-member" id="dad-robert" data-marriages='[{"spouse":"mom-sarah","start":"1972","status":"married"}]' data-children="myself,brother-mike">
@@ -61,7 +61,7 @@
                     </div>
                     <div class="family-member" id="uncle-tom" data-marriages='[{"spouse":"uncle-tom-first-wife","start":"1975","end":"1985","status":"widowed"},{"spouse":"aunt-linda","start":"1988","status":"married"}]' data-children="cousin-jenny" data-parents="grandpa-john-first-wife,grandpa-john">
                         <h3>Uncle Tom</h3>
-                        <p class="relation">Son of Elizabeth & John</p>
+                        <p class="relation">Son of Doris & Martin</p>
                         <p class="years">1952-</p>
                     </div>
                     <div class="family-member" id="aunt-linda" data-marriages='[{"spouse":"uncle-tom","start":"1988","status":"married"}]'>
@@ -127,8 +127,8 @@
             <div class="recipes-container">
                 
                 <div class="recipe-card">
-                    <h3>Grandma's Cornbread</h3>
-                    <p class="recipe-attribution">From: <a href="#grandma-mary">Grandma Mary</a></p>
+                    <h3>Linda's Cornbread</h3>
+                    <p class="recipe-attribution">From: <a href="#grandma-mary">Linda</a></p>
                     <div class="recipe-content">
                         <h4>Ingredients:</h4>
                         <ul>
@@ -150,7 +150,7 @@
                             <li>Pour batter into prepared pan.</li>
                             <li>Bake for 20-25 minutes until golden brown.</li>
                         </ol>
-                        <p class="recipe-note">Grandma Mary made this every Sunday for dinner. Best served warm with butter!</p>
+                        <p class="recipe-note">Linda made this every Sunday for dinner. Best served warm with butter!</p>
                     </div>
                 </div>
 
@@ -211,7 +211,7 @@
                             <li>Brush with beaten egg for golden finish.</li>
                             <li>Bake for 40-45 minutes until crust is golden and filling is bubbly.</li>
                         </ol>
-                        <p class="recipe-note">Mom learned this from Grandma Mary and perfected it over the years!</p>
+                        <p class="recipe-note">Mom learned this from Linda and perfected it over the years!</p>
                     </div>
                 </div>
 
@@ -247,8 +247,8 @@
                 </div>
 
                 <div class="recipe-card">
-                    <h3>Grandpa John's Beef Stew</h3>
-                    <p class="recipe-attribution">From: <a href="#grandpa-john">Grandpa John</a></p>
+                    <h3>Martin's Beef Stew</h3>
+                    <p class="recipe-attribution">From: <a href="#grandpa-john">Martin</a></p>
                     <div class="recipe-content">
                         <h4>Ingredients:</h4>
                         <ul>
@@ -274,7 +274,7 @@
                             <li>Simmer for another 45 minutes until vegetables are tender.</li>
                             <li>Remove bay leaves and season to taste.</li>
                         </ol>
-                        <p class="recipe-note">Grandpa's special winter warmer - perfect for cold evenings!</p>
+                        <p class="recipe-note">Martin's special winter warmer - perfect for cold evenings!</p>
                     </div>
                 </div>
 
