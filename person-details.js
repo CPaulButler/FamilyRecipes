@@ -101,7 +101,7 @@ const personData = {
                 { type: 'Phone', value: '(312) 555-0146' }
             ]
         },
-        bio: 'Robert is an engineer who loves solving complex problems. He enjoys woodworking, a skill he learned from Grandpa John.'
+        bio: 'Robert is an engineer who loves solving complex problems. He enjoys woodworking, a skill he learned from Martin.'
     },
     'uncle-tom': {
         name: 'Uncle Tom',
