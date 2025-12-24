@@ -25,6 +25,12 @@ To test the site locally, use a simple HTTP server:
 # Python 3
 python3 -m http.server 8000
 
+# Node.js (if npx is available)
+npx http-server -p 8000
+
+# PHP (if installed)
+php -S localhost:8000
+
 # Then visit http://localhost:8000 in your browser
 ```
 
