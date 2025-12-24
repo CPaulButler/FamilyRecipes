@@ -46,7 +46,7 @@ const personData = {
                 { type: 'Phone', value: '(217) 555-0124' }
             ]
         },
-        bio: 'Martin worked as a carpenter and built the family home. He loved fishing and teaching his grandchildren about woodworking. He was married to Doris Ann Bradley from 1945-1947, then married Linda in 1948.'
+        bio: 'Martin worked as a carpenter and built the family home. He loved fishing and teaching his grandchildren about woodworking.'
     },
     'grandpa-john-first-wife': {
         name: 'Doris',
@@ -59,7 +59,7 @@ const personData = {
             physical: [],
             virtual: []
         },
-        bio: 'Doris was briefly married to Martin from 1945-1947. After their divorce, she moved to California and remarried in 1950.'
+        bio: 'Doris is a loving mother and grandmother.'
     },
     'mom-sarah': {
         name: 'Mom Sarah',
