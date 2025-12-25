@@ -4,6 +4,17 @@
  * Uses Manhattan routing to avoid tiles and prevent overlaps
  */
 
+// Routing configuration constants
+const ROUTING_CONFIG = {
+    OBSTACLE_MARGIN: 20,        // Margin around obstacles to avoid
+    PARALLEL_SPACING: 10,       // Spacing between parallel lines
+    DROP_DISTANCE: 50,          // Initial vertical drop from parent
+    DETOUR_OFFSET: 30,          // Horizontal offset for vertical detours
+    DETOUR_VERTICAL_MULTIPLIER: 2,  // Multiplier for vertical detour spacing
+    ROUTING_LEVEL_OFFSETS: [10, 30, 50],  // Candidate routing levels to try
+    SOLDER_JOINT_RADIUS: 4      // Radius of solder joint circles
+};
+
 document.addEventListener('DOMContentLoaded', function() {
     drawFamilyLines();
     
@@ -189,13 +200,8 @@ function drawParentChildConnections(svg, containerRect, obstacles) {
             };
         }).sort((a, b) => a.x - b.x);
         
-        // Constants for routing
-        const MARGIN = 20; // Margin around obstacles
-        const PARALLEL_SPACING = 10; // Spacing between parallel lines
-        const DROP_DISTANCE = 50; // How far down from parent the horizontal routing level is
-        
         // Vertical drop from parent to routing level
-        const routingY = parentBottom + DROP_DISTANCE;
+        const routingY = parentBottom + ROUTING_CONFIG.DROP_DISTANCE;
         
         // Draw vertical line from parent down to routing level
         const parentVerticalPath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
@@ -217,8 +223,8 @@ function drawParentChildConnections(svg, containerRect, obstacles) {
                 parentX, routingY,
                 childX, childTop,
                 obstacles,
-                MARGIN,
-                index * PARALLEL_SPACING // Offset for parallel lines
+                ROUTING_CONFIG.OBSTACLE_MARGIN,
+                index * ROUTING_CONFIG.PARALLEL_SPACING // Offset for parallel lines
             );
             
             const pathElement = document.createElementNS('http://www.w3.org/2000/svg', 'path');
@@ -249,7 +255,7 @@ function routeManhattanPath(startX, startY, endX, endY, obstacles, margin, paral
             pathSegments.push(`L ${endX},${endY}`);
         } else {
             // Need to detour around
-            const detourX = startX + 30 + parallelOffset;
+            const detourX = startX + ROUTING_CONFIG.DETOUR_OFFSET + parallelOffset;
             const midY = (startY + endY) / 2;
             pathSegments.push(`L ${detourX},${startY}`);
             pathSegments.push(`L ${detourX},${midY}`);
@@ -312,7 +318,7 @@ function findClearHorizontalLevel(startX, endX, startY, endY, obstacles, margin,
     }
     
     // Try levels below obstacles
-    const candidates = [startY + 10 + offset, startY + 30 + offset, startY + 50 + offset];
+    const candidates = ROUTING_CONFIG.ROUTING_LEVEL_OFFSETS.map(offset_val => startY + offset_val + offset);
     for (const candidateY of candidates) {
         isClear = true;
         for (const obs of obstacles) {
@@ -393,7 +399,7 @@ function routeHorizontal(startX, y, endX, obstacles, margin, offset) {
         
         if (blocked) {
             // Go around: move up, over, and back down
-            const detourY = obs.top - margin - Math.abs(offset) * 2;
+            const detourY = obs.top - margin - Math.abs(offset) * ROUTING_CONFIG.DETOUR_VERTICAL_MULTIPLIER;
             const passX = direction > 0 ? obs.right + margin : obs.left - margin;
             
             // Go up
@@ -446,7 +452,7 @@ function addSolderJoint(svg, x, y) {
     const joint = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
     joint.setAttribute('cx', x);
     joint.setAttribute('cy', y);
-    joint.setAttribute('r', 4);
+    joint.setAttribute('r', ROUTING_CONFIG.SOLDER_JOINT_RADIUS);
     joint.setAttribute('class', 'solder-joint');
     svg.appendChild(joint);
 }
