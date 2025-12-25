@@ -12,7 +12,8 @@ const ROUTING_CONFIG = {
     DETOUR_OFFSET: 30,          // Horizontal offset for vertical detours
     DETOUR_VERTICAL_MULTIPLIER: 2,  // Multiplier for vertical detour spacing
     ROUTING_LEVEL_OFFSETS: [10, 30, 50],  // Candidate routing levels to try
-    SOLDER_JOINT_RADIUS: 4      // Radius of solder joint circles
+    SOLDER_JOINT_RADIUS: 4,     // Radius of solder joint circles
+    COORDINATE_TOLERANCE: 1     // Tolerance for coordinate comparisons
 };
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -71,6 +72,18 @@ function collectObstacles(containerRect) {
     });
     
     return obstacles;
+}
+
+/**
+ * Get obstacle bounds with margin applied
+ */
+function getObstacleBounds(obstacle, margin) {
+    return {
+        left: obstacle.left - margin,
+        right: obstacle.right + margin,
+        top: obstacle.top - margin,
+        bottom: obstacle.bottom + margin
+    };
 }
 
 function drawSpouseConnections(svg, containerRect, obstacles) {
@@ -250,7 +263,7 @@ function routeManhattanPath(startX, startY, endX, endY, obstacles, margin, paral
     pathSegments.push(`M ${startX},${startY}`);
     
     // If start and end are vertically aligned (or very close), draw straight line if no obstacles
-    if (Math.abs(startX - endX) < 1) {
+    if (Math.abs(startX - endX) < ROUTING_CONFIG.COORDINATE_TOLERANCE) {
         if (!checkVerticalPathBlocked(startX, startY, endY, obstacles, margin)) {
             pathSegments.push(`L ${endX},${endY}`);
         } else {
@@ -299,14 +312,11 @@ function findClearHorizontalLevel(startX, endX, startY, endY, obstacles, margin,
     // Check if this level is clear
     let isClear = true;
     for (const obs of obstacles) {
-        const obsLeft = obs.left - margin;
-        const obsRight = obs.right + margin;
-        const obsTop = obs.top - margin;
-        const obsBottom = obs.bottom + margin;
+        const bounds = getObstacleBounds(obs, margin);
         
         // Check if horizontal line at preferredY intersects obstacle
-        if (preferredY >= obsTop && preferredY <= obsBottom) {
-            if (obsRight >= minX && obsLeft <= maxX) {
+        if (preferredY >= bounds.top && preferredY <= bounds.bottom) {
+            if (bounds.right >= minX && bounds.left <= maxX) {
                 isClear = false;
                 break;
             }
@@ -322,13 +332,10 @@ function findClearHorizontalLevel(startX, endX, startY, endY, obstacles, margin,
     for (const candidateY of candidates) {
         isClear = true;
         for (const obs of obstacles) {
-            const obsLeft = obs.left - margin;
-            const obsRight = obs.right + margin;
-            const obsTop = obs.top - margin;
-            const obsBottom = obs.bottom + margin;
+            const bounds = getObstacleBounds(obs, margin);
             
-            if (candidateY >= obsTop && candidateY <= obsBottom) {
-                if (obsRight >= minX && obsLeft <= maxX) {
+            if (candidateY >= bounds.top && candidateY <= bounds.bottom) {
+                if (bounds.right >= minX && bounds.left <= maxX) {
                     isClear = false;
                     break;
                 }
@@ -356,20 +363,12 @@ function routeHorizontal(startX, y, endX, obstacles, margin, offset) {
     // Find all obstacles blocking this horizontal path
     const blockingObstacles = [];
     for (const obs of obstacles) {
-        const obsLeft = obs.left - margin;
-        const obsRight = obs.right + margin;
-        const obsTop = obs.top - margin;
-        const obsBottom = obs.bottom + margin;
+        const bounds = getObstacleBounds(obs, margin);
         
         // Check if obstacle blocks this horizontal segment
-        if (y >= obsTop && y <= obsBottom) {
-            if (obsRight >= minX && obsLeft <= maxX) {
-                blockingObstacles.push({
-                    left: obsLeft,
-                    right: obsRight,
-                    top: obsTop,
-                    bottom: obsBottom
-                });
+        if (y >= bounds.top && y <= bounds.bottom) {
+            if (bounds.right >= minX && bounds.left <= maxX) {
+                blockingObstacles.push(bounds);
             }
         }
     }
@@ -414,7 +413,7 @@ function routeHorizontal(startX, y, endX, obstacles, margin, offset) {
     }
     
     // Final segment to destination
-    if (Math.abs(currentX - endX) > 1) {
+    if (Math.abs(currentX - endX) > ROUTING_CONFIG.COORDINATE_TOLERANCE) {
         segments.push(`L ${endX},${y}`);
     }
     
@@ -429,14 +428,11 @@ function checkVerticalPathBlocked(x, y1, y2, obstacles, margin) {
     const maxY = Math.max(y1, y2);
     
     for (const obs of obstacles) {
-        const obsLeft = obs.left - margin;
-        const obsRight = obs.right + margin;
-        const obsTop = obs.top - margin;
-        const obsBottom = obs.bottom + margin;
+        const bounds = getObstacleBounds(obs, margin);
         
         // Check if vertical line at x intersects obstacle
-        if (x >= obsLeft && x <= obsRight) {
-            if (obsBottom >= minY && obsTop <= maxY) {
+        if (x >= bounds.left && x <= bounds.right) {
+            if (bounds.bottom >= minY && bounds.top <= maxY) {
                 return true;
             }
         }
