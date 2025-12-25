@@ -135,12 +135,11 @@ function drawSpouseConnections(svg, containerRect, obstacles) {
             const x2 = spouseRect.left + spouseRect.width / 2 - containerRect.left;
             const y2 = spouseRect.top + spouseRect.height / 2 - containerRect.top;
             
-            // Draw line between spouses with appropriate style based on status
-            const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
-            line.setAttribute('x1', x1);
-            line.setAttribute('y1', y1);
-            line.setAttribute('x2', x2);
-            line.setAttribute('y2', y2);
+            // Use Manhattan routing for spouse connections to avoid diagonal lines
+            const spousePath = routeSpouseManhattanPath(x1, y1, x2, y2, obstacles, ROUTING_CONFIG.OBSTACLE_MARGIN);
+            
+            const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+            path.setAttribute('d', spousePath);
             
             // Set class based on marriage status
             let lineClass = 'spouse-line';
@@ -156,8 +155,8 @@ function drawSpouseConnections(svg, containerRect, obstacles) {
                 lineClass += ' married-line';
             }
             
-            line.setAttribute('class', lineClass);
-            svg.appendChild(line);
+            path.setAttribute('class', lineClass);
+            svg.appendChild(path);
         });
     });
 }
@@ -209,12 +208,21 @@ function drawParentChildConnections(svg, containerRect, obstacles) {
                 element: child,
                 x: rect.left + rect.width / 2 - containerRect.left,
                 top: rect.top - containerRect.top,
+                bottom: rect.bottom - containerRect.top,
                 rect: rect
             };
         }).sort((a, b) => a.x - b.x);
         
-        // Vertical drop from parent to routing level
-        const routingY = parentBottom + ROUTING_CONFIG.DROP_DISTANCE;
+        // Find a safe vertical drop distance that avoids all obstacles in the generation below
+        const minChildTop = Math.min(...childrenWithPos.map(c => c.top));
+        let routingY = parentBottom + ROUTING_CONFIG.DROP_DISTANCE;
+        
+        // Make sure routingY is not inside any child tiles
+        // It should be between parent and children with some margin
+        const safeRouting = (parentBottom + minChildTop) / 2;
+        if (routingY > safeRouting - 10) {
+            routingY = safeRouting;
+        }
         
         // Draw vertical line from parent down to routing level
         const parentVerticalPath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
@@ -222,9 +230,6 @@ function drawParentChildConnections(svg, containerRect, obstacles) {
         parentVerticalPath.setAttribute('d', parentVerticalData);
         parentVerticalPath.setAttribute('class', 'parent-child-line');
         svg.appendChild(parentVerticalPath);
-        
-        // Add solder joint at parent connection point (top of vertical line)
-        addSolderJoint(svg, parentX, parentBottom);
         
         // Draw connections to each child with parallel routing
         childrenWithPos.forEach((childInfo, index) => {
@@ -247,6 +252,7 @@ function drawParentChildConnections(svg, containerRect, obstacles) {
         });
         
         // Add solder joint where child lines branch from parent's vertical line
+        // Only add if there are multiple children or if child is not directly below parent
         if (childrenWithPos.length > 0) {
             addSolderJoint(svg, parentX, routingY);
         }
@@ -439,6 +445,86 @@ function checkVerticalPathBlocked(x, y1, y2, obstacles, margin) {
     }
     
     return false;
+}
+
+/**
+ * Route a Manhattan path for spouse connections (horizontal routing)
+ * Spouses are typically on the same horizontal level, so we route horizontally
+ */
+function routeSpouseManhattanPath(startX, startY, endX, endY, obstacles, margin) {
+    const pathSegments = [];
+    
+    // Start point
+    pathSegments.push(`M ${startX},${startY}`);
+    
+    // Determine if we can route directly horizontally
+    const directPathClear = !checkHorizontalPathBlocked(startX, startY, endX, startY, obstacles, margin);
+    
+    if (directPathClear) {
+        // Simple horizontal line
+        pathSegments.push(`L ${endX},${endY}`);
+    } else {
+        // Need to route around obstacles
+        // Go up, across, then down
+        const routeAbove = findClearHorizontalSpouseLevel(startX, endX, startY, endY, obstacles, margin, -30);
+        
+        // Go up to clear level
+        pathSegments.push(`L ${startX},${routeAbove}`);
+        // Go across
+        pathSegments.push(`L ${endX},${routeAbove}`);
+        // Come back down
+        pathSegments.push(`L ${endX},${endY}`);
+    }
+    
+    return pathSegments.join(' ');
+}
+
+/**
+ * Check if a horizontal path between two points is blocked
+ */
+function checkHorizontalPathBlocked(x1, y, x2, y2, obstacles, margin) {
+    const minX = Math.min(x1, x2);
+    const maxX = Math.max(x1, x2);
+    const minY = Math.min(y, y2);
+    const maxY = Math.max(y, y2);
+    
+    for (const obs of obstacles) {
+        const bounds = getObstacleBounds(obs, margin);
+        
+        // Check if horizontal line intersects obstacle
+        if (minY <= bounds.bottom && maxY >= bounds.top) {
+            if (maxX >= bounds.left && minX <= bounds.right) {
+                return true;
+            }
+        }
+    }
+    
+    return false;
+}
+
+/**
+ * Find a clear horizontal level for spouse routing
+ */
+function findClearHorizontalSpouseLevel(startX, endX, startY, endY, obstacles, margin, verticalOffset) {
+    const minX = Math.min(startX, endX);
+    const maxX = Math.max(startX, endX);
+    
+    // Try routing above the spouses
+    const candidateY = Math.min(startY, endY) + verticalOffset;
+    
+    // Check if this level is clear
+    for (const obs of obstacles) {
+        const bounds = getObstacleBounds(obs, margin);
+        
+        if (candidateY >= bounds.top && candidateY <= bounds.bottom) {
+            if (bounds.right >= minX && bounds.left <= maxX) {
+                // Not clear, try further above
+                return findClearHorizontalSpouseLevel(startX, endX, startY, endY, obstacles, margin, verticalOffset - 20);
+            }
+        }
+    }
+    
+    return candidateY;
 }
 
 /**
