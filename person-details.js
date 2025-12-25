@@ -218,6 +218,32 @@ const personData = {
             ]
         },
         bio: 'Jenny is a food photographer who has documented many of the family recipes. She travels the world capturing culinary stories.'
+    },
+    'jason-porter': {
+        name: 'Jason',
+        fullName: 'Jason Charles Porter',
+        years: '1973-',
+        relation: 'Son of Doris & Martin',
+        photos: [],
+        documents: [],
+        addresses: {
+            physical: [],
+            virtual: []
+        },
+        bio: 'Jason Charles Porter was born on December 13, 1973. He is the son of Martin Porter and Doris Bradley.'
+    },
+    'mackenzie-porter': {
+        name: 'Mackenzie',
+        fullName: 'Mackenzie Leigh Porter',
+        years: '1976-',
+        relation: 'Daughter of Doris & Martin',
+        photos: [],
+        documents: [],
+        addresses: {
+            physical: [],
+            virtual: []
+        },
+        bio: 'Mackenzie Leigh Porter was born on November 17, 1976. She is the daughter of Martin Porter and Doris Bradley.'
     }
 };
 
