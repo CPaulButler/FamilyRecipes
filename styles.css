@@ -243,8 +243,12 @@ section h2 {
     stroke-dasharray: 5, 5;
 }
 
-.legend-path.parent-child-line {
+.legend-line.child-line {
     stroke: #ff8c00;  /* Orange for child connections */
+}
+
+.legend-line.parent-line {
+    stroke: #28a745;  /* Green for parent connections */
 }
 
 /* Recipes Styles */
