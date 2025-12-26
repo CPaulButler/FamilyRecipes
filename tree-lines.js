@@ -233,8 +233,8 @@ function drawParentChildConnections(svg, containerRect) {
             }
         }
         
-        // Set routing level below all obstacles, or at midpoint if no obstacles
-        const routingY = maxObstacleBottom > parentBottom ? maxObstacleBottom + 20 : (parentBottom + minChildTop) / 2;
+        // Set routing level below all obstacles with more clearance, or at midpoint if no obstacles
+        const routingY = maxObstacleBottom > parentBottom ? maxObstacleBottom + 40 : (parentBottom + minChildTop) / 2;
         
         // Draw vertical line from parent down to routing level
         const parentVerticalPath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
