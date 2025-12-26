@@ -217,7 +217,8 @@ function drawParentChildConnections(svg, containerRect) {
         
         const minChildTop = Math.min(...childrenWithPos.map(c => c.top));
         
-        // Find all obstacles in the routing region
+        // Find all obstacles that are truly BETWEEN parent and children vertically
+        // Not just overlapping, but with top clearly below parent and bottom clearly above children
         const minX = Math.min(parentX, ...childrenWithPos.map(c => c.x));
         const maxX = Math.max(parentX, ...childrenWithPos.map(c => c.x));
         let maxObstacleBottom = parentBottom;
@@ -226,15 +227,18 @@ function drawParentChildConnections(svg, containerRect) {
             // Skip parents and children themselves
             if (parentIdArray.includes(obs.id) || childrenWithPos.some(c => c.id === obs.id)) continue;
             
-            // Check if obstacle is in the routing region (between parent and children, horizontally overlapping)
-            if (obs.bottom > parentBottom && obs.top < minChildTop &&
+            // Check if obstacle is truly in the routing region:
+            // - Obstacle top must be clearly below parent bottom (not just touching)
+            // - Obstacle bottom must be clearly above child top (not just touching)  
+            // - Must horizontally overlap the routing path
+            if (obs.top > parentBottom + 10 && obs.bottom < minChildTop - 10 &&
                 obs.right > minX - 20 && obs.left < maxX + 20) {
                 maxObstacleBottom = Math.max(maxObstacleBottom, obs.bottom);
             }
         }
         
-        // Set routing level below all obstacles with more clearance, or at midpoint if no obstacles
-        const routingY = maxObstacleBottom > parentBottom ? maxObstacleBottom + 40 : (parentBottom + minChildTop) / 2;
+        // Set routing level below all obstacles with clearance, or at midpoint if no obstacles
+        const routingY = maxObstacleBottom > parentBottom ? maxObstacleBottom + 20 : (parentBottom + minChildTop) / 2;
         
         // Draw vertical line from parent down to routing level
         const parentVerticalPath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
