@@ -153,6 +153,20 @@ function drawSpouseConnections(svg, containerRect) {
 function drawParentChildConnections(svg, containerRect) {
     const children = document.querySelectorAll('.family-member[data-parents]');
     
+    // Collect all member positions as potential obstacles
+    const allMembers = document.querySelectorAll('.family-member');
+    const obstacles = [];
+    allMembers.forEach(m => {
+        const rect = m.getBoundingClientRect();
+        obstacles.push({
+            id: m.id,
+            left: rect.left - containerRect.left,
+            right: rect.right - containerRect.left,
+            top: rect.top - containerRect.top,
+            bottom: rect.bottom - containerRect.top
+        });
+    });
+    
     // Group children by their parents to identify shared routes
     const parentChildGroups = new Map();
     
@@ -195,6 +209,7 @@ function drawParentChildConnections(svg, containerRect) {
             const rect = child.getBoundingClientRect();
             return {
                 element: child,
+                id: child.id,
                 x: rect.left + rect.width / 2 - containerRect.left,
                 top: rect.top - containerRect.top
             };
@@ -220,9 +235,35 @@ function drawParentChildConnections(svg, containerRect) {
             const parallelOffset = index * 3; // 3px spacing between parallel horizontal segments
             const horizontalY = routingY + parallelOffset;
             
-            // Simple Manhattan routing: down from parent, across at offset level, down to child
+            // Check if horizontal path would pass through any obstacles
+            const minX = Math.min(parentX, childX);
+            const maxX = Math.max(parentX, childX);
+            let hasObstacle = false;
+            
+            for (const obs of obstacles) {
+                // Skip parent and child themselves
+                if (parentIdArray.includes(obs.id) || obs.id === childInfo.id) continue;
+                
+                // Check if obstacle is between parent and child horizontally and overlaps the routing Y level
+                if (obs.left < maxX && obs.right > minX && 
+                    obs.top < horizontalY + 10 && obs.bottom > horizontalY - 10) {
+                    hasObstacle = true;
+                    break;
+                }
+            }
+            
             const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-            const pathData = `M ${parentX},${routingY} L ${parentX},${horizontalY} L ${childX},${horizontalY} L ${childX},${childTop}`;
+            let pathData;
+            
+            if (hasObstacle) {
+                // Route around obstacle: go down further, across, then up to child
+                const detourY = horizontalY + 40; // Go 40px lower to avoid obstacle
+                pathData = `M ${parentX},${routingY} L ${parentX},${horizontalY} L ${parentX},${detourY} L ${childX},${detourY} L ${childX},${childTop}`;
+            } else {
+                // Simple Manhattan routing: down from parent, across at offset level, down to child
+                pathData = `M ${parentX},${routingY} L ${parentX},${horizontalY} L ${childX},${horizontalY} L ${childX},${childTop}`;
+            }
+            
             path.setAttribute('d', pathData);
             path.setAttribute('class', 'parent-child-line');
             svg.appendChild(path);

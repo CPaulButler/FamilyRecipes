@@ -106,6 +106,12 @@ section h2 {
     fill: none;
 }
 
+/* Parent-child lines use different color for diagnostics */
+.tree-lines path.parent-child-line {
+    stroke: #28a745;
+    stroke-width: 2;
+}
+
 /* Solder joints at connection points */
 .tree-lines circle.solder-joint {
     fill: #667eea;
