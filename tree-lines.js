@@ -204,7 +204,7 @@ function drawParentChildConnections(svg, containerRect) {
             parentBottom = Math.max(parent1Rect.bottom, parent2Rect.bottom) - containerRect.top;
         }
         
-        // Calculate routing level - midpoint between parent and children
+        // Calculate routing level - must be below any obstacles between parent and children
         const childrenWithPos = childrenList.map(child => {
             const rect = child.getBoundingClientRect();
             return {
@@ -216,7 +216,25 @@ function drawParentChildConnections(svg, containerRect) {
         });
         
         const minChildTop = Math.min(...childrenWithPos.map(c => c.top));
-        const routingY = (parentBottom + minChildTop) / 2;
+        
+        // Find all obstacles in the routing region
+        const minX = Math.min(parentX, ...childrenWithPos.map(c => c.x));
+        const maxX = Math.max(parentX, ...childrenWithPos.map(c => c.x));
+        let maxObstacleBottom = parentBottom;
+        
+        for (const obs of obstacles) {
+            // Skip parents and children themselves
+            if (parentIdArray.includes(obs.id) || childrenWithPos.some(c => c.id === obs.id)) continue;
+            
+            // Check if obstacle is in the routing region (between parent and children, horizontally overlapping)
+            if (obs.bottom > parentBottom && obs.top < minChildTop &&
+                obs.right > minX - 20 && obs.left < maxX + 20) {
+                maxObstacleBottom = Math.max(maxObstacleBottom, obs.bottom);
+            }
+        }
+        
+        // Set routing level below all obstacles, or at midpoint if no obstacles
+        const routingY = maxObstacleBottom > parentBottom ? maxObstacleBottom + 20 : (parentBottom + minChildTop) / 2;
         
         // Draw vertical line from parent down to routing level
         const parentVerticalPath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
@@ -235,35 +253,9 @@ function drawParentChildConnections(svg, containerRect) {
             const parallelOffset = index * 3; // 3px spacing between parallel horizontal segments
             const horizontalY = routingY + parallelOffset;
             
-            // Check if horizontal path would pass through any obstacles
-            const minX = Math.min(parentX, childX);
-            const maxX = Math.max(parentX, childX);
-            let hasObstacle = false;
-            
-            for (const obs of obstacles) {
-                // Skip parent and child themselves
-                if (parentIdArray.includes(obs.id) || obs.id === childInfo.id) continue;
-                
-                // Check if obstacle is between parent and child horizontally and overlaps the routing Y level
-                if (obs.left < maxX && obs.right > minX && 
-                    obs.top < horizontalY + 10 && obs.bottom > horizontalY - 10) {
-                    hasObstacle = true;
-                    break;
-                }
-            }
-            
+            // Simple Manhattan routing: down from parent, across at offset level, down to child
             const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-            let pathData;
-            
-            if (hasObstacle) {
-                // Route around obstacle: go down further, across, then up to child
-                const detourY = horizontalY + 40; // Go 40px lower to avoid obstacle
-                pathData = `M ${parentX},${routingY} L ${parentX},${horizontalY} L ${parentX},${detourY} L ${childX},${detourY} L ${childX},${childTop}`;
-            } else {
-                // Simple Manhattan routing: down from parent, across at offset level, down to child
-                pathData = `M ${parentX},${routingY} L ${parentX},${horizontalY} L ${childX},${horizontalY} L ${childX},${childTop}`;
-            }
-            
+            const pathData = `M ${parentX},${routingY} L ${parentX},${horizontalY} L ${childX},${horizontalY} L ${childX},${childTop}`;
             path.setAttribute('d', pathData);
             path.setAttribute('class', 'parent-child-line');
             svg.appendChild(path);
