@@ -119,8 +119,9 @@ function drawSpouseConnections(svg, containerRect) {
             let pathData;
             
             if (hasObstacle) {
-                // Route around: go up, across, then back down to same Y level
-                const routeY = Math.min(memberRect.top, spouseRect.top) - containerRect.top - 30;
+                // Route around: go down, across, then back up to same Y level
+                // Route below the cards to stay within visible area
+                const routeY = Math.max(memberRect.bottom, spouseRect.bottom) - containerRect.top + 20;
                 // Both spouses should be at same Y level, use y1
                 pathData = `M ${x1},${y1} L ${x1},${routeY} L ${x2},${routeY} L ${x2},${y1}`;
             } else {
