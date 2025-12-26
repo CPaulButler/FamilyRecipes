@@ -210,14 +210,19 @@ function drawParentChildConnections(svg, containerRect) {
         parentVerticalPath.setAttribute('class', 'parent-child-line');
         svg.appendChild(parentVerticalPath);
         
-        // Draw connections to each child
-        childrenWithPos.forEach(childInfo => {
+        // Draw connections to each child with parallel routing offsets
+        childrenWithPos.forEach((childInfo, index) => {
             const childX = childInfo.x;
             const childTop = childInfo.top;
             
-            // Simple Manhattan routing: down, across, down
+            // Add small vertical offset for parallel lines to improve clarity
+            // Lines going in same direction get slightly different Y positions
+            const parallelOffset = index * 3; // 3px spacing between parallel horizontal segments
+            const horizontalY = routingY + parallelOffset;
+            
+            // Simple Manhattan routing: down from parent, across at offset level, down to child
             const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-            const pathData = `M ${parentX},${routingY} L ${childX},${routingY} L ${childX},${childTop}`;
+            const pathData = `M ${parentX},${routingY} L ${parentX},${horizontalY} L ${childX},${horizontalY} L ${childX},${childTop}`;
             path.setAttribute('d', pathData);
             path.setAttribute('class', 'parent-child-line');
             svg.appendChild(path);
@@ -228,7 +233,7 @@ function drawParentChildConnections(svg, containerRect) {
             const joint = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
             joint.setAttribute('cx', parentX);
             joint.setAttribute('cy', routingY);
-            joint.setAttribute('r', 4);
+            joint.setAttribute('r', 3);  // Reduced from 4 to 3 for better clarity
             joint.setAttribute('class', 'solder-joint');
             svg.appendChild(joint);
         }
