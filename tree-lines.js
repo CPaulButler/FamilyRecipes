@@ -1,20 +1,8 @@
 /**
  * Family Tree Lines Drawing Script
  * Draws connecting lines between family members to show relationships
- * Uses Manhattan routing to avoid tiles and prevent overlaps
+ * Uses simple Manhattan routing (horizontal and vertical lines only)
  */
-
-// Routing configuration constants
-const ROUTING_CONFIG = {
-    OBSTACLE_MARGIN: 20,        // Margin around obstacles to avoid
-    PARALLEL_SPACING: 10,       // Spacing between parallel lines
-    DROP_DISTANCE: 50,          // Initial vertical drop from parent
-    DETOUR_OFFSET: 30,          // Horizontal offset for vertical detours
-    DETOUR_VERTICAL_MULTIPLIER: 2,  // Multiplier for vertical detour spacing
-    ROUTING_LEVEL_OFFSETS: [10, 30, 50],  // Candidate routing levels to try
-    SOLDER_JOINT_RADIUS: 4,     // Radius of solder joint circles
-    COORDINATE_TOLERANCE: 1     // Tolerance for coordinate comparisons
-};
 
 document.addEventListener('DOMContentLoaded', function() {
     drawFamilyLines();
@@ -41,52 +29,14 @@ function drawFamilyLines() {
     svg.setAttribute('width', containerRect.width);
     svg.setAttribute('height', containerRect.height);
     
-    // Collect all family member rectangles for obstacle detection
-    const obstacles = collectObstacles(containerRect);
+    // Draw spouse connections (horizontal lines only - same Y level)
+    drawSpouseConnections(svg, containerRect);
     
-    // Draw spouse connections (horizontal lines)
-    drawSpouseConnections(svg, containerRect, obstacles);
-    
-    // Draw parent-child connections (vertical lines with Manhattan routing)
-    drawParentChildConnections(svg, containerRect, obstacles);
+    // Draw parent-child connections (Manhattan routing)
+    drawParentChildConnections(svg, containerRect);
 }
 
-/**
- * Collect all family member card positions as obstacles
- */
-function collectObstacles(containerRect) {
-    const members = document.querySelectorAll('.family-member');
-    const obstacles = [];
-    
-    members.forEach(member => {
-        const rect = member.getBoundingClientRect();
-        obstacles.push({
-            id: member.id,
-            left: rect.left - containerRect.left,
-            right: rect.right - containerRect.left,
-            top: rect.top - containerRect.top,
-            bottom: rect.bottom - containerRect.top,
-            centerX: rect.left + rect.width / 2 - containerRect.left,
-            centerY: rect.top + rect.height / 2 - containerRect.top
-        });
-    });
-    
-    return obstacles;
-}
-
-/**
- * Get obstacle bounds with margin applied
- */
-function getObstacleBounds(obstacle, margin) {
-    return {
-        left: obstacle.left - margin,
-        right: obstacle.right + margin,
-        top: obstacle.top - margin,
-        bottom: obstacle.bottom + margin
-    };
-}
-
-function drawSpouseConnections(svg, containerRect, obstacles) {
+function drawSpouseConnections(svg, containerRect) {
     // Handle both old data-spouse format and new data-marriages format
     const members = document.querySelectorAll('.family-member[data-spouse], .family-member[data-marriages]');
     const drawnPairs = new Set();
@@ -105,7 +55,6 @@ function drawSpouseConnections(svg, containerRect, obstacles) {
         if (marriagesAttr) {
             try {
                 const marriages = JSON.parse(marriagesAttr);
-                // Draw lines for all valid marriages
                 const validStatuses = ['married', 'widowed', 'divorced'];
                 marriages.forEach(marriage => {
                     if (validStatuses.includes(marriage.status)) {
@@ -135,11 +84,11 @@ function drawSpouseConnections(svg, containerRect, obstacles) {
             const x2 = spouseRect.left + spouseRect.width / 2 - containerRect.left;
             const y2 = spouseRect.top + spouseRect.height / 2 - containerRect.top;
             
-            // Use Manhattan routing for spouse connections to avoid diagonal lines
-            const spousePath = routeSpouseManhattanPath(x1, y1, x2, y2, obstacles, ROUTING_CONFIG.OBSTACLE_MARGIN);
-            
+            // Use horizontal line at same Y level (simpler Manhattan routing)
+            // Draw path: horizontal line at the same Y level
             const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-            path.setAttribute('d', spousePath);
+            const pathData = `M ${x1},${y1} L ${x2},${y1}`;
+            path.setAttribute('d', pathData);
             
             // Set class based on marriage status
             let lineClass = 'spouse-line';
@@ -150,8 +99,7 @@ function drawSpouseConnections(svg, containerRect, obstacles) {
             } else if (spouseInfo.status === 'married') {
                 lineClass += ' married-line';
             } else {
-                // Log warning for unexpected status
-                console.warn(`Unexpected marriage status '${spouseInfo.status}' for ${member.id}, defaulting to married-line`);
+                console.warn(`Unexpected marriage status '${spouseInfo.status}' for ${member.id}`);
                 lineClass += ' married-line';
             }
             
@@ -161,7 +109,7 @@ function drawSpouseConnections(svg, containerRect, obstacles) {
     });
 }
 
-function drawParentChildConnections(svg, containerRect, obstacles) {
+function drawParentChildConnections(svg, containerRect) {
     const children = document.querySelectorAll('.family-member[data-parents]');
     
     // Group children by their parents to identify shared routes
@@ -201,28 +149,18 @@ function drawParentChildConnections(svg, containerRect, obstacles) {
             parentBottom = Math.max(parent1Rect.bottom, parent2Rect.bottom) - containerRect.top;
         }
         
-        // Sort children by x position for parallel routing
+        // Calculate routing level - midpoint between parent and children
         const childrenWithPos = childrenList.map(child => {
             const rect = child.getBoundingClientRect();
             return {
                 element: child,
                 x: rect.left + rect.width / 2 - containerRect.left,
-                top: rect.top - containerRect.top,
-                bottom: rect.bottom - containerRect.top,
-                rect: rect
+                top: rect.top - containerRect.top
             };
-        }).sort((a, b) => a.x - b.x);
+        });
         
-        // Find a safe vertical drop distance that avoids all obstacles in the generation below
         const minChildTop = Math.min(...childrenWithPos.map(c => c.top));
-        let routingY = parentBottom + ROUTING_CONFIG.DROP_DISTANCE;
-        
-        // Make sure routingY is not inside any child tiles
-        // It should be between parent and children with some margin
-        const safeRouting = (parentBottom + minChildTop) / 2;
-        if (routingY > safeRouting - 10) {
-            routingY = safeRouting;
-        }
+        const routingY = (parentBottom + minChildTop) / 2;
         
         // Draw vertical line from parent down to routing level
         const parentVerticalPath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
@@ -231,310 +169,27 @@ function drawParentChildConnections(svg, containerRect, obstacles) {
         parentVerticalPath.setAttribute('class', 'parent-child-line');
         svg.appendChild(parentVerticalPath);
         
-        // Draw connections to each child with parallel routing
-        childrenWithPos.forEach((childInfo, index) => {
+        // Draw connections to each child
+        childrenWithPos.forEach(childInfo => {
             const childX = childInfo.x;
             const childTop = childInfo.top;
             
-            // Route from the horizontal line level to the child
-            const path = routeManhattanPath(
-                parentX, routingY,
-                childX, childTop,
-                obstacles,
-                ROUTING_CONFIG.OBSTACLE_MARGIN,
-                index * ROUTING_CONFIG.PARALLEL_SPACING // Offset for parallel lines
-            );
-            
-            const pathElement = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-            pathElement.setAttribute('d', path);
-            pathElement.setAttribute('class', 'parent-child-line');
-            svg.appendChild(pathElement);
+            // Simple Manhattan routing: down, across, down
+            const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+            const pathData = `M ${parentX},${routingY} L ${childX},${routingY} L ${childX},${childTop}`;
+            path.setAttribute('d', pathData);
+            path.setAttribute('class', 'parent-child-line');
+            svg.appendChild(path);
         });
         
         // Add solder joint where child lines branch from parent's vertical line
-        // Only add if there are multiple children or if child is not directly below parent
         if (childrenWithPos.length > 0) {
-            addSolderJoint(svg, parentX, routingY);
+            const joint = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+            joint.setAttribute('cx', parentX);
+            joint.setAttribute('cy', routingY);
+            joint.setAttribute('r', 4);
+            joint.setAttribute('class', 'solder-joint');
+            svg.appendChild(joint);
         }
     });
-}
-
-/**
- * Route a Manhattan path from start to end, avoiding obstacles
- */
-function routeManhattanPath(startX, startY, endX, endY, obstacles, margin, parallelOffset) {
-    const pathSegments = [];
-    
-    // Start point
-    pathSegments.push(`M ${startX},${startY}`);
-    
-    // If start and end are vertically aligned (or very close), draw straight line if no obstacles
-    if (Math.abs(startX - endX) < ROUTING_CONFIG.COORDINATE_TOLERANCE) {
-        if (!checkVerticalPathBlocked(startX, startY, endY, obstacles, margin)) {
-            pathSegments.push(`L ${endX},${endY}`);
-        } else {
-            // Need to detour around
-            const detourX = startX + ROUTING_CONFIG.DETOUR_OFFSET + parallelOffset;
-            const midY = (startY + endY) / 2;
-            pathSegments.push(`L ${detourX},${startY}`);
-            pathSegments.push(`L ${detourX},${midY}`);
-            pathSegments.push(`L ${endX},${midY}`);
-            pathSegments.push(`L ${endX},${endY}`);
-        }
-        return pathSegments.join(' ');
-    }
-    
-    // Calculate routing with obstacle avoidance
-    // Strategy: Go down a bit, then horizontal to above child, then down to child
-    
-    const direction = endX > startX ? 1 : -1;
-    
-    // Step 1: Move down a bit from the starting point (already at routingY level)
-    // Find a clear horizontal path level
-    let horizontalY = findClearHorizontalLevel(startX, endX, startY, endY, obstacles, margin, parallelOffset);
-    
-    pathSegments.push(`L ${startX},${horizontalY}`);
-    
-    // Step 2: Move horizontally toward target, routing around obstacles
-    const horizontalPath = routeHorizontal(startX, horizontalY, endX, obstacles, margin, parallelOffset);
-    pathSegments.push(horizontalPath);
-    
-    // Step 3: Move down to end point
-    pathSegments.push(`L ${endX},${endY}`);
-    
-    return pathSegments.join(' ');
-}
-
-/**
- * Find a clear horizontal routing level between start and end
- */
-function findClearHorizontalLevel(startX, endX, startY, endY, obstacles, margin, offset) {
-    // Try the preferred level first
-    const preferredY = startY + 20 + Math.abs(offset);
-    
-    const minX = Math.min(startX, endX);
-    const maxX = Math.max(startX, endX);
-    
-    // Check if this level is clear
-    let isClear = true;
-    for (const obs of obstacles) {
-        const bounds = getObstacleBounds(obs, margin);
-        
-        // Check if horizontal line at preferredY intersects obstacle
-        if (preferredY >= bounds.top && preferredY <= bounds.bottom) {
-            if (bounds.right >= minX && bounds.left <= maxX) {
-                isClear = false;
-                break;
-            }
-        }
-    }
-    
-    if (isClear) {
-        return preferredY;
-    }
-    
-    // Try levels below obstacles
-    const candidates = ROUTING_CONFIG.ROUTING_LEVEL_OFFSETS.map(offset_val => startY + offset_val + offset);
-    for (const candidateY of candidates) {
-        isClear = true;
-        for (const obs of obstacles) {
-            const bounds = getObstacleBounds(obs, margin);
-            
-            if (candidateY >= bounds.top && candidateY <= bounds.bottom) {
-                if (bounds.right >= minX && bounds.left <= maxX) {
-                    isClear = false;
-                    break;
-                }
-            }
-        }
-        if (isClear) {
-            return candidateY;
-        }
-    }
-    
-    // Fallback to original calculation
-    return startY + (endY - startY) * 0.5 + offset;
-}
-
-/**
- * Route horizontally from startX to endX at given Y, avoiding obstacles
- */
-function routeHorizontal(startX, y, endX, obstacles, margin, offset) {
-    const segments = [];
-    
-    const minX = Math.min(startX, endX);
-    const maxX = Math.max(startX, endX);
-    const direction = endX > startX ? 1 : -1;
-    
-    // Find all obstacles blocking this horizontal path
-    const blockingObstacles = [];
-    for (const obs of obstacles) {
-        const bounds = getObstacleBounds(obs, margin);
-        
-        // Check if obstacle blocks this horizontal segment
-        if (y >= bounds.top && y <= bounds.bottom) {
-            if (bounds.right >= minX && bounds.left <= maxX) {
-                blockingObstacles.push(bounds);
-            }
-        }
-    }
-    
-    if (blockingObstacles.length === 0) {
-        // Clear path - go straight
-        segments.push(`L ${endX},${y}`);
-        return segments.join(' ');
-    }
-    
-    // Sort obstacles by position
-    blockingObstacles.sort((a, b) => {
-        if (direction > 0) {
-            return a.left - b.left;
-        } else {
-            return b.right - a.right;
-        }
-    });
-    
-    // Route around obstacles
-    let currentX = startX;
-    
-    for (const obs of blockingObstacles) {
-        // Check if we're actually blocked by this obstacle
-        const blocked = (direction > 0 && currentX < obs.right && endX > obs.left) ||
-                       (direction < 0 && currentX > obs.left && endX < obs.right);
-        
-        if (blocked) {
-            // Go around: move up, over, and back down
-            const detourY = obs.top - margin - Math.abs(offset) * ROUTING_CONFIG.DETOUR_VERTICAL_MULTIPLIER;
-            const passX = direction > 0 ? obs.right + margin : obs.left - margin;
-            
-            // Go up
-            segments.push(`L ${currentX},${detourY}`);
-            // Go across
-            segments.push(`L ${passX},${detourY}`);
-            // Come back down
-            segments.push(`L ${passX},${y}`);
-            
-            currentX = passX;
-        }
-    }
-    
-    // Final segment to destination
-    if (Math.abs(currentX - endX) > ROUTING_CONFIG.COORDINATE_TOLERANCE) {
-        segments.push(`L ${endX},${y}`);
-    }
-    
-    return segments.join(' ');
-}
-
-/**
- * Check if a vertical path is blocked by obstacles
- */
-function checkVerticalPathBlocked(x, y1, y2, obstacles, margin) {
-    const minY = Math.min(y1, y2);
-    const maxY = Math.max(y1, y2);
-    
-    for (const obs of obstacles) {
-        const bounds = getObstacleBounds(obs, margin);
-        
-        // Check if vertical line at x intersects obstacle
-        if (x >= bounds.left && x <= bounds.right) {
-            if (bounds.bottom >= minY && bounds.top <= maxY) {
-                return true;
-            }
-        }
-    }
-    
-    return false;
-}
-
-/**
- * Route a Manhattan path for spouse connections (horizontal routing)
- * Spouses are typically on the same horizontal level, so we route horizontally
- */
-function routeSpouseManhattanPath(startX, startY, endX, endY, obstacles, margin) {
-    const pathSegments = [];
-    
-    // Start point
-    pathSegments.push(`M ${startX},${startY}`);
-    
-    // Determine if we can route directly horizontally
-    const directPathClear = !checkHorizontalPathBlocked(startX, startY, endX, startY, obstacles, margin);
-    
-    if (directPathClear) {
-        // Simple horizontal line
-        pathSegments.push(`L ${endX},${endY}`);
-    } else {
-        // Need to route around obstacles
-        // Go up, across, then down
-        const routeAbove = findClearHorizontalSpouseLevel(startX, endX, startY, endY, obstacles, margin, -30);
-        
-        // Go up to clear level
-        pathSegments.push(`L ${startX},${routeAbove}`);
-        // Go across
-        pathSegments.push(`L ${endX},${routeAbove}`);
-        // Come back down
-        pathSegments.push(`L ${endX},${endY}`);
-    }
-    
-    return pathSegments.join(' ');
-}
-
-/**
- * Check if a horizontal path between two points is blocked
- */
-function checkHorizontalPathBlocked(x1, y, x2, y2, obstacles, margin) {
-    const minX = Math.min(x1, x2);
-    const maxX = Math.max(x1, x2);
-    const minY = Math.min(y, y2);
-    const maxY = Math.max(y, y2);
-    
-    for (const obs of obstacles) {
-        const bounds = getObstacleBounds(obs, margin);
-        
-        // Check if horizontal line intersects obstacle
-        if (minY <= bounds.bottom && maxY >= bounds.top) {
-            if (maxX >= bounds.left && minX <= bounds.right) {
-                return true;
-            }
-        }
-    }
-    
-    return false;
-}
-
-/**
- * Find a clear horizontal level for spouse routing
- */
-function findClearHorizontalSpouseLevel(startX, endX, startY, endY, obstacles, margin, verticalOffset) {
-    const minX = Math.min(startX, endX);
-    const maxX = Math.max(startX, endX);
-    
-    // Try routing above the spouses
-    const candidateY = Math.min(startY, endY) + verticalOffset;
-    
-    // Check if this level is clear
-    for (const obs of obstacles) {
-        const bounds = getObstacleBounds(obs, margin);
-        
-        if (candidateY >= bounds.top && candidateY <= bounds.bottom) {
-            if (bounds.right >= minX && bounds.left <= maxX) {
-                // Not clear, try further above
-                return findClearHorizontalSpouseLevel(startX, endX, startY, endY, obstacles, margin, verticalOffset - 20);
-            }
-        }
-    }
-    
-    return candidateY;
-}
-
-/**
- * Add a solder joint (small circle) at connection points
- */
-function addSolderJoint(svg, x, y) {
-    const joint = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-    joint.setAttribute('cx', x);
-    joint.setAttribute('cy', y);
-    joint.setAttribute('r', ROUTING_CONFIG.SOLDER_JOINT_RADIUS);
-    joint.setAttribute('class', 'solder-joint');
-    svg.appendChild(joint);
 }
