@@ -99,29 +99,38 @@ section h2 {
     z-index: 0;
 }
 
-.tree-lines line,
-.tree-lines path {
-    stroke: #667eea;
-    stroke-width: 2;
+/* Hover line styles - appear on mouseover */
+.tree-lines line.hover-line {
+    stroke-width: 3;
     fill: none;
+    pointer-events: none;
 }
 
-/* Spouse line styles based on marriage status */
-.tree-lines line.married-line {
+/* Spouse hover lines - active marriage in solid blue */
+.tree-lines line.married-hover {
     stroke: #667eea;
-    stroke-width: 2;
 }
 
-.tree-lines line.divorced-line {
+/* Divorced spouse hover lines - red dashed */
+.tree-lines line.divorced-hover {
     stroke: #ff6b6b;
-    stroke-width: 2;
     stroke-dasharray: 10, 5;
 }
 
-.tree-lines line.widowed-line {
+/* Widowed spouse hover lines - gray dotted */
+.tree-lines line.widowed-hover {
     stroke: #999;
-    stroke-width: 2;
     stroke-dasharray: 5, 5;
+}
+
+/* Parent hover lines - solid green */
+.tree-lines line.parent-hover-line {
+    stroke: #28a745;
+}
+
+/* Child hover lines - solid orange */
+.tree-lines line.child-hover-line {
+    stroke: #ff8c00;
 }
 
 .generation {
@@ -235,7 +244,7 @@ section h2 {
 }
 
 .legend-path.parent-child-line {
-    stroke: #667eea;
+    stroke: #ff8c00;  /* Orange for child connections */
 }
 
 /* Recipes Styles */

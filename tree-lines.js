@@ -1,25 +1,25 @@
 /**
  * Family Tree Lines Drawing Script
- * Draws connecting lines between family members to show relationships
+ * Draws direct connecting lines on hover to show relationships
+ * Lines pass over all tiles between source and destination
  */
 
 document.addEventListener('DOMContentLoaded', function() {
-    drawFamilyLines();
+    setupHoverLines();
     
-    // Redraw lines on window resize
+    // Update SVG size on window resize
     let resizeTimeout;
     window.addEventListener('resize', function() {
         clearTimeout(resizeTimeout);
-        resizeTimeout = setTimeout(drawFamilyLines, 250);
+        resizeTimeout = setTimeout(updateSVGSize, 250);
     });
+    
+    updateSVGSize();
 });
 
-function drawFamilyLines() {
+function updateSVGSize() {
     const svg = document.querySelector('.tree-lines');
     if (!svg) return;
-    
-    // Clear existing lines
-    svg.innerHTML = '';
     
     const container = document.querySelector('.tree-container');
     const containerRect = container.getBoundingClientRect();
@@ -27,128 +27,153 @@ function drawFamilyLines() {
     // Set SVG dimensions
     svg.setAttribute('width', containerRect.width);
     svg.setAttribute('height', containerRect.height);
-    
-    // Draw spouse connections (horizontal lines)
-    drawSpouseConnections(svg, containerRect);
-    
-    // Draw parent-child connections (vertical lines)
-    drawParentChildConnections(svg, containerRect);
 }
 
-function drawSpouseConnections(svg, containerRect) {
-    // Handle both old data-spouse format and new data-marriages format
-    const members = document.querySelectorAll('.family-member[data-spouse], .family-member[data-marriages]');
-    const drawnPairs = new Set();
+function setupHoverLines() {
+    const members = document.querySelectorAll('.family-member');
     
     members.forEach(member => {
-        let spousesToDraw = [];
+        member.addEventListener('mouseenter', function() {
+            showConnectionLines(member);
+        });
         
-        // Check for old data-spouse format
-        const spouseId = member.getAttribute('data-spouse');
-        if (spouseId) {
-            spousesToDraw.push({id: spouseId, status: 'married'});
-        }
-        
-        // Check for new data-marriages format
-        const marriagesAttr = member.getAttribute('data-marriages');
-        if (marriagesAttr) {
-            try {
-                const marriages = JSON.parse(marriagesAttr);
-                // Draw lines for all valid marriages
-                const validStatuses = ['married', 'widowed', 'divorced'];
-                marriages.forEach(marriage => {
-                    if (validStatuses.includes(marriage.status)) {
-                        spousesToDraw.push({id: marriage.spouse, status: marriage.status});
-                    }
-                });
-            } catch (e) {
-                console.error('Error parsing marriages data for', member.id, e);
-            }
-        }
-        
-        spousesToDraw.forEach(spouseInfo => {
-            const spouse = document.getElementById(spouseInfo.id);
-            if (!spouse) return;
-            
-            // Create a unique pair identifier to avoid drawing twice
-            const pairId = [member.id, spouseInfo.id].sort().join('-');
-            if (drawnPairs.has(pairId)) return;
-            drawnPairs.add(pairId);
-            
-            const memberRect = member.getBoundingClientRect();
-            const spouseRect = spouse.getBoundingClientRect();
-            
-            // Calculate positions relative to container
-            const x1 = memberRect.left + memberRect.width / 2 - containerRect.left;
-            const y1 = memberRect.top + memberRect.height / 2 - containerRect.top;
-            const x2 = spouseRect.left + spouseRect.width / 2 - containerRect.left;
-            const y2 = spouseRect.top + spouseRect.height / 2 - containerRect.top;
-            
-            // Draw line between spouses with appropriate style based on status
-            const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
-            line.setAttribute('x1', x1);
-            line.setAttribute('y1', y1);
-            line.setAttribute('x2', x2);
-            line.setAttribute('y2', y2);
-            
-            // Set class based on marriage status
-            let lineClass = 'spouse-line';
-            if (spouseInfo.status === 'divorced') {
-                lineClass += ' divorced-line';
-            } else if (spouseInfo.status === 'widowed') {
-                lineClass += ' widowed-line';
-            } else if (spouseInfo.status === 'married') {
-                lineClass += ' married-line';
-            } else {
-                // Log warning for unexpected status
-                console.warn(`Unexpected marriage status '${spouseInfo.status}' for ${member.id}, defaulting to married-line`);
-                lineClass += ' married-line';
-            }
-            
-            line.setAttribute('class', lineClass);
-            svg.appendChild(line);
+        member.addEventListener('mouseleave', function() {
+            clearConnectionLines();
         });
     });
 }
 
-function drawParentChildConnections(svg, containerRect) {
-    const children = document.querySelectorAll('.family-member[data-parents]');
+function showConnectionLines(member) {
+    const svg = document.querySelector('.tree-lines');
+    if (!svg) return;
     
-    children.forEach(child => {
-        const parentsAttr = child.getAttribute('data-parents');
-        if (!parentsAttr) return; // Safety check
+    // Clear any existing hover lines
+    clearConnectionLines();
+    
+    const container = document.querySelector('.tree-container');
+    const containerRect = container.getBoundingClientRect();
+    const memberRect = member.getBoundingClientRect();
+    
+    const memberX = memberRect.left + memberRect.width / 2 - containerRect.left;
+    const memberY = memberRect.top + memberRect.height / 2 - containerRect.top;
+    
+    // Draw lines to spouses
+    drawSpouseLines(svg, member, memberX, memberY, containerRect);
+    
+    // Draw lines to parents
+    drawParentLines(svg, member, memberX, memberY, containerRect);
+    
+    // Draw lines to children
+    drawChildLines(svg, member, memberX, memberY, containerRect);
+}
+
+function drawSpouseLines(svg, member, memberX, memberY, containerRect) {
+    let spouses = [];
+    
+    // Check for old data-spouse format
+    const spouseId = member.getAttribute('data-spouse');
+    if (spouseId) {
+        spouses.push({id: spouseId, status: 'married'});
+    }
+    
+    // Check for new data-marriages format
+    const marriagesAttr = member.getAttribute('data-marriages');
+    if (marriagesAttr) {
+        try {
+            const marriages = JSON.parse(marriagesAttr);
+            marriages.forEach(marriage => {
+                spouses.push({id: marriage.spouse, status: marriage.status});
+            });
+        } catch (e) {
+            console.error('Error parsing marriages data', e);
+        }
+    }
+    
+    spouses.forEach(spouseInfo => {
+        const spouse = document.getElementById(spouseInfo.id);
+        if (!spouse) return;
         
-        const parentIds = parentsAttr.split(',');
-        const parents = parentIds.map(id => document.getElementById(id.trim())).filter(p => p);
+        const spouseRect = spouse.getBoundingClientRect();
+        const spouseX = spouseRect.left + spouseRect.width / 2 - containerRect.left;
+        const spouseY = spouseRect.top + spouseRect.height / 2 - containerRect.top;
         
-        if (parents.length === 0) return;
+        // Draw direct line
+        const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+        line.setAttribute('x1', memberX);
+        line.setAttribute('y1', memberY);
+        line.setAttribute('x2', spouseX);
+        line.setAttribute('y2', spouseY);
+        
+        // Set class based on marriage status
+        let lineClass = 'hover-line spouse-hover-line';
+        if (spouseInfo.status === 'married') {
+            lineClass += ' married-hover';
+        } else if (spouseInfo.status === 'divorced') {
+            lineClass += ' divorced-hover';
+        } else if (spouseInfo.status === 'widowed') {
+            lineClass += ' widowed-hover';
+        }
+        
+        line.setAttribute('class', lineClass);
+        svg.appendChild(line);
+    });
+}
+
+function drawParentLines(svg, member, memberX, memberY, containerRect) {
+    const parentsAttr = member.getAttribute('data-parents');
+    if (!parentsAttr) return;
+    
+    const parentIds = parentsAttr.split(',').map(id => id.trim());
+    
+    parentIds.forEach(parentId => {
+        const parent = document.getElementById(parentId);
+        if (!parent) return;
+        
+        const parentRect = parent.getBoundingClientRect();
+        const parentX = parentRect.left + parentRect.width / 2 - containerRect.left;
+        const parentY = parentRect.top + parentRect.height / 2 - containerRect.top;
+        
+        // Draw direct line
+        const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+        line.setAttribute('x1', memberX);
+        line.setAttribute('y1', memberY);
+        line.setAttribute('x2', parentX);
+        line.setAttribute('y2', parentY);
+        line.setAttribute('class', 'hover-line parent-hover-line');
+        svg.appendChild(line);
+    });
+}
+
+function drawChildLines(svg, member, memberX, memberY, containerRect) {
+    const childrenAttr = member.getAttribute('data-children');
+    if (!childrenAttr) return;
+    
+    const childIds = childrenAttr.split(',').map(id => id.trim());
+    
+    childIds.forEach(childId => {
+        const child = document.getElementById(childId);
+        if (!child) return;
         
         const childRect = child.getBoundingClientRect();
         const childX = childRect.left + childRect.width / 2 - containerRect.left;
-        const childTop = childRect.top - containerRect.top;
+        const childY = childRect.top + childRect.height / 2 - containerRect.top;
         
-        // Calculate midpoint between parents
-        let parentX, parentBottom;
-        
-        if (parents.length === 1) {
-            const parentRect = parents[0].getBoundingClientRect();
-            parentX = parentRect.left + parentRect.width / 2 - containerRect.left;
-            parentBottom = parentRect.bottom - containerRect.top;
-        } else {
-            // Handle 2 or more parents - use first two
-            const parent1Rect = parents[0].getBoundingClientRect();
-            const parent2Rect = parents[1].getBoundingClientRect();
-            parentX = (parent1Rect.left + parent1Rect.width / 2 + parent2Rect.left + parent2Rect.width / 2) / 2 - containerRect.left;
-            parentBottom = Math.max(parent1Rect.bottom, parent2Rect.bottom) - containerRect.top;
-        }
-        
-        // Draw path from parents to child
-        const midY = parentBottom + (childTop - parentBottom) / 2;
-        
-        const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-        const pathData = `M ${parentX},${parentBottom} L ${parentX},${midY} L ${childX},${midY} L ${childX},${childTop}`;
-        path.setAttribute('d', pathData);
-        path.setAttribute('class', 'parent-child-line');
-        svg.appendChild(path);
+        // Draw direct line
+        const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+        line.setAttribute('x1', memberX);
+        line.setAttribute('y1', memberY);
+        line.setAttribute('x2', childX);
+        line.setAttribute('y2', childY);
+        line.setAttribute('class', 'hover-line child-hover-line');
+        svg.appendChild(line);
     });
+}
+
+function clearConnectionLines() {
+    const svg = document.querySelector('.tree-lines');
+    if (!svg) return;
+    
+    // Remove all hover lines
+    const hoverLines = svg.querySelectorAll('.hover-line');
+    hoverLines.forEach(line => line.remove());
 }
