@@ -41,6 +41,20 @@ function drawSpouseConnections(svg, containerRect) {
     const members = document.querySelectorAll('.family-member[data-spouse], .family-member[data-marriages]');
     const drawnPairs = new Set();
     
+    // Collect all member positions as potential obstacles
+    const allMembers = document.querySelectorAll('.family-member');
+    const obstacles = [];
+    allMembers.forEach(m => {
+        const rect = m.getBoundingClientRect();
+        obstacles.push({
+            id: m.id,
+            left: rect.left - containerRect.left,
+            right: rect.right - containerRect.left,
+            top: rect.top - containerRect.top,
+            bottom: rect.bottom - containerRect.top
+        });
+    });
+    
     members.forEach(member => {
         let spousesToDraw = [];
         
@@ -84,10 +98,36 @@ function drawSpouseConnections(svg, containerRect) {
             const x2 = spouseRect.left + spouseRect.width / 2 - containerRect.left;
             const y2 = spouseRect.top + spouseRect.height / 2 - containerRect.top;
             
-            // Use horizontal line at same Y level (simpler Manhattan routing)
-            // Draw path: horizontal line at the same Y level
+            // Check if there's an obstacle between spouses
+            const minX = Math.min(x1, x2);
+            const maxX = Math.max(x1, x2);
+            let hasObstacle = false;
+            
+            for (const obs of obstacles) {
+                // Skip the spouses themselves
+                if (obs.id === member.id || obs.id === spouseInfo.id) continue;
+                
+                // Check if obstacle is between spouses horizontally and overlaps Y level
+                if (obs.left < maxX && obs.right > minX && 
+                    obs.top < y1 + 10 && obs.bottom > y1 - 10) {
+                    hasObstacle = true;
+                    break;
+                }
+            }
+            
             const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-            const pathData = `M ${x1},${y1} L ${x2},${y1}`;
+            let pathData;
+            
+            if (hasObstacle) {
+                // Route around: go up, across, then back down to same Y level
+                const routeY = Math.min(memberRect.top, spouseRect.top) - containerRect.top - 30;
+                // Both spouses should be at same Y level, use y1
+                pathData = `M ${x1},${y1} L ${x1},${routeY} L ${x2},${routeY} L ${x2},${y1}`;
+            } else {
+                // Simple horizontal line at same Y level
+                pathData = `M ${x1},${y1} L ${x2},${y1}`;
+            }
+            
             path.setAttribute('d', pathData);
             
             // Set class based on marriage status
