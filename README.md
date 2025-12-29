@@ -35,21 +35,21 @@ The `person-details.js` file provides an interactive modal system that displays 
 
 ### Person Data Structure
 
-Each person in `personData` follows this structure (all fields except `name` are optional):
+Each person in `personData` follows this structure:
 
 ```javascript
 'person-id': {
-    name: 'Display Name',          // Required
-    fullName: 'Full Legal Name',   // Optional
-    years: 'YYYY-YYYY',             // Optional
-    relation: 'Relationship to family',  // Optional
-    photos: [                       // Optional - can be empty array []
+    name: 'Display Name',                    // Required - displayed in modal header
+    fullName: 'Full Legal Name',             // Optional
+    years: 'YYYY-YYYY',                      // Optional
+    relation: 'Relationship to family',      // Optional
+    photos: [                                // Optional - can be empty array []
         { src: 'path/to/image.jpg', caption: 'Photo description', people: ['person-id'] }
     ],
-    documents: [                    // Optional - can be empty array []
+    documents: [                             // Optional - can be empty array []
         { src: 'path/to/doc.jpg', caption: 'Document name', type: 'Document type' }
     ],
-    addresses: {                    // Optional
+    addresses: {                             // Optional
         physical: [
             { type: 'Home (years)', address: 'Street address' }
         ],
@@ -58,7 +58,7 @@ Each person in `personData` follows this structure (all fields except `name` are
             { type: 'Phone', value: '(123) 456-7890' }
         ]
     },
-    bio: 'Biography text about the person'  // Optional
+    bio: 'Biography text about the person'   // Optional
 }
 ```
 
@@ -83,7 +83,17 @@ python3 -m http.server 8000
 
 **Step 1: Add to index.html**
 
-Add a new `family-member` div in the appropriate generation section:
+Add a new `family-member` div in the appropriate generation section. At minimum, you need an `id`:
+
+```html
+<div class="family-member" id="person-name">
+    <h3>Person Name</h3>
+    <p class="relation">Relationship</p>
+    <p class="years">YYYY-YYYY</p>
+</div>
+```
+
+Optionally, add data attributes to show relationships (all are optional):
 
 ```html
 <div class="family-member" id="person-name" 
