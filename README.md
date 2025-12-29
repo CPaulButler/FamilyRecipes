@@ -35,21 +35,21 @@ The `person-details.js` file provides an interactive modal system that displays 
 
 ### Person Data Structure
 
-Each person in `personData` follows this structure:
+Each person in `personData` follows this structure (all fields except `name` are optional):
 
 ```javascript
 'person-id': {
-    name: 'Display Name',
-    fullName: 'Full Legal Name',
-    years: 'YYYY-YYYY',
-    relation: 'Relationship to family',
-    photos: [
+    name: 'Display Name',          // Required
+    fullName: 'Full Legal Name',   // Optional
+    years: 'YYYY-YYYY',             // Optional
+    relation: 'Relationship to family',  // Optional
+    photos: [                       // Optional - can be empty array []
         { src: 'path/to/image.jpg', caption: 'Photo description', people: ['person-id'] }
     ],
-    documents: [
+    documents: [                    // Optional - can be empty array []
         { src: 'path/to/doc.jpg', caption: 'Document name', type: 'Document type' }
     ],
-    addresses: {
+    addresses: {                    // Optional
         physical: [
             { type: 'Home (years)', address: 'Street address' }
         ],
@@ -58,7 +58,7 @@ Each person in `personData` follows this structure:
             { type: 'Phone', value: '(123) 456-7890' }
         ]
     },
-    bio: 'Biography text about the person'
+    bio: 'Biography text about the person'  // Optional
 }
 ```
 
