@@ -24,9 +24,9 @@ The `person-details.js` file provides an interactive modal system that displays 
 ### Relationship Between index.html and person-details.js
 
 1. **HTML Side (index.html)**: Each family member is represented by a `<div class="family-member">` element with:
-   - An `id` attribute (e.g., `id="grandma-linda"`) that uniquely identifies the person
-   - `data-marriages` attribute containing JSON with marriage information
-   - `data-children` and `data-parents` attributes listing related family members
+   - An `id` attribute (e.g., `id="grandma-linda"`) that uniquely identifies the person (required)
+   - Optional `data-marriages` attribute containing JSON with marriage information
+   - Optional `data-children` and `data-parents` attributes listing related family members
 
 2. **JavaScript Side (person-details.js)**: 
    - Contains a `personData` object where each key matches a family member's `id` from index.html
