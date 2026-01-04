@@ -40,18 +40,18 @@ const generationAssignments = {
     '@I6@': 2,  // uncle-tom
     '@I7@': 2,  // uncle-tom-first-wife
     '@I8@': 2,  // aunt-linda
-    '@I12@': 2, // jason-porter
-    '@I13@': 2, // mackenzie-porter
     '@I9@': 3,  // myself
     '@I10@': 3, // brother-mike
-    '@I11@': 3  // cousin-jenny
+    '@I11@': 3, // cousin-jenny
+    '@I12@': 3, // jason-porter
+    '@I13@': 3  // mackenzie-porter
 };
 
 // Define display order within each generation
 const displayOrder = {
     1: ['@I1@', '@I3@', '@I2@'],
-    2: ['@I4@', '@I5@', '@I7@', '@I6@', '@I8@', '@I12@', '@I13@'],
-    3: ['@I9@', '@I10@', '@I11@']
+    2: ['@I4@', '@I5@', '@I7@', '@I6@', '@I8@'],
+    3: ['@I9@', '@I10@', '@I11@', '@I12@', '@I13@']
 };
 
 // Custom relation labels for each person
