@@ -1,15 +1,13 @@
 /**
  * Person Details Modal Script
  * Handles displaying detailed information about family members
+ * Basic genealogical data is loaded from GEDCOM, this file contains additional details
  */
 
-// Person data structure with photos, documents, and contact information
+// Additional person data (photos, documents, contact info, bios)
+// Names, dates, and relationships come from GEDCOM
 const personData = {
     'grandma-linda': {
-        name: 'Linda',
-        fullName: 'Linda Margot Fontenot',
-        years: '1950-',
-        relation: 'Second wife of Martin',
         photos: [
             { src: 'images/photos/grandma-mary.svg', caption: 'Portrait', people: ['grandma-linda'] },
             { src: 'images/photos/DCP_2064.jpg', caption: 'Portrait', people: ['grandma-linda'] },
@@ -29,10 +27,6 @@ const personData = {
         bio: 'Linda was known for her amazing cooking and warm hospitality. Her cornbread recipe has been passed down through generations.'
     },
     'martin': {
-        name: 'Martin',
-        fullName: 'Martin Lee Porter',
-        years: '1948-',
-        relation: 'Patriarch',
         photos: [
             { src: 'images/photos/grandpa-john.svg', caption: 'Portrait', people: ['martin'] },
             { src: 'images/photos/grandparents-anniversary.svg', caption: '50th Anniversary - 1998', people: ['grandma-linda', 'martin'] }
@@ -49,10 +43,6 @@ const personData = {
         bio: 'Martin worked as a carpenter and built the family home. He loved fishing and teaching his grandchildren about woodworking.'
     },
     'doris': {
-        name: 'Doris',
-        fullName: 'Doris Ann Bradley',
-        years: '1950-',
-        relation: 'First wife of Martin',
         photos: [],
         documents: [],
         addresses: {
@@ -62,10 +52,6 @@ const personData = {
         bio: 'Doris is a loving mother and grandmother.'
     },
     'mom-sarah': {
-        name: 'Mom Sarah',
-        fullName: 'Sarah Ann Smith',
-        years: '1950-',
-        relation: 'Daughter of Doris & Martin',
         photos: [
             { src: 'images/photos/mom-sarah.svg', caption: 'Portrait', people: ['mom-sarah'] },
             { src: 'images/photos/family-vacation-2005.svg', caption: 'Family Vacation 2005', people: ['mom-sarah', 'dad-robert', 'myself', 'brother-mike'] }
@@ -83,10 +69,6 @@ const personData = {
         bio: 'Sarah inherited her mother\'s love of cooking and perfected the family apple pie recipe. She works as a school teacher.'
     },
     'dad-robert': {
-        name: 'Dad Robert',
-        fullName: 'Robert James Anderson',
-        years: '1948-',
-        relation: 'Son-in-law',
         photos: [
             { src: 'images/photos/dad-robert.svg', caption: 'Portrait', people: ['dad-robert'] },
             { src: 'images/photos/family-vacation-2005.svg', caption: 'Family Vacation 2005', people: ['mom-sarah', 'dad-robert', 'myself', 'brother-mike'] }
@@ -104,10 +86,6 @@ const personData = {
         bio: 'Robert is an engineer who loves solving complex problems. He enjoys woodworking, a skill he learned from Martin.'
     },
     'uncle-tom': {
-        name: 'Uncle Tom',
-        fullName: 'Thomas William Smith',
-        years: '1952-',
-        relation: 'Son of Doris & Martin',
         photos: [
             { src: 'images/photos/uncle-tom.svg', caption: 'Portrait', people: ['uncle-tom'] }
         ],
@@ -124,10 +102,6 @@ const personData = {
         bio: 'Tom is famous for his BBQ ribs at every family reunion. He owns a small restaurant and loves outdoor cooking. He was married to Patricia Moore from 1975-1985 and they had one daughter, Jenny. After Patricia\'s tragic passing, Tom married Linda in 1988.'
     },
     'uncle-tom-first-wife': {
-        name: 'Patricia Moore',
-        fullName: 'Patricia Ann Moore',
-        years: '1953-1985',
-        relation: 'First wife of Tom',
         photos: [],
         documents: [],
         addresses: {
@@ -137,10 +111,6 @@ const personData = {
         bio: 'Patricia was married to Tom from 1975 until her untimely death in 1985. She was a loving mother to Jenny and is fondly remembered by the family.'
     },
     'aunt-linda': {
-        name: 'Aunt Linda',
-        fullName: 'Linda Marie Wilson',
-        years: '1954-',
-        relation: 'Second wife of Tom',
         photos: [
             { src: 'images/photos/aunt-linda.svg', caption: 'Portrait', people: ['aunt-linda'] }
         ],
@@ -157,10 +127,6 @@ const personData = {
         bio: 'Linda is a pastry chef known for her incredible chocolate chip cookies. She helps Tom run their restaurant.'
     },
     'myself': {
-        name: 'Emily',
-        fullName: 'Emily Rose Anderson',
-        years: '1975-',
-        relation: 'Daughter of Sarah & Robert',
         photos: [
             { src: 'images/photos/emily.svg', caption: 'Portrait', people: ['myself'] },
             { src: 'images/photos/family-vacation-2005.svg', caption: 'Family Vacation 2005', people: ['mom-sarah', 'dad-robert', 'myself', 'brother-mike'] }
@@ -179,10 +145,6 @@ const personData = {
         bio: 'Emily is a software developer who maintains this family website. She loves preserving family history and recipes.'
     },
     'brother-mike': {
-        name: 'Brother Mike',
-        fullName: 'Michael Robert Anderson',
-        years: '1978-',
-        relation: 'Son of Sarah & Robert',
         photos: [
             { src: 'images/photos/brother-mike.svg', caption: 'Portrait', people: ['brother-mike'] },
             { src: 'images/photos/family-vacation-2005.svg', caption: 'Family Vacation 2005', people: ['mom-sarah', 'dad-robert', 'myself', 'brother-mike'] }
@@ -200,10 +162,6 @@ const personData = {
         bio: 'Mike is a chef who combines traditional family recipes with modern techniques. He runs a popular farm-to-table restaurant.'
     },
     'cousin-jenny': {
-        name: 'Cousin Jenny',
-        fullName: 'Jennifer Ann Smith',
-        years: '1980-',
-        relation: 'Daughter of Tom & Linda',
         photos: [
             { src: 'images/photos/cousin-jenny.svg', caption: 'Portrait', people: ['cousin-jenny'] }
         ],
@@ -220,10 +178,6 @@ const personData = {
         bio: 'Jenny is a food photographer who has documented many of the family recipes. She travels the world capturing culinary stories.'
     },
     'jason-porter': {
-        name: 'Jason',
-        fullName: 'Jason Charles Porter',
-        years: '1973-',
-        relation: 'Son of Doris & Martin',
         photos: [],
         documents: [],
         addresses: {
@@ -233,10 +187,6 @@ const personData = {
         bio: 'Jason Charles Porter was born on December 13, 1973. He is the son of Martin Porter and Doris Bradley.'
     },
     'mackenzie-porter': {
-        name: 'Mackenzie',
-        fullName: 'Mackenzie Leigh Porter',
-        years: '1976-',
-        relation: 'Daughter of Doris & Martin',
         photos: [],
         documents: [],
         addresses: {
@@ -247,8 +197,38 @@ const personData = {
     }
 };
 
+// Get person info from GEDCOM
+function getPersonInfo(personId) {
+    const gedcomId = window.gedcomLoader ? window.gedcomLoader.getGedcomId(personId) : null;
+    const parser = window.gedcomLoader ? window.gedcomLoader.getParser() : null;
+    
+    if (gedcomId && parser) {
+        const individual = parser.getIndividual(gedcomId);
+        if (individual) {
+            const displayName = individual.name.given ? individual.name.given.split(' ')[0] : individual.name.full;
+            return {
+                name: displayName,
+                fullName: individual.name.full,
+                years: GedcomParser.formatYears(individual.birthDate, individual.deathDate)
+            };
+        }
+    }
+    
+    // Fallback to empty values if GEDCOM not loaded
+    return {
+        name: '',
+        fullName: '',
+        years: ''
+    };
+}
+
 // Initialize modal when DOM is ready
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', async function() {
+    // Wait for GEDCOM to load
+    if (window.gedcomLoader) {
+        await window.gedcomLoader.initialize();
+    }
+    
     createModal();
     attachClickHandlers();
 });
@@ -324,21 +304,25 @@ function attachClickHandlers() {
 
 // Show person details in modal
 function showPersonDetails(personId) {
-    const person = personData[personId];
-    if (!person) return;
+    const personDetails = personData[personId] || {};
+    const personInfo = getPersonInfo(personId);
     
     const modal = document.getElementById('person-modal');
     
-    // Set basic info
-    document.getElementById('modal-person-name').textContent = person.name;
-    document.getElementById('modal-person-full-name').textContent = person.fullName;
-    document.getElementById('modal-person-years').textContent = person.years;
-    document.getElementById('modal-person-relation').textContent = person.relation;
+    // Set basic info from GEDCOM
+    document.getElementById('modal-person-name').textContent = personInfo.name;
+    document.getElementById('modal-person-full-name').textContent = personInfo.fullName;
+    document.getElementById('modal-person-years').textContent = personInfo.years;
+    
+    // Get relation from family member element (generated by GEDCOM loader)
+    const familyMemberElement = document.getElementById(personId);
+    const relationText = familyMemberElement ? familyMemberElement.querySelector('.relation')?.textContent || '' : '';
+    document.getElementById('modal-person-relation').textContent = relationText;
     
     // Set bio
     const bioSection = document.getElementById('modal-person-bio');
-    if (person.bio) {
-        bioSection.innerHTML = `<p class="bio">${person.bio}</p>`;
+    if (personDetails.bio) {
+        bioSection.innerHTML = `<p class="bio">${personDetails.bio}</p>`;
         bioSection.style.display = 'block';
     } else {
         bioSection.style.display = 'none';
@@ -347,7 +331,6 @@ function showPersonDetails(personId) {
     // Set marriages
     const marriagesContainer = document.getElementById('modal-marriages');
     const marriagesSection = document.getElementById('marriages-section');
-    const familyMemberElement = document.getElementById(personId);
     const marriagesAttr = familyMemberElement ? familyMemberElement.getAttribute('data-marriages') : null;
     
     if (marriagesAttr) {
@@ -356,8 +339,8 @@ function showPersonDetails(personId) {
             if (marriages && marriages.length > 0) {
                 let marriagesHTML = '<div class="marriages-list">';
                 marriages.forEach((marriage, index) => {
-                    const spouseData = personData[marriage.spouse];
-                    const spouseName = spouseData ? spouseData.fullName || spouseData.name : marriage.spouse;
+                    const spouseInfo = getPersonInfo(marriage.spouse);
+                    const spouseName = spouseInfo.fullName || spouseInfo.name || marriage.spouse;
                     
                     let statusText = '';
                     let statusClass = '';
@@ -414,8 +397,8 @@ function showPersonDetails(personId) {
     // Set photos
     const photosContainer = document.getElementById('modal-photos');
     const photosSection = document.getElementById('photos-section');
-    if (person.photos && person.photos.length > 0) {
-        photosContainer.innerHTML = person.photos.map(photo => `
+    if (personDetails.photos && personDetails.photos.length > 0) {
+        photosContainer.innerHTML = personDetails.photos.map(photo => `
             <div class="photo-item">
                 <img src="${photo.src}" alt="${photo.caption}">
                 <p class="photo-caption">${photo.caption}</p>
@@ -429,8 +412,8 @@ function showPersonDetails(personId) {
     // Set documents
     const documentsContainer = document.getElementById('modal-documents');
     const documentsSection = document.getElementById('documents-section');
-    if (person.documents && person.documents.length > 0) {
-        documentsContainer.innerHTML = person.documents.map(doc => `
+    if (personDetails.documents && personDetails.documents.length > 0) {
+        documentsContainer.innerHTML = personDetails.documents.map(doc => `
             <div class="document-item">
                 <img src="${doc.src}" alt="${doc.caption}">
                 <p class="document-caption">${doc.caption}</p>
@@ -446,17 +429,17 @@ function showPersonDetails(personId) {
     const addressesSection = document.getElementById('addresses-section');
     let addressesHTML = '';
     
-    if (person.addresses.physical && person.addresses.physical.length > 0) {
+    if (personDetails.addresses && personDetails.addresses.physical && personDetails.addresses.physical.length > 0) {
         addressesHTML += '<div class="address-group"><h4>Physical Addresses</h4>';
-        person.addresses.physical.forEach(addr => {
+        personDetails.addresses.physical.forEach(addr => {
             addressesHTML += `<p><strong>${addr.type}:</strong> ${addr.address}</p>`;
         });
         addressesHTML += '</div>';
     }
     
-    if (person.addresses.virtual && person.addresses.virtual.length > 0) {
+    if (personDetails.addresses && personDetails.addresses.virtual && personDetails.addresses.virtual.length > 0) {
         addressesHTML += '<div class="address-group"><h4>Virtual Contacts</h4>';
-        person.addresses.virtual.forEach(contact => {
+        personDetails.addresses.virtual.forEach(contact => {
             addressesHTML += `<p><strong>${contact.type}:</strong> ${contact.value}</p>`;
         });
         addressesHTML += '</div>';
