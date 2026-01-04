@@ -4,6 +4,13 @@
  * Lines pass over all tiles between source and destination
  */
 
+// Listen for when family tree is generated from GEDCOM
+document.addEventListener('familyTreeGenerated', function() {
+    setupHoverLines();
+    updateSVGSize();
+});
+
+// Also set up on DOMContentLoaded for backward compatibility
 document.addEventListener('DOMContentLoaded', function() {
     setupHoverLines();
     

@@ -215,6 +215,11 @@ async function initializeFamilyTree() {
         gedcomData = await loadGedcom();
         if (gedcomData) {
             generateFamilyTree();
+            
+            // Notify that family tree has been generated
+            // This allows tree-lines.js to set up hover handlers
+            const event = new CustomEvent('familyTreeGenerated');
+            document.dispatchEvent(event);
         }
         return gedcomData;
     })();
