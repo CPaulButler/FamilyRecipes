@@ -319,10 +319,41 @@ function showPersonDetails(personId) {
     const relationText = familyMemberElement ? familyMemberElement.querySelector('.relation')?.textContent || '' : '';
     document.getElementById('modal-person-relation').textContent = relationText;
     
+    // Get data from GEDCOM (or fallback to personData)
+    const gedcomId = window.gedcomLoader ? window.gedcomLoader.getGedcomId(personId) : null;
+    const parser = window.gedcomLoader ? window.gedcomLoader.getParser() : null;
+    
+    let bio = '';
+    let photos = [];
+    let documents = [];
+    let addresses = { physical: [], virtual: [] };
+    
+    if (gedcomId && parser) {
+        // Get data from GEDCOM
+        bio = parser.getBio(gedcomId);
+        photos = parser.getPhotos(gedcomId);
+        documents = parser.getDocuments(gedcomId);
+        addresses = parser.getAddresses(gedcomId);
+    }
+    
+    // Fallback to personData if GEDCOM data is empty
+    if (!bio && personDetails.bio) {
+        bio = personDetails.bio;
+    }
+    if (photos.length === 0 && personDetails.photos) {
+        photos = personDetails.photos;
+    }
+    if (documents.length === 0 && personDetails.documents) {
+        documents = personDetails.documents;
+    }
+    if (addresses.physical.length === 0 && addresses.virtual.length === 0 && personDetails.addresses) {
+        addresses = personDetails.addresses;
+    }
+    
     // Set bio
     const bioSection = document.getElementById('modal-person-bio');
-    if (personDetails.bio) {
-        bioSection.innerHTML = `<p class="bio">${personDetails.bio}</p>`;
+    if (bio) {
+        bioSection.innerHTML = `<p class="bio">${bio}</p>`;
         bioSection.style.display = 'block';
     } else {
         bioSection.style.display = 'none';
@@ -397,8 +428,8 @@ function showPersonDetails(personId) {
     // Set photos
     const photosContainer = document.getElementById('modal-photos');
     const photosSection = document.getElementById('photos-section');
-    if (personDetails.photos && personDetails.photos.length > 0) {
-        photosContainer.innerHTML = personDetails.photos.map(photo => `
+    if (photos && photos.length > 0) {
+        photosContainer.innerHTML = photos.map(photo => `
             <div class="photo-item">
                 <img src="${photo.src}" alt="${photo.caption}">
                 <p class="photo-caption">${photo.caption}</p>
@@ -412,8 +443,8 @@ function showPersonDetails(personId) {
     // Set documents
     const documentsContainer = document.getElementById('modal-documents');
     const documentsSection = document.getElementById('documents-section');
-    if (personDetails.documents && personDetails.documents.length > 0) {
-        documentsContainer.innerHTML = personDetails.documents.map(doc => `
+    if (documents && documents.length > 0) {
+        documentsContainer.innerHTML = documents.map(doc => `
             <div class="document-item">
                 <img src="${doc.src}" alt="${doc.caption}">
                 <p class="document-caption">${doc.caption}</p>
@@ -429,17 +460,17 @@ function showPersonDetails(personId) {
     const addressesSection = document.getElementById('addresses-section');
     let addressesHTML = '';
     
-    if (personDetails.addresses && personDetails.addresses.physical && personDetails.addresses.physical.length > 0) {
+    if (addresses && addresses.physical && addresses.physical.length > 0) {
         addressesHTML += '<div class="address-group"><h4>Physical Addresses</h4>';
-        personDetails.addresses.physical.forEach(addr => {
+        addresses.physical.forEach(addr => {
             addressesHTML += `<p><strong>${addr.type}:</strong> ${addr.address}</p>`;
         });
         addressesHTML += '</div>';
     }
     
-    if (personDetails.addresses && personDetails.addresses.virtual && personDetails.addresses.virtual.length > 0) {
+    if (addresses && addresses.virtual && addresses.virtual.length > 0) {
         addressesHTML += '<div class="address-group"><h4>Virtual Contacts</h4>';
-        personDetails.addresses.virtual.forEach(contact => {
+        addresses.virtual.forEach(contact => {
             addressesHTML += `<p><strong>${contact.type}:</strong> ${contact.value}</p>`;
         });
         addressesHTML += '</div>';

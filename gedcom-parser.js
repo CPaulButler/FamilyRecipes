@@ -7,6 +7,7 @@ class GedcomParser {
     constructor() {
         this.individuals = new Map();
         this.families = new Map();
+        this.objects = new Map();
     }
 
     /**
@@ -18,6 +19,7 @@ class GedcomParser {
         let currentRecord = null;
         let currentLevel = 0;
         let currentSubRecord = null;
+        let currentSubSubRecord = null;
 
         for (let i = 0; i < lines.length; i++) {
             const line = lines[i];
@@ -46,7 +48,13 @@ class GedcomParser {
                         deathDate: '',
                         sex: '',
                         familiesAsSpouse: [],
-                        familiesAsChild: []
+                        familiesAsChild: [],
+                        objects: [],
+                        notes: [],
+                        addresses: [],
+                        phones: [],
+                        emails: [],
+                        customLinks: []
                     };
                 } else if (tag === 'FAM') {
                     currentRecord = {
@@ -58,13 +66,25 @@ class GedcomParser {
                         marriageDate: '',
                         divorceDate: ''
                     };
+                } else if (tag === 'OBJE') {
+                    currentRecord = {
+                        type: 'OBJE',
+                        id: id,
+                        file: '',
+                        form: '',
+                        title: '',
+                        people: '',
+                        docType: ''
+                    };
                 } else {
                     currentRecord = null;
                 }
                 currentSubRecord = null;
+                currentSubSubRecord = null;
             } else if (currentRecord) {
                 if (level === 1) {
                     currentSubRecord = tag;
+                    currentSubSubRecord = null;
                     
                     if (tag === 'NAME' && currentRecord.type === 'INDI') {
                         currentRecord.name.full = value;
@@ -74,12 +94,34 @@ class GedcomParser {
                         currentRecord.familiesAsSpouse.push(value);
                     } else if (tag === 'FAMC' && currentRecord.type === 'INDI') {
                         currentRecord.familiesAsChild.push(value);
+                    } else if (tag === 'OBJE' && currentRecord.type === 'INDI') {
+                        currentRecord.objects.push(value);
+                    } else if (tag === 'NOTE' && currentRecord.type === 'INDI') {
+                        currentRecord.notes.push(value);
+                    } else if (tag === 'ADDR' && currentRecord.type === 'INDI') {
+                        currentRecord.addresses.push({ address: value, type: '' });
+                    } else if (tag === 'PHON' && currentRecord.type === 'INDI') {
+                        currentRecord.phones.push(value);
+                    } else if (tag === 'EMAIL' && currentRecord.type === 'INDI') {
+                        currentRecord.emails.push(value);
+                    } else if (tag === '_LINK' && currentRecord.type === 'INDI') {
+                        currentRecord.customLinks.push({ value: value, type: '' });
                     } else if (tag === 'HUSB' && currentRecord.type === 'FAM') {
                         currentRecord.husband = value;
                     } else if (tag === 'WIFE' && currentRecord.type === 'FAM') {
                         currentRecord.wife = value;
                     } else if (tag === 'CHIL' && currentRecord.type === 'FAM') {
                         currentRecord.children.push(value);
+                    } else if (tag === 'FILE' && currentRecord.type === 'OBJE') {
+                        currentRecord.file = value;
+                    } else if (tag === 'FORM' && currentRecord.type === 'OBJE') {
+                        currentRecord.form = value;
+                    } else if (tag === 'TITL' && currentRecord.type === 'OBJE') {
+                        currentRecord.title = value;
+                    } else if (tag === '_PEOPLE' && currentRecord.type === 'OBJE') {
+                        currentRecord.people = value;
+                    } else if (tag === '_DOCTYPE' && currentRecord.type === 'OBJE') {
+                        currentRecord.docType = value;
                     }
                 } else if (level === 2) {
                     if (tag === 'GIVN' && currentRecord.type === 'INDI') {
@@ -95,6 +137,12 @@ class GedcomParser {
                             currentRecord.marriageDate = value;
                         } else if (currentSubRecord === 'DIV' && currentRecord.type === 'FAM') {
                             currentRecord.divorceDate = value;
+                        }
+                    } else if (tag === '_TYPE' && currentRecord.type === 'INDI') {
+                        if (currentSubRecord === 'ADDR' && currentRecord.addresses.length > 0) {
+                            currentRecord.addresses[currentRecord.addresses.length - 1].type = value;
+                        } else if (currentSubRecord === '_LINK' && currentRecord.customLinks.length > 0) {
+                            currentRecord.customLinks[currentRecord.customLinks.length - 1].type = value;
                         }
                     }
                 }
@@ -112,6 +160,8 @@ class GedcomParser {
             this.individuals.set(record.id, record);
         } else if (record.type === 'FAM') {
             this.families.set(record.id, record);
+        } else if (record.type === 'OBJE') {
+            this.objects.set(record.id, record);
         }
     }
 
@@ -147,6 +197,120 @@ class GedcomParser {
      */
     getFamily(id) {
         return this.families.get(id) || null;
+    }
+
+    /**
+     * Get multimedia object by ID
+     * @param {string} id - Object ID
+     * @returns {Object|null} Object or null
+     */
+    getObject(id) {
+        return this.objects.get(id) || null;
+    }
+
+    /**
+     * Get photos for an individual
+     * @param {string} individualId - Individual ID
+     * @returns {Array} Array of photo objects
+     */
+    getPhotos(individualId) {
+        const individual = this.getIndividual(individualId);
+        if (!individual) return [];
+
+        const photos = [];
+        for (const objId of individual.objects) {
+            const obj = this.getObject(objId);
+            if (obj && !obj.docType) { // Photos don't have docType
+                photos.push({
+                    src: obj.file,
+                    caption: obj.title,
+                    people: obj.people ? obj.people.split(',') : []
+                });
+            }
+        }
+
+        return photos;
+    }
+
+    /**
+     * Get documents for an individual
+     * @param {string} individualId - Individual ID
+     * @returns {Array} Array of document objects
+     */
+    getDocuments(individualId) {
+        const individual = this.getIndividual(individualId);
+        if (!individual) return [];
+
+        const documents = [];
+        for (const objId of individual.objects) {
+            const obj = this.getObject(objId);
+            if (obj && obj.docType) { // Documents have docType
+                documents.push({
+                    src: obj.file,
+                    caption: obj.title,
+                    type: obj.docType
+                });
+            }
+        }
+
+        return documents;
+    }
+
+    /**
+     * Get addresses for an individual
+     * @param {string} individualId - Individual ID
+     * @returns {Object} Object with physical and virtual arrays
+     */
+    getAddresses(individualId) {
+        const individual = this.getIndividual(individualId);
+        if (!individual) return { physical: [], virtual: [] };
+
+        const addresses = {
+            physical: individual.addresses.map(addr => ({
+                type: addr.type || 'Address',
+                address: addr.address
+            })),
+            virtual: []
+        };
+
+        // Add emails
+        for (const email of individual.emails) {
+            addresses.virtual.push({
+                type: 'Email',
+                value: email
+            });
+        }
+
+        // Add phones
+        for (const phone of individual.phones) {
+            addresses.virtual.push({
+                type: 'Phone',
+                value: phone
+            });
+        }
+
+        // Add custom links
+        for (const link of individual.customLinks) {
+            addresses.virtual.push({
+                type: link.type || 'Link',
+                value: link.value
+            });
+        }
+
+        return addresses;
+    }
+
+    /**
+     * Get biographical note for an individual
+     * @param {string} individualId - Individual ID
+     * @returns {string} Biographical note or empty string
+     */
+    getBio(individualId) {
+        const individual = this.getIndividual(individualId);
+        if (!individual || !individual.notes || individual.notes.length === 0) return '';
+
+        // Join all notes with space
+        return individual.notes.join(' ');
     }
 
     /**
