@@ -6,70 +6,216 @@
 let gedcomParser = null;
 let gedcomData = null;
 let initializationPromise = null;
+let generationMap = new Map(); // Computed generation for each individual
+let generationGroups = {}; // Individuals grouped by generation
 
-// Mapping of GEDCOM IDs to HTML IDs for consistency with existing site
-const idMapping = {
-    '@I1@': 'grandma-linda',
-    '@I2@': 'martin',
-    '@I3@': 'doris',
-    '@I4@': 'mom-sarah',
-    '@I5@': 'dad-robert',
-    '@I6@': 'uncle-tom',
-    '@I7@': 'uncle-tom-first-wife',
-    '@I8@': 'aunt-linda',
-    '@I9@': 'myself',
-    '@I10@': 'brother-mike',
-    '@I11@': 'cousin-jenny',
-    '@I12@': 'jason-porter',
-    '@I13@': 'mackenzie-porter'
-};
-
-// Reverse mapping for looking up GEDCOM IDs from HTML IDs
-const reverseIdMapping = {};
-for (const [gedcomId, htmlId] of Object.entries(idMapping)) {
-    reverseIdMapping[htmlId] = gedcomId;
+/**
+ * Compute generation number for each individual
+ * Uses BFS from individuals with no parents (root generation)
+ */
+function computeGenerations() {
+    generationMap.clear();
+    generationGroups = {};
+    
+    if (!gedcomParser) return;
+    
+    const individuals = gedcomParser.getIndividuals();
+    const visited = new Set();
+    const queue = [];
+    
+    // Find root individuals (those with no parents AND have children)
+    // This helps identify the actual starting generation
+    const roots = [];
+    for (const [id, individual] of individuals) {
+        const parents = gedcomParser.getParents(id);
+        const children = gedcomParser.getChildren(id);
+        if (parents.length === 0 && children.length > 0) {
+            roots.push(id);
+        }
+    }
+    
+    // If we found roots with children, start from them
+    if (roots.length > 0) {
+        for (const id of roots) {
+            generationMap.set(id, 1);
+            queue.push({ id, generation: 1 });
+            visited.add(id);
+        }
+    } else {
+        // Fallback: find individuals with no parents
+        for (const [id, individual] of individuals) {
+            const parents = gedcomParser.getParents(id);
+            if (parents.length === 0) {
+                generationMap.set(id, 1);
+                queue.push({ id, generation: 1 });
+                visited.add(id);
+            }
+        }
+    }
+    
+    // BFS to assign generations based on parent-child relationships
+    while (queue.length > 0) {
+        const { id, generation } = queue.shift();
+        
+        // Add to generation groups
+        if (!generationGroups[generation]) {
+            generationGroups[generation] = [];
+        }
+        if (!generationGroups[generation].includes(id)) {
+            generationGroups[generation].push(id);
+        }
+        
+        // Process children
+        const children = gedcomParser.getChildren(id);
+        for (const childId of children) {
+            if (!visited.has(childId)) {
+                const childGeneration = generation + 1;
+                generationMap.set(childId, childGeneration);
+                queue.push({ id: childId, generation: childGeneration });
+                visited.add(childId);
+            }
+        }
+        
+        // Also process spouses and put them in the same generation
+        const spouses = gedcomParser.getSpouses(id);
+        for (const spouseInfo of spouses) {
+            const spouseId = spouseInfo.id;
+            if (!visited.has(spouseId)) {
+                generationMap.set(spouseId, generation);
+                queue.push({ id: spouseId, generation: generation });
+                visited.add(spouseId);
+            }
+        }
+    }
+    
+    // Handle any individuals not reached (orphaned records)
+    for (const [id, individual] of individuals) {
+        if (!visited.has(id)) {
+            // Assign to a default generation based on parents if they exist
+            const parents = gedcomParser.getParents(id);
+            if (parents.length > 0) {
+                const parentGen = generationMap.get(parents[0]) || 1;
+                const generation = parentGen + 1;
+                generationMap.set(id, generation);
+                if (!generationGroups[generation]) {
+                    generationGroups[generation] = [];
+                }
+                generationGroups[generation].push(id);
+            } else {
+                // Check if they have a spouse who has been assigned
+                const spouses = gedcomParser.getSpouses(id);
+                let assignedToGeneration = false;
+                for (const spouseInfo of spouses) {
+                    const spouseGen = generationMap.get(spouseInfo.id);
+                    if (spouseGen) {
+                        generationMap.set(id, spouseGen);
+                        if (!generationGroups[spouseGen]) {
+                            generationGroups[spouseGen] = [];
+                        }
+                        generationGroups[spouseGen].push(id);
+                        assignedToGeneration = true;
+                        break;
+                    }
+                }
+                
+                // Assign to generation 1 as fallback
+                if (!assignedToGeneration) {
+                    generationMap.set(id, 1);
+                    if (!generationGroups[1]) {
+                        generationGroups[1] = [];
+                    }
+                    generationGroups[1].push(id);
+                }
+            }
+        }
+    }
+    
+    // Sort individuals within each generation by family groups and birth date
+    for (const generation in generationGroups) {
+        generationGroups[generation].sort((a, b) => {
+            const indivA = gedcomParser.getIndividual(a);
+            const indivB = gedcomParser.getIndividual(b);
+            
+            // Try to group spouses together
+            const spousesA = gedcomParser.getSpouses(a).map(s => s.id);
+            const spousesB = gedcomParser.getSpouses(b).map(s => s.id);
+            
+            // If A is spouse of B, or B is spouse of A, keep them close
+            if (spousesA.includes(b)) return -1;
+            if (spousesB.includes(a)) return 1;
+            
+            // Otherwise sort by birth year
+            const yearA = indivA.birthDate ? GedcomParser.extractYear(indivA.birthDate) : '9999';
+            const yearB = indivB.birthDate ? GedcomParser.extractYear(indivB.birthDate) : '9999';
+            
+            return yearA.localeCompare(yearB);
+        });
+    }
 }
 
-// Define generation assignments (which generation each person belongs to)
-const generationAssignments = {
-    '@I1@': 1,  // grandma-linda
-    '@I2@': 1,  // martin
-    '@I3@': 1,  // doris
-    '@I4@': 2,  // mom-sarah
-    '@I5@': 2,  // dad-robert
-    '@I6@': 2,  // uncle-tom
-    '@I7@': 2,  // uncle-tom-first-wife
-    '@I8@': 2,  // aunt-linda
-    '@I12@': 2, // jason-porter
-    '@I13@': 2, // mackenzie-porter
-    '@I9@': 3,  // myself
-    '@I10@': 3, // brother-mike
-    '@I11@': 3  // cousin-jenny
-};
-
-// Define display order within each generation
-const displayOrder = {
-    1: ['@I1@', '@I3@', '@I2@'],
-    2: ['@I4@', '@I5@', '@I7@', '@I6@', '@I8@', '@I12@', '@I13@'],
-    3: ['@I9@', '@I10@', '@I11@']
-};
-
-// Custom relation labels for each person
-const relationLabels = {
-    '@I1@': 'Second wife of Martin',
-    '@I2@': 'Patriarch',
-    '@I3@': 'First wife of Martin',
-    '@I4@': 'Daughter of Doris & Martin',
-    '@I5@': 'Son-in-law',
-    '@I6@': 'Son of Doris & Martin',
-    '@I7@': 'First wife of Tom',
-    '@I8@': 'Second wife of Tom',
-    '@I9@': 'Daughter of Sarah & Robert',
-    '@I10@': 'Son of Sarah & Robert',
-    '@I11@': 'Daughter of Tom & Patricia',
-    '@I12@': 'Son of Doris & Martin',
-    '@I13@': 'Daughter of Doris & Martin'
-};
+/**
+ * Generate a relation label for an individual based on their relationships
+ */
+function generateRelationLabel(gedcomId) {
+    const individual = gedcomParser.getIndividual(gedcomId);
+    if (!individual) return '';
+    
+    const parents = gedcomParser.getParents(gedcomId);
+    const spouses = gedcomParser.getSpouses(gedcomId);
+    
+    // Try to build a meaningful label
+    let label = '';
+    
+    // Check if married
+    if (spouses.length > 0) {
+        const spouseNames = spouses.map(s => {
+            const spouseName = s.spouse.name.given ? s.spouse.name.given.split(' ')[0] : s.spouse.name.full;
+            return spouseName;
+        });
+        
+        if (spouses.length === 1) {
+            const spouse = spouses[0].spouse;
+            const spouseName = spouse.name.given ? spouse.name.given.split(' ')[0] : spouse.name.full;
+            
+            if (spouses[0].status === 'divorced') {
+                label = `Former spouse of ${spouseName}`;
+            } else if (spouses[0].status === 'widowed') {
+                label = `Widow/Widower of ${spouseName}`;
+            } else {
+                label = `Spouse of ${spouseName}`;
+            }
+        } else if (spouses.length > 1) {
+            // Multiple marriages
+            const currentSpouse = spouses.find(s => s.status === 'married');
+            if (currentSpouse) {
+                const spouseName = currentSpouse.spouse.name.given ? 
+                    currentSpouse.spouse.name.given.split(' ')[0] : 
+                    currentSpouse.spouse.name.full;
+                label = `Spouse of ${spouseName}`;
+            } else {
+                label = `${spouses.length} marriages`;
+            }
+        }
+    }
+    
+    // Add parent information if available
+    if (parents.length > 0) {
+        const parentNames = parents.map(p => {
+            const parent = gedcomParser.getIndividual(p);
+            return parent && parent.name.given ? parent.name.given.split(' ')[0] : '';
+        }).filter(n => n).join(' & ');
+        
+        if (parentNames) {
+            if (label) {
+                label = `Child of ${parentNames}`;
+            } else {
+                label = `Child of ${parentNames}`;
+            }
+        }
+    }
+    
+    return label;
+}
 
 /**
  * Load and parse GEDCOM file
@@ -82,6 +228,9 @@ async function loadGedcom() {
         gedcomParser = new GedcomParser();
         gedcomParser.parse(content);
         
+        // Compute generations after parsing
+        computeGenerations();
+        
         return gedcomParser;
     } catch (error) {
         console.error('Error loading GEDCOM file:', error);
@@ -93,14 +242,23 @@ async function loadGedcom() {
  * Get HTML ID for a GEDCOM individual
  */
 function getHtmlId(gedcomId) {
-    return idMapping[gedcomId] || GedcomParser.gedcomIdToHtmlId(gedcomId);
+    return GedcomParser.gedcomIdToHtmlId(gedcomId);
 }
 
 /**
  * Get GEDCOM ID for an HTML ID
  */
 function getGedcomId(htmlId) {
-    return reverseIdMapping[htmlId] || null;
+    // Convert HTML ID back to GEDCOM format
+    // HTML IDs are lowercased versions without @ symbols (e.g., "i1" from "@I1@")
+    const gedcomId = `@${htmlId.toUpperCase()}@`;
+    
+    // Verify this individual exists
+    if (gedcomParser && gedcomParser.getIndividual(gedcomId)) {
+        return gedcomId;
+    }
+    
+    return null;
 }
 
 /**
@@ -116,13 +274,16 @@ function generateFamilyTree() {
     const generations = treeContainer.querySelectorAll('.generation');
     generations.forEach(gen => gen.remove());
 
+    // Get the generations in sorted order
+    const generationNumbers = Object.keys(generationGroups).map(Number).sort((a, b) => a - b);
+    
     // Generate each generation
-    for (let genNum = 1; genNum <= 3; genNum++) {
+    for (const genNum of generationNumbers) {
         const genDiv = document.createElement('div');
         genDiv.className = 'generation';
         genDiv.setAttribute('data-generation', genNum);
 
-        const individualsInGen = displayOrder[genNum] || [];
+        const individualsInGen = generationGroups[genNum] || [];
         
         for (const gedcomId of individualsInGen) {
             const individual = gedcomParser.getIndividual(gedcomId);
@@ -190,7 +351,7 @@ function createFamilyMemberElement(individual, gedcomId, htmlId) {
     // Relation
     const relationP = document.createElement('p');
     relationP.className = 'relation';
-    relationP.textContent = relationLabels[gedcomId] || '';
+    relationP.textContent = generateRelationLabel(gedcomId);
     div.appendChild(relationP);
 
     // Years
