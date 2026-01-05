@@ -4,26 +4,6 @@
  * Basic genealogical data is loaded from GEDCOM, this file contains additional details
  */
 
-// Additional person data (photos, documents, contact info, bios)
-// Names, dates, and relationships come from GEDCOM
-// This constant is now deprecated - all data is loaded from GEDCOM
-// Kept for backward compatibility in case GEDCOM data is unavailable
-const personData = {
-    'grandma-linda': {},
-    'martin': {},
-    'doris': {},
-    'mom-sarah': {},
-    'dad-robert': {},
-    'uncle-tom': {},
-    'uncle-tom-first-wife': {},
-    'aunt-linda': {},
-    'myself': {},
-    'brother-mike': {},
-    'cousin-jenny': {},
-    'jason-porter': {},
-    'mackenzie-porter': {}
-};
-
 // Get person info from GEDCOM
 function getPersonInfo(personId) {
     const gedcomId = window.gedcomLoader ? window.gedcomLoader.getGedcomId(personId) : null;
@@ -131,7 +111,6 @@ function attachClickHandlers() {
 
 // Show person details in modal
 function showPersonDetails(personId) {
-    const personDetails = personData[personId] || {};
     const personInfo = getPersonInfo(personId);
     
     const modal = document.getElementById('person-modal');
@@ -146,7 +125,7 @@ function showPersonDetails(personId) {
     const relationText = familyMemberElement ? familyMemberElement.querySelector('.relation')?.textContent || '' : '';
     document.getElementById('modal-person-relation').textContent = relationText;
     
-    // Get data from GEDCOM (or fallback to personData)
+    // Get data from GEDCOM
     const gedcomId = window.gedcomLoader ? window.gedcomLoader.getGedcomId(personId) : null;
     const parser = window.gedcomLoader ? window.gedcomLoader.getParser() : null;
     
@@ -161,20 +140,6 @@ function showPersonDetails(personId) {
         photos = parser.getPhotos(gedcomId);
         documents = parser.getDocuments(gedcomId);
         addresses = parser.getAddresses(gedcomId);
-    }
-    
-    // Fallback to personData if GEDCOM data is empty
-    if (!bio && personDetails.bio) {
-        bio = personDetails.bio;
-    }
-    if (photos.length === 0 && personDetails.photos) {
-        photos = personDetails.photos;
-    }
-    if (documents.length === 0 && personDetails.documents) {
-        documents = personDetails.documents;
-    }
-    if (addresses.physical.length === 0 && addresses.virtual.length === 0 && personDetails.addresses) {
-        addresses = personDetails.addresses;
     }
     
     // Set bio

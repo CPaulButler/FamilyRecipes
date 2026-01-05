@@ -21,45 +21,43 @@ A static website for preserving family recipes and documenting family relationsh
 
 The `person-details.js` file provides an interactive modal system that displays detailed information about family members when they are clicked on the family tree.
 
-### Relationship Between index.html and person-details.js
+### How Family Data is Stored
 
-1. **HTML Side (index.html)**: Each family member is represented by a `<div class="family-member">` element with:
-   - An `id` attribute (e.g., `id="grandma-linda"`) that uniquely identifies the person (required)
-   - Optional `data-marriages` attribute containing JSON with marriage information
-   - Optional `data-children` and `data-parents` attributes listing related family members
+Family member data is stored in the GEDCOM file (family.ged):
 
-2. **JavaScript Side (person-details.js)**: 
-   - Contains a `personData` object where each key matches a family member's `id` from index.html
-   - When a family member is clicked, the script looks up their `id` in the `personData` object
-   - Displays detailed information (bio, photos, documents, contact info) in a modal popup
+1. **GEDCOM File (family.ged)**: Contains all genealogical data following GEDCOM 5.5.1 format:
+   - Names, birth/death dates, and relationships (standard GEDCOM tags)
+   - Biographical notes (NOTE tags)
+   - Photos and documents (OBJE records with FILE, FORM, TITL tags)
+   - Addresses and contact information (ADDR, PHON, EMAIL tags)
 
-### Person Data Structure
+2. **Dynamic Generation**: 
+   - gedcom-loader.js reads the GEDCOM file and generates the family tree HTML dynamically
+   - When a family member is clicked, person-details.js retrieves their data from the parsed GEDCOM and displays it in a modal
 
-Each person in `personData` follows this structure:
+### GEDCOM Data Structure
 
-```javascript
-'person-id': {
-    name: 'Display Name',                    // Required - displayed in modal header
-    fullName: 'Full Legal Name',             // Optional
-    years: 'YYYY-YYYY',                      // Optional
-    relation: 'Relationship to family',      // Optional
-    photos: [                                // Optional - can be empty array []
-        { src: 'path/to/image.jpg', caption: 'Photo description', people: ['person-id'] }
-    ],
-    documents: [                             // Optional - can be empty array []
-        { src: 'path/to/doc.jpg', caption: 'Document name', type: 'Document type' }
-    ],
-    addresses: {                             // Optional
-        physical: [
-            { type: 'Home (years)', address: 'Street address' }
-        ],
-        virtual: [
-            { type: 'Email', value: 'email@example.com' },
-            { type: 'Phone', value: '(123) 456-7890' }
-        ]
-    },
-    bio: 'Biography text about the person'   // Optional
-}
+Example individual record:
+
+```gedcom
+0 @I1@ INDI
+1 NAME Linda Margot /Fontenot/
+1 OBJE @O1@
+1 NOTE Linda was known for her amazing cooking...
+1 ADDR 123 Oak Street, Springfield, IL 62701
+2 _TYPE Home (1950-2010)
+1 PHON (217) 555-0123
+1 EMAIL linda@example.com
+```
+
+Photos and documents are defined as multimedia objects:
+
+```gedcom
+0 @O1@ OBJE
+1 FILE images/photos/portrait.jpg
+1 FORM jpg
+1 TITL Portrait
+1 _PEOPLE grandma-linda
 ```
 
 ## Deployment
@@ -81,52 +79,37 @@ python3 -m http.server 8000
 
 ### Adding a Family Member
 
-**Step 1: Add to index.html**
+Add the person to the GEDCOM file (family.ged) following the GEDCOM 5.5.1 format:
 
-Add a new `family-member` div in the appropriate generation section. At minimum, you need an `id`:
+```gedcom
+0 @I14@ INDI
+1 NAME John /Doe/
+2 GIVN John
+2 SURN Doe
+1 SEX M
+1 BIRT
+2 DATE 1980
+1 OBJE @O14@
+1 NOTE John is a software engineer who loves coding.
+1 ADDR 123 Main St, City, State 12345
+2 _TYPE Current Address
+1 EMAIL john.doe@example.com
+1 PHON (555) 123-4567
 
-```html
-<div class="family-member" id="person-name">
-    <h3>Person Name</h3>
-    <p class="relation">Relationship</p>
-    <p class="years">YYYY-YYYY</p>
-</div>
+0 @O14@ OBJE
+1 FILE images/photos/john-doe.jpg
+1 FORM jpg
+1 TITL Portrait
+1 _PEOPLE person-id
 ```
 
-Optionally, add data attributes to show relationships (all are optional):
+The family tree will be automatically regenerated from the GEDCOM file when the page loads.
 
-```html
-<div class="family-member" id="person-name" 
-     data-marriages='[{"spouse":"spouse-id","start":"YYYY","status":"married"}]'
-     data-children="child1-id,child2-id"
-     data-parents="parent1-id,parent2-id">
-    <h3>Person Name</h3>
-    <p class="relation">Relationship</p>
-    <p class="years">YYYY-YYYY</p>
-</div>
-```
-
-**Step 2: Add to person-details.js**
-
-Add detailed information to the `personData` object using the same `id`:
-
-```javascript
-'person-name': {
-    name: 'Person Name',
-    fullName: 'Full Legal Name',
-    years: 'YYYY-YYYY',
-    relation: 'Relationship to family',
-    photos: [],
-    documents: [],
-    addresses: {
-        physical: [],
-        virtual: []
-    },
-    bio: 'A brief biography of the person.'
-}
-```
-
-**Important**: The `id` in index.html must exactly match the key in the `personData` object for the modal to work correctly.
+**Note**: You'll need to add the person to the appropriate mappings in gedcom-loader.js:
+- Add to `idMapping` to define the HTML ID
+- Add to `generationAssignments` to specify which generation
+- Add to `displayOrder` to control position within generation
+- Add to `relationLabels` for custom relationship text
 
 ### Adding a Recipe
 
