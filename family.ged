@@ -19,6 +19,14 @@
 1 BIRT
 2 DATE 1950
 1 FAMS @F1@
+1 OBJE @O1@
+1 OBJE @O2@
+1 OBJE @O3@
+1 OBJE @O4@
+1 NOTE Linda was known for her amazing cooking and warm hospitality. Her cornbread recipe has been passed down through generations.
+1 ADDR 123 Oak Street, Springfield, IL 62701
+2 _TYPE Home (1950-2010)
+1 PHON (217) 555-0123
 0 @I2@ INDI
 1 NAME Martin Lee /Porter/
 2 GIVN Martin Lee
@@ -28,6 +36,12 @@
 2 DATE 1948
 1 FAMS @F1@
 1 FAMS @F2@
+1 OBJE @O5@
+1 OBJE @O3@
+1 NOTE Martin worked as a carpenter and built the family home. He loved fishing and teaching his grandchildren about woodworking.
+1 ADDR 123 Oak Street, Springfield, IL 62701
+2 _TYPE Home (1950-2008)
+1 PHON (217) 555-0124
 0 @I3@ INDI
 1 NAME Doris Ann /Bradley/
 2 GIVN Doris Ann
@@ -36,6 +50,7 @@
 1 BIRT
 2 DATE 1950
 1 FAMS @F2@
+1 NOTE Doris is a loving mother and grandmother.
 0 @I4@ INDI
 1 NAME Sarah Ann /Smith/
 2 GIVN Sarah Ann
@@ -45,6 +60,13 @@
 2 DATE 1950
 1 FAMC @F2@
 1 FAMS @F3@
+1 OBJE @O6@
+1 OBJE @O7@
+1 NOTE Sarah inherited her mother's love of cooking and perfected the family apple pie recipe. She works as a school teacher.
+1 ADDR 456 Maple Avenue, Chicago, IL 60601
+2 _TYPE Current Address
+1 EMAIL sarah.smith@email.com
+1 PHON (312) 555-0145
 0 @I5@ INDI
 1 NAME Robert James /Anderson/
 2 GIVN Robert James
@@ -53,6 +75,13 @@
 1 BIRT
 2 DATE 1948
 1 FAMS @F3@
+1 OBJE @O8@
+1 OBJE @O7@
+1 NOTE Robert is an engineer who loves solving complex problems. He enjoys woodworking, a skill he learned from Martin.
+1 ADDR 456 Maple Avenue, Chicago, IL 60601
+2 _TYPE Current Address
+1 EMAIL robert.anderson@email.com
+1 PHON (312) 555-0146
 0 @I6@ INDI
 1 NAME Thomas William /Smith/
 2 GIVN Thomas William
@@ -63,6 +92,12 @@
 1 FAMC @F2@
 1 FAMS @F4@
 1 FAMS @F5@
+1 OBJE @O9@
+1 NOTE Tom is famous for his BBQ ribs at every family reunion. He owns a small restaurant and loves outdoor cooking. He was married to Patricia Moore from 1975-1985 and they had one daughter, Jenny. After Patricia's tragic passing, Tom married Linda in 1988.
+1 ADDR 789 Pine Road, Peoria, IL 61602
+2 _TYPE Current Address
+1 EMAIL tom.smith@email.com
+1 PHON (309) 555-0167
 0 @I7@ INDI
 1 NAME Patricia Ann /Moore/
 2 GIVN Patricia Ann
@@ -73,6 +108,7 @@
 1 DEAT
 2 DATE 1985
 1 FAMS @F4@
+1 NOTE Patricia was married to Tom from 1975 until her untimely death in 1985. She was a loving mother to Jenny and is fondly remembered by the family.
 0 @I8@ INDI
 1 NAME Linda Marie /Wilson/
 2 GIVN Linda Marie
@@ -81,6 +117,12 @@
 1 BIRT
 2 DATE 1954
 1 FAMS @F5@
+1 OBJE @O10@
+1 NOTE Linda is a pastry chef known for her incredible chocolate chip cookies. She helps Tom run their restaurant.
+1 ADDR 789 Pine Road, Peoria, IL 61602
+2 _TYPE Current Address
+1 EMAIL linda.wilson@email.com
+1 PHON (309) 555-0168
 0 @I9@ INDI
 1 NAME Emily Rose /Anderson/
 2 GIVN Emily Rose
@@ -89,6 +131,15 @@
 1 BIRT
 2 DATE 1975
 1 FAMC @F3@
+1 OBJE @O11@
+1 OBJE @O7@
+1 NOTE Emily is a software developer who maintains this family website. She loves preserving family history and recipes.
+1 ADDR 321 Elm Street, Madison, WI 53703
+2 _TYPE Current Address
+1 EMAIL emily.anderson@email.com
+1 PHON (608) 555-0189
+1 _LINK linkedin.com/in/emilyanderson
+2 _TYPE LinkedIn
 0 @I10@ INDI
 1 NAME Michael Robert /Anderson/
 2 GIVN Michael Robert
@@ -97,6 +148,13 @@
 1 BIRT
 2 DATE 1978
 1 FAMC @F3@
+1 OBJE @O12@
+1 OBJE @O7@
+1 NOTE Mike is a chef who combines traditional family recipes with modern techniques. He runs a popular farm-to-table restaurant.
+1 ADDR 654 Birch Lane, Milwaukee, WI 53202
+2 _TYPE Current Address
+1 EMAIL mike.anderson@email.com
+1 PHON (414) 555-0201
 0 @I11@ INDI
 1 NAME Jennifer Ann /Smith/
 2 GIVN Jennifer Ann
@@ -105,6 +163,12 @@
 1 BIRT
 2 DATE 1980
 1 FAMC @F4@
+1 OBJE @O13@
+1 NOTE Jenny is a food photographer who has documented many of the family recipes. She travels the world capturing culinary stories.
+1 ADDR 987 Cedar Court, Bloomington, IL 61701
+2 _TYPE Current Address
+1 EMAIL jenny.smith@email.com
+1 PHON (309) 555-0223
 0 @I12@ INDI
 1 NAME Jason Charles /Porter/
 2 GIVN Jason Charles
@@ -113,6 +177,7 @@
 1 BIRT
 2 DATE 13 DEC 1973
 1 FAMC @F2@
+1 NOTE Jason Charles Porter was born on December 13, 1973. He is the son of Martin Porter and Doris Bradley.
 0 @I13@ INDI
 1 NAME Mackenzie Leigh /Porter/
 2 GIVN Mackenzie Leigh
@@ -121,6 +186,7 @@
 1 BIRT
 2 DATE 17 NOV 1976
 1 FAMC @F2@
+1 NOTE Mackenzie Leigh Porter was born on November 17, 1976. She is the daughter of Martin Porter and Doris Bradley.
 0 @F1@ FAM
 1 HUSB @I2@
 1 WIFE @I1@
@@ -155,4 +221,70 @@
 1 WIFE @I8@
 1 MARR
 2 DATE 1988
+0 @O1@ OBJE
+1 FILE images/photos/grandma-mary.svg
+1 FORM svg
+1 TITL Portrait
+1 _PEOPLE @I1@
+0 @O2@ OBJE
+1 FILE images/photos/DCP_2064.jpg
+1 FORM jpg
+1 TITL Portrait
+1 _PEOPLE @I1@
+0 @O3@ OBJE
+1 FILE images/photos/grandparents-anniversary.svg
+1 FORM svg
+1 TITL 50th Anniversary - 1998
+1 _PEOPLE @I1@,@I2@
+0 @O4@ OBJE
+1 FILE images/documents/birth-cert-grandma-mary.svg
+1 FORM svg
+1 TITL Birth Certificate
+1 _DOCTYPE Birth Certificate
+1 _PEOPLE @I1@
+0 @O5@ OBJE
+1 FILE images/photos/grandpa-john.svg
+1 FORM svg
+1 TITL Portrait
+1 _PEOPLE @I2@
+0 @O6@ OBJE
+1 FILE images/photos/mom-sarah.svg
+1 FORM svg
+1 TITL Portrait
+1 _PEOPLE @I4@
+0 @O7@ OBJE
+1 FILE images/photos/family-vacation-2005.svg
+1 FORM svg
+1 TITL Family Vacation 2005
+1 _PEOPLE @I4@,@I5@,@I9@,@I10@
+0 @O8@ OBJE
+1 FILE images/photos/dad-robert.svg
+1 FORM svg
+1 TITL Portrait
+1 _PEOPLE @I5@
+0 @O9@ OBJE
+1 FILE images/photos/uncle-tom.svg
+1 FORM svg
+1 TITL Portrait
+1 _PEOPLE @I6@
+0 @O10@ OBJE
+1 FILE images/photos/aunt-linda.svg
+1 FORM svg
+1 TITL Portrait
+1 _PEOPLE @I8@
+0 @O11@ OBJE
+1 FILE images/photos/emily.svg
+1 FORM svg
+1 TITL Portrait
+1 _PEOPLE @I9@
+0 @O12@ OBJE
+1 FILE images/photos/brother-mike.svg
+1 FORM svg
+1 TITL Portrait
+1 _PEOPLE @I10@
+0 @O13@ OBJE
+1 FILE images/photos/cousin-jenny.svg
+1 FORM svg
+1 TITL Portrait
+1 _PEOPLE @I11@
 0 TRLR

@@ -4,199 +4,6 @@
  * Basic genealogical data is loaded from GEDCOM, this file contains additional details
  */
 
-// Additional person data (photos, documents, contact info, bios)
-// Names, dates, and relationships come from GEDCOM
-const personData = {
-    'grandma-linda': {
-        photos: [
-            { src: 'images/photos/grandma-mary.svg', caption: 'Portrait', people: ['grandma-linda'] },
-            { src: 'images/photos/DCP_2064.jpg', caption: 'Portrait', people: ['grandma-linda'] },
-            { src: 'images/photos/grandparents-anniversary.svg', caption: '50th Anniversary - 1998', people: ['grandma-linda', 'martin'] }
-        ],
-        documents: [
-            { src: 'images/documents/birth-cert-grandma-mary.svg', caption: 'Birth Certificate', type: 'Birth Certificate' }
-        ],
-        addresses: {
-            physical: [
-                { type: 'Home (1950-2010)', address: '123 Oak Street, Springfield, IL 62701' }
-            ],
-            virtual: [
-                { type: 'Phone', value: '(217) 555-0123' }
-            ]
-        },
-        bio: 'Linda was known for her amazing cooking and warm hospitality. Her cornbread recipe has been passed down through generations.'
-    },
-    'martin': {
-        photos: [
-            { src: 'images/photos/grandpa-john.svg', caption: 'Portrait', people: ['martin'] },
-            { src: 'images/photos/grandparents-anniversary.svg', caption: '50th Anniversary - 1998', people: ['grandma-linda', 'martin'] }
-        ],
-        documents: [],
-        addresses: {
-            physical: [
-                { type: 'Home (1950-2008)', address: '123 Oak Street, Springfield, IL 62701' }
-            ],
-            virtual: [
-                { type: 'Phone', value: '(217) 555-0124' }
-            ]
-        },
-        bio: 'Martin worked as a carpenter and built the family home. He loved fishing and teaching his grandchildren about woodworking.'
-    },
-    'doris': {
-        photos: [],
-        documents: [],
-        addresses: {
-            physical: [],
-            virtual: []
-        },
-        bio: 'Doris is a loving mother and grandmother.'
-    },
-    'mom-sarah': {
-        photos: [
-            { src: 'images/photos/mom-sarah.svg', caption: 'Portrait', people: ['mom-sarah'] },
-            { src: 'images/photos/family-vacation-2005.svg', caption: 'Family Vacation 2005', people: ['mom-sarah', 'dad-robert', 'myself', 'brother-mike'] }
-        ],
-        documents: [],
-        addresses: {
-            physical: [
-                { type: 'Current Address', address: '456 Maple Avenue, Chicago, IL 60601' }
-            ],
-            virtual: [
-                { type: 'Email', value: 'sarah.smith@email.com' },
-                { type: 'Phone', value: '(312) 555-0145' }
-            ]
-        },
-        bio: 'Sarah inherited her mother\'s love of cooking and perfected the family apple pie recipe. She works as a school teacher.'
-    },
-    'dad-robert': {
-        photos: [
-            { src: 'images/photos/dad-robert.svg', caption: 'Portrait', people: ['dad-robert'] },
-            { src: 'images/photos/family-vacation-2005.svg', caption: 'Family Vacation 2005', people: ['mom-sarah', 'dad-robert', 'myself', 'brother-mike'] }
-        ],
-        documents: [],
-        addresses: {
-            physical: [
-                { type: 'Current Address', address: '456 Maple Avenue, Chicago, IL 60601' }
-            ],
-            virtual: [
-                { type: 'Email', value: 'robert.anderson@email.com' },
-                { type: 'Phone', value: '(312) 555-0146' }
-            ]
-        },
-        bio: 'Robert is an engineer who loves solving complex problems. He enjoys woodworking, a skill he learned from Martin.'
-    },
-    'uncle-tom': {
-        photos: [
-            { src: 'images/photos/uncle-tom.svg', caption: 'Portrait', people: ['uncle-tom'] }
-        ],
-        documents: [],
-        addresses: {
-            physical: [
-                { type: 'Current Address', address: '789 Pine Road, Peoria, IL 61602' }
-            ],
-            virtual: [
-                { type: 'Email', value: 'tom.smith@email.com' },
-                { type: 'Phone', value: '(309) 555-0167' }
-            ]
-        },
-        bio: 'Tom is famous for his BBQ ribs at every family reunion. He owns a small restaurant and loves outdoor cooking. He was married to Patricia Moore from 1975-1985 and they had one daughter, Jenny. After Patricia\'s tragic passing, Tom married Linda in 1988.'
-    },
-    'uncle-tom-first-wife': {
-        photos: [],
-        documents: [],
-        addresses: {
-            physical: [],
-            virtual: []
-        },
-        bio: 'Patricia was married to Tom from 1975 until her untimely death in 1985. She was a loving mother to Jenny and is fondly remembered by the family.'
-    },
-    'aunt-linda': {
-        photos: [
-            { src: 'images/photos/aunt-linda.svg', caption: 'Portrait', people: ['aunt-linda'] }
-        ],
-        documents: [],
-        addresses: {
-            physical: [
-                { type: 'Current Address', address: '789 Pine Road, Peoria, IL 61602' }
-            ],
-            virtual: [
-                { type: 'Email', value: 'linda.wilson@email.com' },
-                { type: 'Phone', value: '(309) 555-0168' }
-            ]
-        },
-        bio: 'Linda is a pastry chef known for her incredible chocolate chip cookies. She helps Tom run their restaurant.'
-    },
-    'myself': {
-        photos: [
-            { src: 'images/photos/emily.svg', caption: 'Portrait', people: ['myself'] },
-            { src: 'images/photos/family-vacation-2005.svg', caption: 'Family Vacation 2005', people: ['mom-sarah', 'dad-robert', 'myself', 'brother-mike'] }
-        ],
-        documents: [],
-        addresses: {
-            physical: [
-                { type: 'Current Address', address: '321 Elm Street, Madison, WI 53703' }
-            ],
-            virtual: [
-                { type: 'Email', value: 'emily.anderson@email.com' },
-                { type: 'Phone', value: '(608) 555-0189' },
-                { type: 'LinkedIn', value: 'linkedin.com/in/emilyanderson' }
-            ]
-        },
-        bio: 'Emily is a software developer who maintains this family website. She loves preserving family history and recipes.'
-    },
-    'brother-mike': {
-        photos: [
-            { src: 'images/photos/brother-mike.svg', caption: 'Portrait', people: ['brother-mike'] },
-            { src: 'images/photos/family-vacation-2005.svg', caption: 'Family Vacation 2005', people: ['mom-sarah', 'dad-robert', 'myself', 'brother-mike'] }
-        ],
-        documents: [],
-        addresses: {
-            physical: [
-                { type: 'Current Address', address: '654 Birch Lane, Milwaukee, WI 53202' }
-            ],
-            virtual: [
-                { type: 'Email', value: 'mike.anderson@email.com' },
-                { type: 'Phone', value: '(414) 555-0201' }
-            ]
-        },
-        bio: 'Mike is a chef who combines traditional family recipes with modern techniques. He runs a popular farm-to-table restaurant.'
-    },
-    'cousin-jenny': {
-        photos: [
-            { src: 'images/photos/cousin-jenny.svg', caption: 'Portrait', people: ['cousin-jenny'] }
-        ],
-        documents: [],
-        addresses: {
-            physical: [
-                { type: 'Current Address', address: '987 Cedar Court, Bloomington, IL 61701' }
-            ],
-            virtual: [
-                { type: 'Email', value: 'jenny.smith@email.com' },
-                { type: 'Phone', value: '(309) 555-0223' }
-            ]
-        },
-        bio: 'Jenny is a food photographer who has documented many of the family recipes. She travels the world capturing culinary stories.'
-    },
-    'jason-porter': {
-        photos: [],
-        documents: [],
-        addresses: {
-            physical: [],
-            virtual: []
-        },
-        bio: 'Jason Charles Porter was born on December 13, 1973. He is the son of Martin Porter and Doris Bradley.'
-    },
-    'mackenzie-porter': {
-        photos: [],
-        documents: [],
-        addresses: {
-            physical: [],
-            virtual: []
-        },
-        bio: 'Mackenzie Leigh Porter was born on November 17, 1976. She is the daughter of Martin Porter and Doris Bradley.'
-    }
-};
-
 // Get person info from GEDCOM
 function getPersonInfo(personId) {
     const gedcomId = window.gedcomLoader ? window.gedcomLoader.getGedcomId(personId) : null;
@@ -304,7 +111,6 @@ function attachClickHandlers() {
 
 // Show person details in modal
 function showPersonDetails(personId) {
-    const personDetails = personData[personId] || {};
     const personInfo = getPersonInfo(personId);
     
     const modal = document.getElementById('person-modal');
@@ -319,10 +125,27 @@ function showPersonDetails(personId) {
     const relationText = familyMemberElement ? familyMemberElement.querySelector('.relation')?.textContent || '' : '';
     document.getElementById('modal-person-relation').textContent = relationText;
     
+    // Get data from GEDCOM
+    const gedcomId = window.gedcomLoader ? window.gedcomLoader.getGedcomId(personId) : null;
+    const parser = window.gedcomLoader ? window.gedcomLoader.getParser() : null;
+    
+    let bio = '';
+    let photos = [];
+    let documents = [];
+    let addresses = { physical: [], virtual: [] };
+    
+    if (gedcomId && parser) {
+        // Get data from GEDCOM
+        bio = parser.getBio(gedcomId);
+        photos = parser.getPhotos(gedcomId);
+        documents = parser.getDocuments(gedcomId);
+        addresses = parser.getAddresses(gedcomId);
+    }
+    
     // Set bio
     const bioSection = document.getElementById('modal-person-bio');
-    if (personDetails.bio) {
-        bioSection.innerHTML = `<p class="bio">${personDetails.bio}</p>`;
+    if (bio) {
+        bioSection.innerHTML = `<p class="bio">${bio}</p>`;
         bioSection.style.display = 'block';
     } else {
         bioSection.style.display = 'none';
@@ -397,8 +220,8 @@ function showPersonDetails(personId) {
     // Set photos
     const photosContainer = document.getElementById('modal-photos');
     const photosSection = document.getElementById('photos-section');
-    if (personDetails.photos && personDetails.photos.length > 0) {
-        photosContainer.innerHTML = personDetails.photos.map(photo => `
+    if (photos && photos.length > 0) {
+        photosContainer.innerHTML = photos.map(photo => `
             <div class="photo-item">
                 <img src="${photo.src}" alt="${photo.caption}">
                 <p class="photo-caption">${photo.caption}</p>
@@ -412,8 +235,8 @@ function showPersonDetails(personId) {
     // Set documents
     const documentsContainer = document.getElementById('modal-documents');
     const documentsSection = document.getElementById('documents-section');
-    if (personDetails.documents && personDetails.documents.length > 0) {
-        documentsContainer.innerHTML = personDetails.documents.map(doc => `
+    if (documents && documents.length > 0) {
+        documentsContainer.innerHTML = documents.map(doc => `
             <div class="document-item">
                 <img src="${doc.src}" alt="${doc.caption}">
                 <p class="document-caption">${doc.caption}</p>
@@ -429,17 +252,17 @@ function showPersonDetails(personId) {
     const addressesSection = document.getElementById('addresses-section');
     let addressesHTML = '';
     
-    if (personDetails.addresses && personDetails.addresses.physical && personDetails.addresses.physical.length > 0) {
+    if (addresses && addresses.physical && addresses.physical.length > 0) {
         addressesHTML += '<div class="address-group"><h4>Physical Addresses</h4>';
-        personDetails.addresses.physical.forEach(addr => {
+        addresses.physical.forEach(addr => {
             addressesHTML += `<p><strong>${addr.type}:</strong> ${addr.address}</p>`;
         });
         addressesHTML += '</div>';
     }
     
-    if (personDetails.addresses && personDetails.addresses.virtual && personDetails.addresses.virtual.length > 0) {
+    if (addresses && addresses.virtual && addresses.virtual.length > 0) {
         addressesHTML += '<div class="address-group"><h4>Virtual Contacts</h4>';
-        personDetails.addresses.virtual.forEach(contact => {
+        addresses.virtual.forEach(contact => {
             addressesHTML += `<p><strong>${contact.type}:</strong> ${contact.value}</p>`;
         });
         addressesHTML += '</div>';
