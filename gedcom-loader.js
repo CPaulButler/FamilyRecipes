@@ -63,8 +63,8 @@ function sortBySpouseGroups(individuals) {
                     if (spouse.status === 'divorced' || spouse.status === 'widowed') {
                         group.push(spouse.id);
                     } else {
-                        // Current spouse should be adjacent
-                        group.unshift(spouse.id);
+                        // Current spouse should be adjacent (insert after person)
+                        group.splice(1, 0, spouse.id);
                     }
                     visited.add(spouse.id);
                 }
@@ -72,10 +72,14 @@ function sortBySpouseGroups(individuals) {
             
             // Use the earliest marriage or birth date for sorting groups
             let minYear = person.birthDate ? GedcomParser.extractYear(person.birthDate) : FALLBACK_YEAR;
-            if (spouses.length > 0 && spouses[0].marriageDate) {
-                const marriageYear = GedcomParser.extractYear(spouses[0].marriageDate);
-                if (marriageYear < minYear) {
-                    minYear = marriageYear;
+            
+            // Find the earliest marriage date
+            for (const spouse of sortedSpouses) {
+                if (spouse.marriageDate) {
+                    const marriageYear = GedcomParser.extractYear(spouse.marriageDate);
+                    if (marriageYear.localeCompare(minYear) < 0) {
+                        minYear = marriageYear;
+                    }
                 }
             }
             
