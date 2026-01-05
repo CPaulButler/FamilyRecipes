@@ -423,22 +423,10 @@ function generateFamilyTree() {
 function buildSpouseGroupsForGeneration(individualsInGen) {
     const visited = new Set();
     const groups = [];
+    const individualsSet = new Set(individualsInGen);
     
     for (const personId of individualsInGen) {
         if (visited.has(personId)) continue;
-        
-        // Check if this person has already been added to a group as someone's spouse
-        let foundInExistingGroup = false;
-        for (const group of groups) {
-            if (group.includes(personId)) {
-                foundInExistingGroup = true;
-                break;
-            }
-        }
-        if (foundInExistingGroup) {
-            visited.add(personId);
-            continue;
-        }
         
         const group = [personId];
         visited.add(personId);
@@ -449,7 +437,7 @@ function buildSpouseGroupsForGeneration(individualsInGen) {
         const spousesToAdd = [];
         
         for (const spouseInfo of spouses) {
-            if (individualsInGen.includes(spouseInfo.id) && !visited.has(spouseInfo.id)) {
+            if (individualsSet.has(spouseInfo.id) && !visited.has(spouseInfo.id)) {
                 // Find the index of the spouse in individualsInGen
                 const spouseIndex = individualsInGen.indexOf(spouseInfo.id);
                 const personIndex = individualsInGen.indexOf(personId);
