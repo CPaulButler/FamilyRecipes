@@ -385,13 +385,24 @@ function generateFamilyTree() {
 
         const individualsInGen = generationGroups[genNum] || [];
         
-        for (const gedcomId of individualsInGen) {
-            const individual = gedcomParser.getIndividual(gedcomId);
-            if (!individual) continue;
+        // Group individuals into spouse groups
+        const spouseGroups = buildSpouseGroupsForGeneration(individualsInGen);
+        
+        // Create a wrapper div for each spouse group to keep them on the same line
+        for (const group of spouseGroups) {
+            const groupDiv = document.createElement('div');
+            groupDiv.className = 'spouse-group';
+            
+            for (const gedcomId of group) {
+                const individual = gedcomParser.getIndividual(gedcomId);
+                if (!individual) continue;
 
-            const htmlId = getHtmlId(gedcomId);
-            const memberDiv = createFamilyMemberElement(individual, gedcomId, htmlId);
-            genDiv.appendChild(memberDiv);
+                const htmlId = getHtmlId(gedcomId);
+                const memberDiv = createFamilyMemberElement(individual, gedcomId, htmlId);
+                groupDiv.appendChild(memberDiv);
+            }
+            
+            genDiv.appendChild(groupDiv);
         }
 
         // Insert before the legend
@@ -402,6 +413,70 @@ function generateFamilyTree() {
             treeContainer.appendChild(genDiv);
         }
     }
+}
+
+/**
+ * Build spouse groups for a generation to keep spouses visually together
+ * Returns an array of arrays, where each inner array is a group of IDs that should stay together
+ * Preserves the order from sortBySpouseGroups
+ */
+function buildSpouseGroupsForGeneration(individualsInGen) {
+    const visited = new Set();
+    const groups = [];
+    
+    for (const personId of individualsInGen) {
+        if (visited.has(personId)) continue;
+        
+        // Check if this person has already been added to a group as someone's spouse
+        let foundInExistingGroup = false;
+        for (const group of groups) {
+            if (group.includes(personId)) {
+                foundInExistingGroup = true;
+                break;
+            }
+        }
+        if (foundInExistingGroup) {
+            visited.add(personId);
+            continue;
+        }
+        
+        const group = [personId];
+        visited.add(personId);
+        
+        // Find all spouses of this person that appear AFTER this person in the list
+        // This preserves the sorting order from sortBySpouseGroups
+        const spouses = gedcomParser.getSpouses(personId);
+        const spousesToAdd = [];
+        
+        for (const spouseInfo of spouses) {
+            if (individualsInGen.includes(spouseInfo.id) && !visited.has(spouseInfo.id)) {
+                // Find the index of the spouse in individualsInGen
+                const spouseIndex = individualsInGen.indexOf(spouseInfo.id);
+                const personIndex = individualsInGen.indexOf(personId);
+                
+                // Only add if spouse comes after person in the sorted list
+                if (spouseIndex > personIndex) {
+                    spousesToAdd.push({
+                        id: spouseInfo.id,
+                        index: spouseIndex
+                    });
+                }
+            }
+        }
+        
+        // Sort spouses by their position in individualsInGen to preserve the order
+        spousesToAdd.sort((a, b) => a.index - b.index);
+        
+        // Add sorted spouses to the group
+        for (const spouse of spousesToAdd) {
+            group.push(spouse.id);
+            visited.add(spouse.id);
+        }
+        
+        groups.push(group);
+    }
+    
+    return groups;
 }
 
 /**
