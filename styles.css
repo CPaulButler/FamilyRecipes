@@ -142,6 +142,13 @@ section h2 {
     z-index: 1;
 }
 
+.spouse-group {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 1.5rem;
+    align-items: center;
+}
+
 .family-member {
     background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
     border: 2px solid #667eea;

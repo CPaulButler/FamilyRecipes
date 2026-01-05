@@ -13,6 +13,95 @@ let generationGroups = {}; // Individuals grouped by generation
 const FALLBACK_YEAR = '9999';
 
 /**
+ * Sort individuals within a generation by spouse groups
+ * Ensures spouses are adjacent, with most recent spouse closest
+ * @param {Array} individuals - Array of individual IDs in a generation
+ * @returns {Array} Sorted array of individual IDs
+ */
+function sortBySpouseGroups(individuals) {
+    if (!gedcomParser || individuals.length === 0) return individuals;
+    
+    const visited = new Set();
+    const result = [];
+    
+    // Build marriage groups
+    const marriageGroups = [];
+    
+    for (const personId of individuals) {
+        if (visited.has(personId)) continue;
+        
+        const person = gedcomParser.getIndividual(personId);
+        if (!person) continue;
+        
+        const spouses = gedcomParser.getSpouses(personId);
+        
+        if (spouses.length === 0) {
+            // Single person, add as individual
+            marriageGroups.push({
+                individuals: [personId],
+                minYear: person.birthDate ? GedcomParser.extractYear(person.birthDate) : FALLBACK_YEAR
+            });
+            visited.add(personId);
+        } else {
+            // Person with spouse(s)
+            // Sort spouses by marriage date (most recent first)
+            const sortedSpouses = [...spouses].sort((a, b) => {
+                const yearA = a.marriageDate ? GedcomParser.extractYear(a.marriageDate) : FALLBACK_YEAR;
+                const yearB = b.marriageDate ? GedcomParser.extractYear(b.marriageDate) : FALLBACK_YEAR;
+                return yearB.localeCompare(yearA); // Descending order (most recent first)
+            });
+            
+            // Build group with person and their spouses in order
+            const group = [personId];
+            visited.add(personId);
+            
+            // Add spouses in reverse order (oldest marriages at the end)
+            for (let i = sortedSpouses.length - 1; i >= 0; i--) {
+                const spouse = sortedSpouses[i];
+                if (individuals.includes(spouse.id) && !visited.has(spouse.id)) {
+                    // For divorced/widowed, add at the end (away from current spouse)
+                    if (spouse.status === 'divorced' || spouse.status === 'widowed') {
+                        group.push(spouse.id);
+                    } else {
+                        // Current spouse should be adjacent (insert after person)
+                        group.splice(1, 0, spouse.id);
+                    }
+                    visited.add(spouse.id);
+                }
+            }
+            
+            // Use the earliest marriage or birth date for sorting groups
+            let minYear = person.birthDate ? GedcomParser.extractYear(person.birthDate) : FALLBACK_YEAR;
+            
+            // Find the earliest marriage date
+            for (const spouse of sortedSpouses) {
+                if (spouse.marriageDate) {
+                    const marriageYear = GedcomParser.extractYear(spouse.marriageDate);
+                    if (marriageYear.localeCompare(minYear) < 0) {
+                        minYear = marriageYear;
+                    }
+                }
+            }
+            
+            marriageGroups.push({
+                individuals: group,
+                minYear: minYear
+            });
+        }
+    }
+    
+    // Sort groups by their minimum year
+    marriageGroups.sort((a, b) => a.minYear.localeCompare(b.minYear));
+    
+    // Flatten groups into result
+    for (const group of marriageGroups) {
+        result.push(...group.individuals);
+    }
+    
+    return result;
+}
+
+/**
  * Compute generation number for each individual
  * Uses BFS from individuals with no parents (root generation)
  */
@@ -27,13 +116,28 @@ function computeGenerations() {
     const queue = [];
     
     // Find root individuals (those with no parents AND have children)
-    // This helps identify the actual starting generation
+    // Exclude individuals who have a spouse with parents (they should be in spouse's generation)
     const roots = [];
     for (const [id, individual] of individuals) {
         const parents = gedcomParser.getParents(id);
         const children = gedcomParser.getChildren(id);
+        
         if (parents.length === 0 && children.length > 0) {
-            roots.push(id);
+            // Check if any spouse has parents
+            const spouses = gedcomParser.getSpouses(id);
+            let spouseHasParents = false;
+            for (const spouseInfo of spouses) {
+                const spouseParents = gedcomParser.getParents(spouseInfo.id);
+                if (spouseParents.length > 0) {
+                    spouseHasParents = true;
+                    break;
+                }
+            }
+            
+            // Only add as root if no spouse has parents
+            if (!spouseHasParents) {
+                roots.push(id);
+            }
         }
     }
     
@@ -49,9 +153,23 @@ function computeGenerations() {
         for (const [id, individual] of individuals) {
             const parents = gedcomParser.getParents(id);
             if (parents.length === 0) {
-                generationMap.set(id, 1);
-                queue.push({ id, generation: 1 });
-                visited.add(id);
+                // Check if any spouse has parents
+                const spouses = gedcomParser.getSpouses(id);
+                let spouseHasParents = false;
+                for (const spouseInfo of spouses) {
+                    const spouseParents = gedcomParser.getParents(spouseInfo.id);
+                    if (spouseParents.length > 0) {
+                        spouseHasParents = true;
+                        break;
+                    }
+                }
+                
+                // Only add as root if no spouse has parents
+                if (!spouseHasParents) {
+                    generationMap.set(id, 1);
+                    queue.push({ id, generation: 1 });
+                    visited.add(id);
+                }
             }
         }
     }
@@ -133,26 +251,9 @@ function computeGenerations() {
         }
     }
     
-    // Sort individuals within each generation by family groups and birth date
+    // Sort individuals within each generation by spouse groups
     for (const generation in generationGroups) {
-        generationGroups[generation].sort((a, b) => {
-            const indivA = gedcomParser.getIndividual(a);
-            const indivB = gedcomParser.getIndividual(b);
-            
-            // Try to group spouses together
-            const spousesA = gedcomParser.getSpouses(a).map(s => s.id);
-            const spousesB = gedcomParser.getSpouses(b).map(s => s.id);
-            
-            // If A is spouse of B, or B is spouse of A, keep them close
-            if (spousesA.includes(b)) return -1;
-            if (spousesB.includes(a)) return 1;
-            
-            // Otherwise sort by birth year
-            const yearA = indivA.birthDate ? GedcomParser.extractYear(indivA.birthDate) : FALLBACK_YEAR;
-            const yearB = indivB.birthDate ? GedcomParser.extractYear(indivB.birthDate) : FALLBACK_YEAR;
-            
-            return yearA.localeCompare(yearB);
-        });
+        generationGroups[generation] = sortBySpouseGroups(generationGroups[generation]);
     }
 }
 
@@ -284,13 +385,24 @@ function generateFamilyTree() {
 
         const individualsInGen = generationGroups[genNum] || [];
         
-        for (const gedcomId of individualsInGen) {
-            const individual = gedcomParser.getIndividual(gedcomId);
-            if (!individual) continue;
+        // Group individuals into spouse groups
+        const spouseGroups = buildSpouseGroupsForGeneration(individualsInGen);
+        
+        // Create a wrapper div for each spouse group to keep them on the same line
+        for (const group of spouseGroups) {
+            const groupDiv = document.createElement('div');
+            groupDiv.className = 'spouse-group';
+            
+            for (const gedcomId of group) {
+                const individual = gedcomParser.getIndividual(gedcomId);
+                if (!individual) continue;
 
-            const htmlId = getHtmlId(gedcomId);
-            const memberDiv = createFamilyMemberElement(individual, gedcomId, htmlId);
-            genDiv.appendChild(memberDiv);
+                const htmlId = getHtmlId(gedcomId);
+                const memberDiv = createFamilyMemberElement(individual, gedcomId, htmlId);
+                groupDiv.appendChild(memberDiv);
+            }
+            
+            genDiv.appendChild(groupDiv);
         }
 
         // Insert before the legend
@@ -301,6 +413,58 @@ function generateFamilyTree() {
             treeContainer.appendChild(genDiv);
         }
     }
+}
+
+/**
+ * Build spouse groups for a generation to keep spouses visually together
+ * Returns an array of arrays, where each inner array is a group of IDs that should stay together
+ * Preserves the order from sortBySpouseGroups
+ */
+function buildSpouseGroupsForGeneration(individualsInGen) {
+    const visited = new Set();
+    const groups = [];
+    const individualsSet = new Set(individualsInGen);
+    
+    for (const personId of individualsInGen) {
+        if (visited.has(personId)) continue;
+        
+        const group = [personId];
+        visited.add(personId);
+        
+        // Find all spouses of this person that appear AFTER this person in the list
+        // This preserves the sorting order from sortBySpouseGroups
+        const spouses = gedcomParser.getSpouses(personId);
+        const spousesToAdd = [];
+        
+        for (const spouseInfo of spouses) {
+            if (individualsSet.has(spouseInfo.id) && !visited.has(spouseInfo.id)) {
+                // Find the index of the spouse in individualsInGen
+                const spouseIndex = individualsInGen.indexOf(spouseInfo.id);
+                const personIndex = individualsInGen.indexOf(personId);
+                
+                // Only add if spouse comes after person in the sorted list
+                if (spouseIndex > personIndex) {
+                    spousesToAdd.push({
+                        id: spouseInfo.id,
+                        index: spouseIndex
+                    });
+                }
+            }
+        }
+        
+        // Sort spouses by their position in individualsInGen to preserve the order
+        spousesToAdd.sort((a, b) => a.index - b.index);
+        
+        // Add sorted spouses to the group
+        for (const spouse of spousesToAdd) {
+            group.push(spouse.id);
+            visited.add(spouse.id);
+        }
+        
+        groups.push(group);
+    }
+    
+    return groups;
 }
 
 /**
