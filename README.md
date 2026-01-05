@@ -105,12 +105,6 @@ Add the person to the GEDCOM file (family.ged) following the GEDCOM 5.5.1 format
 
 The family tree will be automatically regenerated from the GEDCOM file when the page loads.
 
-**Note**: You'll need to add the person to the appropriate mappings in gedcom-loader.js:
-- Add to `idMapping` to define the HTML ID
-- Add to `generationAssignments` to specify which generation
-- Add to `displayOrder` to control position within generation
-- Add to `relationLabels` for custom relationship text
-
 ### Adding a Recipe
 
 Add a new `recipe-card` div in the recipes section:
