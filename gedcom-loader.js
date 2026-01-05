@@ -9,6 +9,9 @@ let initializationPromise = null;
 let generationMap = new Map(); // Computed generation for each individual
 let generationGroups = {}; // Individuals grouped by generation
 
+// Fallback year for sorting individuals without birth dates
+const FALLBACK_YEAR = '9999';
+
 /**
  * Compute generation number for each individual
  * Uses BFS from individuals with no parents (root generation)
@@ -145,8 +148,8 @@ function computeGenerations() {
             if (spousesB.includes(a)) return 1;
             
             // Otherwise sort by birth year
-            const yearA = indivA.birthDate ? GedcomParser.extractYear(indivA.birthDate) : '9999';
-            const yearB = indivB.birthDate ? GedcomParser.extractYear(indivB.birthDate) : '9999';
+            const yearA = indivA.birthDate ? GedcomParser.extractYear(indivA.birthDate) : FALLBACK_YEAR;
+            const yearB = indivB.birthDate ? GedcomParser.extractYear(indivB.birthDate) : FALLBACK_YEAR;
             
             return yearA.localeCompare(yearB);
         });
@@ -206,11 +209,7 @@ function generateRelationLabel(gedcomId) {
         }).filter(n => n).join(' & ');
         
         if (parentNames) {
-            if (label) {
-                label = `Child of ${parentNames}`;
-            } else {
-                label = `Child of ${parentNames}`;
-            }
+            label = `Child of ${parentNames}`;
         }
     }
     
