@@ -45,12 +45,15 @@ class GedcomParser {
                         id: id,
                         name: {},
                         birthDate: '',
+                        birthPlace: '',
                         deathDate: '',
+                        deathPlace: '',
                         sex: '',
                         familiesAsSpouse: [],
                         familiesAsChild: [],
                         objects: [],
                         notes: [],
+                        sources: [],
                         addresses: [],
                         phones: [],
                         emails: [],
@@ -90,6 +93,9 @@ class GedcomParser {
                         currentRecord.name.full = value;
                     } else if (tag === 'SEX' && currentRecord.type === 'INDI') {
                         currentRecord.sex = value;
+                    } else if (tag === 'SOUR' && currentRecord.type === 'INDI') {
+                        // Start tracking a new source
+                        currentRecord.sources.push({ id: value, page: '', www: '' });
                     } else if (tag === 'FAMS' && currentRecord.type === 'INDI') {
                         currentRecord.familiesAsSpouse.push(value);
                     } else if (tag === 'FAMC' && currentRecord.type === 'INDI') {
@@ -128,6 +134,12 @@ class GedcomParser {
                         currentRecord.name.given = value;
                     } else if (tag === 'SURN' && currentRecord.type === 'INDI') {
                         currentRecord.name.surname = value;
+                    } else if (tag === 'SOUR') {
+                        currentSubSubRecord = 'SOUR';
+                        // SOUR at level 2 (under NAME, SEX, etc.)
+                        if (currentRecord.type === 'INDI') {
+                            currentRecord.sources.push({ id: value, page: '', www: '' });
+                        }
                     } else if (tag === 'DATE') {
                         if (currentSubRecord === 'BIRT') {
                             currentRecord.birthDate = value;
@@ -138,12 +150,30 @@ class GedcomParser {
                         } else if (currentSubRecord === 'DIV' && currentRecord.type === 'FAM') {
                             currentRecord.divorceDate = value;
                         }
+                    } else if (tag === 'PLAC') {
+                        if (currentSubRecord === 'BIRT') {
+                            currentRecord.birthPlace = value;
+                        } else if (currentSubRecord === 'DEAT') {
+                            currentRecord.deathPlace = value;
+                        }
                     } else if (tag === '_TYPE' && currentRecord.type === 'INDI') {
                         if (currentSubRecord === 'ADDR' && currentRecord.addresses.length > 0) {
                             currentRecord.addresses[currentRecord.addresses.length - 1].type = value;
                         } else if (currentSubRecord === '_LINK' && currentRecord.customLinks.length > 0) {
                             currentRecord.customLinks[currentRecord.customLinks.length - 1].type = value;
                         }
+                    }
+                } else if (level === 3) {
+                    // Level 3 - under SOUR tags
+                    if (tag === 'PAGE' && currentRecord.type === 'INDI' && currentRecord.sources.length > 0) {
+                        currentRecord.sources[currentRecord.sources.length - 1].page = value;
+                    } else if (currentSubSubRecord === 'SOUR' && tag === 'PAGE' && currentRecord.type === 'INDI' && currentRecord.sources.length > 0) {
+                        currentRecord.sources[currentRecord.sources.length - 1].page = value;
+                    }
+                } else if (level === 4) {
+                    // Level 4 - WWW under DATA under SOUR
+                    if (tag === 'WWW' && currentRecord.type === 'INDI' && currentRecord.sources.length > 0) {
+                        currentRecord.sources[currentRecord.sources.length - 1].www = value;
                     }
                 }
             }

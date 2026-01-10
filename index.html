@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="styles.css">
     <script src="gedcom-parser.js"></script>
     <script src="gedcom-loader.js"></script>
+    <script src="central-person.js" defer></script>
     <script src="tree-lines.js" defer></script>
     <script src="person-details.js" defer></script>
 </head>
@@ -25,6 +26,10 @@
         <!-- Family Tree Section -->
         <section id="family-tree">
             <h2>Family Tree</h2>
+            <div class="person-search-container">
+                <input type="text" id="person-search" placeholder="Search for a family member..." autocomplete="off">
+                <div id="search-results" class="search-results"></div>
+            </div>
             <div class="tree-container">
                 <svg class="tree-lines" aria-hidden="true"></svg>
                 <!-- Family tree will be dynamically generated from GEDCOM data -->

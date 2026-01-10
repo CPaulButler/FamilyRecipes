@@ -40,6 +40,12 @@ document.addEventListener('DOMContentLoaded', async function() {
     attachClickHandlers();
 });
 
+// Also listen for family tree generated event
+document.addEventListener('familyTreeGenerated', function() {
+    // Re-attach handlers after family tree is generated
+    attachClickHandlers();
+});
+
 // Create the modal structure
 function createModal() {
     const modal = document.createElement('div');
@@ -55,6 +61,21 @@ function createModal() {
                 <p id="modal-person-relation" class="relation"></p>
                 
                 <div id="modal-person-bio" class="bio-section"></div>
+                
+                <div class="modal-section" id="vital-stats-section">
+                    <h3>Vital Information</h3>
+                    <div id="modal-vital-stats"></div>
+                </div>
+                
+                <div class="modal-section" id="family-section">
+                    <h3>Family</h3>
+                    <div id="modal-family"></div>
+                </div>
+                
+                <div class="modal-section" id="sources-section">
+                    <h3>Sources & References</h3>
+                    <div id="modal-sources"></div>
+                </div>
                 
                 <div class="modal-section" id="marriages-section">
                     <h3>Marriages</h3>
@@ -98,12 +119,18 @@ function createModal() {
     });
 }
 
-// Attach click handlers to all family member tiles
+// Attach click handlers to details buttons
 function attachClickHandlers() {
-    const familyMembers = document.querySelectorAll('.family-member');
-    familyMembers.forEach(member => {
-        member.addEventListener('click', function() {
-            const personId = this.id;
+    attachDetailsButtonHandlers();
+}
+
+// Attach click handlers to all details buttons
+function attachDetailsButtonHandlers() {
+    const detailsButtons = document.querySelectorAll('.details-btn');
+    detailsButtons.forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.stopPropagation(); // Prevent tile click from firing
+            const personId = this.closest('.family-member').id;
             showPersonDetails(personId);
         });
     });
@@ -114,6 +141,10 @@ function showPersonDetails(personId) {
     const personInfo = getPersonInfo(personId);
     
     const modal = document.getElementById('person-modal');
+    if (!modal) {
+        console.error('Modal not found');
+        return;
+    }
     
     // Set basic info from GEDCOM
     document.getElementById('modal-person-name').textContent = personInfo.name;
@@ -133,8 +164,12 @@ function showPersonDetails(personId) {
     let photos = [];
     let documents = [];
     let addresses = { physical: [], virtual: [] };
+    let individual = null;
     
     if (gedcomId && parser) {
+        // Get individual data
+        individual = parser.getIndividual(gedcomId);
+        
         // Get data from GEDCOM
         bio = parser.getBio(gedcomId);
         photos = parser.getPhotos(gedcomId);
@@ -149,6 +184,116 @@ function showPersonDetails(personId) {
         bioSection.style.display = 'block';
     } else {
         bioSection.style.display = 'none';
+    }
+    
+    // Set vital statistics
+    const vitalStatsContainer = document.getElementById('modal-vital-stats');
+    const vitalStatsSection = document.getElementById('vital-stats-section');
+    let vitalStatsHTML = '<div class="vital-stats-list">';
+    
+    if (individual) {
+        if (individual.sex) {
+            const gender = individual.sex === 'M' ? 'Male' : individual.sex === 'F' ? 'Female' : individual.sex;
+            vitalStatsHTML += `<p><strong>Gender:</strong> ${gender}</p>`;
+        }
+        
+        if (individual.birthDate) {
+            vitalStatsHTML += `<p><strong>Born:</strong> ${individual.birthDate}`;
+            if (individual.birthPlace) {
+                vitalStatsHTML += ` in ${individual.birthPlace}`;
+            }
+            vitalStatsHTML += `</p>`;
+        }
+        
+        if (individual.deathDate) {
+            vitalStatsHTML += `<p><strong>Died:</strong> ${individual.deathDate}`;
+            if (individual.deathPlace) {
+                vitalStatsHTML += ` in ${individual.deathPlace}`;
+            }
+            vitalStatsHTML += `</p>`;
+        }
+        
+        vitalStatsHTML += '</div>';
+        vitalStatsContainer.innerHTML = vitalStatsHTML;
+        vitalStatsSection.style.display = 'block';
+    } else {
+        vitalStatsSection.style.display = 'none';
+    }
+    
+    // Set family information (parents and children)
+    const familyContainer = document.getElementById('modal-family');
+    const familySection = document.getElementById('family-section');
+    let familyHTML = '';
+    
+    // Get parents
+    const parentsAttr = familyMemberElement ? familyMemberElement.getAttribute('data-parents') : null;
+    if (parentsAttr) {
+        const parentIds = parentsAttr.split(',').map(id => id.trim()).filter(id => id);
+        if (parentIds.length > 0) {
+            familyHTML += '<div class="family-group"><h4>Parents</h4>';
+            parentIds.forEach(parentId => {
+                const parentInfo = getPersonInfo(parentId);
+                const parentName = parentInfo.fullName || parentInfo.name || parentId;
+                familyHTML += `<p>${parentName} <span class="years">${parentInfo.years}</span></p>`;
+            });
+            familyHTML += '</div>';
+        }
+    }
+    
+    // Get children
+    const childrenAttr = familyMemberElement ? familyMemberElement.getAttribute('data-children') : null;
+    if (childrenAttr) {
+        const childIds = childrenAttr.split(',').map(id => id.trim()).filter(id => id);
+        if (childIds.length > 0) {
+            familyHTML += '<div class="family-group"><h4>Children</h4>';
+            childIds.forEach(childId => {
+                const childInfo = getPersonInfo(childId);
+                const childName = childInfo.fullName || childInfo.name || childId;
+                familyHTML += `<p>${childName} <span class="years">${childInfo.years}</span></p>`;
+            });
+            familyHTML += '</div>';
+        }
+    }
+    
+    if (familyHTML) {
+        familyContainer.innerHTML = familyHTML;
+        familySection.style.display = 'block';
+    } else {
+        familySection.style.display = 'none';
+    }
+    
+    // Set sources
+    const sourcesContainer = document.getElementById('modal-sources');
+    const sourcesSection = document.getElementById('sources-section');
+    
+    if (individual && individual.sources && individual.sources.length > 0) {
+        let sourcesHTML = '<div class="sources-list">';
+        
+        // Filter out duplicates and sources without page info
+        const uniqueSources = [];
+        const seen = new Set();
+        
+        individual.sources.forEach(source => {
+            if (source.page && !seen.has(source.page)) {
+                seen.add(source.page);
+                uniqueSources.push(source);
+            }
+        });
+        
+        uniqueSources.forEach((source, index) => {
+            sourcesHTML += `<div class="source-item">`;
+            sourcesHTML += `<p class="source-citation">${source.page}</p>`;
+            if (source.www) {
+                sourcesHTML += `<p class="source-link"><a href="${source.www}" target="_blank" rel="noopener noreferrer">View Source</a></p>`;
+            }
+            sourcesHTML += `</div>`;
+        });
+        
+        sourcesHTML += '</div>';
+        sourcesContainer.innerHTML = sourcesHTML;
+        sourcesSection.style.display = 'block';
+    } else {
+        sourcesSection.style.display = 'none';
     }
     
     // Set marriages
@@ -286,3 +431,7 @@ function closeModal() {
     modal.style.display = 'none';
     document.body.style.overflow = ''; // Restore scrolling
 }
+
+// Make functions globally accessible
+window.showPersonDetails = showPersonDetails;
+window.closeModal = closeModal;
