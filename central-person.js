@@ -22,12 +22,18 @@ function initializeSearch() {
         const name = member.querySelector('h3')?.textContent || '';
         const relation = member.querySelector('.relation')?.textContent || '';
         const years = member.querySelector('.years')?.textContent || '';
+        
+        // Get full name from GEDCOM data
+        const personInfo = getPersonInfo(member.id);
+        const fullName = personInfo ? personInfo.fullName || '' : '';
+        
         return {
             id: member.id,
             name: name,
+            fullName: fullName,
             relation: relation,
             years: years,
-            searchText: `${name} ${relation} ${years}`.toLowerCase()
+            searchText: `${name} ${fullName} ${relation} ${years}`.toLowerCase()
         };
     });
     

@@ -95,7 +95,8 @@ class GedcomParser {
                     currentSubSubRecord = null;
                     
                     if (tag === 'NAME' && currentRecord.type === 'INDI') {
-                        currentRecord.name.full = value;
+                        // Remove GEDCOM surname delimiters (slashes)
+                        currentRecord.name.full = value.replace(/\//g, '');
                     } else if (tag === 'SEX' && currentRecord.type === 'INDI') {
                         currentRecord.sex = value;
                     } else if (tag === 'OCCU' && currentRecord.type === 'INDI') {
