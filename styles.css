@@ -759,6 +759,30 @@ footer p {
     min-width: 100px;
 }
 
+/* Residences Section Styles */
+.residences-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.residence-item {
+    padding: 0.75rem 1rem;
+    background-color: #f5f7fa;
+    border-radius: 6px;
+    border-left: 3px solid #764ba2;
+}
+
+.residence-item p {
+    margin: 0;
+    color: #555;
+    line-height: 1.5;
+}
+
+.residence-item strong {
+    color: #333;
+}
+
 /* Family Section Styles */
 .family-group {
     margin-bottom: 1.5rem;

@@ -48,7 +48,12 @@ class GedcomParser {
                         birthPlace: '',
                         deathDate: '',
                         deathPlace: '',
+                        burialDate: '',
+                        burialPlace: '',
                         sex: '',
+                        occupation: '',
+                        education: '',
+                        residences: [],
                         familiesAsSpouse: [],
                         familiesAsChild: [],
                         objects: [],
@@ -93,9 +98,16 @@ class GedcomParser {
                         currentRecord.name.full = value;
                     } else if (tag === 'SEX' && currentRecord.type === 'INDI') {
                         currentRecord.sex = value;
+                    } else if (tag === 'OCCU' && currentRecord.type === 'INDI') {
+                        currentRecord.occupation = value;
+                    } else if (tag === 'EDUC' && currentRecord.type === 'INDI') {
+                        currentRecord.education = value;
+                    } else if (tag === 'RESI' && currentRecord.type === 'INDI') {
+                        // Start tracking a new residence
+                        currentRecord.residences.push({ date: '', place: '' });
                     } else if (tag === 'SOUR' && currentRecord.type === 'INDI') {
                         // Start tracking a new source
-                        currentRecord.sources.push({ id: value, page: '', www: '' });
+                        currentRecord.sources.push({ id: value, page: '', www: '', text: '' });
                     } else if (tag === 'FAMS' && currentRecord.type === 'INDI') {
                         currentRecord.familiesAsSpouse.push(value);
                     } else if (tag === 'FAMC' && currentRecord.type === 'INDI') {
@@ -145,6 +157,10 @@ class GedcomParser {
                             currentRecord.birthDate = value;
                         } else if (currentSubRecord === 'DEAT') {
                             currentRecord.deathDate = value;
+                        } else if (currentSubRecord === 'BURI') {
+                            currentRecord.burialDate = value;
+                        } else if (currentSubRecord === 'RESI' && currentRecord.type === 'INDI' && currentRecord.residences.length > 0) {
+                            currentRecord.residences[currentRecord.residences.length - 1].date = value;
                         } else if (currentSubRecord === 'MARR' && currentRecord.type === 'FAM') {
                             currentRecord.marriageDate = value;
                         } else if (currentSubRecord === 'DIV' && currentRecord.type === 'FAM') {
@@ -155,6 +171,18 @@ class GedcomParser {
                             currentRecord.birthPlace = value;
                         } else if (currentSubRecord === 'DEAT') {
                             currentRecord.deathPlace = value;
+                        } else if (currentSubRecord === 'BURI') {
+                            currentRecord.burialPlace = value;
+                        } else if (currentSubRecord === 'RESI' && currentRecord.type === 'INDI' && currentRecord.residences.length > 0) {
+                            currentRecord.residences[currentRecord.residences.length - 1].place = value;
+                        }
+                    } else if (tag === 'CONT' || tag === 'CONC') {
+                        // Handle continuation lines
+                        const separator = tag === 'CONT' ? ' ' : '';
+                        if (currentSubRecord === 'NOTE' && currentRecord.type === 'INDI' && currentRecord.notes.length > 0) {
+                            currentRecord.notes[currentRecord.notes.length - 1] += separator + value;
+                        } else if (currentSubSubRecord === 'TEXT' && currentRecord.type === 'INDI' && currentRecord.sources.length > 0) {
+                            currentRecord.sources[currentRecord.sources.length - 1].text += separator + value;
                         }
                     } else if (tag === '_TYPE' && currentRecord.type === 'INDI') {
                         if (currentSubRecord === 'ADDR' && currentRecord.addresses.length > 0) {
@@ -165,16 +193,24 @@ class GedcomParser {
                     }
                 } else if (level === 3) {
                     // Level 3 - under SOUR tags
+                    currentSubSubRecord = tag;
                     if (tag === 'PAGE' && currentRecord.type === 'INDI' && currentRecord.sources.length > 0) {
                         currentRecord.sources[currentRecord.sources.length - 1].page = value;
                     } else if (currentSubSubRecord === 'SOUR' && tag === 'PAGE' && currentRecord.type === 'INDI' && currentRecord.sources.length > 0) {
                         currentRecord.sources[currentRecord.sources.length - 1].page = value;
-                    }
-                } else if (level === 4) {
-                    // Level 4 - WWW under DATA under SOUR
-                    if (tag === 'WWW' && currentRecord.type === 'INDI' && currentRecord.sources.length > 0) {
+                    } else if (tag === 'WWW' && currentRecord.type === 'INDI' && currentRecord.sources.length > 0) {
                         currentRecord.sources[currentRecord.sources.length - 1].www = value;
                     }
+                } else if (level === 4) {
+                    // Level 4 - TEXT and WWW under DATA under SOUR
+                    if (tag === 'TEXT' && currentRecord.type === 'INDI' && currentRecord.sources.length > 0) {
+                        currentRecord.sources[currentRecord.sources.length - 1].text = value;
+                    } else if (tag === 'WWW' && currentRecord.type === 'INDI' && currentRecord.sources.length > 0) {
+                        currentRecord.sources[currentRecord.sources.length - 1].www = value;
+                    }
+                } else if (level === 5) {
+                    // Level 5 - CONT under TEXT
+                    currentSubSubRecord = tag;
                 }
             }
         }

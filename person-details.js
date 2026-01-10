@@ -67,6 +67,11 @@ function createModal() {
                     <div id="modal-vital-stats"></div>
                 </div>
                 
+                <div class="modal-section" id="residences-section">
+                    <h3>Residences</h3>
+                    <div id="modal-residences"></div>
+                </div>
+                
                 <div class="modal-section" id="family-section">
                     <h3>Family</h3>
                     <div id="modal-family"></div>
@@ -197,6 +202,14 @@ function showPersonDetails(personId) {
             vitalStatsHTML += `<p><strong>Gender:</strong> ${gender}</p>`;
         }
         
+        if (individual.occupation) {
+            vitalStatsHTML += `<p><strong>Occupation:</strong> ${individual.occupation}</p>`;
+        }
+        
+        if (individual.education) {
+            vitalStatsHTML += `<p><strong>Education:</strong> ${individual.education}</p>`;
+        }
+        
         if (individual.birthDate) {
             vitalStatsHTML += `<p><strong>Born:</strong> ${individual.birthDate}`;
             if (individual.birthPlace) {
@@ -213,11 +226,52 @@ function showPersonDetails(personId) {
             vitalStatsHTML += `</p>`;
         }
         
+        if (individual.burialDate || individual.burialPlace) {
+            vitalStatsHTML += `<p><strong>Burial:</strong> `;
+            if (individual.burialDate) {
+                vitalStatsHTML += individual.burialDate;
+            }
+            if (individual.burialPlace) {
+                if (individual.burialDate) vitalStatsHTML += ' in ';
+                vitalStatsHTML += individual.burialPlace;
+            }
+            vitalStatsHTML += `</p>`;
+        }
+        
         vitalStatsHTML += '</div>';
         vitalStatsContainer.innerHTML = vitalStatsHTML;
         vitalStatsSection.style.display = 'block';
     } else {
         vitalStatsSection.style.display = 'none';
+    }
+    
+    // Set residences
+    const residencesContainer = document.getElementById('modal-residences');
+    const residencesSection = document.getElementById('residences-section');
+    
+    if (individual && individual.residences && individual.residences.length > 0) {
+        let residencesHTML = '<div class="residences-list">';
+        
+        // Filter out residences without meaningful data
+        const validResidences = individual.residences.filter(r => r.date || r.place);
+        
+        validResidences.forEach((residence, index) => {
+            residencesHTML += `<div class="residence-item">`;
+            if (residence.date && residence.place) {
+                residencesHTML += `<p><strong>${residence.date}:</strong> ${residence.place}</p>`;
+            } else if (residence.date) {
+                residencesHTML += `<p><strong>${residence.date}</strong></p>`;
+            } else if (residence.place) {
+                residencesHTML += `<p>${residence.place}</p>`;
+            }
+            residencesHTML += `</div>`;
+        });
+        
+        residencesHTML += '</div>';
+        residencesContainer.innerHTML = residencesHTML;
+        residencesSection.style.display = 'block';
+    } else {
+        residencesSection.style.display = 'none';
     }
     
     // Set family information (parents and children)
