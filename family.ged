@@ -88,6 +88,8 @@
 3 DATA
 4 WWW https://www.newspapers.com/image/356868212/?article=bf722358-f76a-46b7-9d3b-bb88b7a50184&focus=0.81216484,0.18088211,0.96922505,0.40037617&xid=2378
 3 _APID 1,61843::364505612
+1 OBJE @O167@
+2 _PRIM Y
 1 FAMC @F77@
 1 FAMS @F36@
 1 FAMS @F3@
@@ -25169,6 +25171,11 @@
 1 _ORIG u
 2 _URL https://www.findagrave.com/memorial/21906779/dorinda-evans
 1 _ATL N
+0 @O167@ OBJE
+1 FILE images/photos/Marty.jpg
+2 FORM jpg
+3 TYPE image
+2 TITL Martin Lee Porter
 0 @S_2144727909@ SOUR
 1 TITL World War I Draft Registration Cards, 1917-1918
 1 AUTH Ancestry.com
