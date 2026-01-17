@@ -6,7 +6,7 @@
 }
 
 body {
-    font-family: 'Georgia', 'Times New Roman', serif;
+    font-family: 'Calibri', 'Arial', sans-serif;
     line-height: 1.6;
     color: #333;
     background-color: #faf8f3;
@@ -159,6 +159,7 @@ section h2 {
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
+    position: relative;
 }
 
 .family-member:hover {
@@ -182,6 +183,23 @@ section h2 {
 .family-member .years {
     color: #999;
     font-size: 0.9rem;
+}
+
+.child-count {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    background-color: #ff8c00;
+    color: #000;
+    font-size: 1.1rem;
+    font-weight: bold;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
 .details-btn {

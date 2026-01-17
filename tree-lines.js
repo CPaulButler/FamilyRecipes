@@ -65,7 +65,7 @@ function showConnectionLines(member) {
     const memberY = memberRect.top + memberRect.height / 2 - containerRect.top;
     
     // Draw lines to spouses
-    drawSpouseLines(svg, member, memberX, memberY, containerRect);
+    drawSpouseLines(svg, member, memberX, memberY, memberRect, containerRect);
     
     // Draw lines to parents
     drawParentLines(svg, member, memberX, memberY, containerRect);
@@ -74,7 +74,7 @@ function showConnectionLines(member) {
     drawChildLines(svg, member, memberX, memberY, containerRect);
 }
 
-function drawSpouseLines(svg, member, memberX, memberY, containerRect) {
+function drawSpouseLines(svg, member, memberX, memberY, memberRect, containerRect) {
     let spouses = [];
     
     // Check for old data-spouse format
@@ -101,15 +101,34 @@ function drawSpouseLines(svg, member, memberX, memberY, containerRect) {
         if (!spouse) return;
         
         const spouseRect = spouse.getBoundingClientRect();
+        // Skip if element has no dimensions (not rendered)
+        if (spouseRect.width === 0 || spouseRect.height === 0) return;
+        
         const spouseX = spouseRect.left + spouseRect.width / 2 - containerRect.left;
         const spouseY = spouseRect.top + spouseRect.height / 2 - containerRect.top;
+        
+        // Adjust Y position based on marriage status to prevent overlapping lines
+        let memberYAdjusted = memberY;
+        let spouseYAdjusted = spouseY;
+        const offset = memberRect.height * 0.25; // 25% of tile height
+        
+        if (spouseInfo.status === 'divorced') {
+            // Divorced lines above center
+            memberYAdjusted = memberY - offset;
+            spouseYAdjusted = spouseY - offset;
+        } else if (spouseInfo.status === 'widowed') {
+            // Widowed lines below center
+            memberYAdjusted = memberY + offset;
+            spouseYAdjusted = spouseY + offset;
+        }
+        // married status stays at center (no adjustment)
         
         // Draw direct line
         const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
         line.setAttribute('x1', memberX);
-        line.setAttribute('y1', memberY);
+        line.setAttribute('y1', memberYAdjusted);
         line.setAttribute('x2', spouseX);
-        line.setAttribute('y2', spouseY);
+        line.setAttribute('y2', spouseYAdjusted);
         
         // Set class based on marriage status
         let lineClass = 'hover-line spouse-hover-line';
@@ -137,6 +156,9 @@ function drawParentLines(svg, member, memberX, memberY, containerRect) {
         if (!parent) return;
         
         const parentRect = parent.getBoundingClientRect();
+        // Skip if element has no dimensions (not rendered)
+        if (parentRect.width === 0 || parentRect.height === 0) return;
+        
         const parentX = parentRect.left + parentRect.width / 2 - containerRect.left;
         const parentY = parentRect.top + parentRect.height / 2 - containerRect.top;
         
@@ -162,6 +184,9 @@ function drawChildLines(svg, member, memberX, memberY, containerRect) {
         if (!child) return;
         
         const childRect = child.getBoundingClientRect();
+        // Skip if element has no dimensions (not rendered)
+        if (childRect.width === 0 || childRect.height === 0) return;
+        
         const childX = childRect.left + childRect.width / 2 - containerRect.left;
         const childY = childRect.top + childRect.height / 2 - containerRect.top;
         

@@ -496,6 +496,12 @@ function createFamilyMemberElement(individual, gedcomId, htmlId) {
     if (children.length > 0) {
         const childHtmlIds = children.map(c => getHtmlId(c));
         div.setAttribute('data-children', childHtmlIds.join(','));
+        
+        // Add child count badge
+        const childCount = document.createElement('div');
+        childCount.className = 'child-count';
+        childCount.textContent = children.length;
+        div.appendChild(childCount);
     }
 
     // Get parents
