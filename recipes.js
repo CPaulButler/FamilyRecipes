@@ -208,6 +208,20 @@ const recipeData = [
                 <p class="recipe-note">Martin's special winter warmer - perfect for cold evenings!</p>
             `
         }
+    },
+    {
+        id: 'grandmas-lemonade',
+        name: "Grandma's Fresh Lemonade",
+        familyMember: 'i1',
+        familyMemberName: 'Linda',
+        type: 'drink',
+        flavor: 'sweet',
+        ingredients: ['lemons', 'sugar', 'water', 'ice', 'mint'],
+        description: 'A refreshing homemade lemonade recipe perfect for summer gatherings.',
+        format: 'md',
+        content: {
+            md: 'recipes/grandmas-lemonade.md'
+        }
     }
 ];
 
