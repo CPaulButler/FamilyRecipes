@@ -71,6 +71,13 @@ function initializeSearch() {
         searchResults.querySelectorAll('.search-result[data-person-id]').forEach(result => {
             result.addEventListener('click', function() {
                 const personId = this.getAttribute('data-person-id');
+                
+                // Find and display connection path from current central person
+                if (currentCentralPerson && currentCentralPerson !== personId) {
+                    const path = findConnectionPath(currentCentralPerson, personId);
+                    displayConnectionPath(path);
+                }
+                
                 setCurrentCentralPerson(personId);
                 searchInput.value = '';
                 searchResults.innerHTML = '';
@@ -82,6 +89,11 @@ function initializeSearch() {
         });
     });
     
+    // Clear connection path when starting new search
+    searchInput.addEventListener('focus', function() {
+        clearConnectionPath();
+    });
+    
     // Close results when clicking outside
     document.addEventListener('click', function(e) {
         if (!searchInput.contains(e.target) && !searchResults.contains(e.target)) {
@@ -89,6 +101,15 @@ function initializeSearch() {
         }
     });
 }
+
+// Helper function to get person info from person-details.js
+function getPersonInfo(personId) {
+    if (typeof personData !== 'undefined' && personData[personId]) {
+        return personData[personId];
+    }
+    return null;
+}
+
 
 // Listen for when family tree is generated from GEDCOM
 document.addEventListener('familyTreeGenerated', function() {
@@ -374,6 +395,212 @@ function getChildren(element) {
     if (!children) return [];
     
     return children.split(',').map(id => id.trim()).filter(id => id);
+}
+
+/**
+ * Find path between two family members using BFS
+ * @param {string} startId - Starting person ID
+ * @param {string} endId - Ending person ID
+ * @returns {Array<string>} Array of person IDs forming the path, or empty array if no path
+ */
+function findConnectionPath(startId, endId) {
+    if (startId === endId) return [startId];
+    
+    const visited = new Set();
+    const queue = [[startId]];
+    visited.add(startId);
+    
+    while (queue.length > 0) {
+        const path = queue.shift();
+        const currentId = path[path.length - 1];
+        const currentElement = document.getElementById(currentId);
+        
+        if (!currentElement) continue;
+        
+        // Get all connected people (parents, children, spouses)
+        const connections = [
+            ...getParents(currentElement),
+            ...getChildren(currentElement),
+            ...getSpouses(currentElement)
+        ];
+        
+        for (const connectedId of connections) {
+            if (visited.has(connectedId)) continue;
+            
+            const newPath = [...path, connectedId];
+            
+            if (connectedId === endId) {
+                return newPath;
+            }
+            
+            visited.add(connectedId);
+            queue.push(newPath);
+        }
+    }
+    
+    return []; // No path found
+}
+
+/**
+ * Determine relationship type between two people
+ * @param {string} fromId - First person ID
+ * @param {string} toId - Second person ID
+ * @returns {string} Relationship type: 'parent', 'child', 'spouse-married', 'spouse-divorced', 'spouse-widowed'
+ */
+function getRelationshipType(fromId, toId) {
+    const fromElement = document.getElementById(fromId);
+    const toElement = document.getElementById(toId);
+    
+    if (!fromElement || !toElement) return 'unknown';
+    
+    // Check if toId is a parent of fromId
+    const parents = getParents(fromElement);
+    if (parents.includes(toId)) {
+        return 'parent';
+    }
+    
+    // Check if toId is a child of fromId
+    const children = getChildren(fromElement);
+    if (children.includes(toId)) {
+        return 'child';
+    }
+    
+    // Check if toId is a spouse of fromId
+    const marriages = fromElement.getAttribute('data-marriages');
+    if (marriages) {
+        try {
+            const marriageData = JSON.parse(marriages);
+            const spouseData = marriageData.find(m => m.spouse === toId);
+            if (spouseData) {
+                if (spouseData.status === 'divorced') {
+                    return 'spouse-divorced';
+                } else if (spouseData.status === 'widowed' || spouseData.status === 'deceased') {
+                    return 'spouse-widowed';
+                } else {
+                    return 'spouse-married';
+                }
+            }
+        } catch (e) {
+            console.error('Error parsing marriage data:', e);
+        }
+    }
+    
+    return 'unknown';
+}
+
+/**
+ * Display connection path as visual breadcrumbs
+ * @param {Array<string>} path - Array of person IDs
+ */
+function displayConnectionPath(path) {
+    // Remove existing path if any
+    const existingPath = document.getElementById('connection-path');
+    if (existingPath) {
+        existingPath.remove();
+    }
+    
+    if (!path || path.length === 0) return;
+    
+    const searchContainer = document.querySelector('.person-search-container');
+    if (!searchContainer) return;
+    
+    // Create path container
+    const pathContainer = document.createElement('div');
+    pathContainer.id = 'connection-path';
+    pathContainer.className = 'connection-path';
+    
+    // Add path title
+    const pathTitle = document.createElement('div');
+    pathTitle.className = 'connection-path-title';
+    pathTitle.textContent = 'Connection Path:';
+    pathContainer.appendChild(pathTitle);
+    
+    // Create path icons container
+    const iconsContainer = document.createElement('div');
+    iconsContainer.className = 'connection-path-icons';
+    
+    path.forEach((personId, index) => {
+        const personElement = document.getElementById(personId);
+        if (!personElement) return;
+        
+        const personInfo = getPersonInfo(personId);
+        const name = personElement.querySelector('h3')?.textContent || 'Unknown';
+        const fullName = personInfo ? (personInfo.fullName || name) : name;
+        
+        // Create icon
+        const icon = document.createElement('div');
+        icon.className = 'connection-path-icon';
+        icon.setAttribute('data-person-id', personId);
+        icon.setAttribute('data-full-name', fullName);
+        
+        // Add initials to icon
+        const initials = getInitials(name);
+        icon.textContent = initials;
+        
+        // Highlight current central person
+        if (personId === currentCentralPerson) {
+            icon.classList.add('current-person');
+        }
+        
+        // Add tooltip
+        const tooltip = document.createElement('div');
+        tooltip.className = 'connection-path-tooltip';
+        tooltip.textContent = fullName;
+        icon.appendChild(tooltip);
+        
+        // Add click handler
+        icon.addEventListener('click', function() {
+            setCurrentCentralPerson(personId);
+            // Scroll to tree
+            document.getElementById('family-tree')?.scrollIntoView({ behavior: 'smooth' });
+        });
+        
+        iconsContainer.appendChild(icon);
+        
+        // Add arrow between icons (except after last one)
+        if (index < path.length - 1) {
+            const nextPersonId = path[index + 1];
+            const relationshipType = getRelationshipType(personId, nextPersonId);
+            
+            const arrow = document.createElement('div');
+            arrow.className = 'connection-path-arrow';
+            arrow.classList.add(`relationship-${relationshipType}`);
+            arrow.innerHTML = '→';
+            
+            // Add title for accessibility
+            const relationshipLabel = relationshipType.replace('spouse-', '').replace('-', ' ');
+            arrow.title = relationshipLabel.charAt(0).toUpperCase() + relationshipLabel.slice(1);
+            
+            iconsContainer.appendChild(arrow);
+        }
+    });
+    
+    pathContainer.appendChild(iconsContainer);
+    
+    // Insert after search container
+    searchContainer.parentNode.insertBefore(pathContainer, searchContainer.nextSibling);
+}
+
+/**
+ * Get initials from a name
+ * @param {string} name - Person's name
+ * @returns {string} Initials
+ */
+function getInitials(name) {
+    const parts = name.split(' ').filter(p => p.length > 0);
+    if (parts.length === 0) return '?';
+    if (parts.length === 1) return parts[0].substring(0, 2).toUpperCase();
+    return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
+}
+
+/**
+ * Clear connection path display
+ */
+function clearConnectionPath() {
+    const existingPath = document.getElementById('connection-path');
+    if (existingPath) {
+        existingPath.remove();
+    }
 }
 
 /**
