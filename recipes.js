@@ -351,9 +351,15 @@ function renderRecipeContent(recipe) {
             return recipe.content.html;
         
         case 'md':
-            // For markdown, you would need a markdown parser
-            // For now, just display as pre-formatted text
-            return `<pre>${recipe.content.md}</pre>`;
+            // For markdown files, link to the file or display a message
+            // In a production environment, you would fetch and parse the markdown
+            if (recipe.content.md) {
+                return `<div class="recipe-media">
+                    <p><a href="${recipe.content.md}" target="_blank">View Markdown Recipe</a></p>
+                    <p><em>Note: For full markdown rendering support, a markdown parser library would be needed.</em></p>
+                </div>`;
+            }
+            return '<p>Markdown content not available</p>';
         
         case 'pdf':
             return `<div class="recipe-media">
@@ -398,14 +404,15 @@ function createRecipeModal() {
         }
     };
     
-    document.addEventListener('keydown', function(event) {
-        if (event.key === 'Escape') {
-            closeRecipeModal();
-        }
-    });
-    
     return modal;
 }
+
+// Global escape key handler (added only once)
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        closeRecipeModal();
+    }
+});
 
 // Close recipe modal
 function closeRecipeModal() {
