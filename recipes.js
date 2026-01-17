@@ -18,10 +18,24 @@ function escapeHtml(text) {
 // Each recipe supports multiple formats: html, md, pdf, jpg, links to images
 const recipeData = [
     {
+        id: 'grandmas-lemonade',
+        name: "Grandma's Fresh Lemonade",
+        familyMember: '@I6036539853@',
+        familyMemberName: 'Linda Margot Fontenot',
+        type: 'drink',
+        flavor: 'sweet',
+        ingredients: ['lemons', 'sugar', 'water', 'ice', 'mint'],
+        description: 'A refreshing homemade lemonade recipe perfect for summer gatherings.',
+        format: 'md',
+        content: {
+            mdFile: 'recipes/grandmas-lemonade.md'
+        }
+    },
+    {
         id: 'lindas-cornbread',
         name: "Linda's Cornbread",
-        familyMember: 'i1',
-        familyMemberName: 'Linda',
+        familyMember: '@I6036539853@',
+        familyMemberName: 'Linda Margot Fontenot',
         type: 'side',
         flavor: 'savory',
         ingredients: ['cornmeal', 'flour', 'sugar', 'baking powder', 'salt', 'milk', 'vegetable oil', 'egg'],
@@ -56,8 +70,8 @@ const recipeData = [
     {
         id: 'uncle-toms-bbq-ribs',
         name: "Uncle Tom's BBQ Ribs",
-        familyMember: 'i6',
-        familyMemberName: 'Uncle Tom',
+        familyMember: '@I_949871576@',
+        familyMemberName: 'Martin Lee Porter',
         type: 'entree',
         flavor: 'savory',
         ingredients: ['baby back ribs', 'brown sugar', 'paprika', 'black pepper', 'salt', 'garlic powder', 'onion powder', 'cayenne pepper', 'BBQ sauce'],
@@ -94,8 +108,8 @@ const recipeData = [
     {
         id: 'moms-apple-pie',
         name: "Mom's Apple Pie",
-        familyMember: 'i4',
-        familyMemberName: 'Mom Sarah',
+        familyMember: '@I_949796306@',
+        familyMemberName: 'Sarah Jane Porter',
         type: 'dessert',
         flavor: 'sweet',
         ingredients: ['pie crusts', 'Granny Smith apples', 'sugar', 'flour', 'cinnamon', 'nutmeg', 'salt', 'butter', 'egg'],
@@ -133,8 +147,8 @@ const recipeData = [
     {
         id: 'aunt-lindas-chocolate-chip-cookies',
         name: "Aunt Linda's Chocolate Chip Cookies",
-        familyMember: 'i8',
-        familyMemberName: 'Aunt Linda',
+        familyMember: '@I372150330015@',
+        familyMemberName: 'Linda Kay King',
         type: 'dessert',
         flavor: 'sweet',
         ingredients: ['flour', 'baking soda', 'salt', 'butter', 'granulated sugar', 'brown sugar', 'eggs', 'vanilla extract', 'chocolate chips'],
@@ -172,8 +186,8 @@ const recipeData = [
     {
         id: 'martins-beef-stew',
         name: "Martin's Beef Stew",
-        familyMember: 'i2',
-        familyMemberName: 'Martin',
+        familyMember: '@I_949871576@',
+        familyMemberName: 'Martin Lee Porter',
         type: 'entree',
         flavor: 'savory',
         ingredients: ['beef chuck', 'flour', 'vegetable oil', 'beef broth', 'potatoes', 'carrots', 'celery', 'onion', 'garlic', 'bay leaves', 'salt', 'pepper'],
@@ -207,20 +221,6 @@ const recipeData = [
                 </ol>
                 <p class="recipe-note">Martin's special winter warmer - perfect for cold evenings!</p>
             `
-        }
-    },
-    {
-        id: 'grandmas-lemonade',
-        name: "Grandma's Fresh Lemonade",
-        familyMember: 'i1',
-        familyMemberName: 'Linda',
-        type: 'drink',
-        flavor: 'sweet',
-        ingredients: ['lemons', 'sugar', 'water', 'ice', 'mint'],
-        description: 'A refreshing homemade lemonade recipe perfect for summer gatherings.',
-        format: 'md',
-        content: {
-            md: 'recipes/grandmas-lemonade.md'
         }
     }
 ];
@@ -342,7 +342,7 @@ function updateRecipeCount(visibleCount = null) {
 }
 
 // View recipe in modal
-function viewRecipe(recipeId) {
+async function viewRecipe(recipeId) {
     const recipe = recipeData.find(r => r.id === recipeId);
     if (!recipe) return;
     
@@ -362,6 +362,7 @@ function viewRecipe(recipeId) {
     const safeDescription = escapeHtml(recipe.description);
     const safeMemberName = escapeHtml(recipe.familyMemberName);
     
+    // Show loading state
     modalBody.innerHTML = `
         <h2>${safeName}</h2>
         <div class="recipe-meta">
@@ -371,32 +372,59 @@ function viewRecipe(recipeId) {
         <p class="recipe-attribution">From: <a href="index.html#${recipe.familyMember}">${safeMemberName}</a></p>
         <p class="recipe-description">${safeDescription}</p>
         <div class="recipe-content">
-            ${renderRecipeContent(recipe)}
+            <p>Loading recipe...</p>
         </div>
     `;
     
     // Show modal
     modal.style.display = 'block';
     document.body.style.overflow = 'hidden';
+    
+    // Render recipe content (async for markdown files)
+    const recipeContent = await renderRecipeContent(recipe);
+    const contentDiv = modalBody.querySelector('.recipe-content');
+    if (contentDiv) {
+        contentDiv.innerHTML = recipeContent;
+    }
 }
 
 // Render recipe content based on format
 // NOTE: Recipe content HTML is hardcoded by site maintainers in recipeData array.
 // If recipe content becomes user-generated in the future, implement proper HTML sanitization.
-function renderRecipeContent(recipe) {
+async function renderRecipeContent(recipe) {
     switch (recipe.format) {
         case 'html':
             // Recipe HTML content is trusted - controlled by site maintainers
             return recipe.content.html;
         
         case 'md':
-            // For markdown files, link to the file or display a message
-            // In a production environment, you would fetch and parse the markdown
-            if (recipe.content.md) {
-                return `<div class="recipe-media">
-                    <p><a href="${recipe.content.md}" target="_blank">View Markdown Recipe</a></p>
-                    <p><em>Note: For full markdown rendering support, a markdown parser library would be needed.</em></p>
-                </div>`;
+            // For markdown files, fetch and parse the content
+            if (recipe.content.mdFile) {
+                try {
+                    const response = await fetch(recipe.content.mdFile);
+                    if (!response.ok) {
+                        throw new Error(`Failed to load recipe: ${response.status}`);
+                    }
+                    const markdown = await response.text();
+                    
+                    // Parse markdown to HTML using marked.js
+                    if (typeof marked !== 'undefined') {
+                        return marked.parse(markdown);
+                    } else {
+                        // Fallback if marked.js didn't load
+                        return `<pre>${escapeHtml(markdown)}</pre>`;
+                    }
+                } catch (error) {
+                    console.error('Error loading markdown recipe:', error);
+                    return `<p class="recipe-error">Error loading recipe. Please try again later.</p>`;
+                }
+            } else if (recipe.content.md) {
+                // Parse inline markdown content
+                if (typeof marked !== 'undefined') {
+                    return marked.parse(recipe.content.md);
+                } else {
+                    return `<pre>${escapeHtml(recipe.content.md)}</pre>`;
+                }
             }
             return '<p>Markdown content not available</p>';
         

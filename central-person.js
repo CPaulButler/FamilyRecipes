@@ -133,10 +133,26 @@ function initializeCentralPersonView() {
     const members = document.querySelectorAll('.family-member');
     if (members.length === 0) return;
     
-    // Set Martin Lee Porter as initial central person
-    const initialPerson = document.getElementById('i_949871576') || members[0];
+    // Check if there's a hash in the URL to select a specific person
+    let initialPerson = null;
+    if (window.location.hash) {
+        const hash = window.location.hash.substring(1); // Remove the #
+        // Convert GEDCOM ID format (@I123@) to HTML ID format (i123)
+        const htmlId = hash.replace(/@/g, '').toLowerCase();
+        initialPerson = document.getElementById(htmlId);
+    }
+    
+    // Fall back to Martin Lee Porter or first member if no hash or person not found
+    if (!initialPerson) {
+        initialPerson = document.getElementById('i_949871576') || members[0];
+    }
+    
     if (initialPerson) {
         setCurrentCentralPerson(initialPerson.id);
+        // Scroll to the family tree section
+        setTimeout(() => {
+            document.getElementById('family-tree')?.scrollIntoView({ behavior: 'smooth' });
+        }, 300);
     }
     
     // Add details button to all family members
