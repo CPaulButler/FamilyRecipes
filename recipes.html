@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Family Recipes</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="recipes.css">
+    <script src="recipes.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Family Recipes</h1>
+        <p>Preserving our family's culinary heritage</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Family Tree</a>
+        <a href="recipes.html">Recipes</a>
+    </nav>
+
+    <main>
+        <section id="recipes">
+            <h2>Recipe Collection</h2>
+            
+            <!-- Search and Filter Bar -->
+            <div class="recipe-search-container">
+                <input type="text" id="recipe-search" placeholder="Search recipes by name, ingredient, family member..." autocomplete="off">
+                
+                <div class="recipe-filters">
+                    <select id="filter-type" class="filter-select">
+                        <option value="">All Types</option>
+                        <option value="entree">Entree</option>
+                        <option value="appetizer">Appetizer</option>
+                        <option value="dessert">Dessert</option>
+                        <option value="side">Side Dish</option>
+                        <option value="drink">Drink</option>
+                        <option value="breakfast">Breakfast</option>
+                    </select>
+                    
+                    <select id="filter-flavor" class="filter-select">
+                        <option value="">All Flavors</option>
+                        <option value="savory">Savory</option>
+                        <option value="sweet">Sweet</option>
+                    </select>
+                    
+                    <button id="clear-filters" class="clear-btn">Clear Filters</button>
+                </div>
+            </div>
+            
+            <!-- Recipe Count -->
+            <div class="recipe-count">
+                <p>Showing <span id="visible-count">0</span> of <span id="total-count">0</span> recipes</p>
+            </div>
+            
+            <!-- Recipes Grid -->
+            <div class="recipes-grid" id="recipes-grid">
+                <!-- Recipes will be dynamically loaded here -->
+            </div>
+            
+            <!-- No Results Message -->
+            <div class="no-results" id="no-results" style="display: none;">
+                <p>No recipes found matching your search criteria.</p>
+                <p>Try different keywords or clear your filters.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Family Recipes. Preserving memories one recipe at a time.</p>
+    </footer>
+</body>
+</html>
