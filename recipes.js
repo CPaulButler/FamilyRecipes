@@ -1,7 +1,18 @@
 /**
  * Recipe Management Script
  * Handles recipe display, search, and filtering
+ * 
+ * SECURITY NOTE: Recipe data is hardcoded in this file and controlled by site maintainers.
+ * No user input modifies recipe data. If this changes in the future, implement proper
+ * HTML sanitization for recipe content to prevent XSS attacks.
  */
+
+// Helper function to escape HTML in user-facing text fields
+function escapeHtml(text) {
+    const div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML;
+}
 
 // Recipe data structure
 // Each recipe supports multiple formats: html, md, pdf, jpg, links to images
@@ -230,17 +241,23 @@ function displayRecipes(recipes) {
         const flavorLabel = recipe.flavor.charAt(0).toUpperCase() + recipe.flavor.slice(1);
         const ingredientsPreview = recipe.ingredients.slice(0, 5).join(', ') + (recipe.ingredients.length > 5 ? '...' : '');
         
+        // Escape user-facing text to prevent XSS (defense in depth)
+        const safeName = escapeHtml(recipe.name);
+        const safeDescription = escapeHtml(recipe.description);
+        const safeMemberName = escapeHtml(recipe.familyMemberName);
+        const safeIngredientsPreview = escapeHtml(ingredientsPreview);
+        
         return `
             <div class="recipe-card" data-recipe-id="${recipe.id}">
-                <h3>${recipe.name}</h3>
+                <h3>${safeName}</h3>
                 <div class="recipe-meta">
                     <span class="recipe-tag tag-type">${typeLabel}</span>
                     <span class="recipe-tag tag-flavor">${flavorLabel}</span>
                 </div>
-                <p class="recipe-attribution">From: <a href="index.html#${recipe.familyMember}">${recipe.familyMemberName}</a></p>
-                <p class="recipe-description">${recipe.description}</p>
+                <p class="recipe-attribution">From: <a href="index.html#${recipe.familyMember}">${safeMemberName}</a></p>
+                <p class="recipe-description">${safeDescription}</p>
                 <div class="recipe-ingredients-preview">
-                    <strong>Key ingredients:</strong> ${ingredientsPreview}
+                    <strong>Key ingredients:</strong> ${safeIngredientsPreview}
                 </div>
                 <div class="recipe-format">
                     <span>Format: ${recipe.format.toUpperCase()}</span>
@@ -326,14 +343,19 @@ function viewRecipe(recipeId) {
     const typeLabel = recipe.type.charAt(0).toUpperCase() + recipe.type.slice(1);
     const flavorLabel = recipe.flavor.charAt(0).toUpperCase() + recipe.flavor.slice(1);
     
+    // Escape user-facing text fields for defense in depth
+    const safeName = escapeHtml(recipe.name);
+    const safeDescription = escapeHtml(recipe.description);
+    const safeMemberName = escapeHtml(recipe.familyMemberName);
+    
     modalBody.innerHTML = `
-        <h2>${recipe.name}</h2>
+        <h2>${safeName}</h2>
         <div class="recipe-meta">
             <span class="recipe-tag tag-type">${typeLabel}</span>
             <span class="recipe-tag tag-flavor">${flavorLabel}</span>
         </div>
-        <p class="recipe-attribution">From: <a href="index.html#${recipe.familyMember}">${recipe.familyMemberName}</a></p>
-        <p class="recipe-description">${recipe.description}</p>
+        <p class="recipe-attribution">From: <a href="index.html#${recipe.familyMember}">${safeMemberName}</a></p>
+        <p class="recipe-description">${safeDescription}</p>
         <div class="recipe-content">
             ${renderRecipeContent(recipe)}
         </div>
@@ -345,9 +367,12 @@ function viewRecipe(recipeId) {
 }
 
 // Render recipe content based on format
+// NOTE: Recipe content HTML is hardcoded by site maintainers in recipeData array.
+// If recipe content becomes user-generated in the future, implement proper HTML sanitization.
 function renderRecipeContent(recipe) {
     switch (recipe.format) {
         case 'html':
+            // Recipe HTML content is trusted - controlled by site maintainers
             return recipe.content.html;
         
         case 'md':
@@ -369,7 +394,7 @@ function renderRecipeContent(recipe) {
         case 'jpg':
         case 'png':
             return `<div class="recipe-media">
-                <img src="${recipe.content.image}" alt="${recipe.name}">
+                <img src="${recipe.content.image}" alt="${escapeHtml(recipe.name)}">
             </div>`;
         
         default:
