@@ -46,19 +46,26 @@ class GedcomParser {
                         name: {},
                         birthDate: '',
                         birthPlace: '',
+                        birthSources: [],
                         deathDate: '',
                         deathPlace: '',
+                        deathSources: [],
                         burialDate: '',
                         burialPlace: '',
+                        burialSources: [],
                         sex: '',
+                        sexSources: [],
                         occupation: '',
+                        occupationSources: [],
                         education: '',
+                        educationSources: [],
                         residences: [],
                         familiesAsSpouse: [],
                         familiesAsChild: [],
                         objects: [],
                         notes: [],
                         sources: [],
+                        nameSources: [],
                         addresses: [],
                         phones: [],
                         emails: [],
@@ -105,9 +112,9 @@ class GedcomParser {
                         currentRecord.education = value;
                     } else if (tag === 'RESI' && currentRecord.type === 'INDI') {
                         // Start tracking a new residence
-                        currentRecord.residences.push({ date: '', place: '' });
+                        currentRecord.residences.push({ date: '', place: '', sources: [] });
                     } else if (tag === 'SOUR' && currentRecord.type === 'INDI') {
-                        // Start tracking a new source
+                        // Start tracking a new source - keep in general sources array as well
                         currentRecord.sources.push({ id: value, page: '', www: '', text: '' });
                     } else if (tag === 'FAMS' && currentRecord.type === 'INDI') {
                         currentRecord.familiesAsSpouse.push(value);
@@ -149,9 +156,30 @@ class GedcomParser {
                         currentRecord.name.surname = value;
                     } else if (tag === 'SOUR') {
                         currentSubSubRecord = 'SOUR';
-                        // SOUR at level 2 (under NAME, SEX, etc.)
+                        // SOUR at level 2 (under NAME, SEX, BIRT, DEAT, RESI, etc.)
                         if (currentRecord.type === 'INDI') {
-                            currentRecord.sources.push({ id: value, page: '', www: '' });
+                            const source = { id: value, page: '', www: '' };
+                            // Add to general sources array
+                            currentRecord.sources.push(source);
+                            
+                            // Also add to the specific fact's source array based on currentSubRecord
+                            if (currentSubRecord === 'NAME') {
+                                currentRecord.nameSources.push(source);
+                            } else if (currentSubRecord === 'BIRT') {
+                                currentRecord.birthSources.push(source);
+                            } else if (currentSubRecord === 'DEAT') {
+                                currentRecord.deathSources.push(source);
+                            } else if (currentSubRecord === 'BURI') {
+                                currentRecord.burialSources.push(source);
+                            } else if (currentSubRecord === 'SEX') {
+                                currentRecord.sexSources.push(source);
+                            } else if (currentSubRecord === 'OCCU') {
+                                currentRecord.occupationSources.push(source);
+                            } else if (currentSubRecord === 'EDUC') {
+                                currentRecord.educationSources.push(source);
+                            } else if (currentSubRecord === 'RESI' && currentRecord.residences.length > 0) {
+                                currentRecord.residences[currentRecord.residences.length - 1].sources.push(source);
+                            }
                         }
                     } else if (tag === 'DATE') {
                         if (currentSubRecord === 'BIRT') {

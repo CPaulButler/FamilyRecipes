@@ -141,6 +141,41 @@ function attachDetailsButtonHandlers() {
     });
 }
 
+/**
+ * Format sources for inline display
+ * @param {Array} sources - Array of source objects
+ * @returns {string} HTML string for formatted sources
+ */
+function formatInlineSources(sources) {
+    if (!sources || sources.length === 0) return '';
+    
+    // Filter out sources without page info and remove duplicates
+    const uniqueSources = [];
+    const seen = new Set();
+    
+    sources.forEach(source => {
+        if (source.page && !seen.has(source.page)) {
+            seen.add(source.page);
+            uniqueSources.push(source);
+        }
+    });
+    
+    if (uniqueSources.length === 0) return '';
+    
+    let html = '<div class="inline-sources">';
+    uniqueSources.forEach((source, index) => {
+        html += `<div class="inline-source-item">`;
+        html += `<p class="inline-source-citation">${source.page}</p>`;
+        if (source.www) {
+            html += `<p class="inline-source-link"><a href="${source.www}" target="_blank" rel="noopener noreferrer">View Source</a></p>`;
+        }
+        html += `</div>`;
+    });
+    html += '</div>';
+    
+    return html;
+}
+
 // Show person details in modal
 function showPersonDetails(personId) {
     const personInfo = getPersonInfo(personId);
@@ -199,35 +234,45 @@ function showPersonDetails(personId) {
     if (individual) {
         if (individual.sex) {
             const gender = individual.sex === 'M' ? 'Male' : individual.sex === 'F' ? 'Female' : individual.sex;
-            vitalStatsHTML += `<p><strong>Gender:</strong> ${gender}</p>`;
+            vitalStatsHTML += `<div class="vital-stat-item"><p><strong>Gender:</strong> ${gender}</p>`;
+            vitalStatsHTML += formatInlineSources(individual.sexSources);
+            vitalStatsHTML += `</div>`;
         }
         
         if (individual.occupation) {
-            vitalStatsHTML += `<p><strong>Occupation:</strong> ${individual.occupation}</p>`;
+            vitalStatsHTML += `<div class="vital-stat-item"><p><strong>Occupation:</strong> ${individual.occupation}</p>`;
+            vitalStatsHTML += formatInlineSources(individual.occupationSources);
+            vitalStatsHTML += `</div>`;
         }
         
         if (individual.education) {
-            vitalStatsHTML += `<p><strong>Education:</strong> ${individual.education}</p>`;
+            vitalStatsHTML += `<div class="vital-stat-item"><p><strong>Education:</strong> ${individual.education}</p>`;
+            vitalStatsHTML += formatInlineSources(individual.educationSources);
+            vitalStatsHTML += `</div>`;
         }
         
         if (individual.birthDate) {
-            vitalStatsHTML += `<p><strong>Born:</strong> ${individual.birthDate}`;
+            vitalStatsHTML += `<div class="vital-stat-item"><p><strong>Born:</strong> ${individual.birthDate}`;
             if (individual.birthPlace) {
                 vitalStatsHTML += ` in ${individual.birthPlace}`;
             }
             vitalStatsHTML += `</p>`;
+            vitalStatsHTML += formatInlineSources(individual.birthSources);
+            vitalStatsHTML += `</div>`;
         }
         
         if (individual.deathDate) {
-            vitalStatsHTML += `<p><strong>Died:</strong> ${individual.deathDate}`;
+            vitalStatsHTML += `<div class="vital-stat-item"><p><strong>Died:</strong> ${individual.deathDate}`;
             if (individual.deathPlace) {
                 vitalStatsHTML += ` in ${individual.deathPlace}`;
             }
             vitalStatsHTML += `</p>`;
+            vitalStatsHTML += formatInlineSources(individual.deathSources);
+            vitalStatsHTML += `</div>`;
         }
         
         if (individual.burialDate || individual.burialPlace) {
-            vitalStatsHTML += `<p><strong>Burial:</strong> `;
+            vitalStatsHTML += `<div class="vital-stat-item"><p><strong>Burial:</strong> `;
             if (individual.burialDate) {
                 vitalStatsHTML += individual.burialDate;
             }
@@ -236,6 +281,8 @@ function showPersonDetails(personId) {
                 vitalStatsHTML += individual.burialPlace;
             }
             vitalStatsHTML += `</p>`;
+            vitalStatsHTML += formatInlineSources(individual.burialSources);
+            vitalStatsHTML += `</div>`;
         }
         
         vitalStatsHTML += '</div>';
@@ -264,6 +311,7 @@ function showPersonDetails(personId) {
             } else if (residence.place) {
                 residencesHTML += `<p>${residence.place}</p>`;
             }
+            residencesHTML += formatInlineSources(residence.sources);
             residencesHTML += `</div>`;
         });
         
@@ -316,37 +364,9 @@ function showPersonDetails(personId) {
         familySection.style.display = 'none';
     }
     
-    // Set sources
-    const sourcesContainer = document.getElementById('modal-sources');
+    // Hide the separate "Sources & References" section since sources are now inline
     const sourcesSection = document.getElementById('sources-section');
-    
-    if (individual && individual.sources && individual.sources.length > 0) {
-        let sourcesHTML = '<div class="sources-list">';
-        
-        // Filter out duplicates and sources without page info
-        const uniqueSources = [];
-        const seen = new Set();
-        
-        individual.sources.forEach(source => {
-            if (source.page && !seen.has(source.page)) {
-                seen.add(source.page);
-                uniqueSources.push(source);
-            }
-        });
-        
-        uniqueSources.forEach((source, index) => {
-            sourcesHTML += `<div class="source-item">`;
-            sourcesHTML += `<p class="source-citation">${source.page}</p>`;
-            if (source.www) {
-                sourcesHTML += `<p class="source-link"><a href="${source.www}" target="_blank" rel="noopener noreferrer">View Source</a></p>`;
-            }
-            sourcesHTML += `</div>`;
-        });
-        
-        sourcesHTML += '</div>';
-        sourcesContainer.innerHTML = sourcesHTML;
-        sourcesSection.style.display = 'block';
-    } else {
+    if (sourcesSection) {
         sourcesSection.style.display = 'none';
     }
     
