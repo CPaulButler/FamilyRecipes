@@ -142,9 +142,9 @@ function initializeCentralPersonView() {
         initialPerson = document.getElementById(htmlId);
     }
     
-    // Fall back to Martin Lee Porter or first member if no hash or person not found
+    // Fall back to Charles Henry Porter or first member if no hash or person not found
     if (!initialPerson) {
-        initialPerson = document.getElementById('i_949871576') || members[0];
+        initialPerson = document.getElementById('i_949872000') || members[0];
     }
     
     if (initialPerson) {
