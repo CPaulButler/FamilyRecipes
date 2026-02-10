@@ -13,7 +13,7 @@
 4 CONT Lehi, UT  84043
 4 CONT USA
 1 DATE 9 Feb 2026
-2 TIME 20:43:12
+2 TIME 23:14:46
 1 GEDC
 2 VERS 5.5.1
 2 FORM LINEAGE-LINKED
@@ -88,7 +88,7 @@
 3 DATA
 4 WWW https://www.newspapers.com/image/356868212/?article=bf722358-f76a-46b7-9d3b-bb88b7a50184&focus=0.81216484,0.18088211,0.96922505,0.40037617&xid=2378
 3 _APID 1,61843::364505612
-1 FAMC @F77@
+1 FAMC @F76@
 1 FAMS @F36@
 1 FAMS @F3@
 1 BIRT
@@ -207,6 +207,13 @@
 3 WWW https://www.newspapers.com/image/356868212/?article=bf722358-f76a-46b7-9d3b-bb88b7a50184&focus=0.81216484,0.18088211,0.96922505,0.40037617&xid=2378
 2 _APID 1,61843::364505612
 1 OBJE @O59@
+2 _PRIM Y
+2 _CROP
+3 _LEFT 87
+3 _TOP 15
+3 _WDTH 118
+3 _HGHT 117
+3 _TYPE primary
 0 @I_949872456@ INDI
 1 NAME Mary Frances /Roberson/
 2 GIVN Mary Frances
@@ -308,8 +315,7 @@
 4 WWW https://www.newspapers.com/image/356868212/?article=bf722358-f76a-46b7-9d3b-bb88b7a50184&focus=0.81216484,0.18088211,0.96922505,0.40037617&xid=2378
 3 _APID 1,61843::607747457
 1 FAMC @F66@
-1 FAMS @F77@
-1 FAMS @F69@
+1 FAMS @F76@
 1 BIRT
 2 DATE 4 Jul 1921
 2 PLAC Stephenville, Erath County, Texas
@@ -740,7 +746,7 @@
 4 WWW https://www.newspapers.com/image/356868212/?article=bf722358-f76a-46b7-9d3b-bb88b7a50184&focus=0.81216484,0.18088211,0.96922505,0.40037617&xid=2378
 3 _APID 1,61843::364199436
 1 FAMC @F14@
-1 FAMS @F77@
+1 FAMS @F76@
 1 BIRT
 2 DATE 12 May 1920
 2 PLAC Prescott, Nevada County, Arkansas, USA
@@ -1206,7 +1212,7 @@
 3 DATA
 4 WWW https://www.newspapers.com/image/356868212/?article=bf722358-f76a-46b7-9d3b-bb88b7a50184&focus=0.81216484,0.18088211,0.96922505,0.40037617&xid=2378
 3 _APID 1,61843::364828031
-1 FAMC @F77@
+1 FAMC @F76@
 1 FAMS @F53@
 1 BIRT
 2 DATE 1 Jul 1952
@@ -1326,7 +1332,7 @@
 3 DATA
 4 WWW https://www.newspapers.com/image/356868212/?article=bf722358-f76a-46b7-9d3b-bb88b7a50184&focus=0.81216484,0.18088211,0.96922505,0.40037617&xid=2378
 3 _APID 1,61843::364952940
-1 FAMC @F77@
+1 FAMC @F76@
 1 FAMS @F26@
 1 BIRT
 2 DATE 05/14/1954
@@ -2999,7 +3005,7 @@
 4 WWW http://search.ancestry.com/cgi-bin/sse.dll?db=structuredcrawledsites-55&h=846968&ti=0&indiv=try&gss=pt
 3 _APID 1,70054::846968
 1 SEX M
-1 FAMC @F76@
+1 FAMC @F75@
 1 FAMS @F51@
 1 BIRT
 2 DATE 26 Jan 1841
@@ -3692,7 +3698,7 @@
 3 _APID 1,7884::423296
 1 SEX M
 1 FAMC @F51@
-1 FAMS @F80@
+1 FAMS @F79@
 1 BIRT
 2 DATE 20 Apr 1879
 2 PLAC Hempstead, Arkansas, USA
@@ -4006,7 +4012,7 @@
 4 WWW http://search.ancestry.com/cgi-bin/sse.dll?db=armarriages_ga&h=29130&ti=0&indiv=try&gss=pt
 3 _APID 1,7841::29130
 1 SEX M
-1 FAMS @F76@
+1 FAMS @F75@
 1 BIRT
 2 DATE 1798
 2 PLAC Georgia
@@ -4058,7 +4064,7 @@
 3 _APID 1,2082::51592
 1 SEX F
 1 FAMC @F65@
-1 FAMS @F76@
+1 FAMS @F75@
 1 BIRT
 2 DATE 1808
 2 PLAC , , Kentucky, USA
@@ -8941,7 +8947,7 @@
 2 GIVN Margaret Elizabeth
 2 SURN Smith
 1 SEX F
-1 FAMC @F74@
+1 FAMC @F73@
 1 FAMS @F27@
 1 BIRT
 2 DATE 1825
@@ -8963,7 +8969,7 @@
 2 SURN Smith
 1 SEX M
 1 FAMC @F18@
-1 FAMS @F74@
+1 FAMS @F73@
 1 BIRT
 2 DATE 1790
 2 PLAC Goochland, Goochland, Virginia, United States
@@ -8985,7 +8991,7 @@
 2 GIVN Margaret
 2 SURN Greaves
 1 SEX F
-1 FAMS @F74@
+1 FAMS @F73@
 1 BIRT
 2 DATE 1794
 2 PLAC Lincoln, North Carolina, United States
@@ -9013,7 +9019,7 @@
 3 PAGE Book Title: Lineage Book of the Charter Members of the DAR Vol 069
 3 _APID 1,61157::2402721
 1 SEX M
-1 FAMC @F84@
+1 FAMC @F83@
 1 FAMS @F18@
 1 BIRT
 2 DATE 18 Jun 1749
@@ -9099,7 +9105,7 @@
 2 GIVN Robert Armstrong
 2 SURN Smith
 1 SEX M
-1 FAMC @F74@
+1 FAMC @F73@
 1 BIRT
 2 DATE 1811
 1 SOUR @S_2133383483@
@@ -9110,7 +9116,7 @@
 2 GIVN Sophia
 2 SURN Smith
 1 SEX F
-1 FAMC @F74@
+1 FAMC @F73@
 1 BIRT
 2 DATE ABT. 1821
 1 SOUR @S_2133383483@
@@ -9121,7 +9127,7 @@
 2 GIVN Margaret Elizabeth
 2 SURN Smith
 1 SEX F
-1 FAMC @F74@
+1 FAMC @F73@
 1 BIRT
 2 DATE ABT. 1825
 1 SOUR @S_2133383483@
@@ -9132,7 +9138,7 @@
 2 GIVN Thomas Washington
 2 SURN Smith
 1 SEX M
-1 FAMC @F74@
+1 FAMC @F73@
 1 BIRT
 2 DATE ABT. 1825
 1 SOUR @S_2133383483@
@@ -9143,7 +9149,7 @@
 2 GIVN Jonathan Greaves
 2 SURN Smith
 1 SEX M
-1 FAMC @F74@
+1 FAMC @F73@
 1 BIRT
 2 DATE 1825
 2 PLAC Rutherford, Tennessee, United States
@@ -9536,7 +9542,7 @@
 2 SOUR @S_1097900206@
 3 PAGE Source number: 312.000; Source type: Electronic Database; Number of Pages: 1; Submitter Code: VAU
 3 _APID 1,7836::13906
-1 FAMC @F79@
+1 FAMC @F78@
 1 FAMS @F1@
 1 BIRT
 2 DATE 1800
@@ -10984,7 +10990,7 @@
 2 SOUR @S_1782662430@
 3 _APID 1,70054::296341
 1 SEX F
-1 FAMC @F78@
+1 FAMC @F77@
 1 FAMS @F29@
 1 BIRT
 2 DATE 5 Jan 1853
@@ -11656,7 +11662,7 @@
 2 SOUR @S_2133383568@
 3 PAGE Year: 1850; Census Place: District 7, Obion, Tennessee; Roll: M432_891; Page: 334B; Image: 666
 3 _APID 1,8054::6456463
-1 FAMS @F78@
+1 FAMS @F77@
 1 FAMS @F41@
 1 BIRT
 2 DATE 7 Jun 1824
@@ -11690,8 +11696,8 @@
 2 GIVN Margaret Elizabeth
 2 SURN Smith
 1 SEX F
-1 FAMC @F75@
-1 FAMS @F78@
+1 FAMC @F74@
+1 FAMS @F77@
 1 BIRT
 2 DATE 1825
 2 PLAC Rutherford, Tennessee, United States
@@ -12399,7 +12405,7 @@
 4 CONC 844893&x
 3 _APID 1,61843::583840150
 1 SEX M
-1 FAMC @F72@
+1 FAMC @F71@
 1 FAMS @F33@
 1 BIRT
 2 DATE 14 Jan 1917
@@ -12838,7 +12844,7 @@
 5 CONT Death:
 4 WWW http://search.ancestry.com/cgi-bin/sse.dll?db=1930usfedcen&h=10817907&ti=0&indiv=try&gss=pt
 3 _APID 1,6224::10817907
-1 FAMC @F80@
+1 FAMC @F79@
 1 BIRT
 2 DATE 25 Feb 1908
 2 PLAC Pine Bluff, Jefferson Co., Arkansas
@@ -12987,7 +12993,7 @@
 3 _APID 1,9168::25236467
 2 SOUR @S1350774969@
 3 _APID 1,60183::1620832
-1 FAMC @F73@
+1 FAMC @F72@
 1 FAMS @F40@
 1 BIRT
 2 DATE 3 JUL 1852
@@ -14072,7 +14078,7 @@
 2 SOUR @S_2133383568@
 3 PAGE Year: 1850; Census Place: Precinct 6, Lamar, Texas; Roll: M432_912; Page: 293A; Image: 168
 3 _APID 1,8054::1041103
-1 FAMS @F73@
+1 FAMS @F72@
 1 BIRT
 2 DATE Apr 23 1818
 2 PLAC Bourbon Co., Kentucky
@@ -14245,8 +14251,8 @@
 3 _APID 1,8054::1039999
 2 SOUR @S_2133382282@
 3 _APID 1,8795::284974
-1 FAMC @F87@
-1 FAMS @F73@
+1 FAMC @F86@
+1 FAMS @F72@
 1 BIRT
 2 DATE 18 May 1829
 2 PLAC Franklin Co., North Carolina
@@ -14847,7 +14853,7 @@
 2 SOUR @S1353926267@
 3 PAGE Williamson County Clerk's Office; Georgetown, Texas; Williamson County Marriage Records
 3 _APID 1,9168::24681229
-1 FAMC @F85@
+1 FAMC @F84@
 1 FAMS @F44@
 1 BIRT
 2 DATE 09 Feb 1977
@@ -14959,8 +14965,8 @@
 4 WWW http://search.ancestry.com/cgi-bin/sse.dll?db=uspublicrecords2&h=57604707&ti=0&indiv=try&gss=pt
 3 _APID 1,1732::57604707
 1 SEX M
-1 FAMC @F88@
-1 FAMS @F85@
+1 FAMC @F87@
+1 FAMS @F84@
 1 BIRT
 2 DATE 13 Aug 1946
 2 PLAC Farmer City, De Witt, Illinois, USA
@@ -15014,8 +15020,8 @@
 4 WWW http://search.ancestry.com/cgi-bin/sse.dll?db=1930usfedcen&h=25701004&ti=0&indiv=try&gss=pt
 3 _APID 1,6224::25701004
 1 SEX M
-1 FAMC @F71@
-1 FAMS @F88@
+1 FAMC @F70@
+1 FAMS @F87@
 1 BIRT
 2 DATE 5/12/1921
 2 PLAC Bloomington, Illinois, USA
@@ -15102,7 +15108,7 @@
 3 PAGE Registration State: Illinois; Registration County: DeWitt; Roll: 1613180
 3 _APID 1,6482::23100224
 1 SEX M
-1 FAMS @F71@
+1 FAMS @F70@
 1 BIRT
 2 DATE abt 1891
 2 PLAC Illinois,United States of America
@@ -15165,7 +15171,7 @@
 4 WWW http://search.ancestry.com/cgi-bin/sse.dll?db=1930usfedcen&h=25701003&ti=0&indiv=try&gss=pt
 3 _APID 1,6224::25701003
 1 SEX F
-1 FAMS @F71@
+1 FAMS @F70@
 1 BIRT
 2 DATE abt 1895
 2 PLAC Illinois
@@ -15207,7 +15213,7 @@
 2 GIVN Ira
 2 SURN Colbert
 1 SEX M
-1 FAMS @F87@
+1 FAMS @F86@
 0 @I25781749024@ INDI
 1 NAME John H /Runyon/
 2 GIVN John H
@@ -15353,7 +15359,7 @@
 3 PAGE Year: 1910; Census Place: Justice Precinct 4, Erath, Texas; Roll: T624_1550; Page: 4B; Enumeration District: 0027; FHL microfilm: 1375563
 3 _APID 1,7884::125733388
 1 FAMC @F50@
-1 FAMS @F86@
+1 FAMS @F85@
 1 BIRT
 2 DATE 23 February 1909
 2 PLAC Texas
@@ -15452,7 +15458,7 @@
 2 SOUR @S_2133383536@
 3 PAGE Year: 1880; Census Place: Precinct 4, Erath, Texas; Roll: 1302; Family History Film: 1255302; Page: 84D; Enumeration District: 152
 3 _APID 1,6742::40427850
-1 FAMC @F73@
+1 FAMC @F72@
 1 BIRT
 2 DATE abt 1862
 2 PLAC Texas
@@ -15556,7 +15562,7 @@
 2 SOUR @S_1780178973@
 3 PAGE Year: 1940; Census Place: Fort Worth, Tarrant, Texas; Roll: T627_4187; Page: 2B; Enumeration District: 257-120
 3 _APID 1,2442::160404462
-1 FAMC @F86@
+1 FAMC @F85@
 1 BIRT
 2 DATE abt 1931
 2 PLAC Texas
@@ -15590,7 +15596,7 @@
 2 SOUR @S_1780178973@
 3 PAGE Year: 1940; Census Place: Fort Worth, Tarrant, Texas; Roll: T627_4187; Page: 2B; Enumeration District: 257-120
 3 _APID 1,2442::160404463
-1 FAMC @F86@
+1 FAMC @F85@
 1 BIRT
 2 DATE abt 1932
 2 PLAC Texas
@@ -16505,7 +16511,7 @@
 4 WWW https://www.newspapers.com/image/213119139/?article=d03824b6-fdcd-4b8f-bc04-218fc4f64375&focus=0.15447843,0.20145316,0.26892686,0.31397218&xid=2378
 3 _APID 1,61843::538966371
 1 FAMS @F13@
-1 FAMS @F83@
+1 FAMS @F82@
 1 BIRT
 2 DATE 23 Sep 1883
 2 PLAC Louisiana
@@ -18619,7 +18625,7 @@
 2 GIVN David
 2 SURN Allard
 1 SEX M
-1 FAMS @F79@
+1 FAMS @F78@
 1 BIRT
 2 DATE 1776
 2 PLAC Union, North Carolina, United States
@@ -18634,7 +18640,7 @@
 2 GIVN Mary
 2 SURN Burleson
 1 SEX F
-1 FAMS @F79@
+1 FAMS @F78@
 1 BIRT
 2 DATE 1780
 2 PLAC Washington, Tennessee, United States
@@ -18982,7 +18988,7 @@
 3 DATA
 4 WWW https://www.newspapers.com/image/213119139/?article=d03824b6-fdcd-4b8f-bc04-218fc4f64375&focus=0.15447843,0.20145316,0.26892686,0.31397218&xid=2378
 3 _APID 1,61843::140026541
-1 FAMC @F83@
+1 FAMC @F82@
 1 SOUR @S1393070288@
 2 PAGE The Times; Publication Date: 6/ Jun/ 1969; Publication Place: Shreveport, Louisiana, United States of America; URL: https://www.newspapers.com/image/213119139/?article=d03824b6-fdcd-4b8f-bc04-218fc4f64375&focus=0.15447843,0.20145316,0.26892686,0.31
 3 CONC 397218&x
@@ -18999,7 +19005,7 @@
 3 DATA
 4 WWW https://www.newspapers.com/image/213119139/?article=d03824b6-fdcd-4b8f-bc04-218fc4f64375&focus=0.15447843,0.20145316,0.26892686,0.31397218&xid=2378
 3 _APID 1,61843::140003383
-1 FAMC @F83@
+1 FAMC @F82@
 1 SOUR @S1393070288@
 2 PAGE The Times; Publication Date: 6/ Jun/ 1969; Publication Place: Shreveport, Louisiana, United States of America; URL: https://www.newspapers.com/image/213119139/?article=d03824b6-fdcd-4b8f-bc04-218fc4f64375&focus=0.15447843,0.20145316,0.26892686,0.31
 3 CONC 397218&x
@@ -19023,7 +19029,7 @@
 3 DATA
 4 WWW https://www.newspapers.com/image/213119139/?article=d03824b6-fdcd-4b8f-bc04-218fc4f64375&focus=0.15447843,0.20145316,0.26892686,0.31397218&xid=2378
 3 _APID 1,61843::139971638
-1 FAMC @F83@
+1 FAMC @F82@
 1 SOUR @S1393070288@
 2 PAGE The Times; Publication Date: 6/ Jun/ 1969; Publication Place: Shreveport, Louisiana, United States of America; URL: https://www.newspapers.com/image/213119139/?article=d03824b6-fdcd-4b8f-bc04-218fc4f64375&focus=0.15447843,0.20145316,0.26892686,0.31
 3 CONC 397218&x
@@ -19047,7 +19053,7 @@
 3 DATA
 4 WWW https://www.newspapers.com/image/213119139/?article=d03824b6-fdcd-4b8f-bc04-218fc4f64375&focus=0.15447843,0.20145316,0.26892686,0.31397218&xid=2378
 3 _APID 1,61843::140049500
-1 FAMC @F83@
+1 FAMC @F82@
 1 SOUR @S1393070288@
 2 PAGE The Times; Publication Date: 6/ Jun/ 1969; Publication Place: Shreveport, Louisiana, United States of America; URL: https://www.newspapers.com/image/213119139/?article=d03824b6-fdcd-4b8f-bc04-218fc4f64375&focus=0.15447843,0.20145316,0.26892686,0.31
 3 CONC 397218&x
@@ -19178,7 +19184,7 @@
 3 PAGE Year: 1930; Census Place: Robinson, Allegheny, Pennsylvania; Page: 19B; Enumeration District: 0774; FHL microfilm: 2341723
 3 _APID 1,6224::49062337
 1 SEX M
-1 FAMS @F72@
+1 FAMS @F71@
 1 BIRT
 2 DATE abt 1890
 2 PLAC Pennsylvania
@@ -19241,7 +19247,7 @@
 3 PAGE Year: 1930; Census Place: Robinson, Allegheny, Pennsylvania; Page: 19B; Enumeration District: 0774; FHL microfilm: 2341723
 3 _APID 1,6224::49062333
 1 SEX F
-1 FAMS @F72@
+1 FAMS @F71@
 1 BIRT
 2 DATE abt 1894
 2 PLAC Pennsylvania
@@ -19302,7 +19308,7 @@
 3 PAGE Year: 1930; Census Place: Robinson, Allegheny, Pennsylvania; Page: 19B; Enumeration District: 0774; FHL microfilm: 2341723
 3 _APID 1,6224::49062352
 1 SEX M
-1 FAMC @F72@
+1 FAMC @F71@
 1 BIRT
 2 DATE abt 1921
 2 PLAC Pennsylvania
@@ -19349,7 +19355,7 @@
 3 PAGE Year: 1930; Census Place: Robinson, Allegheny, Pennsylvania; Page: 19B; Enumeration District: 0774; FHL microfilm: 2341723
 3 _APID 1,6224::49062330
 1 SEX M
-1 FAMC @F72@
+1 FAMC @F71@
 1 BIRT
 2 DATE abt 1923
 2 PLAC Pennsylvania
@@ -19396,7 +19402,7 @@
 3 PAGE Year: 1930; Census Place: Robinson, Allegheny, Pennsylvania; Page: 19B; Enumeration District: 0774; FHL microfilm: 2341723
 3 _APID 1,6224::49062335
 1 SEX F
-1 FAMC @F72@
+1 FAMC @F71@
 1 BIRT
 2 DATE abt 1926
 2 PLAC Pennsylvania
@@ -19443,7 +19449,7 @@
 3 PAGE Year: 1930; Census Place: Robinson, Allegheny, Pennsylvania; Page: 19B; Enumeration District: 0774; FHL microfilm: 2341723
 3 _APID 1,6224::49062356
 1 SEX M
-1 FAMC @F72@
+1 FAMC @F71@
 1 BIRT
 2 DATE abt 1930
 2 PLAC Pennsylvania
@@ -19490,7 +19496,7 @@
 3 PAGE Year: 1930; Census Place: Robinson, Allegheny, Pennsylvania; Page: 19B; Enumeration District: 0774; FHL microfilm: 2341723
 3 _APID 1,6224::49062332
 1 SEX F
-1 FAMC @F72@
+1 FAMC @F71@
 1 BIRT
 2 DATE abt 1930
 2 PLAC Pennsylvania
@@ -19600,7 +19606,7 @@
 2 SURN Smith
 1 SEX M
 1 FAMC @F46@
-1 FAMS @F75@
+1 FAMS @F74@
 1 BIRT
 2 DATE 1790
 2 PLAC Goochland Co., Virginia, USA
@@ -19612,7 +19618,7 @@
 2 GIVN Margaret (Peggy) D.
 2 SURN Greaves
 1 SEX F
-1 FAMS @F75@
+1 FAMS @F74@
 1 BIRT
 2 DATE 1794
 2 PLAC Lincoln County, North Carolina
@@ -19643,7 +19649,7 @@
 3 DATA
 4 WWW http://familysearch.org/pal:/MM9.1.1/V29M-P5X
 3 _APID 1,60214::4809244
-1 FAMC @F81@
+1 FAMC @F80@
 1 FAMS @F46@
 1 BIRT
 2 DATE 12 Jun 1749
@@ -19774,8 +19780,8 @@
 3 PAGE Virginia Vital Records; Indexed by: Judith McGhan
 3 _APID 1,61462::5619
 1 SEX M
-1 FAMC @F82@
-1 FAMS @F81@
+1 FAMC @F81@
+1 FAMS @F80@
 1 DEAT
 2 DATE 1775
 2 PLAC Goochland Co., Virginia, USA
@@ -19802,13 +19808,13 @@
 2 NSFX Sr.
 1 SEX M
 1 FAMC @F32@
-1 FAMS @F82@
+1 FAMS @F81@
 0 @I372184844188@ INDI
 1 NAME Capt. William /Smith/
 2 GIVN Capt. William
 2 SURN Smith
 1 SEX M
-1 FAMC @F70@
+1 FAMC @F69@
 1 FAMS @F32@
 1 DEAT
 2 DATE June 1734
@@ -19827,21 +19833,21 @@
 2 GIVN Major Lawrence
 2 SURN Smith
 1 SEX M
-1 FAMS @F70@
+1 FAMS @F69@
 1 DEAT
 2 DATE 1700
 0 @I372184844607@ INDI
 1 NAME Mary //
 2 GIVN Mary
 1 SEX F
-1 FAMS @F70@
+1 FAMS @F69@
 0 @I372184854466@ INDI
 1 NAME JOHN /SMITH/ JR
 2 GIVN JOHN
 2 SURN SMITH
 2 NSFX JR
 1 SEX M
-1 FAMS @F84@
+1 FAMS @F83@
 1 BIRT
 2 DATE 23 Sep 1725
 2 PLAC Abington Parish, Gloucester, Virginia, United States
@@ -20050,17 +20056,6 @@
 3 _APID 1,2469::961280757
 1 SOUR @S1350774959@
 2 _APID 1,2469::961280757
-0 @I372271733726@ INDI
-1 NAME Charles Henry /Porter/
-2 GIVN Charles Henry
-2 SURN Porter
-2 SOUR @S1353926267@
-3 PAGE Dallas County Clerk's Office; Dallas, Texas; Dallas County Marriage Records
-3 _APID 1,9168::41168781
-1 FAMS @F69@
-1 SOUR @S1353926267@
-2 PAGE Dallas County Clerk's Office; Dallas, Texas; Dallas County Marriage Records
-2 _APID 1,9168::41168781
 0 @I372301108955@ INDI
 1 NAME Hayden Travis /Porter/
 2 GIVN Hayden Travis
@@ -20991,17 +20986,14 @@
 1 WIFE @I25785824794@
 1 CHIL @I370045885857@
 0 @F69@ FAM
-1 HUSB @I372271733726@
-1 WIFE @I_949872456@
-0 @F70@ FAM
 1 HUSB @I372184844563@
 1 WIFE @I372184844607@
 1 CHIL @I372184844188@
-0 @F71@ FAM
+0 @F70@ FAM
 1 HUSB @I6852687318@
 1 WIFE @I6852687319@
 1 CHIL @I6852686586@
-0 @F72@ FAM
+0 @F71@ FAM
 1 HUSB @I372164360773@
 1 WIFE @I372164360774@
 1 CHIL @I6036923906@
@@ -21010,7 +21002,7 @@
 1 CHIL @I372164360778@
 1 CHIL @I372164360780@
 1 CHIL @I372164360781@
-0 @F73@ FAM
+0 @F72@ FAM
 1 HUSB @I6272735831@
 1 WIFE @I6272735832@
 1 CHIL @I6272723623@
@@ -21021,7 +21013,7 @@
 2 SOUR @S1350774969@
 3 _HPID 1,60183::2045866
 3 _WPID 1,60183::2045874
-0 @F74@ FAM
+0 @F73@ FAM
 1 HUSB @I5123353762@
 1 WIFE @I5123353780@
 1 CHIL @I5123526755@
@@ -21033,11 +21025,11 @@
 1 MARR
 2 DATE 18 Jul 1810
 2 PLAC Rutherford, Tennessee, United States
-0 @F75@ FAM
+0 @F74@ FAM
 1 HUSB @I372184832587@
 1 WIFE @I372184833640@
 1 CHIL @I6036794160@
-0 @F76@ FAM
+0 @F75@ FAM
 1 HUSB @I_949765703@
 1 WIFE @I_949765702@
 1 CHIL @I_949798895@
@@ -21052,7 +21044,7 @@
 3 _APID 1,2082::1592
 2 SOUR @S_1774775631@
 3 _APID 1,2082::51592
-0 @F77@ FAM
+0 @F76@ FAM
 1 HUSB @I_949872000@
 1 WIFE @I_949872456@
 1 CHIL @I_949871576@
@@ -21066,48 +21058,48 @@
 3 _APID 1,9168::41168781
 1 MARR
 2 PLAC Stephenville, Texas
-0 @F78@ FAM
+0 @F77@ FAM
 1 HUSB @I6036794159@
 1 WIFE @I6036794160@
 1 CHIL @I6036792290@
 1 MARR
 2 DATE 08 Feb 1847
-0 @F79@ FAM
+0 @F78@ FAM
 1 HUSB @I372020981385@
 1 WIFE @I372020981386@
 1 CHIL @I6036505289@
 1 MARR
 2 DATE 1799
 2 PLAC Warren, Kentucky, United States
-0 @F80@ FAM
+0 @F79@ FAM
 1 HUSB @I_949796303@
 1 CHIL @I6270267281@
-0 @F81@ FAM
+0 @F80@ FAM
 1 HUSB @I372184840511@
 1 CHIL @I372184835562@
-0 @F82@ FAM
+0 @F81@ FAM
 1 HUSB @I372184844010@
 1 CHIL @I372184840511@
-0 @F83@ FAM
+0 @F82@ FAM
 1 HUSB @I25781961894@
 1 CHIL @I372150330735@
 1 CHIL @I372150330736@
 1 CHIL @I372150330737@
 1 CHIL @I372150330738@
-0 @F84@ FAM
+0 @F83@ FAM
 1 HUSB @I372184854466@
 1 CHIL @I5123526722@
-0 @F85@ FAM
+0 @F84@ FAM
 1 HUSB @I6852685747@
 1 CHIL @I6852682555@
-0 @F86@ FAM
+0 @F85@ FAM
 1 HUSB @I25781749026@
 1 CHIL @I25781760468@
 1 CHIL @I25781760469@
-0 @F87@ FAM
+0 @F86@ FAM
 1 HUSB @I25781748682@
 1 CHIL @I6272735832@
-0 @F88@ FAM
+0 @F87@ FAM
 1 HUSB @I6852686586@
 1 CHIL @I6852685747@
 0 @O1@ OBJE
@@ -21123,13 +21115,13 @@
 1 _OID 0499d1cd-cee0-4503-88b7-cad8856d83b5
 1 _DSCR This story has been passed down for several generations in our family.
 1 _CREA 2019-05-30 20:32:13.000
-1 _USER cW4SSDlCmFV3QTK2bs8B4WRrPR2+FW98bRfT8uEA4bTSfpY50nZKKQ80tEojAhrb+NpZzMEFnbLbiP/vpoJAvA==
+1 _USER DsvxwSen7De8OA+sP++/DzygrBnACHvH4dhxPMkE2QRo0Y1t7+YEgVB2oELvQSVqsTz9b1O2tnQ0isd4UTetUg==
 2 _ENCR 1
 1 _CLON
 2 _TID 102171111
 2 _PID 330014130453
 2 _OID 38cf71a8-c8dd-4b10-95b2-a9a3e829a7d2
-2 _USER XFwBGHAFDQpEMvPBxClgatJwJ0GiXwVgTu1X4dT5h64FOsGbfcsK/Lo1TOTAS+HsTYjvhphx2eyUivX+BaKFcQ==
+2 _USER IZJ8Bt82JFKZ1ZJB1dv7Nk/ilpigZnvGLaMUgrGihp+Vb/FFqZ8W0VaArTAUeNXUTCbyXRMxdT2L8p49a+DmPQ==
 3 _ENCR 1
 2 _DATE 2019-05-30 13:41:42.000
 1 _ORIG u
@@ -21154,13 +21146,13 @@
 2 CONT Texas, USA
 1 _META <metadataxml><cemetery /><transcription /></metadataxml>
 1 _CREA 2013-08-05 22:40:43.197
-1 _USER LvqfYWlXvH34WpWyJVbL/txB5BjUZZvBAcjjLrUEtXdS36po9GHACRuenhNd0VxXp7CVawWUD/Zmdy4lXrK23Q==
+1 _USER 1V4MLn29OMTdv0LH7sjy2sPoK5/7a5wTJN8Xa6wytMXjJoxPFikOolaGOJ46zWlXfZIYvFVp1LgCUP6edtVgPg==
 2 _ENCR 1
 1 _CLON
 2 _TID 9364918
 2 _PID 6021526502
 2 _OID 6cc892da-5fa9-4268-aeb5-963b26b40858
-2 _USER axyLTla6jfq5nH5uORoa2REZR0hqueHEFU09ejchOf6V1q5qefiF28n1z/te8j8ZglYd8T2l/xrXz99Gbj+C1Q==
+2 _USER 74BAhIn4GvDBkeSNAKpB4TPTPEEaYyo+q0gKzoNqJbnZ5nlPxN2TrhRM5uTICFQFNnQKZ8iW1jqKh8u8UD5A2w==
 3 _ENCR 1
 2 _DATE 2013-04-01 01:36:49.000
 1 _ORIG u
@@ -21179,13 +21171,13 @@
 1 _DSCR Wife of William Sylvester Dillon
 1 _META <metadataxml><cemetery /><transcription /></metadataxml>
 1 _CREA 2020-05-07 23:20:33.000
-1 _USER 4gfnkMdhZ2TZS3IfJm1OiyJFCG+TfWemrbKCsb1MF+CMoga9Y6ws2DSZ4T8LNs8p87grRidrl95OqlNu3jnfxQ==
+1 _USER XnD9pni5Dt0731j1dJy30ZX4puZVSh2VNX3S9dC0B/egs8bt646Wba+NX+b4xNdmZUEo/wIf9iHjD/E5pelU9w==
 2 _ENCR 1
 1 _CLON
 2 _TID 15540920
 2 _PID 1940346118
 2 _OID d5a5cf34-4681-4154-bed8-c68a7befa64b
-2 _USER Ym38oPO9hNJMoCtJ8rLpPLYJxdQFQ1N7rwmeg4/XpMnKS6F8eLGgX1OzwpTLsY4yo9G1GHQdWZKnWi5IkEQRhg==
+2 _USER BizUduEedOt3t2zxnJCzxs9oGMm/9WV1Ubge9LFdaCNVnGOFjmU7qrt7vLiENJdCV/AIRjwmKYcNLKfsW2agPg==
 3 _ENCR 1
 2 _DATE 2011-05-01 20:56:40.000
 1 _ORIG u
@@ -21203,13 +21195,13 @@
 1 _OID 06f1ea87-a6d1-4d71-8618-4fd634c56ae1
 1 _META <metadataxml><cemetery /><transcription /></metadataxml>
 1 _CREA 2020-01-10 11:43:22.000
-1 _USER DQBh5djxRXu5MHgecj+p55fUW2pripd/5sHzmbhdY56CdyUmBMEZlrWPlgZZd+LccFbnlq1YR72bDPaIvkFmZQ==
+1 _USER RC+xA56Z4V9nBrV/ZW86ycLkDQSo/kOGjRMHQwpDyJ9H6lCrp/vJYdhRYiLt66lSjaJveRbbhnx3BhmzY1HhvA==
 2 _ENCR 1
 1 _CLON
 2 _TID 45964438
 2 _PID 46576528929
 2 _OID 9a542a8b-dba7-4cea-afc1-0d9daf21f3fd
-2 _USER U1Aa7fMo70kW+UIx435kRs0tFZqpTSk1WZpFPqhKkEd+/OSndUSRlAno5lQf3s8qLaCrH82e5Um33Ai0IB2XYQ==
+2 _USER bYSmjEadopDlGNFXe0iHmXEqBW+G6P2g58okQUnjdQQPv5G8yY1++MU0YPFF7Yasd7x5fGUjBvLhOgPsn05G7g==
 3 _ENCR 1
 2 _DATE 2016-02-21 09:00:11.000
 1 _ORIG u
@@ -21227,13 +21219,13 @@
 1 _DSCR Married to Thomas Walker Roberson Sr. in or around Franklin County, Tennessee. Died in Texas.
 1 _META <metadataxml><cemetery /><transcription /></metadataxml>
 1 _CREA 2011-10-11 02:20:02.943
-1 _USER oIcqN37yjj20Zk9dLa3jqCtLaJ0Ubg2eTlMcXGAjTcRvtFcjaW7W9MRK29h/uMMks6gpVykI89cb7mjoBWsszQ==
+1 _USER lXrnKG8kdqSCwTNfv56xpSM3inSiLWYYMC5QgerZAoN4CjlXHZ7pWKSENcPYdB8sy8lLjNTSmhvknBRCW4Dq2Q==
 2 _ENCR 1
 1 _CLON
 2 _TID 9807882
 2 _PID -243062936
 2 _OID 833ac866-d052-4cc0-80d0-057c9b4affb7
-2 _USER Xdc3H1ugGVNyNx0RGX/mZV43Wj+FmYMM6O9tTZ4ST14bTiYdoIrWr5Jl58919B5xJ8CNm+XTEO8sb1d4tkb41g==
+2 _USER auKbm2YnZV805hX0ml5TOmOluBSz0qXxq18lwt1LFrlCa8+QO3rU0CaSE6qQTKBZnBFhNyp27etPoGq2YwQGXQ==
 3 _ENCR 1
 2 _DATE 2009-08-24 00:13:50.133
 1 _ORIG u
@@ -21251,13 +21243,13 @@
 1 _OID 0c337099-3482-4d77-9bf4-84c5c3585118
 1 _META <metadataxml><cemetery /><transcription /></metadataxml>
 1 _CREA 2017-02-14 06:46:08.809
-1 _USER //JFvOXWSqFOoyeuzxxIA35ta6RE/2db3KJOzy14Js65HbiyBf0e+1RdwgGVvsugSH9zuNKMxg7n9XJQ/baYqg==
+1 _USER GTOCa8J07x3jJX0ZkE+hZHL1MGPz46FtI7yKfAIcADfiuVWetOiwYMf8fb5Y+JhjlL7pIKw9zO0X3Ebkg5XkZA==
 2 _ENCR 1
 1 _CLON
 2 _TID 3122381
 2 _PID -815650290
 2 _OID 13e74197-8c4f-4350-a7c7-38fb7eb66459
-2 _USER bJ6e50jaw1gRV6Wci8XaroS8y6cD3ZO3GTTSzYC/2bXQwaeOwKQ7m/nJobq8gsAfIjXfC2xPxgA8leFg08x5mA==
+2 _USER Hltmybn+FD8cm9lFCqCxxFJjpEe/u9Zy+mT/WEEfH6FLN4EszFHiW1nF53NBx20BnfYR8lvPgVbnsKCKFlpVKw==
 3 _ENCR 1
 2 _DATE 2015-10-15 18:40:42.000
 1 _ORIG u
@@ -21276,13 +21268,13 @@
 1 _DSCR "Arkansas, County Marriages, 1837-1957," index and images, FamilySearch (https://familysearch.org/pal:/MM9.3.1/TH-266-12457-70433-96?cc=1417439 : accessed 3 April 2015), 1006737(004368676) > image 68 of 1734; county offices, Arkansas.
 1 _META <metadataxml><cemetery /><transcription /></metadataxml>
 1 _CREA 2017-02-14 07:37:55.431
-1 _USER RnVeCzKuG6RdvTmmaxPJmJFoHTyjpg7dt6wdoRiYlY5yM2aqPw7T0pbTQMhTBRV03mKSRAx8/wns14XSAfu5lQ==
+1 _USER 3fiY0QFLeBA7rLJCNujrsNKAOE70JenkIINC7pczKNatF8IA6hzRu/wp6zqOD4yj8WJmZ2tLtzfrjkUaTq14NA==
 2 _ENCR 1
 1 _CLON
 2 _TID 877725
 2 _PID 25341059241
 2 _OID fb5c00f5-3fe4-4257-b568-8f3b1e3df888
-2 _USER XDPfxPoKGQLbqVYIcG3qGzY6O2knRtE8fDwGYeOFf0XnWm4b15GI0uKpYxhZv4dSNVj9y1EbpoHvtIeeat+X5w==
+2 _USER LXCNvhyOVfVTiyS+7dHSjQkLFMykIYlUenOtNCTU3fvL31lon43ylupEN4S44ZvFG9gI1nXY1w1SgSepf599uw==
 3 _ENCR 1
 2 _DATE 2015-04-03 17:35:00.000
 1 _ORIG u
@@ -21304,13 +21296,13 @@
 2 CONT from http://arsnova.donovanfamily.com/margann.html
 1 _META <metadataxml><cemetery>Duffau, Texas, Cemetery</cemetery><transcription /><personas><persona><pname>Margaret Ann Roberson and Thomas Roberson</pname><bdate /><bplace /><ddate /><dplace /></persona></personas></metadataxml>
 1 _CREA 2011-10-11 02:47:37.760
-1 _USER HWoLipib+WnbPlFg/BbPo5qL+tpvhjEsXLSZbx/ivetrjh2DTg6xAxJ/PdEGW6z6/ehSSmlNKUPN9maR/SEb7Q==
+1 _USER OxxoumKlEQCULvSa+RHzbuQGzo5DKfZpBII9gcZvlFJzQUvaGvtbyD5V1WYX+MLavzlwWOnnRRzkq1XTfqAvUA==
 2 _ENCR 1
 1 _CLON
 2 _TID 6044091
 2 _PID 1314076595
 2 _OID bfce310d-f118-49a7-afc0-7da43abe7a74
-2 _USER Zcyro2Nkxotik3hFVojGcdbLLspqP1QKKaqhMVU52Gw8loOnmyl4ttOSnRsckMW8pPg4vI+KZzt8l0jkXCeijg==
+2 _USER jttCVWKRdDDG0EAM1fXwTdrYA7JUAeoilZUW45xsqtZT9R+TXZJSV0HPjt8Vq17nmzbcYyokrgm2fLmpzHrdAg==
 3 _ENCR 1
 2 _DATE 2011-03-07 15:37:48.893
 1 _ORIG u
@@ -21328,11 +21320,11 @@
 1 DATE 9/6/2014 6:50:44 AM
 1 _DSCR Added by: Ken Jones  5/18/2006
 1 _CREA 2017-02-14 07:48:03.430
-1 _USER sqar3C8EEfAyJtY9V6HwMkMysRJ4DEIAL+vVfGlGTFzoFqM8gmnMe1YDojW9HHP48TS/ytBOG3WW/s7ohaahLA==
+1 _USER WCBsY0qrtYz2C8xDp2poGh+9cO3IGCynDqxC6RhRHa2A8mxU3KA9AVKtn9M1NoL9E7kDZRqsDG/VQCr/R2Bq/A==
 2 _ENCR 1
 1 _CLON
 2 _OID 33ab46ed-c60f-4ec6-b4d3-53f3ed745587
-2 _USER xtsYl0Y2SGEiodaWYGIrOgAB5euKWISIGD6cplX3Y9KlzzDVXkU5r45AZgDD7AxJWpF/3+O0gzCun9aYbkLTgA==
+2 _USER 6ktN8QALjujxGzNSpo3jvYs19IlSuKSwZYnKng4aBVaqfBameNOFimBPYQXpIKD70b03IEbVlOgSdRRSxnLl1A==
 3 _ENCR 1
 2 _DATE 2016-07-01 15:03:17.000
 1 _ORIG u
@@ -21429,13 +21421,13 @@
 2 CONT 
 1 _META <metadataxml><cemetery /><transcription /></metadataxml>
 1 _CREA 2017-02-14 07:34:08.247
-1 _USER d4IyRqCHz3SFQIiikvMEy21za/E8npUMteFvcfKK0IWyoZ7j67oLYsScqrBbbqESHWViROGnbZJL9b0ADlYBog==
+1 _USER STrFmmkqIxXkceo/XGHEpjQCTfwL5F0WGGm4ZMQe4QrYu+BbFtI4CuUrijfFxPMywYY+a+SNrkY2tK/qW7Rh2A==
 2 _ENCR 1
 1 _CLON
 2 _TID 877725
 2 _PID 25341059241
 2 _OID f2e99023-4c34-4d20-b44d-7672a88b5089
-2 _USER J/ynjVD5s0mveoHS+9Jfhl4u3kmEX+xbA7zqgPiJGWVB/X5ipuo9BK7JgxSXA/7q787z5MbgzKnpVxPuXYaSBQ==
+2 _USER b+kdZ+5JOKgiAgGxTuFOEVQ7+aGzpXxhVi0jLX5lMSVX0wIPiYj8yhLffokTRHOH/WqXjvmxZSYBsxmb28i5Cg==
 3 _ENCR 1
 2 _DATE 2015-05-04 16:49:55.000
 1 _ORIG u
@@ -21526,13 +21518,13 @@
 2 CONC , m (1) Mary Marshall, m(2) Mrs. Cecily Morton Smith, widow of Joseph Morton, Sen. and William Smith). DAR records state there were 3 more children: Virginia Smith (m. Joseph D. Greaves); Thomas Jarratt Smith (b. 1790, m. Margaret/Peggy D. Greaves)
 2 CONC ; Sally Smith (m. John Hughes Pryor. (DAR pension records)&lt;/p&gt;</line></content></metadataxml>
 1 _CREA 2011-07-05 03:15:35.610
-1 _USER doszf3qnxb7Bvdm6R4Bar/OGu8Ggvt/XKouNzZ5ORG5SbbunaYxVkxPnBV77MSYCPBW+CNyo6X7awK40V7t31Q==
+1 _USER maavBYawqn3kh1YFEr/rqz2vtGvyJl8v6uAvck+2efgov3EWuWG8nsLw4A+rvDU7xJ8RUEbrDihCMjm0GZtJsQ==
 2 _ENCR 1
 1 _CLON
 2 _TID 12216683
 2 _PID -311346158
 2 _OID 13bb2655-4b33-4e78-90d2-c96c1488ec45
-2 _USER NRghhed13bpoLM6kA6IrTJgj0UB43UkRbXwHuUu0948jMuhEX6nDkzf6CkSyTP2RzT/KQ7UohjDPytdehlIRSQ==
+2 _USER 3eBFmzewEaNOQaN3Lg94CZXTS5Zd8OSKBBts0r4YhC10GZ5SapH6PZZOaqUCd+aPxZZ8TvOlmYnOVBOWNRCxgw==
 3 _ENCR 1
 2 _DATE 2009-10-06 00:33:52.700
 1 _ORIG u
@@ -21550,13 +21542,13 @@
 1 PLAC St Ignatius Loyola Church Cemetery, Buchanan Valley, Franklin, Adams, Pennsylvania
 1 _META <metadataxml><cemetery /><transcription /></metadataxml>
 1 _CREA 2011-07-05 04:30:24.637
-1 _USER CcYGAAQXTD3ISG9WSqXiJVEIVM5mTTEtidD8cwV6D7xf3e2egNLbpKxyXsVwt7cIBCchT3Q0WE0dh8EmWixUSw==
+1 _USER GHtHXDFwPfxQWxGEKUm6rm2ypdmn8eYM3jINAq5if8RWjtwfsULwHQBcj7GKx+wjecGJJC9nHhMi5VkLb3lrNg==
 2 _ENCR 1
 1 _CLON
 2 _TID 11828542
 2 _PID -388473726
 2 _OID 42d0b91f-c3da-44e7-935b-3f4c2accfe55
-2 _USER QXUCnAgqutvy1PyVwXkXWdhdPgUR9HvpJeoHhKpZa9XwvXv4Agq9XL8NyF44ARWlQ38acHjemnm1Mm7Pt1MQ9g==
+2 _USER 71bvSRCN4U73CkWN8hefYHGj3UhbOPfaiPDtjKkb8+/SQgQWj/i/vbmCfpe+uSYHcJGuAMUzthhv6Qqv+rHz5g==
 3 _ENCR 1
 2 _DATE 2009-07-14 00:43:25.777
 1 _ORIG u
@@ -21575,13 +21567,13 @@
 1 DATE 30 Sep 1822
 1 PLAC Murfreesboro, Rutherford County, Tennessee, USA
 1 _CREA 2020-04-25 23:14:29.000
-1 _USER cp1GQdwFcZJpw5GnnI4PTaY6VLhlzqJivDv0wX+wjkefBNG0XZjO4a6z6DrokZxuBaSwWtINHaQ8BVFfZIx6oQ==
+1 _USER 43WL3RtxNqF+mmHQ9kQfGicvyAknKnbSS5nn6XTki0fUiU6LF2z8khJSgdAirFHGSFFrBx1U0PjPMYBDZ5O4qg==
 2 _ENCR 1
 1 _CLON
 2 _TID 24968951
 2 _PID 410175936154
 2 _OID 523d6159-b67e-4d0c-947f-5324e34cacb3
-2 _USER Zyzu7TOQ7sbWVsvWy9FBEj0lZ+/84fzr+wG43wzO1OlbrRDZLTSZSObbIzThb5TSBlHLDQ+/5iYxxN2/KTBMnw==
+2 _USER hJBhG2G0dacq3plypJfk9hJQR7vfxdfFNFNrtJv9KxRrS03nrt3X57rpYPyH2nPmqS1dfU2wjSL98qE8EC3QIw==
 3 _ENCR 1
 2 _DATE 2018-01-12 14:18:54.000
 1 _ORIG u
@@ -21600,13 +21592,13 @@
 1 _OID 13bbd9bb-f233-4113-a033-e6e267c6077f
 1 _META <metadataxml><cemetery /><transcription /></metadataxml>
 1 _CREA 2018-07-10 17:29:00.561
-1 _USER dKDedYOGFctoAVespFBdRv2Ys/quHtzbgSxNJpnLBAYqCgTJtdNIK4qgd4zG9a3c6/P4VD+N7i+1TbOJCQgisg==
+1 _USER 7K7WA3J49CgsXa6uX+/csM4V252/8AnMaOQc1EgjlPjFf/B7YhC/4Mf9fV2koyjG10QAoxrtYp2xno4rNUU9mA==
 2 _ENCR 1
 1 _CLON
 2 _TID 3235533
 2 _PID 6087889409
 2 _OID d1185321-a0b0-4b58-9c77-231ac2f3f6d8
-2 _USER eXOHXJsrBNMXjOHJChRAoPi0H7CEJJjkA0IdkJ1gd6Czevfs/KfBMfg2vWsn73hdH30ccI/9UeyX3lDatRjKwA==
+2 _USER awriJ9Pmf4M04Le8u2rTP/sewsbotlWk4+DHClbizhyx3hvN/akwHex9PAWQxnV6oJb7cd7qGF3Px6pRTYbEOA==
 3 _ENCR 1
 2 _DATE 2012-02-19 04:18:07.000
 1 _ORIG u
@@ -21626,7 +21618,7 @@
 1 PLAC United States of America
 1 _DSCR Veterans Affairs BIRLS Death File
 1 _CREA 2020-02-05 19:50:29.000
-1 _USER BdlWsT92/8vUVBLnKhWUsZmVBm7PE5uyTbvJPFTuJ/PaJgm/4+iDk4BLdKnPo+njrqFbXP/hbBCF/v9FtYLLQA==
+1 _USER 0/PGWYqJ2C+5BClRaTtml6xI5r2i4rL2EEEFXg1H8imp8adRNbuwAAtBGn1rs3XcyLBoGBbo7J+mwG2+isnWyA==
 2 _ENCR 1
 1 _ORIG fold3
 2 _URL https://www.fold3.com/record/529116766-raymond-roberson-1916?xid=2030
@@ -21645,7 +21637,7 @@
 1 _META <metadataxml><cemetery>West End Cemetery, Erath County, Texas</cemetery><transcription /><personas><persona><pname>Roberson - Arthur V. and Lula Bell</pname><bdate>1880</bdate><bplace /><ddate>1953</ddate><dplace /></persona></personas></metadataxm
 2 CONC l>
 1 _CREA 2011-06-02 22:41:06.550
-1 _USER 2rb9w++rKmVfMznEKfqPEgXZz1IVdvjP7Y+ATK8qxEnJ6nxpjr7FL4GL0YPJQvMnUh0AEdcbWlxzllINJ+mYoA==
+1 _USER Rv2/Xuz1LWWEUStwg6E5XktMsWxRiJWyUdCEKWbE+isQXtUMXOAfkZ5Tm5nrvwAGGJFTuuMWT2zN6LP91tiRcw==
 2 _ENCR 1
 1 _ORIG u
 1 _ATL N
@@ -21664,7 +21656,7 @@
 1 PLAC United States of America
 1 _DSCR Selective Service Registration Card
 1 _CREA 2020-02-05 19:55:49.000
-1 _USER aTvxw0ohnyJ426o2R2fBtBoCWuh5MsNRr2Fy1rmh5/3gSMGSOvi0+UbCPUvg9cV9lbpzHDmDC2483Keh/pTcFw==
+1 _USER eq42BsGm86Ni2l22YodJvs5WxStdrD7vb27YKv5clDLNM2vVPxbzd16Qo6qPLN25+3cJCs8gQSA/1GN7ZDrBTQ==
 2 _ENCR 1
 1 _ORIG fold3
 2 _URL https://www.fold3.com/image/627494430?terms=mackey,cleaves,john&amp;amp;xid=2030
@@ -21683,7 +21675,7 @@
 1 DATE 2012
 1 PLAC United States of America
 1 _CREA 2020-02-05 18:13:51.000
-1 _USER aQIkjk/zFEijPVubxhbTEKD9IIZhkE2bwJ4QOQiCCFz2qnPvpUIBK5s/JyC0v39prESFDRG974rAhRfjRJCZqA==
+1 _USER jfzhU8uuF7GL1hWHaWUQuzs+O0O7D0Mi3uHOOizH9JsxX2VYF/iLaop9SnspBt8EBhLwvX6tgFh7h+iZE61VAQ==
 2 _ENCR 1
 1 _ORIG fold3
 2 _URL https://www.fold3.com/image/627580849?terms=james,rel,william,jan,1917,war,114690,ii,smith,14,world,148838&amp;amp;xid=2030
@@ -21701,13 +21693,13 @@
 1 _OID 25dc79b8-7ef8-4d36-a435-8a0702c71729
 1 _META <metadataxml><cemetery /><transcription /></metadataxml>
 1 _CREA 2016-05-28 04:22:38.566
-1 _USER Pli5k64K2AC9bQJYLOL1+AU8c7vEI31FfxJfLzvrtDbwd8YKMydlQqel/4d0KGsGf+fNM3M28Jln04PyHsYggw==
+1 _USER 5Zknz/w5m4/F6J8hB7vhTZdD9uILqIFqBbEVhWZdOp9+eWtzY/FrC0n/TNsRBePOCwnyyTIpGpobUhMuggrXuQ==
 2 _ENCR 1
 1 _CLON
 2 _TID 6957812
 2 _PID -619076782
 2 _OID 59bab750-874e-4870-beeb-f5f9faa17afb
-2 _USER iVut5jWQrKRpd3CDjpFt1CimTdzmqhzH94zuBHfYtEVaEi1nBzwr7g80Uzh31OOiLtyJCIHSoDaw1f7RcD2cIw==
+2 _USER rd7TShXkx6Rqiw8RN8Xbdpc358/AGVj12wT6gVsoRQUobJ94ukMG5Yi5Kdxu94XfTB434fRAb2kVziperUVxIg==
 3 _ENCR 1
 2 _DATE 2010-06-30 09:33:02.000
 1 _ORIG u
@@ -21729,13 +21721,13 @@
 2 CONT 
 1 _META <metadataxml><cemetery /><transcription /></metadataxml>
 1 _CREA 2017-11-05 15:58:14.009
-1 _USER bh8ZA+XzwH18/twfbsVmRshIOhyT+n3jU5zCbHREOTuSht1TizooY+CVZg2y7ysfsJHUSNxtdEKOlQW42BGFGg==
+1 _USER qPYyaBFz3lOzYfEaPnvVjnmz2Mx91D+wrF3s7bDyX2hu0uUZfXT+T4OqGnap36dYfDQzySVLVPnvB7yLaayzVA==
 2 _ENCR 1
 1 _CLON
 2 _TID 3122381
 2 _PID -142225263
 2 _OID c3c9c1c1-af8b-4c13-aec0-ed2ecbd3cdb7
-2 _USER oj4QJcc0dEqEx3D459QInHc6CC/lpk9PzwqNvI6pH3NTGg4pZA6ee5nnhcAvlJOmA36BQ4UkCkg+kFbNik3BYw==
+2 _USER 7aGQoO1LTmG4Lt7dxkNshur8n4IGI0t/xjYIKAFAJldfu6eC/2vmuSksOz4JTPNZNUx5drsYVKYY+HcBuuBZCA==
 3 _ENCR 1
 2 _DATE 2012-09-27 17:15:59.000
 1 _ORIG u
@@ -21847,13 +21839,13 @@
 2 CONC n and was born on August 10, 1889 in Arkansas. He married Lena Dean. Major Porter worked for the Cotton Belt Railroad in Pine Bluff, Jefferson County, Arkansas until he retired. He and Lena had eight children: Nell, Donald Ray, James "Buddy", Mar
 2 CONC y Bell, Nelia Faye, Jack, Ralph and Leonard Major.&lt;/p&gt;</line></content></metadataxml>
 1 _CREA 2019-04-30 03:41:42.000
-1 _USER wQJ4kV6aHxyqT4nvAOjdmxpVHF0PGckyDwQmNSJYkwnOsP9aHOegVsC9xYv3Ld2JZkO1m4G1Fj/oPgDc2ExWkg==
+1 _USER Zh1pqzJvr/Q02Xq2RTqsto7JdRDKEGuNU1v+XpuJ1aXma9BGWJmRnmReRxgY+0prRoVUUB1Y/LxqHAVtFQ/mXA==
 2 _ENCR 1
 1 _CLON
 2 _TID 62959688
 2 _PID 46099605622
 2 _OID b1450899-326b-4fd4-938d-365dbcd1158c
-2 _USER 3mMz5w1FucGGBkJ95azDf+GJpKPdPWD0y0BsC0Xi9c8pEquVO6+/S1sVfd/V/uyzSh1MPIOWGL5NyUH0Wfxhng==
+2 _USER B2LyIvE8GmtZLG8pJOBk4WOfAS3cFKFgHU9SEFOFx4fi69Fow7evf6JnsbeTc7Jy+p1JVn/wP9qchiatnuxWWQ==
 3 _ENCR 1
 2 _DATE 2017-03-30 18:04:20.000
 1 _ORIG u
@@ -21871,13 +21863,13 @@
 1 PLAC Pony Creek Cemetery, TX
 1 _DSCR William Reed Roberson's leg is buried in Pony Creek Cemetery, but William Reed is buried in Johnsville Cemetery.
 1 _CREA 2017-02-14 06:39:30.568
-1 _USER /sGcS0U22uT+5h7x2QgJiQQmPEucaiPKUYCMC/tTpHIdPHndoxIIQ8puAVAJ/l1zbLcoP7A31aMUsDpIQF7JGw==
+1 _USER wxSm+o/PYdD+YnGg8qTZsmb+kPLokCA5hkwz0RcjmKajUgoc4wKYXVqk1B18dbSGvyvcmxwOi3bE+R6qmgOScA==
 2 _ENCR 1
 1 _CLON
 2 _TID 42475198
 2 _PID 280035896896
 2 _OID ffde32b8-649d-42d9-bb3d-43fe365d01cf
-2 _USER NfhNLS4bk3aq+qfUgqYde2fUkzaO0zUk1uCZqxu9rGAVhq4/8Ow9z3oX6ZkC+203SV81O74QEYuBLZL+/2KXNg==
+2 _USER HvUelaBf5PzJ1vyn30GavrywoeGfmooX0OkS+Mel5C1J9qZVBLWaRHi+6uLkT//baSqQp2Kvez22WSPL4Q9UhQ==
 3 _ENCR 1
 2 _DATE 2016-09-23 03:28:50.000
 1 _ORIG u
@@ -21897,12 +21889,12 @@
 2 CONC &lt;span style="font-size: medium;"&gt;James H Black&lt;br&gt;&lt;/span&gt;&lt;/p&gt;</line><line>&lt;p&gt;&lt;span style="font-size: medium;"&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;</line><line>&lt;p&gt;&lt;span style="font-size: medium;"&gt;Submitte
 2 CONC d by Jim Porter&lt;br&gt;&lt;/span&gt;&lt;/p&gt;</line></content></metadataxml>
 1 _CREA 2017-02-14 07:32:56.127
-1 _USER Tczdt+zUYb5lincWVI+NLgrx6xlsLHgAPeVB53wKTP9U7hKZNcQqI41cn5tRIXLbFU1mKOK82y23H/sbdn8xRg==
+1 _USER 0UDcVblDqqB+OPp9VkbGgZ5PnAZ467FEaKO6VWZc1SswA5IcriktnhRPrPb//xLXSuojqr5FLOt/xR480DVwtg==
 2 _ENCR 1
 1 _CLON
 2 _TID 42600238
 2 _OID 0929c452-7a17-4ed0-a043-fd391710f8b5
-2 _USER nfZhd4E7HnV1GtaYLTNpWbsC4eSksftf0auIrFsYHeM1lvgNTTKzkghmfyJ5UqNJ6ILlpqGEiiO88EJA4EofmQ==
+2 _USER Wuzy4bqGmhhbiN2Q9ZFxXaM+O0iU+P4hf7vwFj5eCl0v2J7luiqW7M1bZQYDXF0Il6VxCGN7Bwxs3ubH3Q7WoA==
 3 _ENCR 1
 2 _DATE 2014-02-02 02:35:50.000
 1 _ORIG u
@@ -21922,7 +21914,7 @@
 1 PLAC United States of America
 1 _DSCR Selective Service Registration Card
 1 _CREA 2020-02-05 19:56:47.000
-1 _USER F+be0XsIIy/bMyRlQq7eCeYkDiePpfU8QFl9m6CJlw1wakRilnM3aLp/NgU+QaIwODxA2nmOfVwxurVIJBboCw==
+1 _USER a6LQypi5qyGC9AjXpT3paTZTodtaDEJJmjCIiZjv/YEJPqd1dAw/pYlnb1058ptXK9R9SQ/p0YKf6Nv1uSEENg==
 2 _ENCR 1
 1 _ORIG fold3
 2 _URL https://www.fold3.com/image/627494431?xid=2030
@@ -21938,13 +21930,13 @@
 2 TITL M T Porter Headstone
 1 _OID 30081c14-33a0-4e3e-a003-a25ff4d66b14
 1 _CREA 2019-04-30 03:54:09.000
-1 _USER PrBWRYo+jg3QpQnQAVBpec3kwvx8rfV64y2le70bN39KRL3rK03Od4uQISSp4xjtWc6CDJDKDpn2epmvzffKvw==
+1 _USER BQTLOH6iLp93OCnKvdd1QX7TnFOWOjwlRuCo3ptsedvpUyNq+NhYilgtsXE8sulZDDNJx4WAT1uVWeRcNQZsvg==
 2 _ENCR 1
 1 _CLON
 2 _TID 107084904
 2 _PID 100058156264
 2 _OID bbaa57cc-9807-4ad1-b178-3faadbfb90af
-2 _USER mcYV21QMS0l1UvwIP4AqC8qVBlT3H0u+gF5CRjAHTd3Jhvew8tlEB1272LNGigGLHMlYP0iXCXKwXq5PatK0tg==
+2 _USER Fe+poTFzkZ5tItKheITtEJn0Y2m5tRPGNlia2Qe/MQnkyEjzUm8f+JayaSngpXjQQoinAMkCWv1e2GsXPFGZcw==
 3 _ENCR 1
 2 _DATE 2017-01-02 23:53:25.000
 1 _ORIG u
@@ -21963,13 +21955,13 @@
 1 _DSCR http://arsnova.donovanfamily.com/margann.html
 1 _META <metadataxml><cemetery /><transcription /></metadataxml>
 1 _CREA 2017-02-14 06:44:50.138
-1 _USER TzpAG7in8g34eMKoubcwRtKsO5zSlQD7flbr+hksWtyystJNjARS3cgxvdj/7/a/t9C1yYkQApOabELMVeuFig==
+1 _USER m4BpmHjAdrT/4aPtOtkppktCaem5zziEeZayRrpYD+WHpicIXpuKs4TAPdUqXIh0l3MDW8zAHJN01U9Tz6t2vw==
 2 _ENCR 1
 1 _CLON
 2 _TID 6044091
 2 _PID 1314076595
 2 _OID 18b90e80-d616-4263-be51-f4d6325d9f0f
-2 _USER 3R4gftAbfuyjKnYQhu6XvHBt16vvFj7aFC4iURrHFqslLiTaYF7mcHwVVcbh2NRgIzT+Ooxw5l0oGhEpv9tCXw==
+2 _USER VmqwgK4pRPRxPQvHzVZ+oCcwluVeS9scV9awL2igVesOhVvPvwbl5N6bp4UY9N6hpVWj77Wx19ngHOt89WfVQw==
 3 _ENCR 1
 2 _DATE 2011-03-07 15:18:04.000
 1 _ORIG u
@@ -21990,13 +21982,13 @@
 1 _DSCR District 4 Goochland Co. Va. Personal Property Tax payers 1782-1787
 1 _META <metadataxml><cemetery /><transcription /></metadataxml>
 1 _CREA 2011-07-05 03:10:06.947
-1 _USER r5YNEVSfKTmMb9ZGgYvr9ECJ7Tz3FbCYisrQq10qT8dYQYJ/yjyymHz+oaXCrr/5FLQ3KhYUMWQwJnaxrVP/Yw==
+1 _USER 5eCW0YRiETOttApCuPc103YiMCa6Spe1qPA9Z9eBIW+ZwMzLxwlD/cYe4bjjc6ojrTe/TlyzSZfmKO2MIB/4ew==
 2 _ENCR 1
 1 _CLON
 2 _TID 14711680
 2 _PID 149960032
 2 _OID 19cef70a-e2fa-4203-ba49-f20195ee7780
-2 _USER hHJ+lO/1tWZD6UjwCCzSbQwJbNZFPfE1Iis+X9WYdPkcp+tSosNr0LIB7aLbrNKwIuYmAtEWhdHsJZ+iHDizmQ==
+2 _USER imoBOmH4rGJjKXwcc+ZJh9xrmi3k2A1KoRSjropDYO9LmTYeCoT2U1Fuy1Dq+dQTl7hIE+LGMeyhEy6NyWMtZg==
 3 _ENCR 1
 2 _DATE 2010-06-01 21:13:26.697
 1 _ORIG u
@@ -22014,13 +22006,13 @@
 1 DATE 11.22.2013
 1 _DSCR The cover page of The Douglas Register.
 1 _CREA 2020-04-23 20:55:40.000
-1 _USER liMP2hJvP3z1etmtgVGJOfxP6/mdY67jGT30k0HEYP9xURFEWhNamRSxlHNiWEedAeNjy2rw97fMQwb1GZ5dPQ==
+1 _USER 8gxUcymj8QacxpaBd4A+Q9te7Zouhr3+KWUMfsKz3ZphosSCTZzvYoySXLU+RmpiXjSiAaSVo3qLov3PRzoZog==
 2 _ENCR 1
 1 _CLON
 2 _TID 113685454
 2 _PID 380113928884
 2 _OID 6eb7b1fb-a3e4-448b-8163-4a35480bd474
-2 _USER VfRq7xAfgAivlTxZ81muzoRgt5wiDDXGn26Iw9on9nRSi7AiySHRkPxmEauDbKrsvlmwahTvlpc8pO5Z7E36Qg==
+2 _USER ZIpwZ2BnIEgmfOYPPmqUHJ0eZEJGgoW76dMeCeO9HJszqA40aU9bC3poVzELP+iDBGL5yytQXMjTZ7tV4cxkNg==
 3 _ENCR 1
 2 _DATE 2017-07-19 15:46:10.000
 1 _ORIG u
@@ -22038,13 +22030,13 @@
 1 _OID 35ad86bd-28bb-4b53-b1a8-b8b3bf48002e
 1 _META <metadataxml><cemetery /><transcription /></metadataxml>
 1 _CREA 2017-02-14 08:00:44.917
-1 _USER lrZuRtSBLY40zPKdoKvq85dKvnDjHfUWN+Ch3NuliclNcSIfsYw4CcxFjgdv05Lr2MERKfy3WOjIswc/gxsDCg==
+1 _USER n0yaQUtL31IAHoPH2qvHkae7YySivrAnOUoVz2axrFE/Njqhn221uIs9LutcUPfQdkwKUK7ivQvdanHYpPgXnA==
 2 _ENCR 1
 1 _CLON
 2 _TID 25274786
 2 _PID 1900935502
 2 _OID 40714b90-1587-47d3-956f-11f1d4e5d0e6
-2 _USER yzDRzeyn24nJdphkGE6P3CD2a5FyxTpUDnStmJXsNlxWEytdbnltXfXrKd64vOuh+pJUgNnHfORLhASPEOsAOg==
+2 _USER QCyR9W3QMwCIieR69uYa2iF82RiHDM8nUjo3arj8V5SDe8JjG4z0DtsVpdGqVmDDEw4ZAkVEkjBmtO5ZQHSYkw==
 3 _ENCR 1
 2 _DATE 2012-04-29 02:49:08.000
 1 _ORIG u
@@ -22061,7 +22053,7 @@
 1 _OID 38bb29cb-f59e-444d-9cad-5f1c71202b00
 1 _META <metadataxml><cemetery /><transcription /></metadataxml>
 1 _CREA 2012-08-07 21:40:02.057
-1 _USER Oz0X79chsVNtO5/hK91XCT6jwCOee0GZfypHBaRoHY/pyYhpx/ry3I6wZAbJthUAznjD9vjZLNYdkc2V6nSj+Q==
+1 _USER 3dVR2g4zUYx+mlpD03Q0NScy0h7Ji4sQeZ86qJNDDTApDz7bkcbxTDLTRsGSanOliQ8vGLA/XLCSoVMsBCTbDg==
 2 _ENCR 1
 1 _ORIG u
 1 _ATL N
@@ -22078,13 +22070,13 @@
 1 _OID 38e95dab-9b0b-4b68-8da8-7ce6b7b31514
 1 _META <metadataxml><cemetery /><transcription /></metadataxml>
 1 _CREA 2017-02-14 08:00:14.105
-1 _USER xWCHb8T1PPMwZ9GRTa3cQwRC9fWZ9LfI9JuGQqH9izKT8WAdjJtkoJHWY7+1EAAN4Oy+FE0IexDwWPqqby9Yng==
+1 _USER 5WEJ8RnC3595S7Qhma9SZJMWbUoY0FwrmvOCWsjAAOZa+U+5V3JaQcnaWP8BjSa48hkUR2hFIw1aZysdMErbLA==
 2 _ENCR 1
 1 _CLON
 2 _TID 5742336
 2 _PID 24085826461
 2 _OID e6784895-7b36-419f-a968-ac08207f9f35
-2 _USER yJQcAThEpB+4xrZcyMKZPzs7EA1BjB+Rzc2rXty2035JxMFphUiyTRv7SHrqcBZmI/Ly5dlOzQdRIzbQIOXxpw==
+2 _USER Kut4OTaAVwfE1H4IDvqdg9j0XfVZ+ay8xIXUD61ZpuaONzsmchpXQZCUX8JZdoru8C9EH4z9x6n+Ma9z3d6/oQ==
 3 _ENCR 1
 2 _DATE 2015-01-06 20:42:54.000
 1 _ORIG u
@@ -22101,7 +22093,7 @@
 1 _OID 39cfce77-54e5-434c-98e7-a15ccb8f35ea
 1 _META <metadataxml><cemetery /><transcription /></metadataxml>
 1 _CREA 2012-08-07 21:39:16.357
-1 _USER rTXGSIsRrUdRp0548UBz/a5JpYZaE95TI1VYTNsjFRhFCl5OxIjxVUU2L7HFDhrL6Q6DBNO3QLoqKG7UxO82Bw==
+1 _USER j1yj028Xo1x9gQlkTi+aAO5z0chKMf8U0PMKPFWvlrOFlmBLUUBOGELaPLJsO+xvdT/Sd+AnxWjLMJ+aMnT0DA==
 2 _ENCR 1
 1 _ORIG u
 1 _ATL N
@@ -22118,13 +22110,13 @@
 1 _OID 3a135247-a7af-46fd-ae93-c148e3cfb8b0
 1 _META <metadataxml><cemetery /><transcription /></metadataxml>
 1 _CREA 2011-07-05 03:59:15.510
-1 _USER AD7NYH8kXoiq3BGySV0DIv2kb5DQ/45kFJ5u+VYfkH7SyGxy7UrDP5ve93ZWiEIQ4L7wf6WlxbSh4FWv/z5VxQ==
+1 _USER 0SDYS6J1csdQYPlwT5eg5cf/xdGwqa6WWYdg/8KbLshXZyyRc6R1BB7j2tsScRo1l6aK2ZXZkjRZ6ImkUKhrKw==
 2 _ENCR 1
 1 _CLON
 2 _TID 6957812
 2 _PID -619076614
 2 _OID 3d3212f0-d5c4-4fe1-a8fb-10fb3583ff80
-2 _USER u25msogY9dNQi/aLgr9yqHNey1zXI/c0XZ9pxjtwuM8GmEwovTnk4EFBPwxeJoGaqVBdKVQ00alwuyNgsih6IA==
+2 _USER /LbLqf/6Z+4mWWu6+DazHQcPfSRqwKlOu/+K57riuA/ei9TULwD/wIdWoHHEyEpyelc8adPN60X5HvzINVqQdQ==
 3 _ENCR 1
 2 _DATE 2010-06-30 09:34:04.113
 1 _ORIG u
@@ -22142,13 +22134,13 @@
 1 _OID 3a6a4322-4fd5-44df-b235-39eecf07817f
 1 _META <metadataxml><cemetery>Hamilton</cemetery><transcription /><personas><persona><pname>Edward Cox</pname><bdate>1810</bdate><bplace /><ddate>1865</ddate><dplace /></persona></personas></metadataxml>
 1 _CREA 2014-09-29 02:41:50.310
-1 _USER BUA6CA08racriDAmhCPGLd0m6MyRqWt3diQcmtL+5IruE1LAJEasWmezuz4t64F5lMXkFoCiMgiDlAkWtHIKlg==
+1 _USER BBDAKkof1nxBp0z5lBe+12ra2+ye+xMOV6poFGEvKeH2vntUgfxOUtNJAuBNZM3yvB7m52vx5rKWfNPuzXebPw==
 2 _ENCR 1
 1 _CLON
 2 _TID 8593199
 2 _PID -925380293
 2 _OID 351d7427-c442-4fcf-8b8d-29b63a595b36
-2 _USER iloe0B5//6Pp3S49Kr3i+Eb8kLGOVqro+Ev2T8jT7uxGmTyUJxq1/HqANgOPO6wOrtEziPgASPAaCmsQhISsqw==
+2 _USER dTbsS/CZD9aRX798eA3O0eqVDLLdyVeTdjOuqZVID+NAYQVBs6X54dm2vg7fVCLQF9r0iyeRW5fFr/248X510Q==
 3 _ENCR 1
 2 _DATE 2012-11-02 17:24:44.000
 1 _ORIG u
@@ -22167,13 +22159,13 @@
 1 _DSCR Allard Cemetary in Erath County, TX 
 1 _META <metadataxml><cemetery /><transcription /></metadataxml>
 1 _CREA 2011-10-11 03:27:26.267
-1 _USER NwaIlPY396O7LieQk7EhMSYj/a3kB3fdCGBjdGYlcaPmNe/SXZ56stA+eIkg3U7e0ciD+nrom3BtNr6aQTxJuQ==
+1 _USER e06A3Lt2Re1ALA3J3082I9ev1FGncJVXLu0+0kWaNx4z3KpGkrb3JmlwQVQpASj/zi/gH1adDmb+UjoLz2vQUw==
 2 _ENCR 1
 1 _CLON
 2 _TID 13632386
 2 _PID -36959269
 2 _OID 594c1551-7271-4ddf-acb0-4b6c466a78a8
-2 _USER sCUo8+ipr2n7s0kCEIM+RP4/88001esJffSm/m0PNmAD4SC9g5LTX0KkFpia1GcTfok0xba9EB3d5MDEbwTP8w==
+2 _USER Wdo1oiB7QX8D7EnAsLkcPaVolkhlr9P7D0PrDs/cLe34K0iwYrWR0+RRJnywb4Z+edCtwOWTWKxMAh/a9u4ZOw==
 3 _ENCR 1
 2 _DATE 2011-06-07 12:47:22.220
 1 _ORIG u
@@ -22195,13 +22187,13 @@
 2 CONC ear the small coummunity of Duffau. William&amp;#39;s family settled four miles west of Duffau and thomas&amp;#39;s family settled four miles east of duffau. Tach family built log cabins for their families. &amp;nbsp;&lt;/p&gt;</line></content></me
 2 CONC tadataxml>
 1 _CREA 2011-06-02 03:41:52.957
-1 _USER cuW7CnzC8wHrw3VggkM9ZRPVqqQF5rPh6dKEiIhioZVsLMt+HBtFucDmM7XvQJiUn29SDirwX8EeBs2TO8CtPQ==
+1 _USER QnQJHK09lhJBctlUqrTrDP/nWfaxLj95l+XOm9DngdxBbNXh4pN1q3cgO7VMtG3789WcBsbS1Qu/gO/lrFWDVQ==
 2 _ENCR 1
 1 _CLON
 2 _TID 9807882
 2 _PID -262664008
 2 _OID ad698a33-1ef5-487e-9917-0dcbf0954ee3
-2 _USER nzcew3cmLeMXj/Rd5KuTWdkWdDh8Wk9q+vt5duPaKAutZsYb5yc+MWn0ddf9x7zI6vUGmO0N05zYILbVEhKvWg==
+2 _USER xwPZf6Y+vUXjoMSlMFOxX4PY2LiiyRqMDkB0lqNuqFXDMikW65fgOTXXcO3QTm3mDNkcBzIkifPBvGB5DKokRQ==
 3 _ENCR 1
 2 _DATE 2009-08-23 19:53:27.197
 1 _ORIG u
@@ -22219,13 +22211,13 @@
 1 _OID 43183e4d-a6a5-47dc-90c0-74b9d2a10be3
 1 _META <metadataxml><cemetery /><transcription /></metadataxml>
 1 _CREA 2011-10-11 21:57:09.680
-1 _USER DJs7ALTnG4mLJT+rB85HCR1APqpihMmJJuTJVj2iA5L5DjWq+861vOpdN824UfyZXTVsO88mUTIbgJyGB6+Niw==
+1 _USER uSzFQY0AmQoxSSaCgC2Pd1MNWhJl4bjMw/RR10bWgYWvjyKcim/egLyHKZKwYMj4xhLQWUww/KK4GoX/uNZxhA==
 2 _ENCR 1
 1 _CLON
 2 _TID 6957812
 2 _PID -619076614
 2 _OID 3d3212f0-d5c4-4fe1-a8fb-10fb3583ff80
-2 _USER gdSFq87ONqn5THE7uMy4hrmfPpHM7Y2nYCLJqfZRcmVyg/ErTQjHq/umXJsY2DzZrVpZseKFFYGhAUCpVFwP3Q==
+2 _USER 1eUjuNYWikVIc8mWiWnZz1YCUWFI91GB3VFgi9DHt18jOCEFF8ipbxgrhqEk87mYJGiuHrBuoKyY8BdnNGHhkw==
 3 _ENCR 1
 2 _DATE 2010-06-30 09:34:04.113
 1 _ORIG u
@@ -22248,13 +22240,13 @@
 2 CONT Texas
 1 _META <metadataxml><cemetery /><transcription /></metadataxml>
 1 _CREA 2019-12-20 21:35:11.000
-1 _USER D0ip5+6L28wtsh1XYennqM3o55Gw1SylmeEZLodNE4GLAV9IzbCLc1rffJj2NHT++WFoYGriwt7YxVJvinHIOw==
+1 _USER 5MKrmjidnrLKKWIoGhB33z9sa9V53aM9YNohoPHYF5+Jd3Dx4SAG2T422XjJuNrWxhf5G3kJXWHzg6U86mXKwg==
 2 _ENCR 1
 1 _CLON
 2 _TID 9364918
 2 _PID 6021530315
 2 _OID e43782b7-f8b5-454b-9f90-46d07bc095ba
-2 _USER gbYz4ZMUtbWXM11+UzyFfALbJA0qR8DpC4Ftt5bu+nBJQnBbP2Ii13M1wDnJV4RjHgE09mz9tpe9R26VDMpm3A==
+2 _USER 6orf6vDqXAwq43CN594JMs8Mx/3jJ1OwU9mRcVSlgqwX85foKnrd/LlK/0MdinCaTGsiV3DXSsIYuk9yS9SH2A==
 3 _ENCR 1
 2 _DATE 2013-11-26 15:05:30.000
 1 _ORIG u
@@ -22273,13 +22265,13 @@
 1 PLAC St. Benedict Cemetery, Carrolltown, PA
 1 _META <metadataxml><cemetery /><transcription /></metadataxml>
 1 _CREA 2017-02-14 07:01:20.511
-1 _USER 2lJV/vJ9ESFl8CIfpAL1YYbHG46x20uRrfu5H5ZouJ6sAMNZeeouOBPS3QM+/FQTW/zWh5NOVqGTF9DLkVHnkQ==
+1 _USER BpGMJ/ewUXR2kKmMeV5gLk4r/x+ppgQzaTsa7bv7bmFpX+uI+6J9oti54ttX0cR6mtQvze0BXpOalbVWELijBA==
 2 _ENCR 1
 1 _CLON
 2 _TID 15540920
 2 _PID 1642871888
 2 _OID 3ac3891d-a85c-4a8d-acc8-d33dbdd1fc38
-2 _USER kIPfho1RvTw+dLmAYLZZkW18pxJsvzRyB0AkMnkpc8792OD6cpDyVggSlyiYay8uOf0JknPb1BUVygSAJSThVA==
+2 _USER ORVBWQpSCmjcPYvlkeHlpIpS9TWJ/5SwYmpmZPqkvuA37CXnSymfPEEK5NGk18ZvJxdIM9HfaCJt3rHg4VkjAw==
 3 _ENCR 1
 2 _DATE 2011-04-25 14:02:35.000
 1 _ORIG u
@@ -22308,13 +22300,13 @@
 2 CONC e CCNMP archives?				&lt;blockquote&gt;&lt;div&gt;Daryl Black, Ph.D., Curator&lt;br&gt;Chattanooga History Center&lt;br&gt;615 Lindsay Street&lt;br&gt;Suite 100&lt;br&gt;Chattanooga, TN 37403&lt;/div&gt;&lt;/blockquote&gt;</line></content></metadat
 2 CONC axml>
 1 _CREA 2017-02-14 07:00:14.618
-1 _USER m7Ed3gEL8hU+syDkayz3Py0fxRJxJDjoSwqTfcEEvN10LytdxKmzTKO4ovZOPIOMllU5FGxkhMiCBJCEns5LuQ==
+1 _USER oP5XPZLXbK29/R0eN6iNBIyYiTgw1Sv/AS3PafPa6+Bry0UsafQHALXKUaLfSIyIfCbNhn9bVyPtUnEctT0Clw==
 2 _ENCR 1
 1 _CLON
 2 _TID 15540920
 2 _PID 1642908788
 2 _OID 02d15ff2-ea12-48f6-b80f-0c79fe96fbca
-2 _USER r3vaRlY/LBdpRFQK5OPFbWZp9qJkwfMhU6EFJQQzuyExMVDpyQ1t0x9WJcVkIbRONKqne7PWxLZyuUV2OSYY9Q==
+2 _USER oo+Rkhyf/IYfGnsQT4jTl20GHDHGwWWz/0j3hT8UBAjPBtihu1Fiegv/I3tQ/uS7H/nRtTKS9WlcNDuZZRFptg==
 3 _ENCR 1
 2 _DATE 2011-04-30 15:16:27.000
 1 _ORIG u
@@ -22330,13 +22322,13 @@
 2 TITL William Reed Roberson and family
 1 _OID 4a165e86-f198-43f9-8829-3b14a5f71c15
 1 _CREA 2017-06-24 17:29:50.567
-1 _USER eDFLJBUd/33ehNOyLnXRdVwcfL+CwTh2Xj0KqkLxuAA05byIuyaIUocHskfrGM9AZff0xFisyhWNritE1irI6A==
+1 _USER jP4qnXuYLLc8GujJ0iNgIzfrODKEes/aXTfk4r+wXD9tGLPYayzuD7b2b8/Q1wAjtmZ9PnLdl9SuDPzlS87Icg==
 2 _ENCR 1
 1 _CLON
 2 _TID 83464411
 2 _PID 32490834596
 2 _OID f9e4b1b2-550d-472e-9c86-bbf49a12b03f
-2 _USER D1Hf5ciSvIzKADXVURG9PODQZ0qZyc3lHTNQlqy0j/FKqmy2/KrqvvYrtT/vvUS17dA/5SbEEG0ZwEVQUny7jg==
+2 _USER 8MuG+gEzR5DdJKjJbc3bWxIl6WVZdm/rP1ULsGPN9oStIpl0vkb3d6CoX/rrJ7V/hgGAmd7NqonkY0lDIbUlmw==
 3 _ENCR 1
 2 _DATE 2017-05-27 19:27:51.000
 1 _ORIG u
@@ -22356,13 +22348,13 @@
 1 _DSCR Old Klondike Cemetery
 1 _META <metadataxml><cemetery /><transcription /></metadataxml>
 1 _CREA 2018-07-10 17:31:16.135
-1 _USER Gn35i8TSnbwKJMrVJl3jqGetJMqkGPRm60K+cc3DiKgWb7jJBfGUie7fJuZkuICsvUHdPeyDTmin0Q/VshnXhA==
+1 _USER pOSHI2xNiTEWoDFeDMNvI6+gLz0VbK8uLgJ07+Gk/ZfcwEIodlW8NQ5/oaH1o5G0UXY9470W4Kai2RclBuJaaQ==
 2 _ENCR 1
 1 _CLON
 2 _TID 8260969
 2 _PID 225390041
 2 _OID d4d2ad9f-be0f-4c30-a3f7-770fe8aa4d1d
-2 _USER GzdQPGW7BNM8Hr7mPV3x8KvoTWgxHPUuHloqYCzF5bsmaGfaN+6wvteUfg3hvmzihET2p+6lEeOIKbDGjsm/tA==
+2 _USER ++N8/Hx85HQd3+4n4YNWNBjyjmiQKAbDNSGpQV8TLrhJlxegkPMBh0dWXrzTBtqogFm7o8OKbRPIn2wy4sVViQ==
 3 _ENCR 1
 2 _DATE 2010-12-18 06:11:43.000
 1 _ORIG u
@@ -22380,11 +22372,11 @@
 1 DATE 1937
 1 _DSCR Stephenville High School
 1 _CREA 2016-11-15 14:29:07.733
-1 _USER ozCxT3/X3R3WDOjBWYJrTS87gr7VW5nRa1L1x5RDk8z1iLQqo3MG2aozgQ91vgEWwzuc9IIl+/cWs+wCKCOyKQ==
+1 _USER HpLQEf6U6q17UmzK1gLMX27UBpah5unpZEOrKZL1hP1JjPahXKnRGvvs4tlT6oBpS8gZ/JkxpKV7MfxVxPVZXQ==
 2 _ENCR 1
 1 _CLON
 2 _OID 655f92e9-c0dc-4b5a-a66a-ea8df56749fb
-2 _USER Xtbymwwdv9T1A1X4AhaVAnbyzUIPmrrzKwlLgfuJsDJuQ+/Ed1MA79TyGuO0+6RUZBrsYKcZJJups2mcnHgcvQ==
+2 _USER 7VCKOHudE3C3axaOi8xHv8mKz8kP5P8ERfQ7Q3lQhrMqRTR9ZIJCcI57/cdBHZvUuQipWqy2fq/tjwkROdmFgg==
 3 _ENCR 1
 2 _DATE 2016-07-01 15:03:07.000
 1 _ORIG u
@@ -22402,11 +22394,11 @@
 1 DATE 2/5/2006 10:33:06 AM
 1 _DSCR Added by: Sherill Hensley  10/13/2008
 1 _CREA 2016-08-10 16:52:16.431
-1 _USER 9LMV7ZikBdtQAFQlmiyylpuWOkYK2oPgK5QMY6LcGbirrEKOSaJ8jqSbc5jvIs9A1utyL3BrSZqifmX9V7BgAA==
+1 _USER BAe3dGpcsAFiqGJ4MtLWNh9ImKsJ7TWKReQaGKlz78qVPKVWbggdRa5tVCDkaWtMaw/dF4ArpRJb+H8DhqEs2w==
 2 _ENCR 1
 1 _CLON
 2 _OID 7c36f081-7033-437c-9444-7475a6d410fd
-2 _USER 1M+k9AnvN3pY+VHF/UNmk1tsW0Dt+sfuG4DDk6MKY3UdId00xMru+4h8y50ETlrgS5MXbuyl8w9dhHMFC3YGyQ==
+2 _USER uhH137iUXG1Jp1TK4ZuX1d9dkJHJNcAst+9g4FnVwxqk3/89gea9cPdeIlanEZ3ZcK60ZGwH4X8B4QusX0vIdA==
 3 _ENCR 1
 2 _DATE 2015-09-07 05:12:48.000
 1 _ORIG u
@@ -22422,13 +22414,13 @@
 2 TITL dorinda cox_l p evans
 1 _OID 4ca45a8b-c4c9-4eaf-bd9a-e857e61caa3e
 1 _CREA 2017-11-05 15:24:52.216
-1 _USER UiGzNnNCqfFIsiMOcRkTCcFNS6qQDnoLsXSnW4qxO3iw0sLNUmDYLUfp1NxSsp4s8RrJVs7Y5oJVEimd5GdhaQ==
+1 _USER ZzkamCGWWmEE725x829H2TwFUKpxGtx74hfLgwK2MTDIKVt3AeYH3sQQkFISEZqtsdvNRRVGbyUVPa6Jc0010g==
 2 _ENCR 1
 1 _CLON
 2 _TID 67680232
 2 _PID 34211676133
 2 _OID c8590886-7b7e-4e90-bef5-9d57a80e5f42
-2 _USER Nto2yNHtYqeBeOqrdeX5D3+e7+JRNbsb95u2dx5VRE1zi4++7aJWT2OG6y/s8uMkP3LXm4XJ35SBnz/brm2koQ==
+2 _USER kPKepaygn84SOOCrcdrGiywPMhAEeMKhguMx6C+36pxWtQOWi6nNCIVxyU6+62JUGP4hqZfJuBqJpTD7fim5xA==
 3 _ENCR 1
 2 _DATE 2017-10-09 22:06:08.000
 1 _ORIG u
@@ -22450,12 +22442,12 @@
 2 CONC n style="font-size: small;"&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;</line><line>&lt;p&gt;&lt;span style="font-size: small;"&gt;This was submitted by Jim Porter&lt;br&gt;&lt;/span&gt;&lt;/p&gt;</line><line>&lt;p&gt;&lt;span style="font-size: small;"&gt
 2 CONC ;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;</line></content></metadataxml>
 1 _CREA 2017-02-14 07:45:49.390
-1 _USER j/ozuJebALU3slXU/kmC7/hkbEEbyp8ayUvS9xdriz2y2xniFR29zIsoADddxlhaBJF5pJ6YeoVYVAv6oneqGQ==
+1 _USER ViNsi9iQI0fzIgroLSI8fvpF/Vi/rhLt6+yWvOxEkTljqOPPUSqMINgoPy9Yz4x0KMsU9ExWeQki9uq1OGPp5A==
 2 _ENCR 1
 1 _CLON
 2 _TID 42600238
 2 _OID bc8efa55-6748-4ed9-b842-8f960cdcf9ae
-2 _USER OxDa3ThoZqT9bruKAUF3K4Of/BGWWwxIAdHp7rRJuLauw+nfna/uK0lCVBbg7kVy1ToKs/Q51pXfxjD+0HYpNQ==
+2 _USER e95mux0OYR4drKfBpFhFYbJKKJEBAGSI8lek77L6HHqpv5rJ5rszv9Fp42rFfZW+yrgAJz7RJUYEuRdc38B+7w==
 3 _ENCR 1
 2 _DATE 2014-02-02 02:30:47.000
 1 _ORIG u
@@ -22475,7 +22467,7 @@
 1 PLAC Texas, United States of America
 1 _DSCR Death Certificate
 1 _CREA 2020-02-05 19:35:31.000
-1 _USER VXEblpdkgnS4hJCUr9SHHSyq5Lp+4nzYtHwOgNvmhAzviyy+mr8xsVaOIL7nj1Kl+Nsyj2UjCWjBgyNkJdm1tA==
+1 _USER yfUykUn4gC7IdryIcGaonxYx9tGs5xzOYc6dXzXSQYGg7A01akQuGItZNjxZhEL2JoN/QQTHGhaweFLpukAwWA==
 2 _ENCR 1
 1 _ORIG fold3
 2 _URL https://www.fold3.com/image/230306968?terms=stephenville,roberson,texas&amp;amp;xid=2030
@@ -22493,13 +22485,13 @@
 1 _OID 53f533af-df9b-4870-a19d-d5dec2d0a97c
 1 _META <metadataxml><cemetery /><transcription /></metadataxml>
 1 _CREA 2018-07-10 17:28:54.701
-1 _USER 2hGV1/J+Dd+0iA/FV1NkCTFw/TkhlagAunuh3iwJJj/KkqDGDON2T7Md3AK58m+gQvWnpYdB9wR4qxQgxqB7rg==
+1 _USER oaUP+Mq261SGUn9CX9rs08bA41tF9/lemER7VCJzCVpicdrx93SQS++lyzqGQABuEnWq3hjgqlcm2i7kbb1mQg==
 2 _ENCR 1
 1 _CLON
 2 _TID 3235533
 2 _PID 6087889409
 2 _OID 44efeadd-f0b5-481c-aef9-70aa5c558946
-2 _USER UNYPe7jxb2Fap/5k9h7BEKT9B3SHBfcCnxRkXFnv1dXD5Mji/U2UFKwizAI4sZIFrJPMOZZ6xj6qBxn1AxDBew==
+2 _USER 6Y2HSJC7naGiC8DdzfsAaQhoPINY2e/8Tqyi870n0s61vj+DKJKUxO/qW99EAl+ThRVeoXyNEXwlNeCbQSWUJQ==
 3 _ENCR 1
 2 _DATE 2012-02-19 02:27:04.000
 1 _ORIG u
@@ -22517,13 +22509,13 @@
 1 _OID 54504a15-e757-46f4-8e4a-79f265664d38
 1 _META <metadataxml><cemetery /><transcription /></metadataxml>
 1 _CREA 2017-02-14 06:46:24.332
-1 _USER xSWZNt71I3zw2Xa8iYNXotQ7w5WFtuXttxjb741ajlWcH+EB6VZk5WLUszLOYmNHSst3aqdVwrPioza06Jsm6g==
+1 _USER /tr4/BYqfQcnvdm0fnxLWpaA+SHJxMdqIasI4CHoOyMGk7Q7wEsQ2vf0dI2eMNt7ODShjngg7v5+5YetXirVOw==
 2 _ENCR 1
 1 _CLON
 2 _TID 3122381
 2 _PID -815650290
 2 _OID c6eed519-ff8d-4585-af2d-d1127809f3a5
-2 _USER pIn1NIk5Cz3uGvQ2cPGmzUiUrNR5GdEv41dx5DJyuysBa5smaBpVPNqbGYsrbLorpImMREB+RxSqc0HL9ot+5w==
+2 _USER nkHy3dPXUo770j1z+fGttxYeXHRRMpIk3jle3Tl8XJhCQanKHcdcpu0BkKkSDgcEHeEFlfkzveMvWKYm4AyWpA==
 3 _ENCR 1
 2 _DATE 2015-10-15 18:40:40.000
 1 _ORIG u
@@ -22541,13 +22533,13 @@
 1 _OID 548f452d-838a-4bda-850b-2073e9b1290d
 1 _META <metadataxml><cemetery /><transcription /></metadataxml>
 1 _CREA 2017-02-14 07:43:11.940
-1 _USER r9KOaIWbtJknkVfq5eGpSDfnUY3LfTBVh/1HzDae87TEDW7EEw7rJya9SicUAATG4uOnSU/Tzrfm++guaBztng==
+1 _USER V5nQLjou2oFx1kN/CuO087FJyfokDXUvFeSLJTYoI5cetNLuaC0Qdc8yZAe5I0w15cBZVg9ls1S4xoNGHmI3+w==
 2 _ENCR 1
 1 _CLON
 2 _TID 27954154
 2 _PID 13042833823
 2 _OID 06cdcc35-0895-49ad-92f0-506bc2b08753
-2 _USER Zv2AdfNeLZiWlYGVPOdb/wn4+xqmcvMw9LaRxrTd7yReZ/t1O7EQFbEPQ5AZf6jTkm3kaMLZoyjYxvRNWsq9sQ==
+2 _USER xwxM7mlg1fx3l5Ee+k6kijV8RB8Ki+AYklH38/GZpye0zXtxEkULStx4kYzABtRNHfj5v0IoUx1/vocIhMa53w==
 3 _ENCR 1
 2 _DATE 2015-11-13 21:46:59.000
 1 _ORIG u
@@ -22565,13 +22557,13 @@
 1 _OID 549deddc-c0f7-4b6a-bb90-a47cdbe3b18d
 1 _META <metadataxml><cemetery /><transcription /></metadataxml>
 1 _CREA 2014-09-14 01:58:23.113
-1 _USER qsLSAtON6kGc1nppmV+m/dwQfqKi7bY1xCdeaD0OjoaBY3Xl9JmA7O2O34y4uX5OWL1IVPbFC4k2dvaRsgxVfQ==
+1 _USER agh5z51TN9Ul2hvEO+N3bjQRnUVzCturLVlTHzzUjKdfpjRrVJSdYVLTSmGQwFEZ4RUXx7u3KiFEIBFM7zGj+w==
 2 _ENCR 1
 1 _CLON
 2 _TID 3528068
 2 _PID 6155115833
 2 _OID 50ad9df5-c176-4da9-92f1-3a6d1b9a95ab
-2 _USER v4XTRpyvZCDrJROBOJYTclN4uIq62pZY7nftVb2ySHwmU6lAEBsLvr1IZMCF2A78v2BhIw6bjd2z8RzdDk2rJQ==
+2 _USER Fg2MWQI1h70U0EJFSDO66EJb0Qm75645ewEmNcj27MLf5GjAXWqQxTbK5MPDF0to0f3UHBn945c3VP5mjqAceQ==
 3 _ENCR 1
 2 _DATE 2014-01-22 19:00:26.000
 1 _ORIG u
@@ -22590,13 +22582,13 @@
 1 _DSCR abt 1 and 3 yrs. old
 1 _META <metadataxml><cemetery /><transcription /></metadataxml>
 1 _CREA 2014-09-14 06:00:23.540
-1 _USER tUz+e1ZcO4V6MB0IHoos9QMCrf8tPEYrGqcUxcin5M0D34xUNqndAtEW911NyHR17PKGVO8N3ctDO6NdiXYwNA==
+1 _USER jugaR0LcKUtO2QtXg+UTLlOrBUxkO09H7vHu+o4Bti176IPd6KulJNk6/2xlnFawO0Vqntneyehz1b+7WZkuiA==
 2 _ENCR 1
 1 _CLON
 2 _TID 3160477
 2 _PID -1767243742
 2 _OID 16a58948-a078-4340-83c8-5417c7095209
-2 _USER ozexjQSThJb1EH4dAESs5Na20AFCRKlPUfg/UoWFKcir58X8BRLV99646hPSeaJ48tKAPQe3cYArc2c8b+2IfA==
+2 _USER BedLM7pOBEmpJvXfk6gTnynv1cUSiURl5817DhDpelZRtYZN8+xsTkZ0K/B0TMbE3Z6WmuBD9BXtMi2qTQym4w==
 3 _ENCR 1
 2 _DATE 2010-01-19 16:10:51.000
 1 _ORIG u
@@ -22614,13 +22606,13 @@
 1 _OID 58212257-85e7-48ed-801f-b549067f1f23
 1 _META <metadataxml><cemetery /><transcription /></metadataxml>
 1 _CREA 2014-09-14 01:19:09.480
-1 _USER 4WvUlWekmWtN99Z0L0tmrNSaJ+IYXOHFnLTNKuILDYAwK/u31CamTqfkRLAQDOQIQ2WLrrIUH/GvF11yOnEUhQ==
+1 _USER Nu2PEyCVKKaHFl5A5GDRTXj60w5Iz3EnXSpH7LOqUn0I6+SS1w8PpQ9gGO+rMqItjRuv5J7rjwvMhnBPFa2t6A==
 2 _ENCR 1
 1 _CLON
 2 _TID 22681778
 2 _PID 20319311471
 2 _OID 8778591b-ebad-4751-adda-7176bf23c935
-2 _USER czb96CZ9nDBcfyZhCmaUfkQOietGwoffyo3DGL9sFcvn8qu1dF9/GeBlUDB8Z9kNfovXSB0Q0lhbvUjE/4uWzw==
+2 _USER 2qkNKjZEGbUXdFrlEl44OOD4saf9dPxo5zZZ3BMPVf0+iYanDt2Clmiun12Iwyb5yaop9qIQVcwgOYuuAh/GgA==
 3 _ENCR 1
 2 _DATE 2013-01-17 21:00:48.000
 1 _ORIG u
@@ -22652,13 +22644,13 @@
 2 CONC mas Jarratt Smith (b. 1790, m. Margaret/Peggy D. Greaves);&amp;nbsp;&lt;strong&gt;Sally Smith&lt;/strong&gt;&amp;nbsp;(m.&amp;nbsp;&lt;strong&gt;John Hughes Pryor&lt;/strong&gt;. (DAR pension records)&lt;/p&gt;</line><line>&lt;/div&gt;</line><line>
 2 CONC &lt;/div&gt;</line></content></metadataxml>
 1 _CREA 2020-04-25 23:13:57.000
-1 _USER kiy2txLTq97/gxrQVsPPoCFeWAhw3XeAM3py82J6PzSNX7a89UwFJ6V+VRfMjJa7rr4sDOSONLG1D0G2AOHGSg==
+1 _USER rwfvGL5fX3nz0xD6+C5hEg3xWngqNDZWGhGPsscSL9QVGrOLthYDMhncor1igcpDu+zZlR20uP/n16Vw5aqGJA==
 2 _ENCR 1
 1 _CLON
 2 _TID 26958093
 2 _PID 26091340975
 2 _OID 12d8634f-d80c-4b1a-8ed8-0048b0bc72ef
-2 _USER M7YPHozFF6rAd07VadDl290iuXMgdcv98RRmdtUy7H6Ug2iBbx5ggaoVfzmoKSiHJWbJ6oD1StsEi+eb6qRj7A==
+2 _USER X2x2OuNZIGq6l5/1f//2aqVzkB9G+5k4FAZv2xPFZcyrtOm5cmwPDyeDO0oCPzilK172cYTyiGURXLkN4koyGg==
 3 _ENCR 1
 2 _DATE 2014-01-29 06:49:57.000
 1 _ORIG u
@@ -22676,13 +22668,13 @@
 1 _OID 5fac567b-ac6a-4d39-8f29-d2655f96f2fd
 1 _META <metadataxml><cemetery /><transcription /></metadataxml>
 1 _CREA 2016-07-20 19:57:52.985
-1 _USER wydURjzpJ2AM7E4yLvD8nYGZpKFTRmwBwxYvfoph/rnUhFrh2+xy106a71ll7MrwhNUOjL43zzlJAJkN5srF4g==
+1 _USER R5jlDPjDes03D09MShcFz5Ui37yT2WY2VmmUhVBEcIN90B0nDhu5D1qiPIjczrniiw8neCmM7r3jEpZKJLj/zQ==
 2 _ENCR 1
 1 _CLON
 2 _TID 3528068
 2 _PID 6265728240
 2 _OID 50ad9df5-c176-4da9-92f1-3a6d1b9a95ab
-2 _USER dLZDmgvYQ+bo83+hvR6ram6ngzghggUNAFP/1bW2rJRCKqF5k7uJp6zZ4kj8GBauZxsBJobnrUDDAsh76yQ8yg==
+2 _USER SUNgH5at+asDEQFWVKj7XEDDRca1FYZQmIZkUuIcC1sZY1i4+dJrmy5rSxQFdol1OwNaUDMygBz6W4JgmJIpwQ==
 3 _ENCR 1
 2 _DATE 2014-01-22 19:00:26.000
 1 _ORIG u
@@ -22702,13 +22694,13 @@
 1 _DSCR Via FindAGrave.com
 1 _META <metadataxml><cemetery>Allard Cemetery</cemetery><transcription /><personas><persona><pname>Amanda Elizabeth Allard</pname><bdate>1829</bdate><bplace /><ddate>1916</ddate><dplace /></persona></personas></metadataxml>
 1 _CREA 2011-10-11 03:24:03.923
-1 _USER zyiN8y7TyBXSo4SXxsgw9mv9qMvR9/k36BeNjZpFpzz+7yaX/pa6QMMoke4ehCzCDFaoXs9aJcuKa5vMCoJvLw==
+1 _USER T5hPbG+OJpkN4t557OERnJ6U9izYmhFXYTjJw0h67z+O2rHcEERZWnwRxRTmWWJp6GWQ9q9sHpmv4bAdgEjaHQ==
 2 _ENCR 1
 1 _CLON
 2 _TID 8260969
 2 _PID 198699374
 2 _OID a67a1970-e217-4a5d-b280-61d01de5f2fd
-2 _USER gy/vaq07175GYoOWn42+tR8ph+prwWlhS4HEQCbvCTATFxnauVCcjM+flpGLbiLhb6AkfYfMe4cUlVibPehMLw==
+2 _USER N4aHSbRHhhTP0UzTFEEft60VT2G3cD/uyuG98Ag8rR0GZa/Nos72TcZlEzp9TsvKv1Qw+QmW3Rz/ktVb2rEnDg==
 3 _ENCR 1
 2 _DATE 2010-12-18 06:00:49.300
 1 _ORIG u
@@ -22729,13 +22721,13 @@
 1 _DSCR Death Record for Amanda Elizabeth Hamilton
 1 _META <metadataxml><cemetery /><transcription /></metadataxml>
 1 _CREA 2011-10-11 03:24:15.360
-1 _USER c7ypFotHrr/IhIPDhdEiU9cXt5UVi1BMrpa+mYEzULkFkaqZ8VDrcHMp2t620R0EN13szDe9OhPMadcCx6igIA==
+1 _USER i/2wB3Oyx3U7MoE7Dtp0sU9DjRYKWvv+nLNIeMdMg0aGgakPvyEaiTJNiyXitOqYlkJzN6bWbAUHMYaE5G3gcg==
 2 _ENCR 1
 1 _CLON
 2 _TID 8260969
 2 _PID 198699374
 2 _OID d887f493-e50d-43ff-8c80-db174f545673
-2 _USER jaCUw99ZRE9Ijc/8uPy+aq1jlz3/8BkjvKFcBzaTil8Yqc093LOqjf6D7VauKosmdKf/DWnGnh8zgp8sLhgMSw==
+2 _USER 984ZrLBW2BOOySjLrejbAAF5vUY1q50rMTQctbmAulDWU1cue+0Hk3RDBhG0ChytLSWsMDCk6iJQ+mb69JrZ9Q==
 3 _ENCR 1
 2 _DATE 2011-02-12 22:45:28.367
 1 _ORIG u
@@ -22755,7 +22747,7 @@
 1 PLAC United States of America
 1 _DSCR Selective Service Registration Card
 1 _CREA 2020-02-05 19:31:54.000
-1 _USER WG7Z0K39Jdo/XQ9viig/uZLId03OUlWqtSKL+J8oUbZffCzIXY3ipo2bT3mSfG96dILvRkqooapt/RsfzlxvcQ==
+1 _USER iZjSu5f7mc/7klU/lLE4WS8esUZ0qjZUXNYHFVXbqlDKnNpCNIKK6CpRowCmwZ7kUspfnDDCHaGjD34SRtKZ+g==
 2 _ENCR 1
 1 _ORIG fold3
 2 _URL https://www.fold3.com/image/626633021?xid=2030
@@ -22777,7 +22769,7 @@
 1 _META <metadataxml><acountry></acountry><branch></branch><cemetery></cemetery><country></country><directions></directions><ingredients></ingredients><institution></institution><job></job><ocountry></ocountry><school></school><transcription></transcriptio
 2 CONC n><personas><persona><pname></pname><bdate></bdate><bplace></bplace><ddate></ddate><dplace></dplace></persona></personas></metadataxml>
 1 _CREA 2026-02-09 19:30:30.395
-1 _USER FZF8mBwST9SoZzmaepXug4rYORLrWawVy1m3MmGFLbTHpoT5SrDo9zrH1G8AKGQO8uOTEgZsTDnf1L3ylOHn+w==
+1 _USER S/2X0y+nqoy75keIubVFe6UfXkLLiysxg9A/6c2Qjvcm7Ox1xLp4MZlLsrTaiQNTkp7peRDotmCl4MNClywqHA==
 2 _ENCR 1
 1 _ORIG acom
 1 _ATL Y
@@ -22797,13 +22789,13 @@
 2 CONT Via FindAGrave.com
 1 _META <metadataxml><cemetery /><transcription /></metadataxml>
 1 _CREA 2014-09-14 02:08:12.067
-1 _USER aItzpKvOKQxVAzCuv2eOUYbQjZxu8+QzfVEW7h4++5KgU7OV7ytWoSEDK24BCiiz6N5U7VzIOHbGNWaXcJvR8w==
+1 _USER v4BECk+8L6BbNCLhj/V/faub2JLjd05bJlQXwS9zkc4bi98eFr7/u1CXuwHqJ+wxSTh5vxoJi/tonxSPA//u3A==
 2 _ENCR 1
 1 _CLON
 2 _TID 8260969
 2 _PID 225390043
 2 _OID e27edcca-2636-4b75-b503-b53bd461e3d8
-2 _USER tx3Z3ObM1VvAEaaGjCYXQsw1h33ZTaXT99cffJjfBVUvdZkU4uU3smseIxZbjUeBbAlsCE6vvi+Atg/5lO/q7g==
+2 _USER dzySY4O4IlosnS8udq5lqMQJJeGb+kHyzhfTiLNw2fdZ4IYPXS0r8D/ghI9BDxTqpBJYCRWaMXuGkbRIkH4iPA==
 3 _ENCR 1
 2 _DATE 2010-12-18 06:16:48.000
 1 _ORIG u
@@ -22823,7 +22815,7 @@
 1 PLAC United States of America
 1 _DSCR Army enlistment records
 1 _CREA 2020-02-05 20:02:50.000
-1 _USER 2B+N36wBQf3skOlFSLMQHWaG3BAbrFqUPI45DE8QEfZV7eLt2oGLSSJ3bBwKzVwLHD7NTQp1gU0Bh8UDBPrN4g==
+1 _USER /EnAlnYVcG3oluRPJde3pwG4XOi3ccJvP1v1PMzqwjI9q/D2QcawTE1g5BxqgJs9FS44X7SPdahzgaYRE1fung==
 2 _ENCR 1
 1 _ORIG fold3
 2 _URL https://www.fold3.com/record/90415926-charles-h-porter?xid=2030
@@ -22841,13 +22833,13 @@
 1 _OID 65e80629-fa01-449f-a377-ad057618d424
 1 _META <metadataxml><cemetery /><transcription /><personas><persona><pname>Allard</pname><bdate /><bplace /><ddate /><dplace /></persona></personas></metadataxml>
 1 _CREA 2011-10-11 03:28:04.207
-1 _USER V3nxuYcmlWVIraxfEkgsFacmeclwOioInavvpyuIt2rpABzl+46FvyhqNk1EjpeggoeXEfnYxC0ODmFheTkNwA==
+1 _USER KMmjk/JBVWnyMRkP7c+7Ej7caeakhv/FjA6coLQtyb7Vc+wq2KTDvLvGpE/vzsgTTyCHxLX5uQN+1kZu678HFw==
 2 _ENCR 1
 1 _CLON
 2 _TID 13632386
 2 _PID -36959269
 2 _OID f6582f58-e9e9-4620-af65-979800ee5242
-2 _USER YX8ZmSp6Y2eRO1qOm+N2t3qH8aVMYMOIUZQXaS6BZ1ND7fzddKSgtuGj8JiWOOuIZbRSEs5NyeKuMnACRHqO5A==
+2 _USER OAtZoXRt+SKSCI92f7CzC/kA1M69wO4s741+RrESwbNKPmFAjAx8mi1anjgwTtdbkfj1bEbenUZsV2NxqDGanw==
 3 _ENCR 1
 2 _DATE 2011-06-07 12:53:18.427
 1 _ORIG u
@@ -22865,7 +22857,7 @@
 1 _OID 65f79339-58c1-4e4d-ab94-dc6e521231b8
 1 _DSCR fold3 Army WWII Facts
 1 _CREA 2020-02-05 20:07:09.000
-1 _USER 9kz+GtvoYuTmdPeFX5AL97NR6GHTnUFhkVUTxpxXsol/mkvfFZYHV1FdMrmiyRZ80fx5PkVIwoLoM/Dc9yYD2Q==
+1 _USER pJY/KpXtXEsRRin2GcJ1twWn5KbDXotC1RP6CH4NsmHJB3Gk29BbWa4xBZzLVKn2blmr5aLagcnKroFx3DKPcg==
 2 _ENCR 1
 1 _ORIG fold3
 2 _URL https://www.fold3.com/page/90415926-charles-h-porter/?xid=2030
@@ -22886,13 +22878,13 @@
 2 CONC lled them both.&amp;quot;&amp;nbsp;&amp;nbsp; &lt;/p&gt;&lt;p&gt;from INDIAN DEPREDATIONS IN TEXAS,&amp;nbsp; by J. W. Wilbarger, Eakin Press, Statehouse Books, Austin, Texas, 1985, page 503&lt;/p&gt;&lt;p&gt;(a facsimile reproduction of the origin
 2 CONC al)&lt;/p&gt;&lt;p&gt;This is by family lore documentation of my great, great, great, grandfather&amp;#39;s death on the range in Texas, although the dates do not coordinate with the death records&lt;/p&gt;</line></content></metadataxml>
 1 _CREA 2013-10-25 22:29:20.373
-1 _USER ZJIy73plqarYa1gFfq29XygJv2yb5Fbs3rSOvRyvNACUCaP6IZpBrNJFRKIVc3xSv135P+sO8gLEJp7i8YENuw==
+1 _USER red2ADEYfcLsonemBKUmmNo2BVu2cIUm1l65gDdRpN040SF3eZyzbL9G1Tpvn0cACsP5StuYyBGltfr0ylen6w==
 2 _ENCR 1
 1 _CLON
 2 _TID 16778783
 2 _PID 428394135
 2 _OID 0e222fd3-42d9-49b5-81b4-5d5c03215dba
-2 _USER NBwlsheeB0W7wgZamW8O50dKD44B2Vq/+mpuRLhMpdtxKad0ifk5i7tX3vc5agDiXdV+TFZFX7sm75jJBs7qDA==
+2 _USER bqk2Joi+VHswHFbz32P8RmtOV8CC443a6Bb+72Few+MBcByS1B1wlHUE7KoSnSIBk5KU2N3Ld9PeGSDzMe7inw==
 3 _ENCR 1
 2 _DATE 2010-08-16 00:01:06.000
 1 _ORIG u
@@ -22909,7 +22901,7 @@
 1 _OID 68bd9c0e-a492-4383-bc59-6669a89d17f4
 1 _META <metadataxml><cemetery /><transcription /></metadataxml>
 1 _CREA 2012-08-07 21:40:23.447
-1 _USER nzsnzGJMk5YzB9CrPRLekZXiMFEhRLUUngGD9CaG7BzB0VcP3yBKN+XLYb3P8lSFC4a4EwYSrGmW8nE1oJcDUQ==
+1 _USER +iuJvTblTRoS68z0e8ee3eHYkaWCaa6WGNCSeBfn/yTcGtl1BaxwfxS3DtymRE20CrluFkGD0vL/XLM/E4pHDQ==
 2 _ENCR 1
 1 _ORIG u
 1 _ATL N
@@ -22926,13 +22918,13 @@
 1 _OID 69421402-e84a-4a1f-9f7a-f522e5454d5c
 1 _META <metadataxml><cemetery /><transcription /></metadataxml>
 1 _CREA 2016-10-30 13:52:50.647
-1 _USER DxGnkXMJJBh/h45q/3ujekKfUxuIYXOuUrrOuvlIT6vNvmtTBdG5D+0ZDxsdHf2bDITq+pzXmacikaerCsWtTw==
+1 _USER 35j46BNbaJXqP+7lnAJpp5amQuVcRR+249K/IlM06s+Bi5x8+HkDgGYNlaOYZBrVaMWx1EXusnoBmFFLZDfeuQ==
 2 _ENCR 1
 1 _CLON
 2 _TID 12613002
 2 _PID 340621008
 2 _OID ec922cfe-b459-4d60-8710-e0376a47f572
-2 _USER MypFnHFEgSjUYkaJaJ7ygFTAWYJxOEo3tzMyFnkv+0ayPNOQJAhUsEGCV3unIHubEhLEloNznNaf+3UTgNGd7A==
+2 _USER /mmL6rpYUGdP9WD76hg6nvvLdS1x5TdXnh8vAKZ8ZVRRoOnVH/Xc2r1b2i9O5iNOme/8H53x2V7BMfbgGUR4Vw==
 3 _ENCR 1
 2 _DATE 2010-03-11 22:54:05.000
 1 _ORIG u
@@ -22952,13 +22944,13 @@
 1 _META <metadataxml><cemetery /><transcription>William Sylvester Dillon
 2 CONT </transcription></metadataxml>
 1 _CREA 2016-05-28 04:22:08.147
-1 _USER qSh6kKPdYBZfcDLgWnXQapQKVpnuC8H3L7ydch9qQXXBDRM5PAFtXlIJh7kjFookAeMMs3A8l9mU8kkCip+iCw==
+1 _USER gZqPiUR5+lSDDrtAyDGsWj7PprWluAuvEK6clTfwQwSjKjR87Vj47y0Hvl6NIPKsYTKl+M6gHl3xLJywEkx/vQ==
 2 _ENCR 1
 1 _CLON
 2 _TID 6957812
 2 _PID -619076782
 2 _OID 7d3e9056-f196-46d9-ad84-c932c2a7a256
-2 _USER APgb3nEWq5UQh6wQiDlnv4JxBonjUEv6cxlfKhvEuwzBw1eKt+z7Qw6Hcvdu5nheZY7WiEFjVG9GDvqorU+Qyw==
+2 _USER nli4om6jgkoTIf7uO/EGZ4Y/fLiVBkrRaeg0OdziBn5gtpgj7ewEntHXMjfxizNNRlvzMSsEIat+GOtUU9fx4A==
 3 _ENCR 1
 2 _DATE 2011-01-26 22:23:43.000
 1 _ORIG u
@@ -22977,7 +22969,7 @@
 1 _DSCR Virl Roberson gravestone - West End Cemetery, Stephenville, TX
 1 _META <metadataxml><cemetery /><transcription /></metadataxml>
 1 _CREA 2014-06-05 02:59:57.687
-1 _USER x3DtIXQqRychA2pH9Nqx6D68zqlXT60eB9Tf29QDHp2fhp5lRlKzW+9fMCb3T3xqHCgBmO6oTSRX9Ylhw+vLMQ==
+1 _USER uBibqBip7QfBlZSMnNTJ2Gb3SAcxxeeNP6+DCCOsRnpSzBr/MAFFjO4G6GZ5jIguENBmgZxqFN9uXc9PeVhr3Q==
 2 _ENCR 1
 1 _ORIG u
 1 _ATL N
@@ -22995,13 +22987,13 @@
 1 _DSCR Drawn from the memory of William Pryor Lewis
 1 _META <metadataxml><cemetery /><transcription /></metadataxml>
 1 _CREA 2011-07-05 03:12:34.880
-1 _USER J3SvnALgrsyO1w+rL3vVsgZlhU7BlNgkcGAulPvQUWPEzuZZTz+anL3S3+AGr1L01D/mW9XKQCE1focT+YLXiQ==
+1 _USER sfTNdMY2mnz3HRlg0A1vh11S1UKWgoPW4GRSLdfrt5Grkl4W0/cMoT0/XQ6eacsOrw0sL9Mj2hbSP3CTSZh5tg==
 2 _ENCR 1
 1 _CLON
 2 _TID 12216683
 2 _PID -311346158
 2 _OID 236eea37-8e4e-48e8-8bb7-bc73b27581bd
-2 _USER AGYVEtyrAKmy6ikmgVl9UOjKyxC1/CP00b9FWi1ugyuARTuNC7yEIkWSy1sp5P9H0+/fIGOigglI++Vg4bWaCg==
+2 _USER zMTb5Vm5WSE/qHQNvMQs6gM7xPNVJQ7l6uFqR0HgxwhtglajKibDo1tKxx7Vq0nYwt9apjnzF1HchFOVjWVNGg==
 3 _ENCR 1
 2 _DATE 2010-03-09 23:17:09.317
 1 _ORIG u
@@ -23017,13 +23009,13 @@
 2 TITL Buck  Roberson 1894 
 1 _OID 6c5f34c4-4fe0-49e3-839d-8d98318913da
 1 _CREA 2017-06-24 17:30:10.250
-1 _USER t32ShvtnW7Ra9eXMIxYJcByqU4KGOHqz8t2BK32FemrI9b+t7yuOgY1Xd4pdhbN5tROH9qrI1SPOiLX0OR3rlA==
+1 _USER 7GLU85XH7WwH2K1l9F5iJMOu8hFqmVG2DJNDTrd63MblLVc4bEKkmzdkN9tUmiypy49rbUFkeTTG8M7oVgOW5Q==
 2 _ENCR 1
 1 _CLON
 2 _TID 83464411
 2 _PID 32490834596
 2 _OID 6d7ab9a9-8c72-4bae-8e69-ce822f80711a
-2 _USER iN/2uelAfs6CEJQ66iSjFapBqkuN6hrANDXRNoiXmIQQqKoJSbzFiSfa75bubikVW5pii5lfAXtOST8yOt8ERA==
+2 _USER DYQ6DrZs2lImD/IEOvaKiJ3ZZb+Gr6ADptp3ruPdXaPw5mjc61mFktf+5JRZry3+GmNpS8zzj8ebID6DmNrfpw==
 3 _ENCR 1
 2 _DATE 2017-05-27 19:26:17.000
 1 _ORIG u
@@ -23040,13 +23032,13 @@
 1 _OID 6cbb961b-2db1-4d7d-91c1-25f51a4c8c7f
 1 _META <metadataxml><cemetery /><transcription /></metadataxml>
 1 _CREA 2012-08-03 02:04:24.607
-1 _USER DaozkNijhPr6ezKOTcULU6AycTfT+EB645+WJEBxySXY2OhFT/upokDtLMHI0mX7CSivmiUuRphWXAFZ4UOKEA==
+1 _USER 8lgu/Ppbz0XFfKCVgD227gposJ3nZO/+GgcizWOQ/dbkiG+aclfQUYtYdEKZOiBrdxJQLLQVrcKBrfTHWvwhMQ==
 2 _ENCR 1
 1 _CLON
 2 _TID 5680465
 2 _PID -1377902060
 2 _OID f41f43f6-160b-4a65-96fb-44554d80f0a3
-2 _USER +kzTh+wZLWtyb6yH5wNVDy9aLM8+9OgKyeNj+SHnW54Uu+yRYzM4X8H+HA5nmmv4cV0XRMypoN1ADmzWf0JN6g==
+2 _USER dIBB1FTcfW+g8RElG3eOwx7C0bsCXB/2Zsjt+U8UvBibHokfByb7Ps2EGtwv9gcHP8nHxtW4TozUVyppBtIt8g==
 3 _ENCR 1
 2 _DATE 2008-03-23 00:52:45.000
 1 _ORIG u
@@ -23065,13 +23057,13 @@
 1 PLAC St. Benedict Cemetery, Carrolltown, PA
 1 _META <metadataxml><cemetery /><transcription /></metadataxml>
 1 _CREA 2017-02-14 07:10:10.711
-1 _USER nGPxfFzXowfVWoWqoczVBiPPJ9wZNaaf4foICSYmyobD6Hssno6M237UCCeMXBL+7Gk4AZNn5OzqKGpTDdZhwg==
+1 _USER 7B3lvX5BEfRDSdLirUzZz/udK34W8qa1kNBm3I9UQ83NT5eQcsRDpp+i/iQaBQZGKdA34rc06ugdBYZo68uPmg==
 2 _ENCR 1
 1 _CLON
 2 _TID 15540920
 2 _PID 1642871942
 2 _OID b800f3d5-3179-4190-a72d-e865907c3f59
-2 _USER eHZv7FfyPqwuR+ykM4G/93fEvsigInTUBOSro0+GMmBAOgapOgB+0uVIaJtJ2mj0Qup7/c0mZjR7DSh+iebyMw==
+2 _USER nKwSvt3eevTBFU02KW54m0DOtXjycLgoQIzoi3+36qwr968iWK7x7oSsatF/cX/iJe+K6+6XdUjWMLlvmontUQ==
 3 _ENCR 1
 2 _DATE 2011-04-25 14:01:55.000
 1 _ORIG u
@@ -23089,11 +23081,11 @@
 1 DATE 2/25/2011 4:09:05 AM
 1 _DSCR Added by: Ken Jones  2/10/2012
 1 _CREA 2017-02-14 07:38:51.917
-1 _USER YLOeF6NWaoSJ6mN2TOj/Sc6zsEcvHIyjtxuSDwqIp0do7NaH96CG26KcA2akmvpWOgyoC4K0kWlUYm3gpHjMpw==
+1 _USER gzgQlI6QZwIlhRaYuQ42onpH0XCjw8AVNQm46Zo4gHQ6K5xR9SO1rrgnB2lVRYyq4r1kkWn11KCcfFrnN34okQ==
 2 _ENCR 1
 1 _CLON
 2 _OID 911cc0d2-1480-44c6-b440-91b0472dd315
-2 _USER jYZBm+XnxI/Wdrn1aYJwGOZ+a/XUGJzLMe3UZUNbfluwvT6unIlnFVKn6PiOQpb4pCUz6/vuulP0JI9lRDduPQ==
+2 _USER Ahkm9Gcer+MdcHm6R18TvqvIlp5f6tFYillo/stGyUHF0BNqyG7eYCPa5F1J6mZOLkWRVM4QbZFoYnmzwnBG3g==
 3 _ENCR 1
 2 _DATE 2016-07-01 15:03:25.000
 1 _ORIG u
@@ -23113,7 +23105,7 @@
 1 PLAC United States of America
 1 _DSCR Selective Service Registration Cards
 1 _CREA 2020-02-05 18:51:09.000
-1 _USER IGYe6rSQmZYGEIC1vFIvxz74/Z18gA3TIdgmEoYtkh6zzlM60dete8on9qR2ubHMxEsKBpf6uyrmtPNCmqnyDg==
+1 _USER IfvW27v2wftmET6Fsb73jVorzRrGMuL7nUPpyAZd5APQ0zpz7mgGfPpEyHvBZyi4e6WzXKAb5jaNcunA3E9x0Q==
 2 _ENCR 1
 1 _ORIG fold3
 2 _URL https://www.fold3.com/image/625708025?xid=2030
@@ -23133,13 +23125,13 @@
 1 _META <metadataxml><cemetery>Bethlehem Cemetery </cemetery><transcription /><personas><persona><pname>Charles B. Goss</pname><bdate>1824</bdate><bplace /><ddate>1855</ddate><dplace>Union City, Obion County, Tennessee</dplace></persona></personas></metada
 2 CONC taxml>
 1 _CREA 2017-02-14 07:57:59.348
-1 _USER hCXN+huYST+Nh+lZAcSRZFWJ6p9KwkTYjHwbj3nnPV54Ov9HHbhUrLQXa7jW+tS4Fm5chinM2/WEpnbgbsHalg==
+1 _USER V04EJVCEqTs5/xQSnEbnyMn4yDXO7ft+jr2bgQeRAXoxqOhu7jzllQwjQlfE5ePJyShGW1cxuHGIoF8BmxMcNw==
 2 _ENCR 1
 1 _CLON
 2 _TID 686549
 2 _PID -2060152115
 2 _OID 98513c64-b1c6-445f-b5a3-269bf0d89d03
-2 _USER /EFnF7Y2pRz8s4lUxu6rTNvm8xCazG+6N8aSIZG3a1PSA+8lPtH0LgQT90RwDwXqPxpcEBFOjreqxloDNbgo4w==
+2 _USER 5c/ys+iJq8jwdMR0FPgj5+h+D8WOErg7KmpUTfALn/WXkz7JCdSWI9lmgM0yPPf8gh3+UTXwd2Hv4gug2n6y8g==
 3 _ENCR 1
 2 _DATE 2011-10-20 12:42:54.000
 1 _ORIG u
@@ -23157,13 +23149,13 @@
 1 _DSCR In her older years in Texas
 1 _META <metadataxml><cemetery /><transcription /></metadataxml>
 1 _CREA 2011-10-11 02:20:14.643
-1 _USER FOXq5F9DTokYJdYvRvacar+Ws4SV0RIF1GZbRkpillMpsoQxl3DOXoUJqdJ32Jp9C7MnAUosbuTQHzY3X24paA==
+1 _USER 6mSheh8yqqC8xnSUmlLDLIqz+sxzm1IGi33rGDF/lx7Ib/+EtBxFtUjfymOyft1WRU1fi7AppIJHPhYLy/hsGg==
 2 _ENCR 1
 1 _CLON
 2 _TID 9807882
 2 _PID -243062936
 2 _OID 1cddff09-9f22-4752-bb14-c51703c7dda5
-2 _USER qcKz3FRm4E8TWCF+ax9VySqfPpwhOYrZT/KygScOkgYIv7WTIgXsHbxwTZV4jq/gBaH2UD+S9A3GQ7yCnNafxw==
+2 _USER zdidLwqTsd+uTwLJ7dopXnQlqmGaPuzq0ngL5N57sTDXF7Vw5J8ydg41K44+YMujqMSK2VVpr3EW6KkEJrp3nw==
 3 _ENCR 1
 2 _DATE 2009-08-24 00:18:17.280
 1 _ORIG u
@@ -23179,13 +23171,13 @@
 2 TITL William Reed Roberson McCords Reg 02
 1 _OID 74f932f3-efd1-450f-9bcc-f768a668d974
 1 _CREA 2017-02-14 06:40:06.920
-1 _USER 669jvOzpcdbqX7Z+0Pm56SG9UBUDfYc+C5EQg7rtcvYbyuHkN00QNZ7+dxmOZsIaC8DlcAqhbhEVOk9yPPCsvA==
+1 _USER 9Yj1tQTwN4qM31JxF/PblJv9DW29zZYlnfijYeBvz8Ul8GNRH8mJrr5bdTQlD+At7LhFxRp5S4OhUyByJmosQw==
 2 _ENCR 1
 1 _CLON
 2 _TID 9364918
 2 _PID 6021526502
 2 _OID 1c3e547f-83ff-4fd0-880d-a4f05d5657e3
-2 _USER dQUaD/Pj60C5KIjD4eNvJgFN+oX5sYWvSjDWbKTMjgZwru4qR66Ywm7kTI2uSZHUNKoRwSGZ1FfqrDmhd1q5VA==
+2 _USER DUs1R7kiWSVogtTPg2MKQ02e/ie4aLaMezBPvlDKzxu7quVS1nehGlzidPpvrNQqxFaZvTdz0bcGSPd5u8XNAw==
 3 _ENCR 1
 2 _DATE 2016-08-16 17:27:24.000
 1 _ORIG u
@@ -23203,13 +23195,13 @@
 1 _OID 75f9d68e-cb96-47a0-a6e3-1ea4f76c0c30
 1 _META <metadataxml><cemetery /><transcription /></metadataxml>
 1 _CREA 2014-09-14 01:01:23.337
-1 _USER c7g0hzQr5mmZqZusfECc7I+twZXY4ZpGg75+S9tti88hgW60gv/reNM7ZaQ97rcSdFgF3feyJ9V1ttvWf097Pg==
+1 _USER mcWcIFK1pn1OML/JuHWeXaiQ0v5gpperfxYGy1pfeEhje/nCqFUSDUuIIeiQPaAcKVHJlSN79b5Ad14tZs9Gfw==
 2 _ENCR 1
 1 _CLON
 2 _TID 22681778
 2 _PID 20106672402
 2 _OID 0a985776-b5f8-40b7-a1da-b860792d7884
-2 _USER niJ2BaPsHwNnp2ZwazXEMtElqP0sdcGhieW90mtbwVuYLsr8fxGM67SB/PiIYt49ULS7lw4N9BKWr0hmvkFJ/A==
+2 _USER FOEuBXilCpEAhAw0X4nGDM+35s47GghiaM5mVepzF2TMO2BZFZTSy4eTU5Qkwi/WGnPoSc8n5ySKNcsTekiXPw==
 3 _ENCR 1
 2 _DATE 2013-01-17 20:50:48.000
 1 _ORIG u
@@ -23227,13 +23219,13 @@
 1 _OID 7716c594-8e12-4ab8-add1-5d292a056001
 1 _META <metadataxml><cemetery /><transcription /></metadataxml>
 1 _CREA 2014-09-14 02:09:43.970
-1 _USER MiznhG+5GRZEnNlPF4wXguz9Tha69G3wM/Cl/GTpE7JfIOVyk2Y1xG32BHSZJLjuTrgAvzAOp5gEBMAkR9DkDA==
+1 _USER 3MgQtfoVVv7d249rNDEQgB8CCHjAsCA5wGnwlSp4rChYH2smSjeAXiDLw2ns7kSGYiqUk6HDjLW9gC60x9KBLw==
 2 _ENCR 1
 1 _CLON
 2 _TID 3235533
 2 _PID 6087895877
 2 _OID 3a33af1f-cc64-43ee-8365-e0b5c9926cca
-2 _USER 6jBrLAUGUJIw3QSCj5B8KtVcOYhlr9LMqQ/wgkPDGG/dg1ThJWswJ1u8rAfaHc1QAjSRKPhf1urGgkAlsIQ6+g==
+2 _USER G3giD3MgF6s/a1wob9jyT+HIkt7SZDyOlRuKEt7Mr7Ae977KJ2GFwOkcnTaO0eTCvKLjtZp9ka9R7kxCLf/EqA==
 3 _ENCR 1
 2 _DATE 2012-02-19 02:39:55.000
 1 _ORIG u
@@ -23253,7 +23245,7 @@
 1 PLAC United States of America
 1 _DSCR Selective Service Registration Cards
 1 _CREA 2020-02-05 18:53:14.000
-1 _USER QqxvoCM1DhnILaP37eFp2RxxhWjlg7IPQp+iPvS1qWR02m2u8RnLNVogYrEeoaDFfvlIseThUmrbTbieOPQx2w==
+1 _USER D8yfeZyiP1koXadzYkSlpgPpdDuDA4uLJJpjUtVpvjqxbFMCziLZCof4tq2faFDt0GROQRg52HenAx1EDZsGEA==
 2 _ENCR 1
 1 _ORIG fold3
 2 _URL https://www.fold3.com/image/625708026?xid=2030
@@ -23270,13 +23262,13 @@
 2 TITL Johnsville Cemetery-Johnsville-Erath County-Texas
 1 _OID 7bc39602-4971-4921-8a81-9e558f95bc93
 1 _CREA 2019-12-20 21:48:26.000
-1 _USER 4NrWfLhRTW1BU3hDsNU6Rm6LeeV7kAnCK+SrRHO5mpR/bu3FQc6GeVV3g7ueczwzxOOBxGsC+uTm1ZQMPZjZzQ==
+1 _USER +kE3Otb4RSxRY6xVtHnrono4TdL7ll00NDL4zOG2ucaEkpHo2z8/a17KgGe1GZ+c2/E/kQa1LGnJg1+kPKkCpg==
 2 _ENCR 1
 1 _CLON
 2 _TID 3528068
 2 _PID 340028156954
 2 _OID 8600dbc9-7d0b-49de-9bc3-6aea3728b403
-2 _USER F2hAbJVUzv8Axr36/xhtysNz6QwWtejE4UbZlRyrVEpYDgQtyUF+5vsvTIIsa13IsGY9JPa3Q8PGcSRMkSa37g==
+2 _USER utUOmlFjYr9OUSJrHy3oy4B669sxfqX/wAms09hPsy4HfaJpQDmon/BxguvyGh9GG9Cf7K40ylYd3N+ljzH4Gw==
 3 _ENCR 1
 2 _DATE 2016-09-07 09:28:52.000
 1 _ORIG u
@@ -23294,13 +23286,13 @@
 1 _OID 7bc5c31b-76ec-4d06-a8c2-75b4a5a7c882
 1 _META <metadataxml><cemetery /><transcription /></metadataxml>
 1 _CREA 2018-07-10 17:28:30.700
-1 _USER v1yUFVn3UB2N5Lmd0fAbN6RxLftA+WdEe5D8QjAjqaeYlDZaJ2eN7jMrI+lr3OkSbDx9TL5NWJP7YipWVijMkQ==
+1 _USER 9P1jtad1EFReKycDyp5yco297qoih6s9CA7KcARBiNYOIZ5V6zquiSKLNw5b4vvRtmtNENyrMycDyaol2FIE6A==
 2 _ENCR 1
 1 _CLON
 2 _TID 16778783
 2 _PID 450343938
 2 _OID da118972-7b47-4a03-8644-9e916d7406ed
-2 _USER 2Zvr3qXtgpEr7tZbU9BqP1YYpM3ZH/xz2g8gZ/ACXAOh8OBSB+me6KrexlchbzHAvNDxsy4yEMPxqHKFy96ilA==
+2 _USER lkwliYeS9vlD1d5JLiTZvpaWqcNyGFDtxFEXlF03urKECXm5ukKf9nN680XPcjKVhYavMsG3dsiqk8+VsqUqWw==
 3 _ENCR 1
 2 _DATE 2010-11-24 03:37:22.000
 1 _ORIG u
@@ -23315,13 +23307,13 @@
 3 _HGHT 893
 1 _OID 7c3b2951-44b1-447d-b685-e2790426bcad
 1 _CREA 2017-02-14 07:40:23.875
-1 _USER Vuj5/F4byiM7MPtKlT0bdt0f3YzdWnu8v6lundkOtf4o66tyXnBQ2/ThyoCl5N8sdXnz+4e2be8BLnLxXRJnEg==
+1 _USER 2utZ+SDE8miOj6YaeCIRP4oltp1ht/lG7eEYhB6XxeFXMWUi1RZzn24IeqrCvEJGhxkaqaaFCtWBfey1EIlcjg==
 2 _ENCR 1
 1 _CLON
 2 _TID 83464411
 2 _PID 32490834608
 2 _OID f275c6ca-30d2-4609-baab-6a53422d0708
-2 _USER I8ly9EkeExcsbvsM0ZhdAM7zTSBFpz694Qt5Bgitg9Wrgq/HI1gtaDtj80L2HRMWG8S4jDE9S62jHCXXtmjVTQ==
+2 _USER VyjoZiKVz4MFc+0BlrLUxm9ynjL2EmtPMPGDMrf4hrPYV0KYWcneISifCycKNUA/mZvE1TX6ky6CgEq9BI9mNQ==
 3 _ENCR 1
 2 _DATE 2015-09-07 21:58:29.000
 1 _ORIG u
@@ -23339,13 +23331,13 @@
 1 _OID 808f41b8-256f-4c7d-afef-d63d8d7416d6
 1 _META <metadataxml><cemetery /><transcription /></metadataxml>
 1 _CREA 2014-09-14 01:17:23.840
-1 _USER oeCOQw11T25q6W+XHjcqixFmCRE7HECFX5neckUD4PbS3s9w5UnIiKDo3UErdK87FEvx6P23+1vu4VN13q8vkA==
+1 _USER pRVfgdfIM7t8b+rW9gcDzZoGLWHM6uOQAjlug0oeeRHuncFs0ta+kIBt6IacU1XM2Axexv7E9u9DR5kFmddQmg==
 2 _ENCR 1
 1 _CLON
 2 _TID 22681778
 2 _PID 20319316850
 2 _OID 5350b823-4d8f-45a6-b36f-a594dc30d22a
-2 _USER D/B2U/L8ixDjWTSdmVsR4B3hTNTll+9hTae0V3W67T223TMpa07LHk+kdIMYOf1GHP7fbeGDQJ2U+3cDeBWOGQ==
+2 _USER Sen851SYxkG2fSK32YfwnvD2k1CqoIAxCAyRkpHoqtVk/ulsKFB5SZ5dZ8EE4jW7kKkOBQMfPOC/rDEhI75m+w==
 3 _ENCR 1
 2 _DATE 2013-01-17 21:32:05.000
 1 _ORIG u
@@ -23364,13 +23356,13 @@
 1 _DSCR http://arsnova.donovanfamily.com/margann.html
 1 _META <metadataxml><cemetery /><transcription /></metadataxml>
 1 _CREA 2011-10-11 02:51:15.663
-1 _USER fJ5RtkhinTAfwh/06V96dcfXcfh2leLeCI9pXPDY0X+RZUG4whJy5jTaEHZMxCrJZzx94Tjz10mvOrnHsFVqkA==
+1 _USER tiDI9i1NLBdxqk5a5VTjgOUHUEzrqUkg9pgi+XkRJ5vGgFJ6ZUKfpNiR0JADyMyalY0RmCnDur7RfD/oOLTxmw==
 2 _ENCR 1
 1 _CLON
 2 _TID 6044091
 2 _PID 1314076595
 2 _OID 4f1f091b-f16c-4521-a9d7-50c7c683445d
-2 _USER T7kCzWqwZp8Sj22g6bIu9OFbqPSvc6k8AiA25Q7khzeWoG2jsqVO+Sv0a5uaGduNrJOx78U+NdWVnl8G2P1CUw==
+2 _USER xtE2Y9lKIQgzvwfHwgoV0vTkrshqQZxSUFMwuyV5zUvWmdF2Tpb1aY9J/4CnlXl2m1Pc+EGNNxgfEPOXQbqGiA==
 3 _ENCR 1
 2 _DATE 2011-03-07 15:18:06.457
 1 _ORIG u
@@ -23390,13 +23382,13 @@
 1 _DSCR Old Klondike Cemetery
 1 _META <metadataxml><cemetery /><transcription /></metadataxml>
 1 _CREA 2014-09-14 02:08:20.193
-1 _USER jvUIZd6xcYjsRIlo7YlIYl/TqHgT1pQ/FtcbFZYvYZ73Rqwj38WYmPm6rWCTXM4Tz29QNzCcsqWTl/xwp6h5kw==
+1 _USER nvkD6iZoaooe/7JwltOE9rQeRVPaV8TY0pKsoDfbTV0IVFlX6IV4Z7mdEu7OtWMfYTvKBQtGDq/TyIMrJ2u9WQ==
 2 _ENCR 1
 1 _CLON
 2 _TID 8260969
 2 _PID 225390043
 2 _OID d4d2ad9f-be0f-4c30-a3f7-770fe8aa4d1d
-2 _USER 8SsU+a9zutmXtF5/Fgw2gX0cdaJd2ILfqxhXy0k4hsl4OfvSMoYaknjRxE7oo1hj20Xax4N5SHvk73WAvPxAnw==
+2 _USER tyxJrG6LM8Jq7U1ZAHJX3MEtWyYAFQYGmPBwTJpEEWbWbKBqCA41gJGW5JaeDr19JxYeSf6JulqHhe1YXWGD1g==
 3 _ENCR 1
 2 _DATE 2010-12-18 06:11:43.000
 1 _ORIG u
@@ -23414,13 +23406,13 @@
 1 _OID 857baf85-fd11-4b82-9139-6eda0d623d19
 1 _META <metadataxml><cemetery /><transcription /></metadataxml>
 1 _CREA 2014-09-14 01:17:41.297
-1 _USER UIAQb4hHwJoALe/UlTgSR7kjUwy2Yqkjy15119NNntccvQybpHPosAfpAACbbP1V9UUh2avZ8Sui1UaEIpBlCQ==
+1 _USER RShNtJfF3JoPjKqq4VqLiKh4MKosykW2yMBbm2XFnkbPSMxxI8vJmN86Ld86spLimD9FiKJUYV/SRjSOtO8Svg==
 2 _ENCR 1
 1 _CLON
 2 _TID 22681778
 2 _PID 20319316850
 2 _OID a2996d5a-f263-496e-8b87-6f87c232e0ec
-2 _USER cwrV4L7JSNS8UFtEbCIttuj/KcGKGogCGyj7JduME+YpBTB99+4JVM7EPJ08XXKcGBQaZnBZoeoRFCNVIzdQig==
+2 _USER JxEED77SCo/SSpmy+zyTklpBA671OgaAUaYEi7dGWi8FjvCI529Pgc4RZF/IQzIKQYiRfvwHfZx5yBd/hG7fJw==
 3 _ENCR 1
 2 _DATE 2013-01-17 21:31:31.000
 1 _ORIG u
@@ -23436,13 +23428,13 @@
 2 TITL 15. Effie Allard and William Reed Roberson
 1 _OID 869dc81c-3eaf-424b-a658-9e55e02ba211
 1 _CREA 2017-02-14 06:38:27.855
-1 _USER Ur8oxrki6R3dx8KQ1n1eSdrk5ncHx4fPInkCZKT9PXME7TEjTd+GOPHQgOoGbozQ9I6L89wuIkU6Q42OVOgn+g==
+1 _USER EBYfxZEB/EwpkIh5nV0T/5fLB4jwY4ovNAldS1NViAtHx87+egrzCOPOTg+OOe5pV1VSirFAEs2bTbNTG574LA==
 2 _ENCR 1
 1 _CLON
 2 _TID 42475198
 2 _PID 280035896896
 2 _OID 6782a143-0dfa-4ec6-8ba7-3ba2cbb57a6c
-2 _USER ttKgrGn1SFW43S/YWujPU/6OykATochvFVNMRAB+pl/Gge8NzW/rNfBgauGSlaD+1sydXgndfRpbi1JPcj2qMA==
+2 _USER +EHJO5L5bTL0xRhxgxhjS0iIxhaTzoYsWQeeaue4zX4wf/i0K9ZpbioHaiJVrRJBIPAysTcXCB5PThHTrpMYsA==
 3 _ENCR 1
 2 _DATE 2016-09-20 01:59:33.000
 1 _ORIG u
@@ -23457,13 +23449,13 @@
 3 _HGHT 1700
 1 _OID 881d0347-89c8-4c60-b32c-84ae14150768
 1 _CREA 2017-02-14 07:40:51.826
-1 _USER wU9LKJ39DrftvYWr0aw4hpJ8fOS3S4LHaD5jPge2QFDkdWuAzrAzaiX3e+nGcrWonRKCrcaV3sSiEGc7IblhWg==
+1 _USER p3bhzuflf5+lmbwGiQAcYrFL7q9Qz2aAMEzx1727t8AYjyfortyk+YNL1nYBbbvYvCaJGnbD92UOIJ6ttUVMSA==
 2 _ENCR 1
 1 _CLON
 2 _TID 83464411
 2 _PID 32490834608
 2 _OID c53d94b2-28e6-4142-a49f-b5af720b27eb
-2 _USER N4z03xDmb0tabxP9JohmjWLQD7x+euvNzxQLilPWbz4YUS4817NC7GM6AsungrutCWkCaqSDJKVEKBUtMnzqDQ==
+2 _USER Y3n8G4W1UWyYF6iVHKm4ZTTotxhVXtAVUoNuh2TnA4h0EfgTAals2YThY+ZBpx4w31NXz/R10KMSv6CZ1bCAdw==
 3 _ENCR 1
 2 _DATE 2015-09-07 21:58:17.000
 1 _ORIG u
@@ -23481,13 +23473,13 @@
 1 _OID 88c6cfe0-d434-4da9-9530-bc365cd4c473
 1 _META <metadataxml><cemetery /><transcription /></metadataxml>
 1 _CREA 2017-02-14 07:41:53.234
-1 _USER taJFswtqZrfANFwomszAlMUYnSfQXKuTk0XzRXicpqf9Y4GMZJUUT01PY/PjYKAXwh+hV/CPrBE2TJ3d8W6i9w==
+1 _USER jA1p6ywvXtGzrIJuIdfsrCshWaii7UxEJr1szQgT91fN3Zz/yEKpBLYIck0tijgwR+118INUGDQvAlaZrUQnGA==
 2 _ENCR 1
 1 _CLON
 2 _TID 27954154
 2 _PID 13042833823
 2 _OID e287be62-7435-4fba-b11d-cd13c44dc446
-2 _USER K15CvStuQ3+878mWVfVKFxhbMw8DDYsDr4u8f9dkJyAovr5JyRDy7hleUrOt+Ixlhb+Bsu/1lAfl42uNCkWE5w==
+2 _USER RcsUsmsDzKH6mn2ppcmpJkyWhTk4vtgDq9SLY3iMXGj3LT1e1nLSci6uUNxC41p3a9fa81ct1+emohFzeRU6vA==
 3 _ENCR 1
 2 _DATE 2015-11-13 22:19:31.000
 1 _ORIG u
@@ -23505,13 +23497,13 @@
 1 _OID 88e1faec-ae6b-4f97-8d76-ab33ebb8b120
 1 _META <metadataxml><cemetery /><transcription /></metadataxml>
 1 _CREA 2017-02-14 06:46:49.710
-1 _USER FWzoh9z+1rkCv0qYj/SdlgSLL3wAexWJDTbZtIfR6iZwpElY8yupWNwbylTdcaxoWRHH0TmKLs7iU1z7fIW+Tg==
+1 _USER QA5gWEuC2MugPo5nDJSTk1WEsXJqzOGTqpfbqwr78sBE5fAIuwTSkj1sMStQfRuNJdU7u13YE+3v2O9F8x/vAw==
 2 _ENCR 1
 1 _CLON
 2 _TID 15491310
 2 _PID 271589750
 2 _OID 62ac8ebb-e905-4f84-a14c-aea626b970e0
-2 _USER 9NKjptNINduilWJqEIUiQUPlGZNLtWHk1GfJAaGeP6YfY7cNxP0+yjlIb9nDrU/VnT25qRFu1nxJAdZ4OCp5Xw==
+2 _USER VUHGUMagYclZjLK2UGW2rAFBaUn0sRiizLNtFuh3abS52avGoao3dEyMeYGI8v+GRuTgD5+EjI7xaxPn8Vv6kQ==
 3 _ENCR 1
 2 _DATE 2010-06-24 15:51:30.000
 1 _ORIG u
@@ -23529,13 +23521,13 @@
 1 _OID 8a9f15cb-fb8b-40a7-92f2-f7f868181b17
 1 _META <metadataxml><cemetery /><transcription /></metadataxml>
 1 _CREA 2017-02-14 07:57:03.594
-1 _USER kQJKS93M6tjFOD/gIF17PWkIpZUcpoP5Od2vZ2Tfpe970NTsl/jC0eFyhc5j67zsPGz/LFKB5Jzrdr8IDbhtWg==
+1 _USER S1hvNgkDjPR4NnjajgNvaj+NiWma3h+QqjkotNI1acDZR0nQZ81nWnXJ2G0JTCl96k76LsKO6fWv8YUflhz/pg==
 2 _ENCR 1
 1 _CLON
 2 _TID 686549
 2 _PID -2060152116
 2 _OID 4b45cf9d-8030-41ab-af39-5c14a3d3b082
-2 _USER 2pz7HNjpcawC9Dz9pSmtwp8MvHmZv8KhKLDLeIK+6UrikoqBBv37G1FvlshTPIBTDwBip0A9QLWk13HVf+Okrg==
+2 _USER pCVaM3aqqgHOjkWEVQ9un7d75xrMvQY70xB7BgfqAazvEvPwfJHTfncYywMXihEtA/oHRAbuoqM2mmmOMT6ZOg==
 3 _ENCR 1
 2 _DATE 2011-04-21 12:54:14.000
 1 _ORIG u
@@ -23555,13 +23547,13 @@
 1 _DSCR Via FindAGrave.com
 1 _META <metadataxml><cemetery>Allard Cemetery</cemetery><transcription /><personas><persona><pname>James Burleson Allard</pname><bdate>1830</bdate><bplace /><ddate>1915</ddate><dplace /></persona></personas></metadataxml>
 1 _CREA 2014-09-14 01:55:36.483
-1 _USER GcVqis0aeMkIEv8cIf7nd0LTimw/aQYKIkTyY9PA+8+d70pRw/Zii7umtsUgz4KvYmdJ6otB5cN/zlDTo9FvzQ==
+1 _USER HrlL82nrJXB4CwSLxSlAAO8ex57e/ihy3qxGkLxyH2O3j0l1JpRkbvhvxR8YlVwkXBb7L+8IipdtKWZFcfkVWw==
 2 _ENCR 1
 1 _CLON
 2 _TID 8260969
 2 _PID 198699364
 2 _OID dbb8452d-1a77-47b9-9ea5-ce6113891510
-2 _USER ENO8UNuXHC1o/g23kr9vlpqWTg9jahGegW4QO1OyxDpHe/XtTakbdKXkUW/MFVKr3NpkrKymm4TFFsAiYhMCtw==
+2 _USER EUqzxRDNyInC+gLM7+lQZJ6UTrVU0sqhUFgcTGgCYCr1f7mOdjzhCPW12WwbI15BylZWOGopqhBMxqsaTEn9nw==
 3 _ENCR 1
 2 _DATE 2010-12-18 05:57:24.000
 1 _ORIG u
@@ -23578,7 +23570,7 @@
 1 _OID 8f62fb6a-fb58-4d76-8d55-a250b101a5f0
 1 _META <metadataxml><cemetery /><transcription /></metadataxml>
 1 _CREA 2012-08-07 21:41:07.483
-1 _USER R5cs+pqd8YaXVAMkAT708RAW8xdjKYHRFHVP3BFf8aTFUBLroz5dck7FH7uX8eQxpa2VR86o+umLyvQu/GZkDg==
+1 _USER oQdMfGl2ph19iVtnR2jmzvdSUtYekBlh1csaUnio6oNSFHBSvKgOii6gVHVmj7SuzjSqKELY0uIASmMLVTSC4w==
 2 _ENCR 1
 1 _ORIG u
 1 _ATL N
@@ -23595,13 +23587,13 @@
 1 _OID 90063790-7a3d-4225-bfe0-31fc48c67993
 1 _META <metadataxml><personas><persona><pname></pname><bdate></bdate><bplace></bplace><ddate></ddate><dplace></dplace></persona></personas></metadataxml>
 1 _CREA 2019-12-20 21:48:47.000
-1 _USER FSCUZq07IVwhpKjG8oRhEXJpC5g11bnirw77XYBJpZ4acSHRgoilB85dgRH/NeDgr3HVSOwk9D6+Ne6C892NlA==
+1 _USER 7qsDF9bepDAnvpsZPu1oY7PZh8XmozY6gfswIZsu5SiVrc1al8PZ3gcOgRJP9BdPceTpbL2VcWdrBictWbdZyA==
 2 _ENCR 1
 1 _CLON
 2 _TID 3528068
 2 _PID 340028156954
 2 _OID 665a6cb3-2429-444a-bf58-55ee2d518bb8
-2 _USER ShXcOcEAQDUDU932vkhhFMplUs3Qv4v7WeGKANt1ingtTvW8TjMBO5CkFf+UsbnO46/rBRzn3ug8AZ3dPZDySg==
+2 _USER S+FUJCcurpS20wlSzAe6nST4ZN4VXouve54SG7XIlx52ZxA+h/ZxAjKwG2yizJ7ZdGgq8FPgo949ckrXW0mNAg==
 3 _ENCR 1
 2 _DATE 2016-09-07 09:28:52.000
 1 _ORIG u
@@ -23621,7 +23613,7 @@
 1 PLAC United States of America
 1 _DSCR Selective Service Registration Card
 1 _CREA 2020-02-05 19:30:47.000
-1 _USER c54f/AUm/jJOu6kk5VvLedBbD22rNe+Bb2GvOq9fcVxoc3UvUQdgF+7xAjIDfBzRBVJU0oufNcSJFyiA6HWEUg==
+1 _USER u9+0soA/NK9yF9wzQgXJL1fdK2rSCbngcpva3YCMPMhWrni3nQNQItTOUSNfDGGZbT5Fq+mcohKOMhTrQ1BdCw==
 2 _ENCR 1
 1 _ORIG fold3
 2 _URL https://www.fold3.com/image/626633020?terms=stephenville,roberson,texas&amp;amp;xid=2030
@@ -23640,13 +23632,13 @@
 1 DATE 15 Dec 1835
 1 _META <metadataxml><cemetery /><transcription /></metadataxml>
 1 _CREA 2018-07-10 17:08:29.681
-1 _USER 4w47erZWCT1SKWsr+c0+XJcWdIYfCsV+/3YwcP5NIrCBVowK/FajXvkcymfU4leqZfAIf7+JQeA7OMWo8BP/kQ==
+1 _USER iv/oujy2K1zm/oOc8My1TjyggPSedsfx1G9dnwrkahdrXKGZJ3t8PfBp9TfWW9gSjUsGWnvdtgqwyrAbK6FONw==
 2 _ENCR 1
 1 _CLON
 2 _TID 5742336
 2 _PID 24085826306
 2 _OID 595b4d0e-3e29-41bf-8104-330c722ca441
-2 _USER GfyIkQHp6WDPErd4BSGS7snr8PKPLHuGOZ4yhVcScWP0Q/WrPoUmowYCn+M2+2mHL0tiFPzqXK33zhuQOijKxA==
+2 _USER C5cJuxIOcD5/QtBmpeP81ciOVPu9oamItE8SMAuhW4Gj7vW6nPjKBsiT+6+aqWIkxB0k4+Rv1rQOmPL9mYUVog==
 3 _ENCR 1
 2 _DATE 2014-08-06 15:38:45.000
 1 _ORIG u
@@ -23665,7 +23657,7 @@
 1 DATE 2012
 1 PLAC United States of America
 1 _CREA 2020-02-05 18:17:28.000
-1 _USER NzSMjoXp7Qjgk8IDfmLTW458gfri5ipp6GEjms0wUUYBvhZC2k6TajSs7HFhWuroW1RGvAUh1WhZ+e0jzk5yeA==
+1 _USER S1dnqQJ9MoLtfk9MoD+pyC2NLVEECYGYgbsQWHEd+keLrKtkC2ultsJ+RpjiSQ9LHaWX2FDw8z5f+3H6HXST6A==
 2 _ENCR 1
 1 _ORIG fold3
 2 _URL https://www.fold3.com/image/627580850?xid=2030
@@ -23683,11 +23675,11 @@
 1 DATE 1937
 1 _DSCR Stephenville High School
 1 _CREA 2016-07-20 21:01:19.622
-1 _USER PYAHrUGYl1Ao00NSlTDyhQSnaIEf/1RFbmAFFbKIPWtfm1oDEBW6Pz3E3ja1LA26hVnTQFaoRVtTeElf+EPWEA==
+1 _USER VbDoCL0O1kFWcXyF2VptzoLxwjaKDjFXNB2gJYWPskjkmXJ0XrAUmp81tNA4oEsl8VgI2MUwWNxV1c/pjO3W8Q==
 2 _ENCR 1
 1 _CLON
 2 _OID ba6734d2-8594-4c96-b234-29769cdef9a2
-2 _USER HWZOR94VQyYrzcrX+IEocJr2PX0E8m7fA1LFO2/5ojALi/IfOuO4UOLAwC4XK6Xb7BSayVCH3VpsEx5HdDWnsQ==
+2 _USER Z8dZ7YgSbcBIxIfORrWHQQwFTkcr/NNWSsO/QZY+pTXcrXD+bfUmakM6erNK+jBQyKNhezwjbL8ZusR6OcjMfw==
 3 _ENCR 1
 2 _DATE 2015-09-07 05:10:21.000
 1 _ORIG u
@@ -23705,11 +23697,11 @@
 1 DATE 4/30/2015 3:53:28 PM
 1 _DSCR Added by: Danny Jones  9/02/2014
 1 _CREA 2017-02-14 07:38:30.785
-1 _USER m13hqMqbXtz2Ci738Y+qk+JiXgle/yK9BIP2KkSFSj8fI+HfjT0mg7MujTbtFXocs0gyRthSP39k059QBczPJw==
+1 _USER YOS5Izyw2eC/aLvmNDtZG6MLwwYGkXBPWbNZ7cqpQ8qT804JNOaZABhQJBT4NpAhPUtdyvlnvpSr38b3UNCMKA==
 2 _ENCR 1
 1 _CLON
 2 _OID e8817002-4299-400c-ad39-186eeb7e8f53
-2 _USER fg7diPGAUQKO+SqcSGR/oFsD8nLvi7neklQSUMyO7j4/A6yWBlftq/3AXARysClCwyxr2q87VIIRKm1rHY5lRg==
+2 _USER +ehUiWRKeIqh1R3nibr+f4fPagWFCoHQ/OB6MAKA0zG9faqhxQiNsfItcuGliVO4umbKfKJEDYIfIiVgADs7jg==
 3 _ENCR 1
 2 _DATE 2016-07-01 15:03:54.000
 1 _ORIG u
@@ -23727,13 +23719,13 @@
 1 _OID 951bdfc0-1f92-428e-af7c-045bb28abb96
 1 _META <metadataxml><cemetery /><transcription /></metadataxml>
 1 _CREA 2017-02-14 07:42:27.588
-1 _USER LD5DxpfXF5+2Vy0KporzfxZ6FbEFdovgEhZt+hJSiQoKBlaZ1FZ8gU8f2WYRJ55Q/5Sx9wAfD4mgmEz3KLn0yg==
+1 _USER 2yd4hbn7cAcVcalnWc1xNat1SNNEIPI7ngUeUMGIZrppI+SfhwreWRdCnnypeC0D50d2QYMclDKGt8S5W0kpjw==
 2 _ENCR 1
 1 _CLON
 2 _TID 27954154
 2 _PID 13042833823
 2 _OID 3a2d00e8-28f2-4004-975e-0294288a3e4b
-2 _USER olAWR9y9CyNoxou3Xx7z6mvv+cTHsz33o3DxTzzz93pzWZzWBJzohnMJWDZIOnup6ONsU9ZUdREIv0PpHxMWbA==
+2 _USER grzqMSZZRZmy3KVR2kt8C27WsWh84FKwhR8kCx6xLO0qi6T1gziIh7ZMq3N1cjJW9NjPuxoxkmU/GSu4Uu5AYA==
 3 _ENCR 1
 2 _DATE 2015-11-13 21:47:01.000
 1 _ORIG u
@@ -23752,13 +23744,13 @@
 1 PLAC Stevenville, Texas
 1 _META <metadataxml><cemetery>East Memorial Cemetery</cemetery><transcription /></metadataxml>
 1 _CREA 2017-02-14 07:25:07.942
-1 _USER 67yvFCXQM8mb/CJVaacxNiq2vF61BCESGQhW+ArGZe0o93wtyEKuWCTLTvq2/DJhTSsbFbIDWxc6DOv8zmIgmA==
+1 _USER Y9Ri2lPyAlzy32fswgZRZ1cZDk61pg5DsW1J7LXKqGG6erF0zO2JcCSx1BC0ZdNYTmLtmmN5SOP+82B1TtX0sg==
 2 _ENCR 1
 1 _CLON
 2 _TID 36712348
 2 _PID 19905850019
 2 _OID 77372770-d666-4c5e-92da-cc454f0cb6bc
-2 _USER W5r7FT5+ZEcTNXqjkQAJY5e6cYiJZuHOFhcy7WbNEfQCDF3SAPNXKgPze/nb7mFq+xQv/fTqAlp4Hq8z1upi6g==
+2 _USER qPZ9Fw5B4cRCAFJdUSz+GzzoamL8mWEui0q3c2Fm2Db9pFFIUj/Ss1zBNjj3NzFl4m7cUvM/j7oNcM8IjfsUsw==
 3 _ENCR 1
 2 _DATE 2012-07-08 17:46:15.000
 1 _ORIG u
@@ -23780,13 +23772,13 @@
 1 _META <metadataxml><cemetery>Johnsville Cemetery </cemetery><transcription /><personas><persona><pname>Sarah I. Roberson &amp; W. R. Roberson </pname><bdate></bdate><bplace /><ddate></ddate><dplace>Erath County, Texas, USA </dplace></persona></personas><
 2 CONC /metadataxml>
 1 _CREA 2011-10-10 22:58:22.347
-1 _USER rWJ0ROgKpZgmWnO6FfPjuwv/s4ZAi2bjV/H/4qHCJ1/2S2AAGJOcaLFDjgomuFxh+taI9IPtXHqUL/gd47Ujhw==
+1 _USER XMKsvXynBcv7rMBtQSVtJmX72IkJB1hP4RCSW56FoCPBsIYYWSX54AHz41YroeidQ0kx/QfGgTLWuSSsGJxthg==
 2 _ENCR 1
 1 _CLON
 2 _TID 20106319
 2 _PID 968414382
 2 _OID 36caa4f6-b589-4e6e-a8c3-4e92e9ce8029
-2 _USER NPfnSGtnTT8HLgdRhzmGUn8EbnXfVxKXDYVzGukht9P3qsmX8UGGh9fYj2DV7+zXR4ndz/Tsq+5MqpZlVXdZsA==
+2 _USER k5JFDH+YK50eZXj32TykoNBhY59//iT1zoW0iuvvBTtDKNNL9681QBy7TDKmTexyXlcZle5E5klVDeTxlfqLCg==
 3 _ENCR 1
 2 _DATE 2011-05-20 02:41:53.010
 1 _ORIG u
@@ -23804,13 +23796,13 @@
 1 _OID 9963e812-3421-418e-a47d-ff8d0068a44b
 1 _META <metadataxml><cemetery /><transcription /></metadataxml>
 1 _CREA 2011-06-02 03:42:00.117
-1 _USER nVONhemoJrENFLIncbhJ56qMwnoiouVuuCjaRpLoyOm0v+wbteaWAQ9SNXIvyn13mqaTAW5tnw6o8OIBVVOMDg==
+1 _USER nHH2c94IwhBASkYvd+5qhQfbubW+ErCwL5OjyL4oZoVRrETItAEjbFH9uPJUtMcKsepPLCBWLXFjoxpglaOQxw==
 2 _ENCR 1
 1 _CLON
 2 _TID 15491310
 2 _PID 271589742
 2 _OID bd024bcc-7cec-45d1-945d-85a2453bd541
-2 _USER TdqQWRTnW4dNZ4fN48epw5rXAICx5YMWm/lMLZcILd9UzMHQw6LccAwImnmrgEBR3smJXBd7DqWKIp6e73asiw==
+2 _USER TbpZ15EyFLWopHTsGoQ0D6Qhc5Xxf1zq86YJDKK0MqHCOk/RtLuFPBjpABMvb4zA1uI0TsqxII5u1GW2WkCiNg==
 3 _ENCR 1
 2 _DATE 2010-06-24 15:58:32.883
 1 _ORIG u
@@ -23828,7 +23820,7 @@
 1 _OID 9b1e3eba-7cad-496f-ba8c-5928857b4b71
 1 _META <metadataxml><cemetery /><transcription /></metadataxml>
 1 _CREA 2011-06-02 22:31:01.513
-1 _USER HWnJfJrlphD7ZajEj9ZECKn1zo2FyQv+MCocfVYYoqBd8LvcGAUceNlzwu+bkW8JK1wtB3n6yp97RFhMC/anPg==
+1 _USER ahINQ7j1sWZExQRPHkxqqhDv8cRFMNXY9TcjTAMiEMY0K97JOb7lkw+jzB8JW63JUFp2NfDttzu1lu3LpkWgsA==
 2 _ENCR 1
 1 _ORIG u
 1 _ATL N
@@ -23845,7 +23837,7 @@
 1 _OID 9cf56298-3ce0-4ed8-96af-662596a2ed4f
 1 _DSCR fold3 Army WWII Records Summary
 1 _CREA 2020-02-05 20:05:27.000
-1 _USER H8ru9zniJr59WKwGDT+ykXMBciUNI78UNA3t50eKL2tR6Ey08RHCTxb+IokYCGjhnYp1zy01PQ9QHb4BdXm2mw==
+1 _USER 1fT20L64C78nvl3NzPFTdAaQt7f05D1Vxt3R1DWz+VZ0moO6TMP5KtrLLgv4hizWlYocJTxOSvZHkceebmiojw==
 2 _ENCR 1
 1 _ORIG fold3
 2 _URL https://www.fold3.com/page/90415926-charles-h-porter/?xid=2030
@@ -23865,13 +23857,13 @@
 1 _DSCR find a grave photo courtesy of Lois Ams
 1 _META <metadataxml><cemetery /><transcription /></metadataxml>
 1 _CREA 2014-09-14 02:13:58.170
-1 _USER N2mfB96Kv6xsCgp8LeYZobS080zchBfEvfEy7iHXRUPyVWOyatLWsHsyqWBMufpCbqhSxeKblbIfSotx3GzN8w==
+1 _USER 3VvPcSuiemLRunhI1MXeg6DeW3wNTEZzmeq2QExs1ypnzVVQTCfUED9JJO9XNdxnvKg9aLB7Fr/OUZgyfRmxuw==
 2 _ENCR 1
 1 _CLON
 2 _TID 22642533
 2 _PID 20466629974
 2 _OID ae8f7073-637d-4ebf-a7e8-e74e894b6b14
-2 _USER autgsgePtcTJU6dgzXZE9rYGKsZ4NtjS54ajYsbkNiGWW72msykYNCp37QkjbfenvAinp5I99fcBvNx4RVeq4g==
+2 _USER RlloW9UxVA+PVfuN9uuBrxo8C0ELM5wfHhRomgXozdmn9Q1YDjHUN0jwgcqP7WkU4P0xKlEPxaVKscghRkh0fw==
 3 _ENCR 1
 2 _DATE 2013-07-13 14:41:52.000
 1 _ORIG u
@@ -23889,13 +23881,13 @@
 1 _DSCR Tintype taken in Texas
 1 _META <metadataxml><cemetery /><transcription /></metadataxml>
 1 _CREA 2011-06-02 03:41:51.713
-1 _USER 6hJP5HFBbNyZ/dqnJoJ4Tw3nNHgzjXDKUBq1PD00gv41sSJmYqltJ8SZK5igAo96ZGON9WU4/JSJSfMX87dJiA==
+1 _USER jEyxRN4JaCElulvwkOdzG3cTJ6jNzu1lHwKG/MVI5AfiKKiznkCuCH82icQcMAs8IRQX/bo97Ywp4fOZ8Xez8A==
 2 _ENCR 1
 1 _CLON
 2 _TID 9807882
 2 _PID -262664008
 2 _OID 9bdff4ea-730c-4729-b6b1-33f5bfebf4d4
-2 _USER aifqyfocWkLQbt0V5JAjhJLupVNnhv3mtggEX7JZMuGibU/jMwRuyn7I220vO9rHYU1jIdFcL2nhMW9/hu6akA==
+2 _USER E47eUIcZeI0Ca1H2ZUG/NeRnNKNAI2UPucHyIg1SwGpkJQB01iGHksZfa6iNxYq31FAW1G8gK0cFfnmNPWwU3w==
 3 _ENCR 1
 2 _DATE 2009-08-24 00:28:54.930
 1 _ORIG u
@@ -23912,13 +23904,13 @@
 1 _OID 9f7bb96c-b5d1-4cfc-a907-001e45991377
 1 _META <metadataxml><cemetery /><transcription /></metadataxml>
 1 _CREA 2011-06-02 03:41:55.493
-1 _USER IBRYUVPERRz9454TI6L18h7X4VcITFZu7oDApR/SdJy36H9Vfz3ZkbvcYowgkM2/5Pdkoql1x7LFd833Jx4XsQ==
+1 _USER HqzpONPFrxChUyM5mpRoJCgq0lnLyH7UrsPias9CiMUVdEBCjNiS8onAQDFhaZPyttXS09EKEc90otactnMBwg==
 2 _ENCR 1
 1 _CLON
 2 _TID 9807882
 2 _PID -262664008
 2 _OID b4137a18-2d36-483a-b2b0-c98c995cd161
-2 _USER vX8e14YZj5Mr5KplKfSTmeViANqoqZaPKWEx+BJa2eQtPbkpZigNEn5vKPGPMQLcrJ1X2MnwOhJutqDBjvik8g==
+2 _USER 5M9GPjt6gsOdlNupZcmyESXhSZoqbihS4qPdyg2TjbVvPZo9GhjSQlskDGbtFkkFmkUfS0X7kGnPQLj+eLyWIg==
 3 _ENCR 1
 2 _DATE 2009-08-24 01:09:45.903
 1 _ORIG u
@@ -23936,13 +23928,13 @@
 1 _DSCR Reproduction of a dadly damaged tintype photograph of Margaret Ann Emerson, who went by the name of "Peggy". 
 1 _META <metadataxml><cemetery /><transcription /></metadataxml>
 1 _CREA 2011-10-11 02:20:08.340
-1 _USER gD0NyM6uFLoI8lIvhv/bOiTpt5ikdi9zmENRaKfILOP0UtkllDntpdy+9J3zixbbJx+ExgNX6UbS+6GTZv6aaw==
+1 _USER ZzYSSVPDMweNzsZbMApH2YL5w7XU2LRfFlD81jyu9l+KcChz2fd//KzrrgpntpSJLt0036lLgwOa8gNqgT5UPg==
 2 _ENCR 1
 1 _CLON
 2 _TID 9807882
 2 _PID -243062936
 2 _OID 42717e33-f8a7-47b3-87ed-6328b1a94c96
-2 _USER 7Ex/zpiTaa4srKD7FGQN5Q4NFLmAy5oQeZOFpo7u2VAM87msxJ46ZQ5Ai34IKGKjMc7w091sZMwrcZeb54kzDQ==
+2 _USER V9KO06A+dSm//YytId1rWexEOAEbKWFEQIXZyQJebZ/zDTL/2htQBgGd0ZLG+WI4+mXzO7xCElVNmubQHoAALw==
 3 _ENCR 1
 2 _DATE 2009-08-24 00:10:47.527
 1 _ORIG u
@@ -23958,13 +23950,13 @@
 2 TITL William Reed Roberson McCords Reg 01
 1 _OID a09e1176-bc53-4b4d-8e51-13c72e702d46
 1 _CREA 2017-02-14 06:39:43.135
-1 _USER XIS9vvBK+1L3E1t4q3k7rVUEM/RKKiLnOP3K6BQREAz6LoroFqzgOHG60lB9dYKWKtdt7OeeQApQIBv/pb/vgA==
+1 _USER 3Ir5RHgPl75hjdhfivJDdGIIbUV3YT8cDENqtV5Tz/k21g9ZVgHlBbl1cK1xxdyqFlxZ/0bpRiA/EESHHZ/n/Q==
 2 _ENCR 1
 1 _CLON
 2 _TID 9364918
 2 _PID 6021526502
 2 _OID cc676f63-9ebb-4f4b-af85-f2be02c7edac
-2 _USER a+dAR08p6SnZ7O9R/HeVcNHPE6rsik9mE63FaekTPGmMPCCdAyZWoC6ixxGN2taDaOW+/NtJuMdHW560Dz4yww==
+2 _USER xoUv6IM6sPr/eVeyNP9xR9YS615DuxPyZq2vqNKF5bUv5yXI6BaHtn9Df/BFxE4/tpRHuKyBKab++KsE7q/48w==
 3 _ENCR 1
 2 _DATE 2016-08-16 17:27:30.000
 1 _ORIG u
@@ -23979,11 +23971,11 @@
 3 _HGHT 990
 1 _OID a1f66e94-0ec9-410f-a11d-1aa86ad8c5c1
 1 _CREA 2017-02-21 05:35:55.174
-1 _USER 6x81UI6KwzO1iTHXWU+rCN84nLQzj4gJNA6RaMx2r/GnPVEpmuS7XcQLEKfpxxbqLChMJGa1cZqcLbW1z5ZEYQ==
+1 _USER qpeMhDbxlh0eXeUWqYhKaOJ+iNqJdoWllYOD8TENiSdObKO/TroTXWtePrff0XmHnBPaMlQvSEgk3alpKRxgLw==
 2 _ENCR 1
 1 _CLON
 2 _OID fb03b126-8ccd-42fd-aaca-b13799ef5018
-2 _USER f3QOhQwRaLT1tU+2z6WJaNFq47gyLZBUHth1xovl62hRGqhhk9V4pEwDcJorGt/Z7y6URxfcclLM4j6NdZ+PoA==
+2 _USER k5H3EBbLyYzEa2ztbtbiwV+IspiOtaF9oc7ZMAvtfx4bcjxAYa1dwmXr2btUrI1CgQ8ywmFrZ5CxbPcddJ6v9Q==
 3 _ENCR 1
 2 _DATE 2012-04-22 01:49:15.000
 1 _ORIG u
@@ -24002,13 +23994,13 @@
 1 _DSCR http://arsnova.donovanfamily.com/margann.html
 1 _META <metadataxml><cemetery /><transcription /></metadataxml>
 1 _CREA 2017-02-14 06:44:13.570
-1 _USER 2DlAeioGaMnAfZNeHQ4Yr/e1o5Tcx+B0y9qi2Ait0pXQA1LNN3WJAg5bKfvm9RyeAr0N1Q/Jl5/CA5rAzp8zwA==
+1 _USER 0qoiv3TbP+kEQZX3ZwU0JGf3cUyZHrsT7P1YczAV9nTVN2WbQ0OrH4Tc+dAd0L+Lq/Hf9rNuLInpQCR4oMMggQ==
 2 _ENCR 1
 1 _CLON
 2 _TID 6044091
 2 _PID 1314076595
 2 _OID 61627788-f04a-4402-ac2c-3751011df1fd
-2 _USER Id66/9FSAjQC2cl6MW4EUfri4ndv+ubEPUNOsXmDTOY68nHT8WsT99dFuNT3QTAwFcjZRQ9jalh2agWy6UaBMQ==
+2 _USER 7bQOUDVXOSsNjhzTFwkdqKANVOHYNydLe55sBlU/ShBlY69E8XCid8adlTTvYFWcqv5PJBLolcGMTkdDRKuOIQ==
 3 _ENCR 1
 2 _DATE 2011-03-07 15:18:04.000
 1 _ORIG u
@@ -24028,7 +24020,7 @@
 1 PLAC United States of America
 1 _DSCR Selective Service Registration Card
 1 _CREA 2020-02-05 19:49:22.000
-1 _USER q91mxbAlhmrwnyylWLRCZ19orj6RFpqnrn6veT8H7iSZZjTQGONcHAFHlbGVVaIQPTwgJP17i6TegtVovQ3VBg==
+1 _USER h0jp9gSWqBPNCyzBv30xsDdrmHya0MGPsisxJbbEaqj1B4XhcjCKpuqXlog2LFye5BnauC1o0oqNjKPm09iNNQ==
 2 _ENCR 1
 1 _ORIG fold3
 2 _URL https://www.fold3.com/image/624817749?xid=2030
@@ -24051,13 +24043,13 @@
 2 CONC umstances and herself over fifty-five years of age. I need only add that I  do not take this step without a sever struggle in my own mind for I am very  sorry to give anyone the least pretense for saying that I deserted the cause  which I believe
 2 CONC d still to be just and holy and one which I sincerely hope will  prosper and which I sincerely believe will also succeed.&lt;/font&gt;&lt;/p&gt;</line></content></metadataxml>
 1 _CREA 2017-02-14 07:00:07.125
-1 _USER NypZe1GYTQVS3uASODPO6C4AxkrU8+WWfgHfqHIKXLB2HYMXg97+EX1rjaI1Pv0wDbCzYtTtxhmnM7G3lAixIg==
+1 _USER mlsi6n1EqkWcEkEgy6npNSVjIyrXvhrUuy+9XHoBMjGbVxYzJDck5tr0+wAa+U3PqOkfT6j63kNVrantnoGwgQ==
 2 _ENCR 1
 1 _CLON
 2 _TID 15540920
 2 _PID 1642908788
 2 _OID 988c1f25-bc6e-4724-8c7f-df5118b2396b
-2 _USER 1ak9p/Gposs1sF6zDgHECB2OoN9cNgoVC6C1Qr3TiIGoD8lGYxXKA1YEA93xn3saVzetHjy6S1CZ8mGO1uqV1Q==
+2 _USER 1DFXX+0924yfOAdeHWMN4XizDqpOYGl2RvI8samIZ1CAx7/c/bInw/FAHQjWz2mIZR7Mlae8TWCalOdbJnJuPA==
 3 _ENCR 1
 2 _DATE 2011-04-30 14:57:48.000
 1 _ORIG u
@@ -24076,13 +24068,13 @@
 1 DATE 30 Sep 1822
 1 PLAC Murfreesboro, Rutherford County, Tennessee, USA
 1 _CREA 2020-04-23 22:27:41.000
-1 _USER J6Ic+RkX/X4l1Q7jO8yG352M3NvcaRRnnEn/+DaEAhrninEL78vULJ4iLY6F7Z0qDlar3B8S1zKuOwzXWR7gYQ==
+1 _USER 1bbtobG9M2tpnU7pIro+a5SsulqgavOu3sj1fawvxMpexYG590d87qWSDxt01KPYxBqz35TXyqIoVfUiIYxhZA==
 2 _ENCR 1
 1 _CLON
 2 _TID 24968951
 2 _PID 410175936154
 2 _OID 523d6159-b67e-4d0c-947f-5324e34cacb3
-2 _USER PxCS5I/nP3JD/Lh3/YblwU70inVvyzNpK4yqH4b+uhc4LkH21Vz4jHhlAHlE9tgy/6kww7eRSFDFDYjlpkBAwA==
+2 _USER 4zs19NwkbiXggXjxRs8ZZiR6Zd32V8DPY2Hdyo9NnGFCXcE/KnRn3OIMFIaxXgzZAhULXW1nbt1++RXPIX6Gnw==
 3 _ENCR 1
 2 _DATE 2018-01-12 14:18:54.000
 1 _ORIG u
@@ -24102,13 +24094,13 @@
 1 PLAC Delta Co, TX   Northeast of Dallas
 1 _META <metadataxml><cemetery>Klondike Cemetary</cemetery><transcription /><personas><persona><pname>Polly Weaver Allard</pname><bdate>1801</bdate><bplace /><ddate>1850</ddate><dplace /></persona></personas></metadataxml>
 1 _CREA 2014-09-14 02:08:01.113
-1 _USER LpsMLgxB62htW6BhHXlwpX7bNIAJwwRsi3zeNqxBCph90nrbJeTkDYc+NfGym9p6+ZtWkmXt9AsXt88PjlwU3A==
+1 _USER 8gc11Gnefe1jEkyHyrxn8zj2y1QnlkXJkEAEAmh8B/TmwkMby3zYPxjLg7Q+g1ValAuSRjnTGXRsSg/Cjhx8Ew==
 2 _ENCR 1
 1 _CLON
 2 _TID 13632386
 2 _PID -36956643
 2 _OID 2de7d391-174d-4329-a4be-5e0e99774977
-2 _USER UqCyCZpm7yZ0hyJsBLjjfkihcp4qGXjbCOneYZ6ZsMDVizKxFUJGghLa8v+ucthuyYzqD4NmQLdOSKorcofpjw==
+2 _USER 2X+oUDQQ2DzNF8mjuKHiXElhjTWMkuz5AjCT3llJ1kDh99lSaxC7Jccl9XdA0t/wXHc73UwKXxyE2/F1BaahGw==
 3 _ENCR 1
 2 _DATE 2011-06-07 13:07:06.000
 1 _ORIG u
@@ -24126,13 +24118,13 @@
 1 _OID ab667fd7-2585-4c78-9e79-2bb8722c2afe
 1 _META <metadataxml><cemetery /><transcription /></metadataxml>
 1 _CREA 2014-09-14 02:09:29.450
-1 _USER 7bHcAUq+fgPy4Pa3hSw/HiyG1svdkgxtq9AdAL9lAlVTNyMDkoeithCzUvv6mGY1IeNan1cR4zPlTBbDPKzDZg==
+1 _USER Yvano6uEmUN7hcsTMZVgpMCM7m4DAK8An9wwBoONkSYQBKVAaaZ25JzOBK5d9EY+1SPk7LPrlhD2N9R7U5xSFg==
 2 _ENCR 1
 1 _CLON
 2 _TID 3528068
 2 _PID 6155100968
 2 _OID 66925709-b479-4e5f-801c-2ad70126e5ce
-2 _USER x59BsTvmbzP5qLgzteHLYB39UeEbsG1v58HKHKKSXF/by24wml39/T/7Slonb8mrvEMSQoQSJYwXt2rRSSsH/w==
+2 _USER 4iC6QH5vyfyPNPWjxyZOJbBhawPsNC1aG3oENtlGg/CBZYxUsdX7RxZ5svUfMlmoB9rSMdXJH3qSr1wd2AdIgA==
 3 _ENCR 1
 2 _DATE 2013-02-26 16:19:22.000
 1 _ORIG u
@@ -24152,7 +24144,7 @@
 1 PLAC Texas, United States of America
 1 _DSCR Death Certificate
 1 _CREA 2020-02-05 19:33:29.000
-1 _USER BAa5/DUvTAnzwY4XOLRtLzw01TnHQBW3cYzEOlzT212rQ2L5eCIKjz4F1OVIQ7xgtAbkj/XNtVYkV//WkDQ2Bg==
+1 _USER GBHmsjtuJHCcl1Fx6uUQNuqDcp3mvcicKeKvzhxO9vlgRz+fjRYBTi6e+Sxlr5KnVhJ4Z731FdATlDK/jjrBYA==
 2 _ENCR 1
 1 _ORIG fold3
 2 _URL https://www.fold3.com/image/225460553?terms=stephenville,roberson,texas&amp;amp;xid=2030
@@ -24169,13 +24161,13 @@
 1 _OID b28beed9-3973-47f9-875b-5871ebbd8b0b
 1 _META <metadataxml><cemetery /><transcription /></metadataxml>
 1 _CREA 2017-02-14 07:50:52.107
-1 _USER 8V8tEM2B2+kk6jViYbVvn6hI7TqXeLbE5JqV260zZ654J01zihXtwxYwbVtPA5Mh3T2jt3I5oIGRs9xPwn8/kg==
+1 _USER iSsFvpoqGy/XzOCsZJ4iOWXc6PQWbtRVyF5yT5JH/Njk0vwqtniXmt5nydTimSOjq4WH6DyHR4EhrSo05jEvuw==
 2 _ENCR 1
 1 _CLON
 2 _TID 80058219
 2 _PID 48413564683
 2 _OID 4b552a61-2cea-4ba8-ae1c-147cd824dbc4
-2 _USER 5bu0wlOIKkpvBCNNlEhbq95M9lKb3qR9JY47OKQnUrqO2CCvFOzeweUS5CJvSxerF38IGK55GA8xH4EYvKSLdg==
+2 _USER Sp+LEDFWWCyHwM3VWx3Te1nUc9Bz0anwuBrCse7J0TU7xkTJmFzVmQcLv4QO0q1OdTNEjw8lgkdD7vFZpYrcIQ==
 3 _ENCR 1
 2 _DATE 2015-05-12 14:12:04.000
 1 _ORIG u
@@ -24196,13 +24188,13 @@
 1 _DSCR Nannie Dean Goss Dillon, her son Charles, his daughter Grace Dillon Howard holding her daughter Elizabeth Eloise (Bettye).
 1 _META <metadataxml><cemetery/><transcription/></metadataxml>
 1 _CREA 2011-10-11 22:06:39.717
-1 _USER boOwaQuThznqcgPKgrujhw10qFPg5pbr3E2oVo/xv1ng8fvlVOY/XCFMtH6v+kGHjPjTUb/olJF77U2iPWxcew==
+1 _USER 4M3QtCqqZqZ3DMR5zJAztc/jW1w/N4V1adwfrGLeralChvvuk79DaKVAl26T3cqUQX9TYEtRRK2MT0z3vOWgmw==
 2 _ENCR 1
 1 _CLON
 2 _TID 1470626
 2 _PID -1937105614
 2 _OID f5426ac8-eeee-4375-90ba-b906334f950e
-2 _USER 7e1cyDB+sEXq9rjdSCahGzkn8gamS6w6U7tw89iOAdhjPTGuIP3oY1rvW63LAs4jX7coY2koxYIZS3/oMZDbZw==
+2 _USER g+ri1/9NenoHtKkIhbtfeN9JPIgH3EC4vCseNup3+BxjxTRSzr6IX2pn+uG0yJlg9ZFmvIgAa0BS8wfWw74Wog==
 3 _ENCR 1
 2 _DATE 2007-03-11 21:02:53.043
 1 _ORIG u
@@ -24220,13 +24212,13 @@
 1 _OID b4246325-78b8-4120-8efe-16b38ea12790
 1 _META <metadataxml><cemetery /><transcription /></metadataxml>
 1 _CREA 2017-02-14 07:36:31.313
-1 _USER SQIQ1S70KHIZuIjhRbVFD9Lt6Sme2zGRU8Ml9X1yT4MNniy5yNwjo4oU7H6A3d7a9fzJiwI6qJylkdcp1T1O2g==
+1 _USER jLyDovb5h1h1Gn8B03KSzVgCkjCn51Cj/YTxXD1PYOo7MyHTkzpGYrYXR1tcC5LiABf4h2JiyF5TdJY+4vhQrw==
 2 _ENCR 1
 1 _CLON
 2 _TID 877725
 2 _PID 25341059241
 2 _OID 79d2b9fb-8605-410e-9b30-064b7f55b6b8
-2 _USER DvzEtupnpgem1xz6f+xdUksrTj/emBdM3mLHyitbIn++cJcu0bnykCMjrAo+hEjBtnpbh2GenD8QxgzvoMwoTQ==
+2 _USER y2hO/QRUSe9lIukhynoNFka8zwjSRKBBgGHT3MSAbaji5qQMp7zQ/3h+zWbeIT4chUKn0wxzE79Tr1iMyiiunw==
 3 _ENCR 1
 2 _DATE 2015-05-04 15:04:55.000
 1 _ORIG u
@@ -24243,13 +24235,13 @@
 1 _META <metadataxml><content><line>Capitan in Virginia Continental Troops 3rd Regiment Light Dragoons&lt;br&gt;SMITH, Robert, Captain, Va. Continental Troops, Revolutionary War, died 30 Sept. 1822. (One source said he was buried at the old Washington Ceme
 2 CONC tery on Manson Pike; another source disputed this)&lt;br&gt;He had two 640 land grants on Overall Creek in today&amp;#39;s Rutherford Co., Tn. </line></content></metadataxml>
 1 _CREA 2011-07-05 03:17:46.457
-1 _USER /8/7leJICVFL551Nav75CFnmiwIphA+UxH/oXjvC9urbXQoVg9X7yWxE90Fp5mNR1OVrJkFS41ISuPpdO1XilA==
+1 _USER lM+I/GL/jCpAtbcq3VPFzwW2X0wg45RKLQvrzk5+hemwewOPiOBtRHYycofWfMNuR+QLoFPRnwUsGgoI/w85Pg==
 2 _ENCR 1
 1 _CLON
 2 _TID 14711680
 2 _PID 149960032
 2 _OID 9674ca9b-bb96-4f9a-b827-becf556d1696
-2 _USER ylJXf2veeaGdXCT4kSniGDjEenABQBbbd9YLTr5Dvy7WE5/dxvlDJLR6CUHNZhRVAoyrnaH1E8i7SgxkVy07/Q==
+2 _USER lHGvGYGNv4jzHqLn+MnsYAc82vDqgMelkdJTROS2bVRcys/3h/qSmPz2JLCeeCFeTbEmGOIuA7oytAYmxWqZJg==
 3 _ENCR 1
 2 _DATE 2010-05-27 01:30:12.127
 1 _ORIG u
@@ -24292,13 +24284,13 @@
 2 CONC yle="font-size: 13px;" colspan="2" valign="top"&gt;Burial:&lt;br&gt;&lt;a style="color: #552255;" href="https://www.findagrave.com/cgi-bin/fg.cgi?page=cr&amp;amp;GRid=21906779&amp;amp;CRid=1102780&amp;amp;"&gt;Pony Creek Cemetery&lt;/a&gt;&amp;nbsp
 2 CONC ;&lt;br&gt;Stephenville&lt;br&gt;Erath County&lt;br&gt;Texas, USA&lt;/td&gt;</line><line>&lt;/tr&gt;</line><line>&lt;/tbody&gt;</line><line /></content></metadataxml>
 1 _CREA 2017-11-05 15:25:03.653
-1 _USER 7201n1St0yS8PpNp8aomdr4+XoRx2fLXWxXmnsDebDvxymuFhww3xZ1UVh+qqLeiEp0kg4J+CyUzVd2Om01ljg==
+1 _USER tJIRJUQ1ZB55ohdxnPiiaBL/RMLDzENKjJh1l0gkNDvN1wSOqZlUFdf3JWWSi9MqlfGyO06QtqcZlulNWeUVjA==
 2 _ENCR 1
 1 _CLON
 2 _TID 67680232
 2 _PID 34211675208
 2 _OID d762221e-846e-4b65-876e-0d6836a770af
-2 _USER I6ft2v+vJiAkVCwxZGoEvoImCAohZR8sEe3JV+CfnZzHWEnAGqp7yQLSCP012yJlbCnt+nK4sh+Hj53G7x+EMg==
+2 _USER 7KLEBkybhrD3F7qp+FcNdaulIJo2qYoZSvzEf811UfUnEr20qrRAS+t+9QktiKtBYQOm3KfG+bR+oU4seAlcNA==
 3 _ENCR 1
 2 _DATE 2017-10-09 22:04:23.000
 1 _ORIG u
@@ -24317,13 +24309,13 @@
 1 _DSCR Top row: Lula Evans Robertson, Emma Evans Johnson, Anise Evans, Narcie Evans Runyon. Seated: Silas Taylor Evans, Arthur J. Evans, Elmer (Pete)Evans, and Grover Cleveland "Clevie" Evans.  
 1 _META <metadataxml><cemetery /><transcription /></metadataxml>
 1 _CREA 2014-09-14 01:11:23.563
-1 _USER L+gLua46yFfBCDKW8zLyko57w9btw+Mu84Ucb3YNFR7VZzWsS9LpO6fKgPMlIyGJLfUTLIRERhQdz6ls0lEq9A==
+1 _USER fe8gUwNa1NZhizbBoZzHAuadeyHF2AKOWTCmtH0LIFsv9CVDGhoTqIkCcoqNRb153+WBE1JIX9UHgFUfmka0+Q==
 2 _ENCR 1
 1 _CLON
 2 _TID 3160477
 2 _PID -1767243738
 2 _OID c092a09f-6fc0-498b-b49d-7896100ae62c
-2 _USER ZkpY84u9xjGYbHe2VjwvJH4xYnHUy4TVWpxdh2jXkpILzqQTx5qvDko3chpSp0GyXPDYvaLXopUZ6DE5VwWK2Q==
+2 _USER 4R6rLzdZMwNr4aRBtG0CO7EMqj0NTlbwLuZQi7EothFveGMKs/xHaZ0YLvk6e/Bu4pMsPNw0rWiXhu9wOBBZIQ==
 3 _ENCR 1
 2 _DATE 2010-04-19 00:12:02.000
 1 _ORIG u
@@ -24340,13 +24332,13 @@
 1 _META <metadataxml><content><line>Samuel Dillon my 3rd great grandfather, was the son of Charles and Mary (Strausbaugh) Dillon. He was born in Adams County, PA on April 6, 1802 and died in 1863.&amp;nbsp;&amp;nbsp;He was married Susannah Noel (1805-1882
 2 CONC ) and together they had 7 daughters and 8 sons, one of whom was Patrick Dillon, my&amp;nbsp;2nd great&amp;nbsp;grandfather.</line></content></metadataxml>
 1 _CREA 2017-02-14 07:01:58.970
-1 _USER ZuGgt+3B1YC84NPt0QNy3HjYepy5PRCXgQnrGK0H1ooUms0t2v16M0nQq3NlrqMnnSVDoT1RVAp7LHg2HSNV6A==
+1 _USER swg+Z/A/mYTehMyqM7cUgFQlhS/zg7PKe2lN2OdhDbKJYmcHRhDO1hFwbV1b213z0f7/P4BqlhIq2PJHW9UeaA==
 2 _ENCR 1
 1 _CLON
 2 _TID 15540920
 2 _PID 1642871888
 2 _OID fadea03c-c3cf-4a27-8620-26bb1c5149b5
-2 _USER xb+KsqqaLpEbiouLUKD6zYKNm2SQQLAVFAhjyy6xLLAG1Y7iOlwWt/PPmPgmDQUNkO8ZSySO6+T8WyguN3WQoQ==
+2 _USER KXXbGHBu7HN+Ku0eiD6M8f9y8aWqzBZCegE9AU6owRYZj40n3G09lJB7kFkdJPHTmz0OtoIlokxperHJOiTVkw==
 3 _ENCR 1
 2 _DATE 2011-04-11 16:05:03.000
 1 _ORIG u
@@ -24364,13 +24356,13 @@
 1 _OID b9fdf438-813e-4ffe-a9ce-d82279bb59f2
 1 _META <metadataxml><cemetery /><transcription /></metadataxml>
 1 _CREA 2017-02-14 06:50:24.620
-1 _USER 11rv2B1lW5TWy+PON7dEeudkRaYR0ThgNuckYAlj2VWN1J0zy7BZpf77UsleROuVEyGMPjtQV+BPbKceysK5jA==
+1 _USER S0Q1WRvp2Ostb4sZ7baNgDzgNUsN5Aaazz+O9DttEiPvpf7Zd6HB+BUBBEprMNLEtin3WlWWtvEqWs7KC5J+GQ==
 2 _ENCR 1
 1 _CLON
 2 _TID 27954154
 2 _PID 27129198892
 2 _OID 8fe6dd4e-bd29-4381-9049-320cb8cb00eb
-2 _USER LDpoQhcuUxeULbGA1dDQxj8GhX3LKBF7+SqUl7PrlnZghEIZFAk3Z8BU4mzMgEP//AweagUXipuHFdbzSbEcgQ==
+2 _USER Nbp9D1RUxNIK7LM42M2CpFrhhfi8bodVCjCRDVIT2sIhQBbpYQkPzdQn8u3vwrOPtZGUrXHi5zrPmN8WCc08xQ==
 3 _ENCR 1
 2 _DATE 2015-11-13 23:42:45.000
 1 _ORIG u
@@ -24387,7 +24379,7 @@
 1 _OID bd728c51-b587-4c8e-858c-e793cc309f10
 1 _META <metadataxml><cemetery /><transcription /></metadataxml>
 1 _CREA 2012-08-07 21:41:02.847
-1 _USER eOXvh583CTyG43zg6hrcicLd/2Qh837ReN/n23NIL1WIdjp41HVnF7MosScV13trbv+bXCMTi9WrnWc4WcRajg==
+1 _USER vsOO0/cVSIKMltCZmsa+PnLtpOT5MVwmCTJNps0bSiWVbWoQ0xDaWKwRWA5ZyyKp5qilnxoLHD8eHGArBzZiPw==
 2 _ENCR 1
 1 _ORIG u
 1 _ATL N
@@ -24404,13 +24396,13 @@
 1 _OID beb3d329-7675-4562-9a05-f6780dea93e4
 1 _META <metadataxml><cemetery /><transcription /></metadataxml>
 1 _CREA 2016-07-11 12:52:13.663
-1 _USER 2AOlCEoyNsWZ1D2nR+xRDSJKcMTQmpF/oiJthtLjjVGXLj1nJN0UY0N1S3oYRSN/I9grCAUupcwu96ubpnl7+Q==
+1 _USER uSbV7Ie4878m9VJpsjboaL+U7/2xOWva1AkeZ2o8qRt9ykmnaG38KykqkM0eba/VcIDkxRHCDIbD6r8aMMeITA==
 2 _ENCR 1
 1 _CLON
 2 _TID 67680232
 2 _PID 34166784053
 2 _OID 584a4654-55e9-4719-9ed5-05b50277f793
-2 _USER sr4p33VD9znsSJF/lHUFfXr4m3wd08Me1HdLsvuzZRxYKwAYBHfk/j7lmwCcTYZiJfTDdK7eDgbn08+XuqUeMw==
+2 _USER yaroOm1N9xdSGIDnc1CM76tBQlaMCCgxsMr9QcDGUbPZn+4qJocwgMm/uaPMmoNV7IBqAwFOnVvobJYPqLUViA==
 3 _ENCR 1
 2 _DATE 2014-05-27 21:40:57.000
 1 _ORIG u
@@ -24426,13 +24418,13 @@
 2 TITL Story of Jane Lowrance, Newell & John Gracey, page 2
 1 _OID c14d0193-cbb4-4bc8-bc19-0b564f28ea63
 1 _CREA 2019-05-30 20:39:27.000
-1 _USER cjX81VAUAEmMa2HqewskIR//1LROhfKhRQP13gcel0U7G+1kSudAlVhznsJCFgNiNb9lnyGJyUOIrd902nt9+Q==
+1 _USER Lvz/2PbqSbpv+ey2jdd5HOrKDk8n379zUSCrvqfT7IXH6qTA5egLzZ8fWweoQj0+VM3MF9kDedziVDFWQzCpcQ==
 2 _ENCR 1
 1 _CLON
 2 _TID 102171111
 2 _PID 330014130453
 2 _OID cf39c45e-0494-46b7-b3c9-cf704e7a57d3
-2 _USER Gt6Q+nLlGFzyvGOMM6bFuLsFXP15ooMzTJPZ7hR8Gx6pC9PtP+JRgMJeNXpFtyndkEmLc+81NKyEQQdoYEqZrw==
+2 _USER b35TXwRUKTKm+4KxykF7+isPhpuqtfgiKwg4yC++1DZ5Zb2ITJdh789YbCXmckzxh8bwwNWCnGeAk1YFmQiO5A==
 3 _ENCR 1
 2 _DATE 2019-05-26 20:34:54.000
 1 _ORIG u
@@ -24450,13 +24442,13 @@
 1 _OID c4da0148-bb64-44a1-aa1b-79fe88cd3f59
 1 _META <metadataxml><cemetery /><transcription /></metadataxml>
 1 _CREA 2016-08-10 17:09:03.284
-1 _USER WDQ5tRSWsOOGk7HvegNwLMCohDTwBXn1pce9VHcmM7SHCZD8RxUpJHbjBifbuzpaHPscARGCnzNnDvHicXh96w==
+1 _USER 4FQhwVQ7U727oSWo05IMqUlauCYVyXMYWff7zkhRucicpaTi5sRgL5p2KtDdrUBzywMEl8AVf75jQr81rOFQnQ==
 2 _ENCR 1
 1 _CLON
 2 _TID 16098506
 2 _PID 419322181
 2 _OID 912658b4-1115-4ee7-ae08-be691c3545f1
-2 _USER mSg+diKe7MvaAIja6x/WY9DQv0GZbiqoqszT3c4BUUGUKyHjv28MuaXep+++eFqvQgpHLrfiNiL7/ONoOD4Bmg==
+2 _USER ZcDmh9GOvzGcFvPLsYfRGs3F1EzMPdcTvGC4ZNKsPK5w+cBLqb4IqcGQLLZ9UC0dB6gBODN9GtL9QKvo4w8zUg==
 3 _ENCR 1
 2 _DATE 2015-03-29 20:31:01.000
 1 _ORIG u
@@ -24474,13 +24466,13 @@
 1 _OID c79f1f67-5866-4336-bbf9-5029268ae1dd
 1 _META <metadataxml><cemetery /><transcription /></metadataxml>
 1 _CREA 2017-02-14 07:42:52.226
-1 _USER TmS4vy0JfdQW7ZtDDhG/RyG3afiJwQqGSQxSsO6d3iU+0c1b+vzpDfscr1pBZmGzE3NkHS5sBXoGP/SutFv2Tg==
+1 _USER VnwhJvaUTPU8Ol7DmBriOXCzpLDgZlsNDDqCz2R3An1nQgPEUWk544sGdpcihS68ptYCp3gM29H8pvXx++0RfQ==
 2 _ENCR 1
 1 _CLON
 2 _TID 27954154
 2 _PID 13042833823
 2 _OID 960c5ac9-b282-4641-a5df-4e1fbebe98d6
-2 _USER OPE0L7r8zMgOaLjRag4VpjLjAEK/5a3d4vJeoiN0vvfyptdMOTt1MYhwXSfZIolIOUz3oLEoJnAN7PhP06X+fg==
+2 _USER dspnoAvpzqXuJikx702OWHIs+w+TEDJauNLFLVsfMPEM5DGTD1rOAOpbVuXt9jfLmxsLO+hCHWwHIbwIpZwwjQ==
 3 _ENCR 1
 2 _DATE 2015-11-13 21:47:02.000
 1 _ORIG u
@@ -24499,13 +24491,13 @@
 1 _DSCR abt 3 and 1 yrs old
 1 _META <metadataxml><cemetery /><transcription /></metadataxml>
 1 _CREA 2014-09-14 05:58:05.980
-1 _USER f9CbxJK7d2UKLRAv9VFCxLQ7T8VsCdTuN1+LMtmTCWiLSX/7zR+txMkGvLRpwm8qmxVO0W/5VIZKNTFeECXU0A==
+1 _USER 4I8iM0PXCqljm5HBP8WTWTtsgVREQ+RTzNtjhFLeoKpnJxRpHAd0iBIKBbIIdwx0Dhn1Bw6f0iARkVm64aGGTw==
 2 _ENCR 1
 1 _CLON
 2 _TID 3160477
 2 _PID -1767243737
 2 _OID a0cdd4e0-bd99-484e-97be-8b3caacd2c29
-2 _USER 0MD6i1KIZYiKxYuzb4ItJLaWbNtaA7jy6mybsv5qnvBdMrtMjoE+jV8epxyruDom2fikaOwBZAxCHeki0o1zAA==
+2 _USER u3SoJTCWW8OSS1/oUbq0a4uQDHBdGzHCDDkdmYLzSOXSkLuYkwLLCqq5c7L0azX1kAei3vaejSp1QN7kDpn5XQ==
 3 _ENCR 1
 2 _DATE 2010-01-19 16:06:53.000
 1 _ORIG u
@@ -24527,13 +24519,13 @@
 1 _META <metadataxml><cemetery>Johnsville Cemetery </cemetery><transcription /><personas><persona><pname>Sarah I. Roberson &amp; W. R. Roberson </pname><bdate></bdate><bplace /><ddate></ddate><dplace>Erath County, Texas, USA </dplace></persona></personas><
 2 CONC /metadataxml>
 1 _CREA 2011-06-02 03:34:42.170
-1 _USER o6QUrithJTTOGCV9j46S/XE9IzVQeMCk6CQltxdyjxeIAPu5/JJUKTomZpG7eQ4xtg8KM9MpHQZ0kvGYeAaX8A==
+1 _USER faAVaD57f3YC/rxMTq6iYavmDc4fnnx3VGjObFQYMpKeJbqP+22oi7iq2UxbCtPTmCdu2UfUboSYzbRbtkunnw==
 2 _ENCR 1
 1 _CLON
 2 _TID 20106319
 2 _PID 968416997
 2 _OID 36caa4f6-b589-4e6e-a8c3-4e92e9ce8029
-2 _USER Q5aY8NKyso1cgi2WL5WRJLHgThByW7eWgh09dRraWy+oYrUzcgaO/dLK7XOD+bywWdgFcUPR02Z1BVtmw2UfFQ==
+2 _USER mH7g8Zig/9/PinaX3jo2g36WCnDEmUUPqW0EdmaZz6P5NbcpMLTCsaER2Q1LhdvMhHGGvzS9rSQ6wuqQ92S8OA==
 3 _ENCR 1
 2 _DATE 2011-05-20 02:41:53.010
 1 _ORIG u
@@ -24549,13 +24541,13 @@
 2 TITL a
 1 _OID cfc5d390-f91d-4525-a91a-4d4eb1a5a26f
 1 _CREA 2017-11-05 15:57:54.746
-1 _USER 7w+TNe4HPF3nMTyGt9m35hP64c8nw8+bBEr6e/fXlMAWGqNsee0e8Qww1JlNragSO2U78BDLZd4Z8w+8clFWEw==
+1 _USER 5nb0ml/cPkhMSAQthzT6HpfFbGbZLVx8e6GWfpCMvQKuXbnhVUMkasp/5ktAXpwSSq/26Z6uafl//ikMPzPGdw==
 2 _ENCR 1
 1 _CLON
 2 _TID 27954154
 2 _PID 27129198894
 2 _OID 15126d30-c7a6-4b4b-9007-fc4658df37c1
-2 _USER XnlL6w7iH+c7x1l1oJK84B9cXRCVCRU9/1xZdBMxsBsVAlVvHVWDtCj+daIUWQXWtNr/kKz+KOfZV2L6oaxEtw==
+2 _USER bPc1hrZzHV4xJsefrT2oTw2eQH/Ur7V3CgUYjPb0Kq6Q7dDZKVTTq1Rn8DxQWAQCO188A2o/yJieQP2JAVhjDg==
 3 _ENCR 1
 2 _DATE 2016-08-06 20:10:12.000
 1 _ORIG u
@@ -24571,13 +24563,13 @@
 2 TITL Tombstone
 1 _OID d165df1d-12ce-4fff-a444-e7a96fd4d285
 1 _CREA 2016-07-20 20:01:39.393
-1 _USER BzANh3h1e5JW72SqTGzESSkJuOf3VbfB81Fzghy85B0GixWrwqoXg0FjM26n1YHUxEd0OkHBJndaHlp5F3T1HA==
+1 _USER alwjfuuBwcx/LYSs55lI9t+eC67jFlfqfKNq+FyfvG24yrslURYW9p3rlq92uU7z7luuzZjTyh7lDx12/BoxpQ==
 2 _ENCR 1
 1 _CLON
 2 _TID 85646902
 2 _PID 34521364198
 2 _OID 0af9bc60-a234-4ef1-98a9-323514acdbab
-2 _USER v5ieN0Qvn1+0A8yNElPtzz7iN0N4aGowRXUsWEKWynICmrwC0uiXznZRibWlktiTiinIZ6mdnv0ummgRY7ByHQ==
+2 _USER Eft1U23d0TtqGdu4HrxnlDAuydCCo7+9INHndt1k0XcqirSI2fHi0Eepqzln+9kQNJcQ7dHXt7JVyK1t9DvDtQ==
 3 _ENCR 1
 2 _DATE 2015-11-23 07:44:02.000
 1 _ORIG u
@@ -24595,13 +24587,13 @@
 1 _OID d344f155-0732-402e-86db-ec0a06c28ca0
 1 _META <metadataxml><cemetery /><transcription /></metadataxml>
 1 _CREA 2014-09-14 02:08:59.903
-1 _USER tAAdh900TnJ1MkojhnG1IEZlNzeHtWDIauEVagPGa4Uqjb/5yPKPXoVbpf3x+WcSHegxp6Eu0Xw9+iXIRVYzcg==
+1 _USER vqSKl5eBXozqxiMeJlFJ32Ysaslv9NzVoIu90fN5Ht2BTBjTGg7KIUuYNCBk/s94F8L7zLYhZZjGapd/KxWq+Q==
 2 _ENCR 1
 1 _CLON
 2 _TID 3528068
 2 _PID 6155100968
 2 _OID 4538cb93-7dc2-4c6e-824e-81615bb34475
-2 _USER whaXIWjj+ekHN8TOTrZf3Hu2DvCqz6HQzGC8jJEo9AZMFmxI4Vv1GpcBV4Gv4EnWIqVZNkHJl5iQOEL+RGzllA==
+2 _USER nDo16+D0hSRbuvqX7gca8BksxmRcPAE3Kb/0RzNu60jj4+V3WfhWgNYoo5agNT8I5NsxZCbjMVUzIjrBD+VBzQ==
 3 _ENCR 1
 2 _DATE 2013-02-12 14:36:27.000
 1 _ORIG u
@@ -24618,13 +24610,13 @@
 1 _OID d3995c5a-a889-4bcc-8797-4339bae3141c
 1 _META <metadataxml><cemetery /><transcription /></metadataxml>
 1 _CREA 2017-02-14 07:50:30.816
-1 _USER xmkYLzzRe5wNYfWrHQnNjX46FpcOvfZcQM5jSUWVe38t1WiDDXue87GuFV1iZ0oan5W6Co9jikNb1LWlVA6yAA==
+1 _USER F+8hVULXlFJRqQ+OIBI5It5JlAmaVzqEKKelOFrOyCvf7O/fiLEEgIpFvlWuUE2ulHnGm6youKNKgh5ftrIbTw==
 2 _ENCR 1
 1 _CLON
 2 _TID 80058219
 2 _PID 48413564683
 2 _OID c519e759-0fb1-4c90-be55-07dff7b5bf11
-2 _USER BykTPseVLJL6yrpw3zXQ9H942CG/LJlfUalr9FhnC2FY5y32Pb22aCEYpdMt7L6SX+BzEidPuenp4iPp1sLFrA==
+2 _USER fYlrlL8OfG5uJh2tB7YA2UzsKJdv16s0Eiv9thoAoxelQria+4hMFk2trGtbbCaMqLJ2jfkRC2G3WCiRlgTJQw==
 3 _ENCR 1
 2 _DATE 2015-05-12 14:12:41.000
 1 _ORIG u
@@ -24640,13 +24632,13 @@
 2 TITL William Reed Roberson McCords Reg 03
 1 _OID d3a24976-aec1-499d-ba82-c711c342a5d3
 1 _CREA 2017-02-14 06:39:55.406
-1 _USER iKOHsMtKbf88kd2HWgVDkyKn+NGm80w/TSowWjQcMFr3I++nb2NdIxgwN9OcalrJyVOzfGBq1SO8F9u9jXsD5Q==
+1 _USER BiRD4iPyq7cu00xku/SXzKTlaV4rkdsdykal/WkNacUOB51uKYemg4HZQRB5j08PE9a+u3NzWFd2c4X3dxCRDg==
 2 _ENCR 1
 1 _CLON
 2 _TID 9364918
 2 _PID 6021526502
 2 _OID 05a8cf10-1b67-40d5-a0f7-74343f67afbe
-2 _USER +M6VWDNGH2gUyFml4xuYGkIqcix0AsrpOXQjEWjVmvgJKWJfC9qP4wcprEh5eXym+NWFTGro07FzwYNtHxmqCQ==
+2 _USER 0+s1c0UE7uO3Ku4glRy4fp4T2uMEpmq/pGcFZUWBw4RbgDDmEz+yS8l51D8BG/beO34nfvRcNLuv77PK4sDzsw==
 3 _ENCR 1
 2 _DATE 2016-08-16 17:27:28.000
 1 _ORIG u
@@ -24662,11 +24654,11 @@
 2 TITL Sarah Allard Roberson
 1 _OID d4be0150-ae89-4a5c-8cec-150e95d81371
 1 _CREA 2019-04-30 04:17:51.000
-1 _USER xl8j+djtwas8v/VuqhfnMl5YSjTGclEJGuZYQNoNh/fU66gV17JAOPydUB12hEy5S5dTygNsmbK6+GqXdEVkcQ==
+1 _USER gJxp10mvDRRdLmpVrMTzF2C8w9U89UY9/tvGkGPZq9Mnvq57oqRKbRMDzcuoa0zWL6K0+S4FV46o16gBEsbNDQ==
 2 _ENCR 1
 1 _CLON
 2 _OID 97d84ab2-7fdd-46b1-b813-407f1be425b4
-2 _USER BQtXlg29CyrSCtwPxLLh1zYIHFk4pUQ3yGDw8gQGxIdQicweZHBHBpvwemR48fKa821O3kOcliQtNvUJNH6bWg==
+2 _USER ssezipha7be4sUr7nl79RyT9YiACMrGzKSVWTfvCuj9sBmp8VqSyJh2UIV3nXWScKeBTrPC1Tm1pGo3pvnFrEw==
 3 _ENCR 1
 2 _DATE 2017-05-27 19:23:51.000
 1 _ORIG u
@@ -24684,13 +24676,13 @@
 1 _OID d6827bef-c9de-444c-a611-95320e9043b7
 1 _META <metadataxml><cemetery /><transcription /></metadataxml>
 1 _CREA 2017-02-21 05:39:39.002
-1 _USER uNvcf0n1IlRBxrpiZkEjR/p/JHCkYiPOjgve7CmhIckt0b8xjc/yElQSim+tqk48PKpoIJhlUrABbbPK9Wdxlg==
+1 _USER mWvPGqDlCODfS9LiIaWagZxS38CKqUQvfD4oeArP+NlVUBs3IYyY1QqdtQZfgyy7yZFJUJar5vEdxuQ0e2s9+w==
 2 _ENCR 1
 1 _CLON
 2 _TID 3122381
 2 _PID -815759052
 2 _OID 1e854ed9-db0e-420e-a6ba-2e09dbc59895
-2 _USER DtiIgk1VAPV6p19fSDZJiI+XW2KYmjg71hlv20AgSRCtODK12WSJ1IRTfQa+Liy6EwVuzP+cQsYdRMEBxl09yw==
+2 _USER FqtE+fwqrSHEPSoItvKiI78NIjExFsxlFyMs6TfvywebBS9pKaR08JtVfJ6NT86srmyyjR09F9tFWNKdfBAu2A==
 3 _ENCR 1
 2 _DATE 2012-09-25 18:17:07.000
 1 _ORIG u
@@ -24706,13 +24698,13 @@
 2 TITL Douglas Register Baptisms
 1 _OID d75e289c-6c2a-43e1-9959-7c62d25cc5af
 1 _CREA 2020-04-23 20:55:52.000
-1 _USER jUS4uFMIDvvTDumEM06232X6IgO2Oxx7V+JHrVxx3hlvvqPLpHNFmGy8R2bk1/RpSRGidQJHmgpnkpBBwUsTzw==
+1 _USER CF/rxEedM5mx0m3YlKHlPLhKoe5iiaoF36H7eBm44/kOtnr932R0hKNEVli2lrbX1bh5xG85aBCvRA60Od06zA==
 2 _ENCR 1
 1 _CLON
 2 _TID 118898016
 2 _PID 260184903136
 2 _OID dd5456fc-7724-4832-8304-da7284ad74ad
-2 _USER VvbtbeACtU3g0ctp0FQX8dOqIsvFFjRD8Z+wdRbij0cvoqyec79qBPIVDULi07uw7dx74F/THd2GBWifOWZnzA==
+2 _USER pZ5iy4Ouonu6K6AJxdbhsIFY1Zwgvli2vYBRA6/t3yTASTwDdYE87AbpiRrEiaEiWKFufvm6N5F8d9HHYFXOyw==
 3 _ENCR 1
 2 _DATE 2018-12-18 17:00:29.000
 1 _ORIG u
@@ -24741,13 +24733,13 @@
 2 CONC : &lt;a href="http://www.findagrave.com/cgi-bin/fg.cgi?page=mr&amp;amp;MRid=46936125"&gt;Skettieman&lt;/a&gt; &lt;br&gt;Originally Created by: &lt;a href="http://www.findagrave.com/cgi-bin/fg.cgi?page=mr&amp;amp;MRid=46993634"&gt;Joan of VA&lt;/a&g
 2 CONC t; &lt;br&gt;Record added: Mar 26, 2009&amp;nbsp; &lt;br&gt;Find A Grave Memorial# 35178660 &lt;/td&gt;</line><line>&lt;/tr&gt;</line><line>&lt;/tbody&gt;</line><line /></content></metadataxml>
 1 _CREA 2017-02-14 07:05:41.848
-1 _USER MsVfJo6kxVMBMU56U3JZrpSEpu5UCMwy8y1c515ambt6UG+URiD1IeNa4gJLT6McDpDRcCChZMAVn5rXPpQ+NQ==
+1 _USER sK++B5cr/CfXPQnWcQvieA/CvweEQE+xXUsks3OtR9gIVQIajqU2QJ9PObU1DMMWI3O3T9oCEWNHgbNRmrrDPg==
 2 _ENCR 1
 1 _CLON
 2 _TID 33707626
 2 _PID 20487219795
 2 _OID 806c3315-758c-4315-a015-41d72350624b
-2 _USER Cz1bagssxKbKq4uj98kkxdGgGe9F3EB1tS6iECPMIGbwjRRYivwGnUd4UTbIG4AlY75Y0to/C4Nbvz7LfFwCMg==
+2 _USER ezyJAz0a1X2TI2ZdCLsOIBjuun0xwpxkV7gMoFTaTYSpbetAEtWwdNmeEDMHzFCgH77BwfdnSa7Q4cSIa4DJtw==
 3 _ENCR 1
 2 _DATE 2013-08-09 04:25:21.000
 1 _ORIG u
@@ -24763,13 +24755,13 @@
 2 TITL Lary Dale Fontenot
 1 _OID d8074a68-affc-4e43-b9f6-9546587c2975
 1 _CREA 2021-03-11 21:01:19.000
-1 _USER Sr5Kb1qoU6IGluTxuvZ0GsO8mo0eiOteyz2EIlLXEbhs1grZRJW3bTrcpp84Z8nxbL4kGnIZBj7KZGfFgizMpg==
+1 _USER V6kfJXBT8nOW5Jy59g9o2+QBtXsSRIuIc3L1ssq8tCzNAATdRc91q01eHdg6kaPMPExPjqikBwd5RMfipbJ4Ng==
 2 _ENCR 1
 1 _CLON
 2 _TID 12613002
 2 _PID 26903875839
 2 _OID aa13aedd-1560-4bb8-8bbe-3a5ed4ba7041
-2 _USER qx4h1mA3suNashvQfVhZGSsmV2XRhpV9T5PN/cfe6Shnyi3YYaoNlPvLfQLum5FvqvAXN5xYRlwAsqK3CBrAlA==
+2 _USER Vzy1oBgAMMQk5eMWJvynhbubDPYHwS0QpPh7PGANevXOaINdsVSINe0lzIg7Ogflzi35ixNG+8e8u/FIZCa7iQ==
 3 _ENCR 1
 2 _DATE 2019-09-24 17:11:46.000
 1 _ORIG u
@@ -24787,13 +24779,13 @@
 1 _OID d842bc5e-c740-4c1b-b6ed-a96cfd6557c6
 1 _META <metadataxml><cemetery /><transcription /></metadataxml>
 1 _CREA 2017-02-14 07:01:06.713
-1 _USER PiDZR3Rv8nCC2JMJGMgEmL1/2e3vBljndwmpt/2f2G0NCjUGlFFcu/dAGo29cg9bazwUmKqm8S4U4qahG+voxw==
+1 _USER EVB6X/iGqAquLH0u8ZnGlzH1qsIiPStRun7j/ApN0DPq+arwviId7xVreQx782RNLcORwXzz0x+E4yjOLTnR5g==
 2 _ENCR 1
 1 _CLON
 2 _TID 15540920
 2 _PID 1642871888
 2 _OID ff54e786-b511-44c5-86b4-8c9c192994a9
-2 _USER dzvF8Fd68F9pkkzisqgxXN+2458qyMhxRj92oJhmnsq4YKAem2a7KjQY4SIDKVA1/ZyOuO+CFr6kh9cGyuJSDw==
+2 _USER sbhrDFmU6BjW2rURh/BVTYG0ajpBwuRdjYHKjC9+MSVLOyjsgpo02bt4Z3d15K1nLud5ZR3q0ITbhml862gXQw==
 3 _ENCR 1
 2 _DATE 2011-04-20 12:34:56.000
 1 _ORIG u
@@ -24822,13 +24814,13 @@
 2 CONT Texas, USA
 1 _META <metadataxml><cemetery /><transcription /></metadataxml>
 1 _CREA 2016-05-28 04:15:26.852
-1 _USER SYRylHDv4+Se4XamNxWsCzNCUAhr3Okgi9ShBdBBNnl3exB6+wNmmTbz6QlLdTuuEDqOupK8l4CXAht7EN4TPA==
+1 _USER OgkT9Vhzxmpsb/pRv8NeSNDzu6EzL1E/OcnFduFyUgZitwKdlOeFfN7gg2h1VhtbGgJbZZye4j1a+bZQ1UwYsQ==
 2 _ENCR 1
 1 _CLON
 2 _TID 9364918
 2 _PID 6021526505
 2 _OID 8a8433b5-1b70-45b9-9030-74c35e8e1945
-2 _USER rensQN8DFB2AtQuIu1Z03GoKXT7kb0oiDdc7ZZvCHCoL5QIitvPp5AWa1VAufZ3QuusQUFWyMxd3eIjYbptFwQ==
+2 _USER CZhk00JbqTl/mwEL0eSOtau3uWb47LHFFXwsKuTgRXIjBd6kLxb6Y+mXHLv8/sMuvW6wRg/787YhIE3qadSlzw==
 3 _ENCR 1
 2 _DATE 2013-04-01 01:25:38.000
 1 _ORIG u
@@ -24846,13 +24838,13 @@
 1 _OID d96bdeec-782b-4055-9da2-8cacbbef4b23
 1 _META <metadataxml><cemetery /><transcription /></metadataxml>
 1 _CREA 2017-02-14 07:24:44.096
-1 _USER TyXzn1rRxEilKnEX6Wu0IcXeTjnGtdGU4YlPVMcmjoiQXlZubLXt5AF0TqQWU0096ZoWv9Yi/pat6ABRZT32Rg==
+1 _USER PutzQc7O0y/ffMxqKw3WS/UbvlYOJNOj8KtcyXX8MKOOklY1up4NiZCqtGyiWM4eW4VvOj3/0qw6LG0FxvoS9g==
 2 _ENCR 1
 1 _CLON
 2 _TID 36712348
 2 _PID 19905850019
 2 _OID 94d4add0-3c3b-4891-a437-0a03a82a65f3
-2 _USER iGEG3A+RmfbQ8mo0f3k17YakaAvCadRCep8K4qRMV5h/0FhcGRDxtw0UE2QIWpN8mkCpzHQGLXdW8GKars/W5Q==
+2 _USER 2ZwvvqKYflTzjGocSEw5vi7ADJqjDWP5lmNs7KLSqyOUW4NdiY+uCstXaJ4Lto4FqR8SAZ3mOsIqpTKfqg72DA==
 3 _ENCR 1
 2 _DATE 2012-07-08 17:00:20.000
 1 _ORIG u
@@ -24870,11 +24862,11 @@
 1 DATE 4/30/2015 3:53:28 PM
 1 _DSCR Added by: Danny Jones  9/02/2014
 1 _CREA 2016-07-20 20:29:26.274
-1 _USER 3ViGhf7CcifSNM+WlmbL01sV9xPBLRnrRc0+h50yxR2WypF9bCRyF41jag5TrX60pf7ssBnNdY3lmn3V8MUXmw==
+1 _USER mdAwPSM4VxA2oA/eh4snD8ECyye87xz+wcuAOb9u/tXltjKNUXb8smKOL0qNbMRqjw91vE/43klNZY/TYgPwTw==
 2 _ENCR 1
 1 _CLON
 2 _OID b510aa8c-d9a3-4718-ba64-ea38d5a3e113
-2 _USER qW5fjUv+7ZHEtDNaTH8asfyX8VCaHk9nbg63V7+47B+XqmaFCqzoij4XWi+KUIi9j982Lc+GDVHHXzllQNITTw==
+2 _USER HEOnTZZRqzkoQ06EyHuUuMAL2vInXRJbhivQxzvzUX9X2mPPAhZm18Mhh/Mq9T8n9J9wqXJNVQdmeDzE0eZ2fQ==
 3 _ENCR 1
 2 _DATE 2015-09-07 05:15:11.000
 1 _ORIG u
@@ -24893,13 +24885,13 @@
 1 _DSCR I went by the church looking for information. The day I went by the church was closed. I took a few pictures of the church while I was there. 
 1 _META <metadataxml><cemetery /><transcription /></metadataxml>
 1 _CREA 2011-07-05 03:03:36.613
-1 _USER 3mhv/tsNLxKdzLMcIHF0lXl6bjkmwnmjiJvfGA0yaHpmgaSlVzjS2KczF/mraYXnc3iXXoSt7aIe6WDEbioDcQ==
+1 _USER RsdIYQEHBaOkh9fzLNBh6PGxzfKsWoeGEkiZFzgwkNxJ+I726IygOywjo7uA96h94+sjytJXqrUrL1osWDNP1Q==
 2 _ENCR 1
 1 _CLON
 2 _TID 16258366
 2 _PID 380059039
 2 _OID 498c2394-9c3c-42a2-b069-94a5fdc8152c
-2 _USER lHAGYAZO+vG4v0pGjtYJ1xx819EhlMJGUCAnAxnvE+QZYsajJDQl5bw2NAfUr3DLYBWqwCTZ+yo4g25v9dlj2g==
+2 _USER 7s3MC17xB0AT8LLUk91YVZx6rnq4CdEV62TKCjXpO02MkMY+WUZoeKnCLjdUntw2kurfC5spy28Ang5Nle8QeA==
 3 _ENCR 1
 2 _DATE 2010-06-12 20:32:13.473
 1 _ORIG u
@@ -24916,7 +24908,7 @@
 1 _OID de7888be-aea7-45d5-a326-1473ded8d884
 1 _META <metadataxml><cemetery /><transcription /></metadataxml>
 1 _CREA 2012-08-07 21:41:47.040
-1 _USER 9K6yfPfF+3P80Cl5bifO+T+EX5o4jPMGn3ThlbrndBbXQmkweabRl/sDjR0SlF78kcgj9IuevnoWrp1NMsXEpw==
+1 _USER xm3rwhA4r3fQo08h8O2NvxilcNyzSA0LPreiRcJdGft6HXMJlqfI2agKX2r5O/iGrrlFtk5w+Ov04FvNdLhQqA==
 2 _ENCR 1
 1 _ORIG u
 1 _ATL N
@@ -24932,7 +24924,7 @@
 1 _OID e03940a0-b756-434f-82b4-8eb32b38a8a4
 1 _META <metadataxml><cemetery /><transcription /></metadataxml>
 1 _CREA 2012-08-07 21:39:22.100
-1 _USER pc+sYT29JOMCUEEUH8/+tScl5HB2hX6RlCuQqKH0YUlBWPN++gQdOBlMdsgJOfcDj9vsQ7vPyM6DO0//AhERjg==
+1 _USER iYXCGy3PLy6J6+md6oaSwqnkoOGLZBgjVhA/8dLn64oCWW4M7p+V0m1RSVSf31dHSmaPEcL4VTA0SBc3/DrzvQ==
 2 _ENCR 1
 1 _ORIG u
 1 _ATL N
@@ -24948,13 +24940,13 @@
 1 _OID e1277d13-3fb7-4179-9dc6-0146100287b4
 1 _META <metadataxml><cemetery /><transcription /></metadataxml>
 1 _CREA 2018-07-10 17:07:48.482
-1 _USER iWw6pDyNfdXjxlBbgAk57OEE1DxLecePrzCZiiZxgix4kmgtG9lXwvsgZEnorS7+67bmA7Lya848eaabr5A9dw==
+1 _USER Nof5gT2y4Ppkxl5jhh85xQ0x1dqNxvDUMhz5sbbbcp2t3RtaZY+hqmMNNLAZpsormCyZbvpbhwVhroPWSbMrbg==
 2 _ENCR 1
 1 _CLON
 2 _TID 11181802
 2 _PID -329032264
 2 _OID 03270a6b-905f-4951-b27b-82c9c097c4b8
-2 _USER sQbz5ZbAjZTkajlWg693rv7l8SORxyu+6mPmiciWyW3wFZ6+8Qwf7tcWNrD6mJdXCzvM1Tm/ZXixbX5sbyvyYA==
+2 _USER WLcwg9OzMueOp96EWb/yqzPxvp79P1yAEFmxb8YOgRuTiN2C0KDkcYauKdH2OM+5eLMV8HhS/zxiZMvisElf5g==
 3 _ENCR 1
 2 _DATE 2009-07-23 06:58:23.000
 1 _ORIG u
@@ -24972,13 +24964,13 @@
 1 _OID e39a48c5-477c-45e5-be4e-6e94cb58d64e
 1 _META <metadataxml><cemetery /><transcription /></metadataxml>
 1 _CREA 2019-12-20 21:34:17.000
-1 _USER +qinmjJgmsC5iNCZEkOrZtZyF0zUYaz3FyKDO9ShNnD3iazhL9crWyCDHl9XLigJWhbsuemS1kc+rJw79EWbQg==
+1 _USER 3uXYN+qFB7p8TN3CuBA6nog22a5bV5KETo0tAYpISa90wTy+uzWHGZKAjpfMOZjKIcOw5CUFrELdvXEyhs4+/g==
 2 _ENCR 1
 1 _CLON
 2 _TID 9364918
 2 _PID 6021530315
 2 _OID 4bafc901-666f-4c60-badf-35bc1fcad12f
-2 _USER nuJ/Y/DtWl/r4Utp/QjG8qpwZqCJkmTceXFiBy2jkSWhWvPc+z4J1WMUWjQpt7y/RBeJEUXQ+em8yJQkEsnnOQ==
+2 _USER AOPlt/EQ3qxy9bx8cSgf9PznFTRA9DW8+SISlSoAHNRFh9K9lH9lhLOqHs2OC3such2JGSSXIxsFdS7y0HaqLw==
 3 _ENCR 1
 2 _DATE 2012-08-29 03:58:56.000
 1 _ORIG u
@@ -24995,13 +24987,13 @@
 1 _OID eb7d7745-32ad-496e-b1a1-331f3a587da9
 1 _DSCR Old tin type photo
 1 _CREA 2019-12-20 21:34:41.000
-1 _USER pQPJ3NMdK4d6BX0YF9OShfxDkfdX/O5RrnkgaE0qy87PbGJJWNyQaoXfkDORQaYg0pV+/LwqoT7S79P+RciD7Q==
+1 _USER vRPHSgn08vwUZ4B70i4bLM59AlbrAoZpB3TKEI3kc/b7nhVBy7KpGyGOSPn5i25TiIjAMWPevnLPPaZMWg4BAA==
 2 _ENCR 1
 1 _CLON
 2 _TID 83464411
 2 _PID 32490834607
 2 _OID 75fa9069-99fc-44bd-9b20-77aebaf70cfd
-2 _USER kOAztH6Jrds82D6fExxFVP75nPoAmDPWIAeDtP05PaYT4fN98aXGkeqKRAYR4I0TF02KcpGtfbosyfQS2FgK1g==
+2 _USER d0Vb9EY7ipWwdbfaQ517t/W6wbYdSNbS8QAOcTe+RSPH16gyrSwEDGh3DJN6sktIXRQn+3gtwAcxGerzUTvyGA==
 3 _ENCR 1
 2 _DATE 2015-09-07 21:58:35.000
 1 _ORIG u
@@ -25020,13 +25012,13 @@
 1 _DSCR from http://arsnova.donovanfamily.com/margann.html
 1 _META <metadataxml><cemetery /><transcription /></metadataxml>
 1 _CREA 2017-02-14 06:43:52.382
-1 _USER sLE0KGwBj11mnNooowkOiCzCM4n+vp1PBV7vNUtNM5JGBbxsBFPfFNQzIScGJOfl0fXa1III9MYNMknIg3Iktw==
+1 _USER zZu3wJ+EwJ1UIbTtuvHIWyHrxj/GM9lKbDz1FRl8zpFDaGXx5GaMkqDudEhzaQtTYxHHIy+84loVIgc6L846WQ==
 2 _ENCR 1
 1 _CLON
 2 _TID 6044091
 2 _PID 1314076595
 2 _OID 6d15d05e-793a-4e36-a5fe-72127f1268d6
-2 _USER drRnR4eDaCxMVYelk1B3JdgZ5rgSsvXqGPNVxkVstq6hvC4ieVNXVrxkWe+RP1gWrkZnM3VShibRM2ByS734pg==
+2 _USER v+6eX3B3VYGA+XFd3njrksaot2tnlE2EWvZoM30mKBQ17xrI0YupLuDRYIFDgod36ESwVSl1O1HZNMcKvensqQ==
 3 _ENCR 1
 2 _DATE 2011-03-07 15:17:13.000
 1 _ORIG u
@@ -25044,13 +25036,13 @@
 1 _OID f1893ab2-82b0-4281-83a5-b923506391f7
 1 _META <metadataxml><cemetery /><transcription /></metadataxml>
 1 _CREA 2016-08-10 16:53:01.710
-1 _USER KOdTTfdMlLc+/Be0cPG/PwoItS80oGEjjQkd/JSqErZh+yd8Tf+tMpfYFnjZBFsvAAT2z7krEiIaP/MQj0zA6A==
+1 _USER GbWjvxyUnxsZPcmAU2KbRyM/D6982BKkwQqjgLVq0hBV2dUD9BfqvZc5GZJivEpk8GC6OaD1f4WpnUgsGTW8mg==
 2 _ENCR 1
 1 _CLON
 2 _TID 32077875
 2 _PID 29359764908
 2 _OID 75cf5184-f810-41e9-9e9d-3fd16788eecd
-2 _USER Re4+B3yMMmOOgo3JvzYCLxSOZX0Is+r5AF57giwJVssHgJ6LO4AcgxQgWgiblWzsK14s0sVFO8bM5lNohq92YQ==
+2 _USER k6K6oel6XsSRvIc7LF0NkFModWgZHd3hswlQDd5qWius4+oXVk+wkDMqJQfEVwXAbIT2hCewpJR0UURIx+iXwg==
 3 _ENCR 1
 2 _DATE 2016-02-19 16:48:13.000
 1 _ORIG u
@@ -25070,13 +25062,13 @@
 2 CONC ptured for a final time during the Union assault on Missionary Ridge. The last year of his diary from Rock Island prisoner of war camp is devoted entirely to prison life and thoughts on the direction of the war. Typescripts only. Location:  Small M
 2 CONC anuscripts 76-3 (1 folder).</line></content></metadataxml>
 1 _CREA 2017-02-14 06:59:56.295
-1 _USER /uuJ+gKAnwNb9Ea6JGM/xCDLc/v6O4k6TqUkcGRTQM+r6gKC6stoJKhoTiDOM2wkVYhS5M2JfbjABU0dF0GsXw==
+1 _USER 7jtepwSh1kOWPVJArAQPRSWeW9MZg7nSP8AifUXi4NRVe6oI8vp7iwXtSA105kqVnMRU2n6/iu7cEiyVRDvgUg==
 2 _ENCR 1
 1 _CLON
 2 _TID 15540920
 2 _PID 1642908788
 2 _OID 9680cbe3-a2d9-4915-909d-1b487095fcc3
-2 _USER IRAOKyIpxmRsnkQjjBbhYIm+fpunnmOG/i6WVjbTGgVr50WQ+bHaHbhTtvelMuO8uD18OVHHd8q+K8GU8tEALA==
+2 _USER tQ3mpvxdZ8p5Nfsi0xWbKH/Ny0bBH6X2AF9VRA0qvxPzgBTc/RpGxE3VvQUpbd8AoK+lLM+MnShtFLW0UNhFUA==
 3 _ENCR 1
 2 _DATE 2011-04-30 14:11:41.000
 1 _ORIG u
@@ -25096,7 +25088,7 @@
 1 PLAC United States of America
 1 _DSCR Army Records
 1 _CREA 2020-02-05 19:45:40.000
-1 _USER I9mCGK+ApAein2YiNVeoLqghN5ri6n1yN4V5hvhxBe8TP2ldHHUUJuvEBoJ9CvhVCtlW4ff1gB/M58CF6cLVNw==
+1 _USER ZyaPXVCVgSVC3ECagi7AiTbUZKzaLKe6fg8wYZyYc3UnEpoSbvASu8khtfMB9Uc3vFzR1AEt2S57/0h9KyVqQw==
 2 _ENCR 1
 1 _ORIG fold3
 2 _URL https://www.fold3.com/record/529116766-raymond-roberson-1916?xid=2030
@@ -25114,13 +25106,13 @@
 1 _OID f31929a8-cead-464d-96f0-508853fad12a
 1 _META <metadataxml><cemetery /><transcription /></metadataxml>
 1 _CREA 2017-02-14 07:59:56.593
-1 _USER pu0u3o01t6g/s9+Gyv/ePRgKgK0ZMIur8TrO1Uav0bJBuTnSmV54Gut5Fro1EuK2lJebp6lamh8CaZl7rAw/WQ==
+1 _USER VYOU3fY/MbQcUx8y31EjSve52j5Vwwna/nI3Td+neZDGHFM9XA97E1o++m18HQ/d79WP7LcUhK+d+XFrRC20yg==
 2 _ENCR 1
 1 _CLON
 2 _TID 3528068
 2 _PID 6155100968
 2 _OID 8de83992-9376-489c-996e-f72101c22918
-2 _USER BNfaFT+om9nmtDCt/kibWf/7e0btSBBv+yzITq3HFfRXUgSHiE4bKAOm6tBbML/tEV9ksZrl9FK7lG42VRB4Lw==
+2 _USER 0o+Mt8nSZZg6rG048am/ZWJTRxgK+FTub/X/McRhcl5oGUcCvylfCmUj/eZQEBTGYWxrt6X9dBAxDdWflSXLNw==
 3 _ENCR 1
 2 _DATE 2013-02-12 14:35:32.000
 1 _ORIG u
@@ -25137,13 +25129,13 @@
 1 _OID f3f90560-665d-4e9a-84bf-7ffa6532bfe3
 1 DATE 1894
 1 _CREA 2017-02-14 06:39:14.801
-1 _USER 5nOjdC8qB9MgFI2GqEdZkcdFpKKPBrkiNp3A3m/P6Qs9spM6ZNzRGpi1b3m4o8VRqm9xY3hgTJmehGgadG9yRw==
+1 _USER WjQsSejubiaVQI+im92G+GWw2sehg71LEZMPqKcpSvr3lmZzTE7P2Tc2/Q1CF6oYx7zWSpvG8fZSOSWU21fFVw==
 2 _ENCR 1
 1 _CLON
 2 _TID 42475198
 2 _PID 280035896896
 2 _OID ef96ed9a-13e6-46cd-bec9-f3fe224d694d
-2 _USER PoDHDc1w8BvcxSDMNKXw1M3IhqHBDdU/b7J30ypyhVnIjg7iI+0eg5mAjlnE9jyhJxt4IXaconfO4rFKyU/URQ==
+2 _USER wB4Vu4BP/tfXpREbXtsMsnvyfvr5r095AofMQR/o2B6GA0HYwCTVRI8MnySjI2cAX6J+qfo/FxJfAEVq4/K8DA==
 3 _ENCR 1
 2 _DATE 2016-09-23 03:07:38.000
 1 _ORIG u
@@ -25161,7 +25153,7 @@
 1 _OID f419a1bc-7070-4bad-81ba-d81808c61fac
 1 _META <metadataxml><record_source_gid>697437690:1265</record_source_gid></metadataxml>
 1 _CREA 2021-03-11 21:00:59.000
-1 _USER HPABAgTKnom/yif+wQ880h0OWECXPiqwJqV2DRIMmWAkzVLpSewMoMlsi3CzaGMK1ovgB8bA2LGapob/0KjGzw==
+1 _USER C81QarBWFS3MsuQ2aOrY7u3ZpZuYWYtG4JmTHSL17MKL6ChINPucEDi8PgniXj3uFBHkODn7C1Zr8A3cHg8+yw==
 2 _ENCR 1
 1 _ORIG u
 1 _ATL N
@@ -25176,13 +25168,13 @@
 2 TITL William Reed Roberson and family
 1 _OID f8b299bd-c4c9-436f-90ae-5e1b198df465
 1 _CREA 2020-05-07 23:22:14.000
-1 _USER 9ws4fYqV86M+SNQkwuQhF+jwzIAMIF7wjR3aDilSO/MPWrOh+0XUknDEE6kKHbIVEQ/Ognlm73bL4e0XQAd6gQ==
+1 _USER va15YYf62iz0nOFKUbdmZ5UFMmQebpcpyQMS4yv8tkwOQ56wPKfmpGDDnH+D4JKUgF8lvuc+oAE4Dq7IqbM95w==
 2 _ENCR 1
 1 _CLON
 2 _TID 83464411
 2 _PID 32490834597
 2 _OID f9e4b1b2-550d-472e-9c86-bbf49a12b03f
-2 _USER zqtuQnz4uopGD2/JZNJQsuED0YYS/6AB0MwfGUAr0vWKDLLmhvgKWdcjzakkuvgTd0ZxJYhOiw4okzWwNxykbg==
+2 _USER P1gGCfBK1Gz7o+uZjI1gWQvmy4F0j7ooTf4oZn99Gyyq4xJ5o+csXAp5HQu7F097XkR5qTGCgZ+YJJY/W5L/PA==
 3 _ENCR 1
 2 _DATE 2017-05-27 19:27:51.000
 1 _ORIG u
@@ -25200,11 +25192,11 @@
 1 DATE 4/3/2003 12:19:10 PM
 1 _DSCR Added by: Randy Johnston  3/30/2010
 1 _CREA 2017-02-21 05:41:59.233
-1 _USER 2LxRdLxreF60qpcxKBZbPDF9Nfdne1UvYdIKL22gSa2K9BE/D7o2dbcE/YMcpArN1V08cT2fTOoTKTcsLIJCPA==
+1 _USER wS5xAZmso+lDQ+hpIOFD9yn9AayoQEBTQHuqKQIBfh3GhI9Ob/f701Sp+3WgQH0QRo8z+3PUBCc8ITMlQTk1gg==
 2 _ENCR 1
 1 _CLON
 2 _OID 766911ac-e347-4163-96d5-a7dc754cba8a
-2 _USER +QwSlHzueYBogMpSR4f9u1tmBe35ex3SMtu4DSwxq87bMvRKeLFiepubXH1qoZS5zOrbgMzdoMqOXllb/I/SMg==
+2 _USER mUK66sNYjna5S6AHm3lX1Hxpm7a/NhQ3QiY/KtNjNZfCBFI+QfCsEubFnP0S22oh4e8OqR4+2VFtSfVhrrLB4A==
 3 _ENCR 1
 2 _DATE 2016-07-01 15:03:43.000
 1 _ORIG u
@@ -25224,7 +25216,7 @@
 1 PLAC United States of America
 1 _DSCR Selective Service Registration Card
 1 _CREA 2020-02-05 19:48:29.000
-1 _USER adnrISwnwRRiEJBMKUqmlVLJtytx9gH6PohcAzMtzc6aT6QqLKYxs6ceMcpd917CTbZDU6qZAMPdCWy3+v2eeA==
+1 _USER +KF7/o9Ze99V1iSiBlmqEiXYjoSH1mmFVVsnhI2BbBjRx9Bu8PP0W210VK/Ai2kuNKkguwDOhsHkZqvwv+fVOw==
 2 _ENCR 1
 1 _ORIG fold3
 2 _URL https://www.fold3.com/image/624817748?terms=raymond,1916,roberson&amp;amp;xid=2030
@@ -25250,13 +25242,13 @@
 2 CONC e  Notes   Wife  Sarrha    McLean  22     Daughter  Elizabeth  D    16     Daughter  Polly    Porter  12     Son  Talbot    Porter  14     Son  William  P  Porter  3     
 1 _META <metadataxml><cemetery /><transcription /></metadataxml>
 1 _CREA 2017-02-14 07:35:43.929
-1 _USER 0BTTvRXsi+g5wCkVSm8ETKwqzOOeRqkD7jVDGqre2yOMHkCrSwv3t9fG36wbY+rawKMW72CxMvnQpWBaWASVJw==
+1 _USER Y6ctgByTS3nVOOHJo1q0/dqIwiA9tBVD9Y+o46tioUDabOoX7ME6Zu428QOt5NhB7iZBVRf14hFRaW+w/OCKPw==
 2 _ENCR 1
 1 _CLON
 2 _TID 877725
 2 _PID 25341059241
 2 _OID 6aa5aac9-2ded-41a5-aaca-43922ba2d893
-2 _USER Z2Nbst4GOs8flEwCtjH/koSiIU8NB+agQLW2koD2HIbt/hRZ7o7Bm43vakvJknK1MzgBE6UVjAi8MX135Z7hdA==
+2 _USER M8SUkc0bkuL8/AuUyLjnUNuGy7CAx6Q0Z22pqMKWFWTbJDKWzBQubzzyzljgglx3J4cWNw2Cob6/nk1r3mOxqw==
 3 _ENCR 1
 2 _DATE 2015-05-04 16:49:55.000
 1 _ORIG u
@@ -25274,13 +25266,13 @@
 1 DATE 11.22.2013
 1 _DSCR This is a page from The Douglas Register showing the births of some of John and Susannah's children.
 1 _CREA 2020-04-23 20:56:00.000
-1 _USER OdUW1Ib1cnW2V7yquxrvcgGfsZOG3Rncvnza9Zoe37FvQtDozKjapChr1wTnfdinCyG87YWHTzHv2uUB69asJg==
+1 _USER k332Ht9CSBkJqPU7cUiSEN35DFK00wF21+JzlU8Sq6rxTfoKZCn6DwdOk5Xa6f9RmICzdeJTEY50s94C+mTzjw==
 2 _ENCR 1
 1 _CLON
 2 _TID 113685454
 2 _PID 380113928884
 2 _OID d67b3495-3730-46fe-aecb-08f77dee84c3
-2 _USER Zn3KKh3B+rMff4V7Z8j8yq0SzYZYalwqHf1NmZQ1szBp1lQcGBFTQfwIudZcLmqGNuOBQk8WJFPdnyK2VkSGwg==
+2 _USER w8nTAR7qeja5iDrKsAvqAgj1HJgcxW/94WrT7VR+EjnouismAjcsUjL+mR/sYgJyK/7dHw0e7mOeVl6mbHKd/g==
 3 _ENCR 1
 2 _DATE 2017-07-19 15:46:11.000
 1 _ORIG u
@@ -25299,13 +25291,13 @@
 1 DATE 1 Jul 1944
 1 PLAC Stephenville, Erath County, Texas, USA
 1 _CREA 2019-12-20 21:40:11.000
-1 _USER dwbj0Ex9s8putWfpV9+7NVEcYSIXXapfhoDNeu+kUrwWdaEV/s8in5S+EdBOoUSVRVvckHh1O2cDU99BokHhiw==
+1 _USER dZxCRmqHzEuT3xNXbMRUE0xftkhRslWcL2dY27V37sC6Z0FTDAvpEMmXqKB7QXc5rnPvJAZIhAkdBmHHAi5XTg==
 2 _ENCR 1
 1 _CLON
 2 _TID 36748411
 2 _PID 310168770596
 2 _OID 9b67e039-cf0e-4465-97fd-56f3194e576a
-2 _USER jGEGvGDoP/oqSmkfQ9LYh8U6V166bHyYMRg9Ojerp0hVLTWRSiRruAdXDwPfzFcCDlF+5CwMiC/3ytleJPGgtw==
+2 _USER YwdnF8bKTb3T5gIGfh+6SeDsP7Kul7VCcwIl1rMizndJAQTswFRNpEEoUmYfm8YyhZz28e8AxLYQBZoCICqtOw==
 3 _ENCR 1
 2 _DATE 2017-12-30 02:45:23.000
 1 _ORIG u
