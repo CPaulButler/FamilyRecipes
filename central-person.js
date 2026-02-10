@@ -139,7 +139,10 @@ function initializeCentralPersonView() {
         const hash = window.location.hash.substring(1); // Remove the #
         // Convert GEDCOM ID format (@I123@) to HTML ID format (i123)
         const htmlId = hash.replace(/@/g, '').toLowerCase();
-        initialPerson = document.getElementById(htmlId);
+        const hashTarget = document.getElementById(htmlId);
+        if (hashTarget && hashTarget.classList.contains('family-member')) {
+            initialPerson = hashTarget;
+        }
     }
     
     // Fall back to Charles Henry Porter or first member if no hash or person not found
@@ -190,6 +193,10 @@ function initializeCentralPersonView() {
  * @param {string} personId - ID of the person to make central
  */
 function setCurrentCentralPerson(personId) {
+    const centralElement = document.getElementById(personId);
+    if (!centralElement || !centralElement.classList.contains('family-member')) {
+        return;
+    }
     currentCentralPerson = personId;
     updateVisibility();
     updateTreeLines();
