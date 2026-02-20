@@ -557,7 +557,7 @@ function displayConnectionPath(path) {
         icon.setAttribute('data-full-name', fullName);
         
         // Add initials to icon
-        const initials = getInitials(name);
+        const initials = getInitials(fullName);
         icon.textContent = initials;
         
         // Highlight current central person
@@ -605,15 +605,14 @@ function displayConnectionPath(path) {
 }
 
 /**
- * Get initials from a name
+ * Get initials from a name (first letter of each word)
  * @param {string} name - Person's name
  * @returns {string} Initials
  */
 function getInitials(name) {
     const parts = name.split(' ').filter(p => p.length > 0);
     if (parts.length === 0) return '?';
-    if (parts.length === 1) return parts[0].substring(0, 2).toUpperCase();
-    return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
+    return parts.map(p => p[0].toUpperCase()).join('');
 }
 
 /**
