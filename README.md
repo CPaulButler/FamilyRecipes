@@ -75,6 +75,17 @@ python3 -m http.server 8000
 # Visit http://localhost:8000 in your browser
 ```
 
+## Git Hooks
+
+This repo includes a commit hook that updates cache-busting query params for
+local CSS references in HTML files.
+
+Enable the hook locally:
+
+```bash
+git config core.hooksPath .githooks
+```
+
 ## Adding Content
 
 ### Adding a Family Member
